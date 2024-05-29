@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>参数variable | xaz的花花世界</title>
+  <title>hexo的使用 | xaz的花花世界</title>
   <meta name="keywords" content="">
-  <meta name="description" content="参数variable | xaz的花花世界">
+  <meta name="description" content="hexo的使用 | xaz的花花世界">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="快捷键">
 <meta property="og:type" content="website">
@@ -942,9 +942,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-参数variable" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-hexo的使用" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">参数variable</h1>
+        <h1 class="article-title">hexo的使用</h1>
     
     <div class="article-meta">
         
@@ -954,9 +954,7 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="分子动力学">分子动力学</a> > 
-            
-            <a  data-rel="分子动力学&lt;---&gt;lammps模拟">lammps模拟</a>
+            <a  data-rel="软件安装与使用">软件安装与使用</a>
             
         </span>
         
@@ -964,12 +962,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2024-05-25 20:00:40'>2024-05-25 10:09</time>
+            发布时间 : <time class="date" title='最后更新: 2024-05-29 15:59:19'>2024-05-29 15:58</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:922</span>
+        <span>字数:7</span>
         
         
         
@@ -977,7 +975,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8variable%E7%9A%84index%E8%BF%9B%E8%A1%8C%E5%A4%9A%E6%AC%A1%E9%87%8D%E5%A4%8D%E6%A8%A1%E6%8B%9F"><span class="toc-text">使用variable的index进行多次重复模拟</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-hexo-admin%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-text">1. hexo-admin的使用</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -993,73 +991,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><div class='inner-toc'><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8variable%E7%9A%84index%E8%BF%9B%E8%A1%8C%E5%A4%9A%E6%AC%A1%E9%87%8D%E5%A4%8D%E6%A8%A1%E6%8B%9F"><span class="toc-text">使用variable的index进行多次重复模拟</span></a></li></ol></div></p>
-<p>variable 命令</p>
-<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/661273076">LAMMPS 学习笔记之 variable 命令 - 知乎 (zhihu.com)</a></p>
-<p>在LAMMPS中，<code>variable</code>命令用于定义一个变量，该变量可以在后续的输入文件中被引用，以设置参数的值。变量可以是一个常量、一个表达式、一个字符串或者一个索引值。它们可以在许多LAMMPS命令中使用，提供了一种灵活的方式来设置和修改参数，尤其是在需要参数化输入文件或者进行参数研究时非常有用。<br><code>variable</code>命令的基本语法如下：</p>
-<pre><code>variable name style value
-</code></pre>
-<p>其中：</p>
-<ul>
-<li><code>name</code> 是变量的名称，用于后续引用。</li>
-<li><code>style</code> 是变量的类型或样式，决定了变量如何被解析和计算。</li>
-<li><code>value</code> 是变量的值，可以是数字、表达式、字符串等。<br>LAMMPS支持多种变量样式，以下是一些常用的样式及其含义：</li>
-</ul>
-<ol>
-<li><p><code>equal</code>：定义一个变量的值为一个表达式或者常量。例如：</p>
-<pre><code>variable temp equal 300.0
-</code></pre>
-<p>这里定义了一个名为<code>temp</code>的变量，其值为300.0。</p>
-</li>
-<li><p><code>atom</code>：定义一个与原子相关的变量，通常用于访问原子的属性。例如：</p>
-<pre><code>variable x atom x
-</code></pre>
-<p>这里定义了一个名为<code>x</code>的变量，它引用了原子的x坐标。</p>
-</li>
-<li><p><code>index</code>：定义一个索引变量，它的值在每次引用时都会增加。例如：</p>
-<pre><code>variable i index 1
-</code></pre>
-<p>这里定义了一个名为<code>i</code>的索引变量，初始值为1，每次引用时都会自动增加1。</p>
-</li>
-<li><p><code>loop</code>：定义一个循环变量，通常与<code>jump</code>命令一起使用，用于在输入文件中创建循环。例如：</p>
-<pre><code>variable j loop 5
-</code></pre>
-<p>这里定义了一个名为<code>j</code>的循环变量，它的值会在1到5之间循环。</p>
-</li>
-<li><p><code>format</code>：定义一个格式化字符串，用于格式化输出。例如：</p>
-<pre><code>variable msd format %16.8e
-</code></pre>
-<p>这里定义了一个名为<code>msd</code>的格式化字符串，用于以特定的格式输出数据。</p>
-</li>
-<li><p><code>file</code>：定义一个变量，其值来自一个文件。例如：</p>
-<pre><code>variable params file params.txt
-</code></pre>
-<p>这里定义了一个名为<code>params</code>的变量，其值从<code>params.txt</code>文件中读取。</p>
-</li>
-<li><p><code>string</code>：定义一个字符串变量。例如：</p>
-<pre><code>variable message string &quot;Hello, LAMMPS!&quot;
-</code></pre>
-<p>这里定义了一个名为<code>message</code>的字符串变量，其值为”Hello, LAMMPS!”。<br>变量可以在LAMMPS输入文件的许多地方被引用，通过在变量名前加上<code>$</code>符号来实现。例如，在<code>timestep</code>命令中使用变量<code>ss</code>：</p>
-</li>
-</ol>
-<pre><code>timestep $&#123;ss&#125;
-</code></pre>
-<p>这里，时间步长被设置为变量<code>ss</code>的值。<br>使用变量可以使得LAMMPS输入文件更加灵活和易于维护，特别是在需要改变模拟参数或者进行参数化研究时。</p>
-<h1 id="使用variable的index进行多次重复模拟"><a href="#使用variable的index进行多次重复模拟" class="headerlink" title="使用variable的index进行多次重复模拟"></a>使用variable的index进行多次重复模拟</h1><p><a target="_blank" rel="noopener" href="https://docs.lammps.org/Howto_multiple.html">8.1.3. Run multiple simulations from one input script — LAMMPS documentation</a></p>
-<p>fix和dump的区别</p>
-<ol>
-<li>fix命令用于在模拟过程中对系统施加各种约束和操作，也可以用于计算和输出特定物理量（只有特定的几个命令可用），如MSD,fix命令通常在模拟过程中持续作用，直到被删除或模拟结束</li>
-</ol>
-<pre><code class="shell">fix ID group-ID style args
-</code></pre>
-<p>例：<code>fix 1 all nvt temp 300.0 300.0 100.0</code>  指定进行nvt计算，阻尼系数为100</p>
-<pre><code class="shell">compute         msd1 Na msd
-fix             2 all ave/time 1 1 1 c_msd1[4] file Na_MSD.dat
-</code></pre>
-<p>搭配compute，进行操作，做计算。&#x3D;&#x3D;理论上，compute+fix能够得到所有可能得到的lammps中已经实现的操作&#x3D;&#x3D;</p>
-<p><code>fix ID group-ID ave/time Nevery Nrepeat Nfreq value1 value2 ... keyword args ...</code></p>
-<p>Nevery 每多少步算一次，Nrepeat 平均多少步 Nfreq 每多少步输出一次</p>
-
+        <p><div class='inner-toc'><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-hexo-admin%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-text">1. hexo-admin的使用</span></a></li></ol></div></p>
+<h1 id="1-hexo-admin的使用"><a href="#1-hexo-admin的使用" class="headerlink" title="1. hexo-admin的使用"></a>1. hexo-admin的使用</h1>
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源 </span>
     </div>
