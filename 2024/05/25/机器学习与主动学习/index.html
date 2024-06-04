@@ -82,7 +82,7 @@
     <li>
         <div class="all active" data-rel="全部文章">全部文章
             
-                <small>(61)</small>
+                <small>(62)</small>
             
         </div>
     </li>
@@ -251,7 +251,7 @@
         <div data-rel="杂谈">
             
             杂谈
-            <small>(7)</small>
+            <small>(8)</small>
         </div>
         
     </li>
@@ -310,8 +310,8 @@
         
     </div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="61">
-<input type="hidden" id="yelog_site_word_count" value="85.9k">
+<input type="hidden" id="yelog_site_posts_number" value="62">
+<input type="hidden" id="yelog_site_word_count" value="88.4k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -380,6 +380,24 @@
     <nav id="title-list-nav">
         
         
+        <a id="top" class="全部文章 学习笔记 "
+           href="/2024/05/27/%E5%BE%85%E5%AD%A6%E4%B9%A0%E5%86%85%E5%AE%B9/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="待学习内容">待学习内容</span>
+            <span class="post-date" title="2024-05-27 09:28:23">2024/05/27</span>
+        </a>
+        
+        
+        <a  class="全部文章 杂谈 "
+           href="/2024/06/04/%E4%B8%8D%E7%9F%A5%E9%81%93%E5%81%9A%E4%BB%80%E4%B9%88%E6%97%B6%E5%8F%AF%E4%BB%A5%E5%81%9A%E7%9A%84%E4%BA%8B/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="不知道做什么时可以做的事">不知道做什么时可以做的事</span>
+            <span class="post-date" title="2024-06-04 20:47:46">2024/06/04</span>
+        </a>
+        
+        
         <a  class="全部文章 网站收集 "
            href="/2024/06/01/%E6%95%85%E4%BA%8B%E9%9B%86/"
            data-tag=""
@@ -390,10 +408,10 @@
         
         
         <a  class="全部文章 学习笔记 "
-           href="/2024/05/31/%E9%98%BF%E4%BC%A6%E5%B0%BC%E4%B9%8C%E6%96%AF%E5%85%AC%E5%BC%8F%E7%9A%84%E7%89%A9%E7%90%86%E8%B5%B7%E6%BA%90/"
+           href="/2024/05/31/%E8%B6%85%E7%A6%BB%E5%AD%90%E5%AF%BC%E4%BD%93%E4%B8%AD%E9%98%BF%E4%BC%A6%E5%B0%BC%E4%B9%8C%E6%96%AF%E5%85%AC%E5%BC%8F%E7%9A%84%E7%89%A9%E7%90%86%E8%B5%B7%E6%BA%90/"
            data-tag=""
            data-author="" >
-            <span class="post-title" title="阿伦尼乌斯公式的物理起源">阿伦尼乌斯公式的物理起源</span>
+            <span class="post-title" title="超离子导体中阿伦尼乌斯公式的物理起源">超离子导体中阿伦尼乌斯公式的物理起源</span>
             <span class="post-date" title="2024-05-31 21:17:54">2024/05/31</span>
         </a>
         
@@ -440,15 +458,6 @@
            data-author="" >
             <span class="post-title" title="lammps_plumed安装">lammps_plumed安装</span>
             <span class="post-date" title="2024-05-27 09:36:27">2024/05/27</span>
-        </a>
-        
-        
-        <a  class="全部文章 学习笔记 "
-           href="/2024/05/27/%E5%BE%85%E5%AD%A6%E4%B9%A0%E5%86%85%E5%AE%B9/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="待学习内容">待学习内容</span>
-            <span class="post-date" title="2024-05-27 09:28:23">2024/05/27</span>
         </a>
         
         
@@ -966,7 +975,7 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2024-05-30 10:35:02'>2024-05-25 22:01</time>
+            发布时间 : <time class="date" title='最后更新: 2024-06-03 14:50:48'>2024-05-25 22:01</time>
         
     </div>
     <div class="article-meta">
@@ -2341,12 +2350,12 @@ if __name__ == &quot;__main__&quot;:
 <h2 id="5-主动学习-minima-hopping"><a href="#5-主动学习-minima-hopping" class="headerlink" title="5. 主动学习+ minima_hopping"></a>5. 主动学习+ minima_hopping</h2><h3 id="1-minima-hopping使用方法"><a href="#1-minima-hopping使用方法" class="headerlink" title="1. minima_hopping使用方法"></a>1. minima_hopping使用方法</h3><p>minimaohopping是在ase中使用的一种采样算法，相比普通的md，采样更有效，这在华为机器<code>liz/2-Na-X-Si-O/2_NaXSiO_big_model/1_one_element/05_Sb_mini</code>  中得到了充分的验证。</p>
 <p>使用minimahopping需改动的地方：</p>
 <ul>
-<li><code>resource/md</code> 文件夹中的data.nso 改为data.vasp</li>
-<li><code>resource/md</code> 文件夹中增加minima_hopping.py，用于进行minima_hopping模拟，可直接copy</li>
+<li><code>resource/md</code> 文件夹中的data.nso 改为data.vasp，data.vasp的文件内容格式为POSCAR</li>
+<li><code>resource/md</code> 文件夹中增加minima_hopping.py，用于进行minima_hopping模拟，可直接copy，需要修改脚本内的元素类型</li>
 <li><code>resource/md</code>  文件夹中的sub-md.sh需要改变，从提交md变为提交mini</li>
 <li><code>resource</code> 文件夹中的iter_scheduling_remote.sh 有一点改变，可直接copy</li>
 </ul>
-<p><code>sub-md.sh,iter_scheduling_remote.sh, mimima_hopping.py </code>可直接从华为机器<code>/liz/2-Na-X-Si-O/2_NaXSiO_big_model/1_one_element/05_Sb_mini/resource</code> 路径下复制到对应位置</p>
+<p><code>sub-md.sh,iter_scheduling_remote.sh, mimima_hopping.py </code>可直接从华为机器<code>/liz/2-Na-X-Si-O/2_NaXSiO_big_model/1_one_element/05_Sb_mini/resource</code> 路径下复制到对应位置，minima_hopping.py需要修改元素类型</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源 </span>
