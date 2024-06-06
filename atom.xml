@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-06-04T13:29:47.961Z</updated>
+  <updated>2024-06-06T03:16:06.875Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,13 +17,62 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>meta_dynamics_plumed</title>
+    <link href="http://example.com/2024/06/05/meta-dynamics-plumed/"/>
+    <id>http://example.com/2024/06/05/meta-dynamics-plumed/</id>
+    <published>2024-06-05T07:22:59.000Z</published>
+    <updated>2024-06-06T03:16:06.875Z</updated>
+    
+    <content type="html"><![CDATA[<p>[toc]</p><h1 id="1-基本功能"><a href="#1-基本功能" class="headerlink" title="1. 基本功能"></a>1. 基本功能</h1><blockquote><p>Promoting transparency and reproducibility in enhanced molecular simulations</p></blockquote><ol><li><p>PLUMED中提供了各种分子动力学增强采样的方法，如umbrella sampling , metadynamics ,steered MD</p><p>这些增强采样方法需要和CV结合使用。<code>CVs包括原子对之间的距离，扭转角，二次结构内容，回转半径，接触图，系统能量，与参考构想偏差的相关指标，基于人工网络人工定义的CVs</code></p></li><li><p>PLUMED通过后处理程序<code>driver</code> 在预计算的轨迹中计算描述符</p></li></ol><h1 id="2-使用lammps-调用plumed模拟"><a href="#2-使用lammps-调用plumed模拟" class="headerlink" title="2. 使用lammps 调用plumed模拟"></a>2. 使用lammps 调用plumed模拟</h1><h1 id="3-一些可能有用的"><a href="#3-一些可能有用的" class="headerlink" title="3. 一些可能有用的"></a>3. 一些可能有用的</h1><p><a href="https://bohrium.dp.tech/notebooks/7144731675">DP 运行实例，使用CP2K 模拟甘氨酸分子在纯水溶液中的质子转移</a></p><p><a href="https://bohrium.dp.tech/notebooks/9874998164">on-the-fly probability enhanced sampling</a></p><p><a href="https://bohrium.dp.tech/notebooks/83327491785">Voronoi CVs</a></p><p><a href="https://www.plumed.org/doc-v2.6/user-doc/html/index.html">PLUMED 2.6 手册</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;[toc]&lt;/p&gt;
+&lt;h1 id=&quot;1-基本功能&quot;&gt;&lt;a href=&quot;#1-基本功能&quot; class=&quot;headerlink&quot; title=&quot;1. 基本功能&quot;&gt;&lt;/a&gt;1. 基本功能&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;Promoting transparency and</summary>
+      
+    
+    
+    
+    <category term="机器学习" scheme="http://example.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>从MP数据库提取结构</title>
+    <link href="http://example.com/2024/06/05/%E4%BB%8EMP%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8F%90%E5%8F%96%E7%BB%93%E6%9E%84/"/>
+    <id>http://example.com/2024/06/05/%E4%BB%8EMP%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8F%90%E5%8F%96%E7%BB%93%E6%9E%84/</id>
+    <published>2024-06-05T02:19:13.000Z</published>
+    <updated>2024-06-05T02:20:03.212Z</updated>
+    
+    <content type="html"><![CDATA[<p>[toc]</p><pre><code class="python">from mp_api.client import MPResterfrom pymatgen.core import compositionfrom pymatgen.io.vasp.inputs import Poscarmpr=MPRester(&quot;5BhZJctjosrFpkuE6qErpu85dT4gw4VZ&quot;)mp_entries = mpr.get_entries_in_chemsys(elements=[&quot;Na&quot;,&quot;Mo&quot;,&quot;Si&quot;,&quot;O&quot;],additional_criteria=&#123;&quot;thermo_types&quot;: [&quot;GGA_GGA+U&quot;]&#125;) count = 0 for entries in mp_entries:    count +=1    struc = entries.structure    vasp_str = Poscar(struc)    vasp_str.write_file(&#39;%d.vasp&#39;%count)#print(mp_entries[0].structure)</code></pre>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;[toc]&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;from mp_api.client import MPRester
+from pymatgen.core import composition
+from pymatgen.io.vasp.inputs</summary>
+      
+    
+    
+    
+    <category term="模拟方法" scheme="http://example.com/categories/%E6%A8%A1%E6%8B%9F%E6%96%B9%E6%B3%95/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>不知道做什么时可以做的事</title>
     <link href="http://example.com/2024/06/04/%E4%B8%8D%E7%9F%A5%E9%81%93%E5%81%9A%E4%BB%80%E4%B9%88%E6%97%B6%E5%8F%AF%E4%BB%A5%E5%81%9A%E7%9A%84%E4%BA%8B/"/>
     <id>http://example.com/2024/06/04/%E4%B8%8D%E7%9F%A5%E9%81%93%E5%81%9A%E4%BB%80%E4%B9%88%E6%97%B6%E5%8F%AF%E4%BB%A5%E5%81%9A%E7%9A%84%E4%BA%8B/</id>
     <published>2024-06-04T12:47:46.000Z</published>
-    <updated>2024-06-04T13:29:47.961Z</updated>
+    <updated>2024-06-06T00:41:12.967Z</updated>
     
-    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">  <script id="hbeData" type="hbeData" data-hmacdigest="85c34a9bcd4a5d852bac660eab95d261bad51fbf0c57d0155bb8afafc66d714d">bda6ad0d5f606e7055c23f770369041fed69a55df7f29c769d489763e906d9f8f3db870535373b51f86d2411b700a830026ebffc57a1c97976cb01d46f92073f88cac6236bc763345fe825be9ca62e8962dbf93d9910b8996cda4f09bbcf6b4a9f675fc5bdee32bb1c50e3be818bc14bb567d8867277afe2c11bf66c0e27c2c677c6da7932c6f27fc59209495c3471cc76f4e6440da61d9c96bd013bd0bf15a7784bccf2ffb792995cdb801fac8c1c1ab0b36c3e80810e465241dc8fdf5a4c29a670752b7dd8fd7bf0daf3ad7041ea64</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Hey, password is required here.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">  <script id="hbeData" type="hbeData" data-hmacdigest="acb3bb86732dff7d90c5ae7ecf40853974da29d5b4af6c462d1d9bc512930751">bda6ad0d5f606e7055c23f770369041fed69a55df7f29c769d489763e906d9f878a01f7f539a3f8dbe2a48aeeb9e905b61ac58153cd4d8c5db7259825e4efcdea33c37dbd50ff85ac372f96be9546a7c1f51f8b785e18fc6958ec78a1aef5f283d5a377764a23cf79d8a619ecf5494434ffc26e8ad6fcd87bd7c20addcd9b57613a7610084be2f057c71be2e24f059b9d037c1b75c5b9f565f80d331a78813d650dedb3a3761d0b00834baaac72763d43a4cec9bcfd5441f441151864bd99ce84d93cdcf03c42a4b04dd3162e011303812d8a8911f3bf8c421b1e02731aac5b7420f839215b2ad1d57f288d13ce7726ad20732ac95a28583c6f9768359812fd06a1396db1dbfccadf6396cce66e320d3b9391b8d7a25d3865d23bae311628cbfeed3d6911998aa5d43642ec35acd41e702cd7677f33ceb018b1ca5800fb22f28fe3d15a5255921c4486c1bcdcdbe202541a2613450aa81b8b9712c14e68b046a0ab3b8b080518b0408064419966d4e10a56302682b218d06106910c2fa6ed18c5c8f277945b4c5a7e078d9c229de23b2d31af5f4f4277dfd4c283e387d11cff234239f8bfac0c1ce9f99d84feb42ebfbb888d66ce66629cf81520c761c95982e90a9f7cd5860d1fcd5c098544714f20e419cb788a9efd207710156ce88e5bc55bd146ddaa83af6ff329459451eeafbc075302f12057bcf46f7da132e9d96150b1c1e8e2d9b044f16ff66d9d63ca5f450</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Hey, password is required here.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
     
     
     <summary type="html">Here&#39;s something encrypted, password is required to continue reading.</summary>
@@ -63,9 +112,9 @@
     <link href="http://example.com/2024/05/31/%E8%B6%85%E7%A6%BB%E5%AD%90%E5%AF%BC%E4%BD%93%E4%B8%AD%E9%98%BF%E4%BC%A6%E5%B0%BC%E4%B9%8C%E6%96%AF%E5%85%AC%E5%BC%8F%E7%9A%84%E7%89%A9%E7%90%86%E8%B5%B7%E6%BA%90/"/>
     <id>http://example.com/2024/05/31/%E8%B6%85%E7%A6%BB%E5%AD%90%E5%AF%BC%E4%BD%93%E4%B8%AD%E9%98%BF%E4%BC%A6%E5%B0%BC%E4%B9%8C%E6%96%AF%E5%85%AC%E5%BC%8F%E7%9A%84%E7%89%A9%E7%90%86%E8%B5%B7%E6%BA%90/</id>
     <published>2024-05-31T13:17:54.000Z</published>
-    <updated>2024-06-04T12:39:43.252Z</updated>
+    <updated>2024-06-06T00:39:06.999Z</updated>
     
-    <content type="html"><![CDATA[<p>[toc]</p><p>思考阿伦尼乌斯公式的起源，来源于对于固体电解质中随着温度改变，两种材料的离子电导率顺序会发生改变，也就是室温下那些相对有利的描述符在高温下变得相对有害；问题的根源来自离子电导率是温度的响应，或者说描述符是对温度的响应。响应的函数是活化能。活化能是本征不变的。</p><hr><h1 id="1-绘制一个非log的阿伦尼乌斯公式"><a href="#1-绘制一个非log的阿伦尼乌斯公式" class="headerlink" title="1. 绘制一个非log的阿伦尼乌斯公式"></a>1. 绘制一个非log的阿伦尼乌斯公式</h1><p><img src="/./../%E5%9B%BE%E7%89%87/image-20240604160746872.png" alt="image-20240604160746872"></p><p><img src="/./../%E5%9B%BE%E7%89%87/image-20240604160816915.png" alt="image-20240604160816915"></p><p><img src="/./../%E5%9B%BE%E7%89%87/image-20240604160647492.png" alt="image-20240604160647492"></p><p><img src="/./../%E5%9B%BE%E7%89%87/image-20240604160933036.png" alt="image-20240604160933036"></p><p>y&#x3D;ae^(-b&#x2F;x)的导数 $\frac{\partial f}{\partial x} &#x3D; \frac{a,b,e^ {- \frac{b}{x} }}{x^2}$</p><p><img src="/./../%E5%9B%BE%E7%89%87/image-20240604162421787.png" alt="image-20240604162421787"></p><p><img src="/./../%E5%9B%BE%E7%89%87/image-20240604162442433.png" alt="image-20240604162442433"></p><h1 id="2-麦克斯韦-玻尔兹曼分布"><a href="#2-麦克斯韦-玻尔兹曼分布" class="headerlink" title="2. 麦克斯韦-玻尔兹曼分布"></a>2. 麦克斯韦-玻尔兹曼分布</h1><h1 id="2-阿伦尼乌斯公式的含义是什么"><a href="#2-阿伦尼乌斯公式的含义是什么" class="headerlink" title="2. 阿伦尼乌斯公式的含义是什么"></a>2. 阿伦尼乌斯公式的含义是什么</h1><blockquote><p>阿伦尼乌斯公式是经验公式，与之相似的是Eyring在1935年提出的Eyring equation，是建立在统计物理上的</p></blockquote><p>一些参考资料</p><p>阿伦尼乌斯公式是如何推导出来的? - 查无此名12138的回答 - 知乎<br><a href="https://www.zhihu.com/question/568999539/answer/2778592065">https://www.zhihu.com/question/568999539/answer/2778592065</a></p><p>[非平衡态统计物理] 3 连续时间随机过程（四） - 笠道梓的文章 - 知乎<br><a href="https://zhuanlan.zhihu.com/p/409136603">https://zhuanlan.zhihu.com/p/409136603</a></p><p>关于如图的Arrhenius方程，老师一定就让你们记住就行，但是我想知道这个方程当初是怎么得出来的？ - 萌铁蛋 MnFeN的回答 - 知乎<br><a href="https://www.zhihu.com/question/431586967/answer/1591685455">https://www.zhihu.com/question/431586967/answer/1591685455</a></p><p>关于如图的Arrhenius方程，老师一定就让你们记住就行，但是我想知道这个方程当初是怎么得出来的？ - 磷酸君Phosphates的回答 - 知乎<br><a href="https://www.zhihu.com/question/431586967/answer/1591829506">https://www.zhihu.com/question/431586967/answer/1591829506</a></p><p>关于如图的Arrhenius方程，老师一定就让你们记住就行，但是我想知道这个方程当初是怎么得出来的？ - 太一的回答 - 知乎<br><a href="https://www.zhihu.com/question/431586967/answer/1841701550">https://www.zhihu.com/question/431586967/answer/1841701550</a></p><p>关于如图的Arrhenius方程，老师一定就让你们记住就行，但是我想知道这个方程当初是怎么得出来的？ - BenderRodriguez的回答 - 知乎<br><a href="https://www.zhihu.com/question/431586967/answer/1621985520">https://www.zhihu.com/question/431586967/answer/1621985520</a></p><p><a href="https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps/Supplemental_Modules_(Physical_and_Theoretical_Chemistry)/Kinetics/06%3A_Modeling_Reaction_Kinetics/6.04%3A_Transition_State_Theory/6.4.01%3A_Eyring_equation">6.4.1: Eyring equation - Chemistry LibreTexts</a></p><p><a href="https://public.websites.umich.edu/~elements/03chap/html/transition/index.htm#IV">https://public.websites.umich.edu/~elements/03chap/html/transition/index.htm#IV</a></p>]]></content>
+    <content type="html"><![CDATA[<p>[toc]</p><p>思考阿伦尼乌斯公式的起源，来源于对于固体电解质中随着温度改变，两种材料的离子电导率顺序会发生改变，也就是室温下那些相对有利的描述符在高温下变得相对有害；问题的根源来自离子电导率是温度的响应，或者说描述符是对温度的响应。响应的函数是活化能。活化能是本征不变的。</p><hr><h1 id="1-绘制一个非log的阿伦尼乌斯公式"><a href="#1-绘制一个非log的阿伦尼乌斯公式" class="headerlink" title="1. 绘制一个非log的阿伦尼乌斯公式"></a>1. 绘制一个非log的阿伦尼乌斯公式</h1><p><img src="/./../%E5%9B%BE%E7%89%87/image-20240604160746872.png" alt="image-20240604160746872"></p><p><img src="/./../%E5%9B%BE%E7%89%87/image-20240604160816915.png" alt="image-20240604160816915"></p><p><img src="/./../%E5%9B%BE%E7%89%87/image-20240604160647492.png" alt="image-20240604160647492"></p><p><img src="/./../%E5%9B%BE%E7%89%87/image-20240604160933036.png" alt="image-20240604160933036"></p><p>y&#x3D;ae^(-b&#x2F;x)的导数 $\frac{\partial f}{\partial x} &#x3D; \frac{a,b,e^ {- \frac{b}{x} }}{x^2}$</p><p><img src="/./../%E5%9B%BE%E7%89%87/image-20240604162421787.png" alt="image-20240604162421787"></p><p><img src="/./../%E5%9B%BE%E7%89%87/image-20240604162442433.png" alt="image-20240604162442433"></p><h1 id="2-麦克斯韦-玻尔兹曼分布"><a href="#2-麦克斯韦-玻尔兹曼分布" class="headerlink" title="2. 麦克斯韦-玻尔兹曼分布"></a>2. 麦克斯韦-玻尔兹曼分布</h1><blockquote><p>物理化学讲义 彭笑刚</p><p><a href="https://img.sslibrary.com/n/slib/book/slib/10187693/bb8c7a9c40184c24aa13df047eef0be8/067598e620dd3dc848749a12394c9c92.shtml?dxbaoku=true&moocbaoku=false&deptid=920&fav=https://www.sslibrary.com/reader/pdg/dxpdgreader?d=4fdf840d872514b21b9babbd8ee01b5b&enc=efc50c213fa6456c44b7f0cb5426940b&ssid=10187693&did=920&fenlei=1304080104&spage=1&t=5&uid=&username=dx2baoku_59.72.114.217_920&view=-1&refinfo=&refaid=">分子化学反应动态学 (sslibrary.com)</a></p></blockquote><h2 id="1-玻尔兹曼分布的含义"><a href="#1-玻尔兹曼分布的含义" class="headerlink" title="1. 玻尔兹曼分布的含义"></a>1. 玻尔兹曼分布的含义</h2><p>平衡态的概念：对于一个系统，在确定的外界条件下，应该有且只有一个平衡态，平衡态的表现是在系统的各个地方（当不考虑表界面时），其物理量不随时间有巨大的改变，但应该允许有涨落的存在。</p><blockquote><p>平衡态只要求在系统的区域内其物理量不随时间有巨大改变，但并没有要求在不同的区域内物理量也相同，在表界面应该有梯度的存在，但是不同离子的化学势应该是平衡的。</p></blockquote><blockquote><p>在离子导体中的模拟中，或者在分子动力学的过程中，我们需要模拟的是平衡态的物理量，分子动力学中的收敛也是平衡态的含义。</p></blockquote><blockquote><p>对于一个宏观的孤立的离子导体，其内部的离子与表面处的离子应该是动态的平衡过程，或者表面到界面应该存在一个迁移的梯度，这种梯度的存在只是离子流的存在，但要求离子的化学势应该是平衡的。</p></blockquote><hr><p>对于每一个宏观状态，都对应着大量的微观状态。一个基本假设是所有的整体的微观状态都是等价的，具有相同的出现概率。宏观下的可观测的物理量，可以理解为微观状态的某个物理量的平均值</p><blockquote><p>扩散系数应该就是这样一个物理量，应该是微观离子运动的距离和时间的平均值</p></blockquote><p>时间平均值等价于系综平均值</p><blockquote><p>计算msd时，理论上时间足够长，晶胞尺寸很小时也应该计算足够准确</p></blockquote><blockquote><p>扩散系数是一个在运动中才能观察到的物理量，但并不是一个运动中才能确定的物理量，其数值的静态统计部分在结构确定时，就应当由离子的振动频率和扩散距离决定，但是运动的离子的关联部分，需要在运动中得到统计平均</p></blockquote><p>一个硬币抛1000次等于1000个硬币抛一次</p><blockquote><p>1000个离子运动一次等于1个离子运动1000次</p></blockquote><p>将N个粒子分配到n个能级上，第$i$个能级上的粒子数为$N_i$,可能的划分方式数量为<br>$$<br>w&#x3D;\frac{N!}{\prod \limits_{i&#x3D;0}^n N_i}<br>$$</p><blockquote><p>晶格中离子的振动与输运是否也有不同的能级。宏观上看，输运处于平衡态时，扩散系数稳定，意味着其微观的离子所处的不同的能级&#x2F;振幅的分布随时间是不变的（如果有这样的能级的话），这一平衡态也应该对应着大量的微观状态，也就是具体到每个粒子上，其所处的状态是不确定的，有大量可能的分布状态。</p></blockquote><blockquote><p>或许可以考虑从晶格静态结构中直接计算其（振幅）分布及分布的最可几状态，也就是平衡态，也就能计算扩散系数。不管非谐还是简谐，振动总是真实存在的，振幅也是真实存在的，或许非谐决定了分布的形状。</p></blockquote><blockquote><p>或许扩散系数有一个分布，而非谐、简谐决定了分布的样子，最可几分布就是宏观的扩散系数。当然，应该暂时不考虑运动中关联的效应</p></blockquote><hr><p>最可几态指的是微观状态数占据最大权重的宏观状态。在给定的外界条件下，系统的平衡态是系统的最可几态。</p><p>系统的元素数量越多，最可几态占据的权重越大。对一个真正宏观系统，当偏离最可几状态时，其状态所包含的微观状态数迅速下降到可以忽略不计。因此最可几状态是宏观系统的大部分时间能够观测到的。其他的涨落小到几乎不可观察</p><p><img src="/./../%E5%9B%BE%E7%89%87/image-20240605205929118.png" alt="image-20240605205929118"></p><p>玻尔兹曼分布就是不同微观状态在外界环境下的分布状况</p><hr><p>宏观状态之间有确定的稳定性差异，通过比较微观状态数的数量，可以判断两个宏观状态间的相对稳定性。以及判断一个化学&#x2F;物理过程是否可以发生</p><blockquote><p>离子从一个稳定态向另一个稳定态跳跃是一个过程，过程中需要跨越一个过渡态，能否到达过渡态是一次微观状态数的比较，从过渡态去哪里是另一次微观状态数的比较。说明过渡态的微观状态数是足够大的</p></blockquote><blockquote><p>记得有一篇文章提到过微观状态数和过渡态的关系</p></blockquote><hr><p>玻尔兹曼对熵的定义<br>$$<br>S&#x3D;kln(W)<br>$$<br>$W$是微观状态数，微观状态数越多，权重越大，熵越大。<code>熵是微观状态数的另一种描述</code></p><p>平衡态是微观状态数权重最大的状态，对应着也是熵最大的状态。系统向着平衡态演化</p><blockquote><p>熵和微观状态数有相同的含义，在离子扩散过程中，是否可定义离子跳跃相关的熵。（振幅熵？）</p></blockquote><p>统计物理中的熵增原理是一个自然而然的推论</p><hr><p>在两个系统之间发生了能量的转移后，熵改变的难易程度，是由具体改变的能量与熵变来决定的。</p><p>温度是能量对熵的偏导数，描述了单位熵的改变需要的能量。<br>$$<br>T&#x3D;(\frac{dU}{dS})_v,_n<br>$$</p><blockquote><p>在离子输运中，也应该存在这样的定义，定义温度增加，可以允许的熵、即微观状态数的改变，这可能与温度升高，振动改变相关</p></blockquote><h1 id="3-化学家眼中的阿伦尼乌斯公式"><a href="#3-化学家眼中的阿伦尼乌斯公式" class="headerlink" title="3. 化学家眼中的阿伦尼乌斯公式"></a>3. 化学家眼中的阿伦尼乌斯公式</h1><h1 id="3-阿伦尼乌斯公式的含义是什么"><a href="#3-阿伦尼乌斯公式的含义是什么" class="headerlink" title="3. 阿伦尼乌斯公式的含义是什么"></a>3. 阿伦尼乌斯公式的含义是什么</h1><blockquote><p>阿伦尼乌斯公式是经验公式，与之相似的是Eyring在1935年提出的Eyring equation，是建立在统计物理上的</p></blockquote><p>一些参考资料</p><p>阿伦尼乌斯公式是如何推导出来的? - 查无此名12138的回答 - 知乎<br><a href="https://www.zhihu.com/question/568999539/answer/2778592065">https://www.zhihu.com/question/568999539/answer/2778592065</a></p><p>[非平衡态统计物理] 3 连续时间随机过程（四） - 笠道梓的文章 - 知乎<br><a href="https://zhuanlan.zhihu.com/p/409136603">https://zhuanlan.zhihu.com/p/409136603</a></p><p>关于如图的Arrhenius方程，老师一定就让你们记住就行，但是我想知道这个方程当初是怎么得出来的？ - 萌铁蛋 MnFeN的回答 - 知乎<br><a href="https://www.zhihu.com/question/431586967/answer/1591685455">https://www.zhihu.com/question/431586967/answer/1591685455</a></p><p>关于如图的Arrhenius方程，老师一定就让你们记住就行，但是我想知道这个方程当初是怎么得出来的？ - 磷酸君Phosphates的回答 - 知乎<br><a href="https://www.zhihu.com/question/431586967/answer/1591829506">https://www.zhihu.com/question/431586967/answer/1591829506</a></p><p>关于如图的Arrhenius方程，老师一定就让你们记住就行，但是我想知道这个方程当初是怎么得出来的？ - 太一的回答 - 知乎<br><a href="https://www.zhihu.com/question/431586967/answer/1841701550">https://www.zhihu.com/question/431586967/answer/1841701550</a></p><p>关于如图的Arrhenius方程，老师一定就让你们记住就行，但是我想知道这个方程当初是怎么得出来的？ - BenderRodriguez的回答 - 知乎<br><a href="https://www.zhihu.com/question/431586967/answer/1621985520">https://www.zhihu.com/question/431586967/answer/1621985520</a></p><p><a href="https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps/Supplemental_Modules_(Physical_and_Theoretical_Chemistry)/Kinetics/06%3A_Modeling_Reaction_Kinetics/6.04%3A_Transition_State_Theory/6.4.01%3A_Eyring_equation">6.4.1: Eyring equation - Chemistry LibreTexts</a></p><p><a href="https://public.websites.umich.edu/~elements/03chap/html/transition/index.htm#IV">https://public.websites.umich.edu/~elements/03chap/html/transition/index.htm#IV</a></p>]]></content>
     
     
       
@@ -86,9 +135,9 @@
     <link href="http://example.com/2024/05/31/%E7%9F%A5%E8%AF%86%E7%B1%BB%E7%BD%91%E7%AB%99/"/>
     <id>http://example.com/2024/05/31/%E7%9F%A5%E8%AF%86%E7%B1%BB%E7%BD%91%E7%AB%99/</id>
     <published>2024-05-31T02:08:33.000Z</published>
-    <updated>2024-05-31T02:10:30.626Z</updated>
+    <updated>2024-06-06T00:41:29.810Z</updated>
     
-    <content type="html"><![CDATA[<p>[toc]</p><h1 id="1-固态电解质收集"><a href="#1-固态电解质收集" class="headerlink" title="1 固态电解质收集"></a>1 固态电解质收集</h1><p><a href="https://ddse-database.streamlit.app/">Streamlit (ddse-database.streamlit.app)</a></p>]]></content>
+    <content type="html"><![CDATA[<p>[toc]</p><h1 id="1-固态电解质收集"><a href="#1-固态电解质收集" class="headerlink" title="1 固态电解质收集"></a>1 固态电解质收集</h1><p><a href="https://ddse-database.streamlit.app/">Streamlit (ddse-database.streamlit.app)</a></p><h1 id="2-国家航天局"><a href="#2-国家航天局" class="headerlink" title="2 国家航天局"></a>2 国家航天局</h1><p><a href="https://www.cnsa.gov.cn/">国家航天局 (cnsa.gov.cn)</a></p><h1 id="3-吉大图书馆"><a href="#3-吉大图书馆" class="headerlink" title="3 吉大图书馆"></a>3 吉大图书馆</h1><p><a href="http://lib.jlu.edu.cn/portal/index.aspx">吉林大学图书馆 (jlu.edu.cn)</a></p>]]></content>
     
     
       
@@ -429,54 +478,6 @@ structure = a.get_</summary>
     
     
     <category term="模拟方法" scheme="http://example.com/categories/%E6%A8%A1%E6%8B%9F%E6%96%B9%E6%B3%95/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>电池计算</title>
-    <link href="http://example.com/2024/05/25/%E7%94%B5%E6%B1%A0%E8%AE%A1%E7%AE%97/"/>
-    <id>http://example.com/2024/05/25/%E7%94%B5%E6%B1%A0%E8%AE%A1%E7%AE%97/</id>
-    <published>2024-05-25T14:01:20.377Z</published>
-    <updated>2024-05-25T12:00:22.317Z</updated>
-    
-    <content type="html"><![CDATA[<p>[toc]</p><h1 id="1-电池负极比容量计算"><a href="#1-电池负极比容量计算" class="headerlink" title="1.电池负极比容量计算"></a>1.<strong>电池负极比容量计算</strong></h1><p><img src="/./../%E5%9B%BE%E7%89%87/image-20230510095231025.png" alt="image-20230510095231025"></p><p><strong>法拉第常数：96485 C&#x2F;mol</strong>  </p><p><strong>含义：1mol电子的带电量</strong> </p><p>*<em>6.02</em>10^23 * 1.6 <em>10^-19</em>*</p><h1 id="2-阿伦尼乌斯关系式辨析"><a href="#2-阿伦尼乌斯关系式辨析" class="headerlink" title="2. 阿伦尼乌斯关系式辨析"></a>2. 阿伦尼乌斯关系式辨析</h1><p>关于电导率和温度倒数的图像，目前有两种画法，分别是</p><p>$log(\sigma T)与\frac{1}{T}$和$log(\sigma)与1&#x2F;T$</p><p>根据公式</p><p><img src="/./../%E5%9B%BE%E7%89%87/image-20230525105911064.png" alt="image-20230525105911064"></p><p>绘制$log(\sigma T)与$$\frac{1}{T}$的关系是正确的</p><p>为什么一些计算用$log(\sigma)$与温度倒数仍能得到不错的结论呢</p><p>$log(\sigma T)&#x3D;log(\sigma )+log(T)$,相当于在log(σ)的基础上每个点加上log(T)项，而log(T)项，在几百k的温度下，变化幅度并不大，所以能够得到相近的活化能。</p><p><img src="/./../%E5%9B%BE%E7%89%87/image-20230525110449083.png" alt="image-20230525110449083"></p><p>由于更高温度log(T)带来的增幅更大， 所以log(σT)得到的活化能要比log(σ)更大</p><p>σ的值通常在1附近。</p><p>尤其对于实验，很难做特别大温度范围内的测量，通常温度幅度只有几十K，这样，使用log(σT)和log(σ)能够得到完全一致的活化能。</p><p>&#x3D;&#x3D;对于计算，由于温度变化幅度很大，因此必须要用log(σT)，对于实验，温度范围不大的话，而且与要探测的温度差距不大的话，无所谓了，当然，用log(σT)肯定是对的。&#x3D;&#x3D;</p><p><img src="/./../%E5%9B%BE%E7%89%87/image-20230525111543913.png" alt="image-20230525111543913"></p><p>以这篇文章（Adv. Funct. Mater. 2022, 32, 2206036）的黑色点为例，文中给的是log(σ),得到的值为</p><p><img src="/./../%E5%9B%BE%E7%89%87/image-20230525111713971.png" alt="image-20230525111713971"></p><p>使用数据重新作图后得到</p><p><img src="/./../%E5%9B%BE%E7%89%87/image-20230525111741409.png" alt="image-20230525111741409"></p><h5 id="Ea-0-4248-eV-σ300-2-58-10-5-S-cm"><a href="#Ea-0-4248-eV-σ300-2-58-10-5-S-cm" class="headerlink" title="Ea &#x3D; 0.4248 eV  σ300&#x3D;2.58*10^-5 S&#x2F;cm"></a>Ea &#x3D; 0.4248 eV  σ300&#x3D;2.58*10^-5 S&#x2F;cm</h5><ol><li>首次充放电、高倍率下的低容量、充放电曲线</li></ol><h1 id="3-关于扩散系数的尺寸效应"><a href="#3-关于扩散系数的尺寸效应" class="headerlink" title="3. 关于扩散系数的尺寸效应"></a>3. 关于扩散系数的尺寸效应</h1>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;[toc]&lt;/p&gt;
-&lt;h1 id=&quot;1-电池负极比容量计算&quot;&gt;&lt;a href=&quot;#1-电池负极比容量计算&quot; class=&quot;headerlink&quot; title=&quot;1.电池负极比容量计算&quot;&gt;&lt;/a&gt;1.&lt;strong&gt;电池负极比容量计算&lt;/strong&gt;&lt;/h1&gt;&lt;p&gt;&lt;img</summary>
-      
-    
-    
-    
-    <category term="模拟方法" scheme="http://example.com/categories/%E6%A8%A1%E6%8B%9F%E6%96%B9%E6%B3%95/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>电子能带理论</title>
-    <link href="http://example.com/2024/05/25/%E7%94%B5%E5%AD%90%E8%83%BD%E5%B8%A6%E7%90%86%E8%AE%BA/"/>
-    <id>http://example.com/2024/05/25/%E7%94%B5%E5%AD%90%E8%83%BD%E5%B8%A6%E7%90%86%E8%AE%BA/</id>
-    <published>2024-05-25T14:01:20.376Z</published>
-    <updated>2024-05-25T03:08:19.478Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>The Basics of Electronic Structure Theory for Periodic Systems</p></blockquote>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;The Basics of Electronic Structure Theory for Periodic Systems&lt;/p&gt;
-&lt;/blockquote&gt;
-</summary>
-      
-    
-    
-    
-    <category term="学习笔记" scheme="http://example.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
   </entry>
