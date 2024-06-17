@@ -311,7 +311,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="64">
-<input type="hidden" id="yelog_site_word_count" value="98.5k">
+<input type="hidden" id="yelog_site_word_count" value="99k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -404,15 +404,6 @@
            data-author="" >
             <span class="post-title" title="从MP数据库提取结构">从MP数据库提取结构</span>
             <span class="post-date" title="2024-06-05 10:19:13">2024/06/05</span>
-        </a>
-        
-        
-        <a  class="全部文章 杂谈 "
-           href="/2024/06/04/%E4%B8%8D%E7%9F%A5%E9%81%93%E5%81%9A%E4%BB%80%E4%B9%88%E6%97%B6%E5%8F%AF%E4%BB%A5%E5%81%9A%E7%9A%84%E4%BA%8B/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="不知道做什么时可以做的事">不知道做什么时可以做的事</span>
-            <span class="post-date" title="2024-06-04 20:47:46">2024/06/04</span>
         </a>
         
         
@@ -894,6 +885,15 @@
         
         
         <a  class="全部文章 杂谈 "
+           href="/2024/05/23/%E4%B8%8D%E7%9F%A5%E9%81%93%E5%81%9A%E4%BB%80%E4%B9%88%E6%97%B6%E5%8F%AF%E4%BB%A5%E5%81%9A%E7%9A%84%E4%BA%8B/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="不知道做什么时可以做的事">不知道做什么时可以做的事</span>
+            <span class="post-date" title="2024-05-23 20:47:46">2024/05/23</span>
+        </a>
+        
+        
+        <a  class="全部文章 杂谈 "
            href="/2024/05/23/%E6%9D%82%E8%B0%88/%E5%87%86%E5%88%99/"
            data-tag=""
            data-author="" >
@@ -993,12 +993,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2024-06-08 16:51:19'>2024-05-25 22:01</time>
+            发布时间 : <time class="date" title='最后更新: 2024-06-15 16:40:12'>2024-05-25 22:01</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:279</span>
+        <span>字数:484</span>
         
         
         
@@ -1006,15 +1006,15 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E7%BB%93%E6%9E%84%E8%BD%AC%E6%8D%A2-STRU-POSCAR"><span class="toc-text">1. 结构转换 STRU-POSCAR</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E8%BE%93%E5%85%A5%E5%8F%82%E6%95%B0"><span class="toc-text">2. 输入参数</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E7%BB%93%E6%9E%84%E8%BD%AC%E6%8D%A2-STRU-POSCAR"><span class="toc-text">1. 结构转换 STRU-POSCAR</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E8%BE%93%E5%85%A5%E5%8F%82%E6%95%B0"><span class="toc-text">2. 输入参数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E6%A5%BC%E4%B8%8B%E9%9B%86%E7%BE%A4%E4%BD%BF%E7%94%A8%E8%84%9A%E6%9C%AC"><span class="toc-text">3. 楼下集群使用脚本</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-ABACUS%E7%9A%84%E4%BC%98%E5%8C%96"><span class="toc-text">4. ABACUS的优化</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
     .left-col .switch-area {
         display: none;
     }
-    .toc-level-3 i,
-    .toc-level-3 ol {
+    .toc-level-4 i,
+    .toc-level-4 ol {
         display: none !important;
     }
 </style>
@@ -1022,7 +1022,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><div class='inner-toc'><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E7%BB%93%E6%9E%84%E8%BD%AC%E6%8D%A2-STRU-POSCAR"><span class="toc-text">1. 结构转换 STRU-POSCAR</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E8%BE%93%E5%85%A5%E5%8F%82%E6%95%B0"><span class="toc-text">2. 输入参数</span></a></li></ol></div></p>
+        <p><div class='inner-toc'><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E7%BB%93%E6%9E%84%E8%BD%AC%E6%8D%A2-STRU-POSCAR"><span class="toc-text">1. 结构转换 STRU-POSCAR</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E8%BE%93%E5%85%A5%E5%8F%82%E6%95%B0"><span class="toc-text">2. 输入参数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E6%A5%BC%E4%B8%8B%E9%9B%86%E7%BE%A4%E4%BD%BF%E7%94%A8%E8%84%9A%E6%9C%AC"><span class="toc-text">3. 楼下集群使用脚本</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-ABACUS%E7%9A%84%E4%BC%98%E5%8C%96"><span class="toc-text">4. ABACUS的优化</span></a></li></ol></div></p>
 <h1 id="1-结构转换-STRU-POSCAR"><a href="#1-结构转换-STRU-POSCAR" class="headerlink" title="1. 结构转换 STRU-POSCAR"></a>1. 结构转换 STRU-POSCAR</h1><pre><code class="python">import dpdata
 #poscar 转为 stru
 ls = dpdata.System(file_name=&#39;POSCAR&#39;,fmt=&#39;poscar&#39;)
@@ -1053,6 +1053,29 @@ ls.to(file_name=&#39;POSCAR&#39;,fmt=&#39;poscar&#39;)
 <p>官方测试案例：<a target="_blank" rel="noopener" href="https://github.com/deepmodeling/abacus-develop/tree/develop/tests/integrate">abacus-develop&#x2F;tests&#x2F;integrate at develop · deepmodeling&#x2F;abacus-develop (github.com)</a></p>
 <p><strong>ABACUS的BFGS算法只能固定晶格参数优化原子位置，不能做真正的结构优化</strong></p>
 <p><img src="/./../%E5%9B%BE%E7%89%87/image-20240608165118851.png" alt="image-20240608165118851"></p>
+<h1 id="3-楼下集群使用脚本"><a href="#3-楼下集群使用脚本" class="headerlink" title="3. 楼下集群使用脚本"></a>3. 楼下集群使用脚本</h1><pre><code class="shell">#!/bin/sh
+#SBATCH  --job-name=vasp_job  
+#SBATCH  --output=log.out.%j
+#SBATCH  --error=log.err.%j
+#SBATCH  --partition=xieyuib
+#SBATCH  --nodes=1
+#SBATCH  --ntasks=48
+
+source /work/env/oneapi-2022.2.0
+source /work/home/liz/software/lammps/torchdemo-new/bin/env_torchdemo
+
+mpirun -n 48 /work/home/liz/software/abacus/abacus-develop-3.4.4/bin/ABACUS.mpi &gt; log 2&gt;&amp;1
+</code></pre>
+<p><code>/work/home/liz/workspace/3-temporary-duty/6-QE_vs_abacus/24-6-14/2_opt</code></p>
+<h1 id="4-ABACUS的优化"><a href="#4-ABACUS的优化" class="headerlink" title="4. ABACUS的优化"></a>4. ABACUS的优化</h1><p>分两步，先固定晶格优化原子位置，可以用bfgs cg SD bfgs+cg  ;再优化晶格，只能用cg </p>
+<p><img src="/./../%E5%9B%BE%E7%89%87/image-20240615135729006.png" alt="image-20240615135729006"></p>
+<p>abacus 如果把原子位置优化设置为cg，确实是每一步既优化原子位置也优化晶格参数</p>
+<p><img src="/./../%E5%9B%BE%E7%89%87/d58c5d16ff63476e4eca787cc7df7f0.png" alt="d58c5d16ff63476e4eca787cc7df7f0"></p>
+<p>但是如果把原子位置优化设置为bfgs，是先优化原子位置再优化晶胞</p>
+<p><img src="/./../%E5%9B%BE%E7%89%87/96a6b77c6607cd5bedc9ffb1b8dcda3.png" alt="96a6b77c6607cd5bedc9ffb1b8dcda3"></p>
+<p>QE里只有bfgs+bfgs ，这种是每一步既优化晶格也优化原子</p>
+<p><img src="/./../%E5%9B%BE%E7%89%87/47a6de6df22fb712b245a64b8695f50.png" alt="47a6de6df22fb712b245a64b8695f50"></p>
+<p><img src="/./../%E5%9B%BE%E7%89%87/0bca3dafd9e25e78f02e6749fc9c8a1.png" alt="0bca3dafd9e25e78f02e6749fc9c8a1"></p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源 </span>
