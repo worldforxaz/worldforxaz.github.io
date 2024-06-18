@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-06-17T14:48:10.293Z</updated>
+  <updated>2024-06-18T13:34:43.229Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,19 +21,22 @@
     <link href="http://example.com/2024/06/17/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%BB%9F%E8%AE%A1%E5%8A%9B%E5%AD%A6/"/>
     <id>http://example.com/2024/06/17/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%BB%9F%E8%AE%A1%E5%8A%9B%E5%AD%A6/</id>
     <published>2024-06-17T13:25:23.000Z</published>
-    <updated>2024-06-17T14:48:10.293Z</updated>
+    <updated>2024-06-18T13:34:43.229Z</updated>
     
-    <content type="html"><![CDATA[<p>[toc]</p><p><img src="/./../../%E5%9B%BE%E7%89%87/26125cce4017c58891b1a3266e7cca4.jpg" alt="26125cce4017c58891b1a3266e7cca4"></p><p><img src="/./../../%E5%9B%BE%E7%89%87/699a3830445597b8da474444cc19c11.jpg" alt="699a3830445597b8da474444cc19c11"></p><p><img src="/./../../%E5%9B%BE%E7%89%87/0197447ef7faa187317ea9e79a8f470.jpg" alt="0197447ef7faa187317ea9e79a8f470"></p>]]></content>
+    <content type="html"><![CDATA[<p>[toc]</p><blockquote><p>学习<a href="https://theoreticalminimum.com/courses/statistical-mechanics/2009/spring/lecture-3">统计力学</a></p></blockquote><p><img src="/./../../%E5%9B%BE%E7%89%87/image-20240618213331482.png" alt="image-20240618213331482"></p><p><img src="/./../../%E5%9B%BE%E7%89%87/image-20240618213400376.png" alt="image-20240618213400376"></p><p><img src="/./../../%E5%9B%BE%E7%89%87/image-20240618213407601.png" alt="image-20240618213407601"></p><p><img src="/./../../%E5%9B%BE%E7%89%87/image-20240618213414194.png" alt="image-20240618213414194"></p><p><img src="/./../../%E5%9B%BE%E7%89%87/image-20240618213421000.png" alt="image-20240618213421000"></p><p><img src="/./../../%E5%9B%BE%E7%89%87/image-20240618213426693.png" alt="image-20240618213426693"></p><p><img src="/./../../%E5%9B%BE%E7%89%87/image-20240618213432429.png" alt="image-20240618213432429"></p><p><img src="/./../../%E5%9B%BE%E7%89%87/image-20240618213442093.png" alt="image-20240618213442093"></p>]]></content>
     
     
       
       
     <summary type="html">&lt;p&gt;[toc]&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/./../../%E5%9B%BE%E7%89%87/26125cce4017c58891b1a3266e7cca4.jpg&quot; alt=&quot;26125cce4017c58891b1a3266e7cca4&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;im</summary>
+&lt;blockquote&gt;
+&lt;p&gt;学习&lt;a href=&quot;https://theoreticalminimum.com/courses/statistical-mechanics/2009/spring/lecture-3&quot;&gt;统计力学&lt;/a&gt;&lt;/p&gt;
+&lt;/b</summary>
       
     
     
+    
+    <category term="学习笔记" scheme="http://example.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
   </entry>
@@ -187,9 +190,9 @@ from pymatgen.io.vasp.inputs</summary>
     <link href="http://example.com/2024/05/27/%E5%86%99%E4%BD%9C%E5%B7%A5%E5%85%B7/"/>
     <id>http://example.com/2024/05/27/%E5%86%99%E4%BD%9C%E5%B7%A5%E5%85%B7/</id>
     <published>2024-05-27T11:37:31.000Z</published>
-    <updated>2024-05-27T11:39:14.781Z</updated>
+    <updated>2024-06-18T13:35:46.706Z</updated>
     
-    <content type="html"><![CDATA[<p>[toc]</p><h1 id="1-输入数学公式的工具"><a href="#1-输入数学公式的工具" class="headerlink" title="1.输入数学公式的工具"></a>1.输入数学公式的工具</h1><p><a href="https://www.mathcha.io/editor">https://www.mathcha.io/editor</a></p>]]></content>
+    <content type="html"><![CDATA[<p>[toc]</p><h1 id="1-输入数学公式的工具"><a href="#1-输入数学公式的工具" class="headerlink" title="1.输入数学公式的工具"></a>1.输入数学公式的工具</h1><p><a href="https://www.mathcha.io/editor">https://www.mathcha.io/editor</a></p><h1 id="2-pdf转图片"><a href="#2-pdf转图片" class="headerlink" title="2. pdf转图片"></a>2. pdf转图片</h1><p><strong>sumatraPDF</strong></p>]]></content>
     
     
       
