@@ -311,7 +311,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="65">
-<input type="hidden" id="yelog_site_word_count" value="100.4k">
+<input type="hidden" id="yelog_site_word_count" value="100.7k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -378,6 +378,10 @@
 
 </div>
 
+    
+    <div id="local-search-result">
+
+    </div>
     
     <nav id="title-list-nav">
         
@@ -1004,12 +1008,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2024-06-13 10:13:16'>2024-05-25 22:01</time>
+            发布时间 : <time class="date" title='最后更新: 2024-06-21 10:12:16'>2024-05-25 22:01</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:9k</span>
+        <span>字数:9.1k</span>
         
         
         
@@ -1189,14 +1193,34 @@ done
 </blockquote>
 <pre><code class="shell">IBRION = -1
 NSW = 0
-LWAVE = .TRUE  #默认为True,输出WAVECAR
-LCHARGE =.TRUE #默认为True,输出CHGCAR
+LWAVE = TRUE  #默认为True,输出WAVECAR
+LCHARGE = TRUE #默认为True,输出CHGCAR
 ISTART = 0
 #当WAVECAR存在时，默认值为1，读取WAVECAR，其他情况默认为0，从头开始构建轨道
 ICHARG = 2
 #ISTART为0时默认为2，等于11时，从给定的CHGCAR读取本征值
 ISMEAR = -5 #非常重要
 ISPIN = 2
+</code></pre>
+<pre><code class="shell">SYSTEM = test
+ALGO = Normal
+ISYM = 0
+LREAL =Auto
+PREC = Normal
+EDIFF = 1e-6
+ENCUT = 800
+NELMIN = 4
+NELM = 500
+IBRION = -1
+ISIF = 2
+ISMEAR = -5
+PSTRESS = 0.001
+KPAR = 4
+NCORE = 6
+LWAVE = TRUE
+LCHARG = TRUE
+ISTART = 0
+ICHARG = 2
 </code></pre>
 <h4 id="3-计算DOS的非自洽"><a href="#3-计算DOS的非自洽" class="headerlink" title="3.计算DOS的非自洽"></a><strong>3.计算DOS的非自洽</strong></h4><p>&#x3D;&#x3D;<strong>加大k点计算更准确的电子态密度，<code>ISMEAR=-5</code></strong>&#x3D;&#x3D;</p>
 <pre><code class="shell">NSW = 0
@@ -1208,6 +1232,26 @@ ISMEAR = -5
 NEDOS = 3000
 ISPIN = 2
 #增加K点网络  cp自洽的电荷密度 CHG CHGCAR  波函数 WAVECAR**
+</code></pre>
+<pre><code class="shell">SYSTEM = test
+ALGO = Normal
+ISYM = 0
+LREAL =Auto
+PREC = Normal
+EDIFF = 1e-6
+ENCUT = 800
+NELMIN = 4
+NELM = 500
+IBRION = -1
+ISIF = 2
+ISMEAR = -5
+PSTRESS = 0.001
+KPAR = 4
+NCORE = 6
+ISTART = 1
+ICHARG = 11
+LORBIT = 11
+NEDOS = 3000
 </code></pre>
 <h4 id="4-使用HSE计算DOS"><a href="#4-使用HSE计算DOS" class="headerlink" title="4**.使用HSE计算DOS**"></a>4**.使用<code>HSE</code>计算<code>DOS</code>**</h4><pre><code class="shell">#在非自洽计算时，INCAR加上
 SYSTEM
