@@ -6,19 +6,20 @@
   <meta name="keywords" content="">
   <meta name="description" content="vasp使用教程 | xaz的花花世界">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="快捷键">
+<meta name="description" content="层状钾离子固态电解质 $K_2Mg_2TeO_6$想法：$K_2Mg_2TeO_6$  2018年提出，但是其形成机制和电化学表现还没有被研究 结论：$K_2Mg_2TeO_6$ 的离子电导率在20℃达到$1.65×10^{-6} S&#x2F;cm$ ;120℃达到$5.15×10^{-5}S&#x2F;cm$。能够稳定循环500 圈 ,倍率性能为$1C,~64 mAh&#x2F;g$  , 循">
 <meta property="og:type" content="website">
-<meta property="og:title" content="about">
-<meta property="og:url" content="http://example.com/about/index.html">
+<meta property="og:title" content="xaz的花花世界">
+<meta property="og:url" content="http://example.com/%E5%B1%82%E7%8A%B6%E9%92%BE%E7%A6%BB%E5%AD%90%E5%9B%BA%E6%80%81%E7%94%B5%E8%A7%A3%E8%B4%A8%20K2Mg2TeO6.html">
 <meta property="og:site_name" content="xaz的花花世界">
-<meta property="og:description" content="快捷键">
+<meta property="og:description" content="层状钾离子固态电解质 $K_2Mg_2TeO_6$想法：$K_2Mg_2TeO_6$  2018年提出，但是其形成机制和电化学表现还没有被研究 结论：$K_2Mg_2TeO_6$ 的离子电导率在20℃达到$1.65×10^{-6} S&#x2F;cm$ ;120℃达到$5.15×10^{-5}S&#x2F;cm$。能够稳定循环500 圈 ,倍率性能为$1C,~64 mAh&#x2F;g$  , 循">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/%E5%9B%BE%E7%89%87/%E5%BF%AB%E6%8D%B7%E9%94%AE.jpg">
-<meta property="article:published_time" content="2024-05-25T09:36:13.000Z">
-<meta property="article:modified_time" content="2024-05-25T09:40:28.322Z">
+<meta property="og:image" content="http://example.com/attachments/FVE5UK9D.png">
+<meta property="og:image" content="http://example.com/attachments/MF84JV97.png">
+<meta property="article:published_time" content="2024-05-30T02:56:27.353Z">
+<meta property="article:modified_time" content="2024-05-30T02:56:10.265Z">
 <meta property="article:author" content="xaz">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/%E5%9B%BE%E7%89%87/%E5%BF%AB%E6%8D%B7%E9%94%AE.jpg">
+<meta name="twitter:image" content="http://example.com/attachments/FVE5UK9D.png">
 
 
 <link rel="icon" href="/img/1.png">
@@ -311,7 +312,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="66">
-<input type="hidden" id="yelog_site_word_count" value="101.2k">
+<input type="hidden" id="yelog_site_word_count" value="101.4k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1017,12 +1018,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2024-06-21 10:12:16'>2024-05-25 22:01</time>
+            发布时间 : <time class="date" title='最后更新: 2024-06-28 20:19:32'>2024-05-25 22:01</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:9.1k</span>
+        <span>字数:9.2k</span>
         
         
         
@@ -1047,7 +1048,12 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p><div class='inner-toc'><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E8%AE%A1%E7%AE%97%E6%96%B9%E6%B3%95%E3%80%81%E6%B5%81%E7%A8%8B%E4%B8%8E%E8%BE%93%E5%85%A5%E6%96%87%E4%BB%B6"><span class="toc-text">1.计算方法、流程与输入文件</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%BB%93%E6%9E%84%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95"><span class="toc-text">1.结构优化方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%B5%8Bk%E7%82%B9-%E7%9B%B4%E6%8E%A5%E6%B5%8BKSPACING"><span class="toc-text">2.测k点 &#x2F;直接测KSPACING</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-ISMEAR%E4%B8%8ESIGMA"><span class="toc-text">3.ISMEAR与SIGMA</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E8%AE%A1%E7%AE%97dos%E4%B8%8Eband"><span class="toc-text">4.计算dos与band</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-DOS%E8%B4%B9%E7%B1%B3%E8%83%BD%E7%BA%A7%E9%97%AE%E9%A2%98"><span class="toc-text">1. DOS费米能级问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%9C%9F%E7%A9%BA%E4%B8%AD%E4%B8%89%E7%BB%B4-%E4%BA%8C%E7%BB%B4%E6%9D%90%E6%96%99%E7%9A%84%E8%83%BD%E5%B8%A6%E8%B7%AF%E5%BE%84%E9%97%AE%E9%A2%98"><span class="toc-text">2. 真空中三维&#x2F;二维材料的能带路径问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E9%87%8D%E8%A6%81%E7%9A%84%E5%8F%82%E6%95%B0"><span class="toc-text">3.重要的参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%AD%A5%E9%AA%A4"><span class="toc-text">4.步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E7%BB%93%E6%9E%84%E4%BC%98%E5%8C%96"><span class="toc-text">1.结构优化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E9%9D%99%E6%80%81%E8%87%AA%E6%B4%BD"><span class="toc-text">2.静态自洽</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E8%AE%A1%E7%AE%97DOS%E7%9A%84%E9%9D%9E%E8%87%AA%E6%B4%BD"><span class="toc-text">3.计算DOS的非自洽</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E4%BD%BF%E7%94%A8HSE%E8%AE%A1%E7%AE%97DOS"><span class="toc-text">4**.使用HSE计算DOS**</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E8%AE%A1%E7%AE%97%E8%83%BD%E5%B8%A6"><span class="toc-text">5**.计算能带**</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-%E4%BD%9C%E5%9B%BE"><span class="toc-text">6. 作图</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E6%B5%8B%E8%AF%95NCORE%E5%92%8CKPAR"><span class="toc-text">5. 测试NCORE和KPAR</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E5%85%B3%E4%BA%8E%E6%89%A9%E4%B8%89%E5%80%8D%E8%83%9E"><span class="toc-text">6.关于扩三倍胞</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E6%9E%84%E5%BB%BAPOTCAR"><span class="toc-text">7. 构建POTCAR</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%B9%E9%87%8F%E8%BF%90%E8%A1%8C"><span class="toc-text">批量运行</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-%E8%AE%A1%E7%AE%97%E5%A3%B0%E5%AD%90%E8%B0%B1"><span class="toc-text">8.计算声子谱</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-HSE06-%E8%AE%A1%E7%AE%97%E8%83%BD%E5%B8%A6"><span class="toc-text">9. HSE06 计算能带</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-%E8%87%AA%E6%97%8B%E8%BD%A8%E9%81%93%E8%80%A6%E5%90%88%E8%AE%A1%E7%AE%97%E8%83%BD%E5%B8%A6"><span class="toc-text">9.自旋轨道耦合计算能带</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-%E5%81%9A%E5%BC%82%E8%B4%A8%E7%BB%93"><span class="toc-text">10 .做异质结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-%E5%81%9A%E5%B7%AE%E5%88%86%E7%94%B5%E8%8D%B7%E5%AF%86%E5%BA%A6"><span class="toc-text">11.做差分电荷密度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-%E5%A6%82%E4%BD%95%E5%8A%A0U"><span class="toc-text">12. 如何加U</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#13-%E7%A3%81%E6%80%A7"><span class="toc-text">13. 磁性</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E5%85%B3%E4%BA%8E%E5%B9%B6%E8%A1%8C%E5%8F%82%E6%95%B0"><span class="toc-text">2. 关于并行参数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%8F%E4%BD%93%E7%B3%BB%E5%B9%B6%E8%A1%8C"><span class="toc-text">小体系并行</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E5%85%B3%E4%BA%8EK%E7%82%B9"><span class="toc-text">3. 关于K点</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95K%E7%82%B9%E5%92%8CkSPACING"><span class="toc-text">关于测试K点和kSPACING</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-%E8%AE%A1%E7%AE%97%E6%8A%A5%E9%94%99"><span class="toc-text">4.计算报错</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%95%E8%AF%95ISYM-0"><span class="toc-text">试试ISYM &#x3D; 0</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-internal-ERROR-RSPHER-running-out-of-buffer"><span class="toc-text">1. internal ERROR RSPHER:running out of buffer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%8A%A5%E9%94%99-Error-EDDDAV-Call-to-ZHEGV-failed-Returncode"><span class="toc-text">2 . 报错 Error EDDDAV: Call to ZHEGV failed. Returncode &#x3D;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%8A%A5%E9%94%99-ERROR-FEXCP-supplied-Exchange-correletion-table-is-too-small-maximal-index"><span class="toc-text">3. 报错 ERROR FEXCP: supplied Exchange-correletion table is too small, maximal index :</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-ERROR-FEXCP-supplied-Exchange-correletion-table-is-too-small-maximal-index-3885"><span class="toc-text">4. ERROR FEXCP: supplied Exchange-correletion table is too small, maximal index :        3885</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-Sub-Space-Matrix-is-not-hermitian"><span class="toc-text">5. Sub-Space-Matrix is not hermitian</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-HNFORM-ERROR-k-point-generating-vectors-and-reciprocal-lattice-are-incommensurate"><span class="toc-text">6. HNFORM: ERROR: k-point generating vectors and reciprocal lattice   are incommensurate.</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-%E8%87%AA%E6%B4%BD%E4%B8%8D%E6%94%B6%E6%95%9B"><span class="toc-text">7.自洽不收敛</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-%E5%86%85%E5%AD%98%E6%BA%A2%E5%87%BA-BAD-TERMINATION-OF-ONE-OF-YOUR-APPLICATION-PROCESSES"><span class="toc-text">8. 内存溢出&#x2F;BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-%E8%AE%A1%E7%AE%97%E8%84%9A%E6%9C%AC"><span class="toc-text">5.计算脚本</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%8F%98%E5%8E%8B%E4%BC%98%E5%8C%96"><span class="toc-text">1.变压优化</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-tips"><span class="toc-text">6.tips</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-%E7%BC%96%E8%AF%91vasp"><span class="toc-text">7. 编译vasp</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%8F%AA%E7%BC%96%E8%AF%91vasp"><span class="toc-text">1.只编译vasp</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%8A%8Avtst%E7%9A%84neb%E6%96%B9%E6%B3%95%E7%BC%96%E8%AF%91%E8%BF%9Bvasp"><span class="toc-text">2.把vtst的neb方法编译进vasp</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8-%E4%BD%BF%E7%94%A8MS%E6%8A%80%E5%B7%A7"><span class="toc-text">8. 使用MS技巧</span></a></li></ol></div></p>
-<h1 id="1-计算方法、流程与输入文件"><a href="#1-计算方法、流程与输入文件" class="headerlink" title="1.计算方法、流程与输入文件"></a>1.计算方法、流程与输入文件</h1><h2 id="1-结构优化方法"><a href="#1-结构优化方法" class="headerlink" title="1.结构优化方法"></a>1.结构优化方法</h2><ul>
+<h1 id="1-计算方法、流程与输入文件"><a href="#1-计算方法、流程与输入文件" class="headerlink" title="1.计算方法、流程与输入文件"></a>1.计算方法、流程与输入文件</h1><h2 id="1-结构优化方法"><a href="#1-结构优化方法" class="headerlink" title="1.结构优化方法"></a>1.结构优化方法</h2><blockquote>
+<p>为什么vasp优化的能量最后不对，因为优化过程中晶格在变化，但是优化过程中的G点网格没有更新，所以最后用的G点网格不适用最后的晶格常数</p>
+<p>QE最后会有一步自洽，所以QE的能量是准的</p>
+<p>ABACUS优化的能量是不准的</p>
+</blockquote>
+<ul>
 <li><p>使用收敛的参数不会出现优化后的结构拿去自洽后能量变化的问题，也不会有优化后的结构再拿去cp CONTCAR POSCAR后优化还可以继续优化的问题，所以归根结底是收敛的参数的问题</p>
 <p>用于验证的目录：五洲</p>
 </li>
