@@ -161,29 +161,6 @@ from pymatgen.io.vasp.inputs</summary>
   </entry>
   
   <entry>
-    <title>超离子导体中阿伦尼乌斯公式的物理起源</title>
-    <link href="http://example.com/2024/05/31/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E8%B6%85%E7%A6%BB%E5%AD%90%E5%AF%BC%E4%BD%93%E4%B8%AD%E9%98%BF%E4%BC%A6%E5%B0%BC%E4%B9%8C%E6%96%AF%E5%85%AC%E5%BC%8F%E7%9A%84%E7%89%A9%E7%90%86%E8%B5%B7%E6%BA%90/"/>
-    <id>http://example.com/2024/05/31/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E8%B6%85%E7%A6%BB%E5%AD%90%E5%AF%BC%E4%BD%93%E4%B8%AD%E9%98%BF%E4%BC%A6%E5%B0%BC%E4%B9%8C%E6%96%AF%E5%85%AC%E5%BC%8F%E7%9A%84%E7%89%A9%E7%90%86%E8%B5%B7%E6%BA%90/</id>
-    <published>2024-05-31T13:17:54.000Z</published>
-    <updated>2024-06-06T00:39:06.999Z</updated>
-    
-    <content type="html"><![CDATA[<p>[toc]</p><p>思考阿伦尼乌斯公式的起源，来源于对于固体电解质中随着温度改变，两种材料的离子电导率顺序会发生改变，也就是室温下那些相对有利的描述符在高温下变得相对有害；问题的根源来自离子电导率是温度的响应，或者说描述符是对温度的响应。响应的函数是活化能。活化能是本征不变的。</p><hr><h1 id="1-绘制一个非log的阿伦尼乌斯公式"><a href="#1-绘制一个非log的阿伦尼乌斯公式" class="headerlink" title="1. 绘制一个非log的阿伦尼乌斯公式"></a>1. 绘制一个非log的阿伦尼乌斯公式</h1><p><img src="/./../%E5%9B%BE%E7%89%87/image-20240604160746872.png" alt="image-20240604160746872"></p><p><img src="/./../%E5%9B%BE%E7%89%87/image-20240604160816915.png" alt="image-20240604160816915"></p><p><img src="/./../%E5%9B%BE%E7%89%87/image-20240604160647492.png" alt="image-20240604160647492"></p><p><img src="/./../%E5%9B%BE%E7%89%87/image-20240604160933036.png" alt="image-20240604160933036"></p><p>y&#x3D;ae^(-b&#x2F;x)的导数 $\frac{\partial f}{\partial x} &#x3D; \frac{a,b,e^ {- \frac{b}{x} }}{x^2}$</p><p><img src="/./../%E5%9B%BE%E7%89%87/image-20240604162421787.png" alt="image-20240604162421787"></p><p><img src="/./../%E5%9B%BE%E7%89%87/image-20240604162442433.png" alt="image-20240604162442433"></p><h1 id="2-麦克斯韦-玻尔兹曼分布"><a href="#2-麦克斯韦-玻尔兹曼分布" class="headerlink" title="2. 麦克斯韦-玻尔兹曼分布"></a>2. 麦克斯韦-玻尔兹曼分布</h1><blockquote><p>物理化学讲义 彭笑刚</p><p><a href="https://img.sslibrary.com/n/slib/book/slib/10187693/bb8c7a9c40184c24aa13df047eef0be8/067598e620dd3dc848749a12394c9c92.shtml?dxbaoku=true&moocbaoku=false&deptid=920&fav=https://www.sslibrary.com/reader/pdg/dxpdgreader?d=4fdf840d872514b21b9babbd8ee01b5b&enc=efc50c213fa6456c44b7f0cb5426940b&ssid=10187693&did=920&fenlei=1304080104&spage=1&t=5&uid=&username=dx2baoku_59.72.114.217_920&view=-1&refinfo=&refaid=">分子化学反应动态学 (sslibrary.com)</a></p></blockquote><h2 id="1-玻尔兹曼分布的含义"><a href="#1-玻尔兹曼分布的含义" class="headerlink" title="1. 玻尔兹曼分布的含义"></a>1. 玻尔兹曼分布的含义</h2><p>平衡态的概念：对于一个系统，在确定的外界条件下，应该有且只有一个平衡态，平衡态的表现是在系统的各个地方（当不考虑表界面时），其物理量不随时间有巨大的改变，但应该允许有涨落的存在。</p><blockquote><p>平衡态只要求在系统的区域内其物理量不随时间有巨大改变，但并没有要求在不同的区域内物理量也相同，在表界面应该有梯度的存在，但是不同离子的化学势应该是平衡的。</p></blockquote><blockquote><p>在离子导体中的模拟中，或者在分子动力学的过程中，我们需要模拟的是平衡态的物理量，分子动力学中的收敛也是平衡态的含义。</p></blockquote><blockquote><p>对于一个宏观的孤立的离子导体，其内部的离子与表面处的离子应该是动态的平衡过程，或者表面到界面应该存在一个迁移的梯度，这种梯度的存在只是离子流的存在，但要求离子的化学势应该是平衡的。</p></blockquote><hr><p>对于每一个宏观状态，都对应着大量的微观状态。一个基本假设是所有的整体的微观状态都是等价的，具有相同的出现概率。宏观下的可观测的物理量，可以理解为微观状态的某个物理量的平均值</p><blockquote><p>扩散系数应该就是这样一个物理量，应该是微观离子运动的距离和时间的平均值</p></blockquote><p>时间平均值等价于系综平均值</p><blockquote><p>计算msd时，理论上时间足够长，晶胞尺寸很小时也应该计算足够准确</p></blockquote><blockquote><p>扩散系数是一个在运动中才能观察到的物理量，但并不是一个运动中才能确定的物理量，其数值的静态统计部分在结构确定时，就应当由离子的振动频率和扩散距离决定，但是运动的离子的关联部分，需要在运动中得到统计平均</p></blockquote><p>一个硬币抛1000次等于1000个硬币抛一次</p><blockquote><p>1000个离子运动一次等于1个离子运动1000次</p></blockquote><p>将N个粒子分配到n个能级上，第$i$个能级上的粒子数为$N_i$,可能的划分方式数量为<br>$$<br>w&#x3D;\frac{N!}{\prod \limits_{i&#x3D;0}^n N_i}<br>$$</p><blockquote><p>晶格中离子的振动与输运是否也有不同的能级。宏观上看，输运处于平衡态时，扩散系数稳定，意味着其微观的离子所处的不同的能级&#x2F;振幅的分布随时间是不变的（如果有这样的能级的话），这一平衡态也应该对应着大量的微观状态，也就是具体到每个粒子上，其所处的状态是不确定的，有大量可能的分布状态。</p></blockquote><blockquote><p>或许可以考虑从晶格静态结构中直接计算其（振幅）分布及分布的最可几状态，也就是平衡态，也就能计算扩散系数。不管非谐还是简谐，振动总是真实存在的，振幅也是真实存在的，或许非谐决定了分布的形状。</p></blockquote><blockquote><p>或许扩散系数有一个分布，而非谐、简谐决定了分布的样子，最可几分布就是宏观的扩散系数。当然，应该暂时不考虑运动中关联的效应</p></blockquote><hr><p>最可几态指的是微观状态数占据最大权重的宏观状态。在给定的外界条件下，系统的平衡态是系统的最可几态。</p><p>系统的元素数量越多，最可几态占据的权重越大。对一个真正宏观系统，当偏离最可几状态时，其状态所包含的微观状态数迅速下降到可以忽略不计。因此最可几状态是宏观系统的大部分时间能够观测到的。其他的涨落小到几乎不可观察</p><p><img src="/./../%E5%9B%BE%E7%89%87/image-20240605205929118.png" alt="image-20240605205929118"></p><p>玻尔兹曼分布就是不同微观状态在外界环境下的分布状况</p><hr><p>宏观状态之间有确定的稳定性差异，通过比较微观状态数的数量，可以判断两个宏观状态间的相对稳定性。以及判断一个化学&#x2F;物理过程是否可以发生</p><blockquote><p>离子从一个稳定态向另一个稳定态跳跃是一个过程，过程中需要跨越一个过渡态，能否到达过渡态是一次微观状态数的比较，从过渡态去哪里是另一次微观状态数的比较。说明过渡态的微观状态数是足够大的</p></blockquote><blockquote><p>记得有一篇文章提到过微观状态数和过渡态的关系</p></blockquote><hr><p>玻尔兹曼对熵的定义<br>$$<br>S&#x3D;kln(W)<br>$$<br>$W$是微观状态数，微观状态数越多，权重越大，熵越大。<code>熵是微观状态数的另一种描述</code></p><p>平衡态是微观状态数权重最大的状态，对应着也是熵最大的状态。系统向着平衡态演化</p><blockquote><p>熵和微观状态数有相同的含义，在离子扩散过程中，是否可定义离子跳跃相关的熵。（振幅熵？）</p></blockquote><p>统计物理中的熵增原理是一个自然而然的推论</p><hr><p>在两个系统之间发生了能量的转移后，熵改变的难易程度，是由具体改变的能量与熵变来决定的。</p><p>温度是能量对熵的偏导数，描述了单位熵的改变需要的能量。<br>$$<br>T&#x3D;(\frac{dU}{dS})_v,_n<br>$$</p><blockquote><p>在离子输运中，也应该存在这样的定义，定义温度增加，可以允许的熵、即微观状态数的改变，这可能与温度升高，振动改变相关</p></blockquote><h1 id="3-化学家眼中的阿伦尼乌斯公式"><a href="#3-化学家眼中的阿伦尼乌斯公式" class="headerlink" title="3. 化学家眼中的阿伦尼乌斯公式"></a>3. 化学家眼中的阿伦尼乌斯公式</h1><h1 id="3-阿伦尼乌斯公式的含义是什么"><a href="#3-阿伦尼乌斯公式的含义是什么" class="headerlink" title="3. 阿伦尼乌斯公式的含义是什么"></a>3. 阿伦尼乌斯公式的含义是什么</h1><blockquote><p>阿伦尼乌斯公式是经验公式，与之相似的是Eyring在1935年提出的Eyring equation，是建立在统计物理上的</p></blockquote><p>一些参考资料</p><p>阿伦尼乌斯公式是如何推导出来的? - 查无此名12138的回答 - 知乎<br><a href="https://www.zhihu.com/question/568999539/answer/2778592065">https://www.zhihu.com/question/568999539/answer/2778592065</a></p><p>[非平衡态统计物理] 3 连续时间随机过程（四） - 笠道梓的文章 - 知乎<br><a href="https://zhuanlan.zhihu.com/p/409136603">https://zhuanlan.zhihu.com/p/409136603</a></p><p>关于如图的Arrhenius方程，老师一定就让你们记住就行，但是我想知道这个方程当初是怎么得出来的？ - 萌铁蛋 MnFeN的回答 - 知乎<br><a href="https://www.zhihu.com/question/431586967/answer/1591685455">https://www.zhihu.com/question/431586967/answer/1591685455</a></p><p>关于如图的Arrhenius方程，老师一定就让你们记住就行，但是我想知道这个方程当初是怎么得出来的？ - 磷酸君Phosphates的回答 - 知乎<br><a href="https://www.zhihu.com/question/431586967/answer/1591829506">https://www.zhihu.com/question/431586967/answer/1591829506</a></p><p>关于如图的Arrhenius方程，老师一定就让你们记住就行，但是我想知道这个方程当初是怎么得出来的？ - 太一的回答 - 知乎<br><a href="https://www.zhihu.com/question/431586967/answer/1841701550">https://www.zhihu.com/question/431586967/answer/1841701550</a></p><p>关于如图的Arrhenius方程，老师一定就让你们记住就行，但是我想知道这个方程当初是怎么得出来的？ - BenderRodriguez的回答 - 知乎<br><a href="https://www.zhihu.com/question/431586967/answer/1621985520">https://www.zhihu.com/question/431586967/answer/1621985520</a></p><p><a href="https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps/Supplemental_Modules_(Physical_and_Theoretical_Chemistry)/Kinetics/06%3A_Modeling_Reaction_Kinetics/6.04%3A_Transition_State_Theory/6.4.01%3A_Eyring_equation">6.4.1: Eyring equation - Chemistry LibreTexts</a></p><p><a href="https://public.websites.umich.edu/~elements/03chap/html/transition/index.htm#IV">https://public.websites.umich.edu/~elements/03chap/html/transition/index.htm#IV</a></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;[toc]&lt;/p&gt;
-&lt;p&gt;思考阿伦尼乌斯公式的起源，来源于对于固体电解质中随着温度改变，两种材料的离子电导率顺序会发生改变，也就是室温下那些相对有利的描述符在高温下变得相对有害；问题的根源来自离子电导率是温度的响应，或者说描述符是对温度的响应。响应的函数是活化能。活化能是本</summary>
-      
-    
-    
-    
-    <category term="学习笔记" scheme="http://example.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-  </entry>
-  
-  <entry>
     <title>知识类网站</title>
     <link href="http://example.com/2024/05/31/%E7%9F%A5%E8%AF%86%E7%B1%BB%E7%BD%91%E7%AB%99/"/>
     <id>http://example.com/2024/05/31/%E7%9F%A5%E8%AF%86%E7%B1%BB%E7%BD%91%E7%AB%99/</id>
@@ -488,6 +465,29 @@ structure = a.get_</summary>
     
     
     <category term="学习笔记" scheme="http://example.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>linux中的软件安装</title>
+    <link href="http://example.com/2024/05/25/linux%E4%B8%AD%E7%9A%84%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/"/>
+    <id>http://example.com/2024/05/25/linux%E4%B8%AD%E7%9A%84%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/</id>
+    <published>2024-05-25T14:01:20.378Z</published>
+    <updated>2024-05-27T12:35:55.900Z</updated>
+    
+    <content type="html"><![CDATA[<p>[toc]</p><h1 id="1-什么是linux系统中的环境"><a href="#1-什么是linux系统中的环境" class="headerlink" title="1. 什么是linux系统中的环境"></a>1. 什么是linux系统中的环境</h1><h1 id="2-linux中软件安装的含义"><a href="#2-linux中软件安装的含义" class="headerlink" title="2. linux中软件安装的含义"></a>2. linux中软件安装的含义</h1><p> <a href="https://www.cnblogs.com/kinsang/articles/6752079.html">https://www.cnblogs.com/kinsang/articles/6752079.html</a><br><a href="https://blog.csdn.net/topasstem8/article/details/7103546">https://blog.csdn.net/topasstem8/article/details/7103546</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;[toc]&lt;/p&gt;
+&lt;h1 id=&quot;1-什么是linux系统中的环境&quot;&gt;&lt;a href=&quot;#1-什么是linux系统中的环境&quot; class=&quot;headerlink&quot; title=&quot;1. 什么是linux系统中的环境&quot;&gt;&lt;/a&gt;1. 什么是linux系统中的环境&lt;/h1&gt;&lt;h</summary>
+      
+    
+    
+    
+    <category term="软件安装与使用" scheme="http://example.com/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/"/>
     
     
   </entry>
