@@ -1222,7 +1222,7 @@
   padding: 2.5em;
   background: #fff;
 /* Inline code */
-/* f0f0f0是灰色的背景 */
+/* f0f0f0是灰色的背景 #74787c */
 }
 #post .pjax article .article-entry>p:nth-child(1) {
   margin-top: 20px;
@@ -1479,7 +1479,7 @@
 }
 #post .pjax article :not(pre) > code {
   background-color: #f0f0f0;
-  color: #74787c;
+  color: #f00;
   font-size: 0.95em;
   font-weight: bold;
   padding: 0.065em 0.4em;
