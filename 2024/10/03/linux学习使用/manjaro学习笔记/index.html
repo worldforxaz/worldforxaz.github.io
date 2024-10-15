@@ -6,20 +6,19 @@
   <meta name="keywords" content="">
   <meta name="description" content="manjaro学习笔记 | xaz的花花世界">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="层状钾离子固态电解质 $K_2Mg_2TeO_6$想法：$K_2Mg_2TeO_6$  2018年提出，但是其形成机制和电化学表现还没有被研究 结论：$K_2Mg_2TeO_6$ 的离子电导率在20℃达到$1.65×10^{-6} S&#x2F;cm$ ;120℃达到$5.15×10^{-5}S&#x2F;cm$。能够稳定循环500 圈 ,倍率性能为$1C,~64 mAh&#x2F;g$  , 循">
+<meta name="description" content="通过搭积木的方式搭建固态电解质Na3Y2Cl9“New Halide-Based Sodium-Ion Conductors Na3Y2Cl9 InverselyDesigned by Building Block Construction” (Xu 等, 2023, p. 1) 想法：将不同相的优点结合（热稳定性，高离子电导率），把骨架结构作为一个个块，来进行搭建 研究方法： 分析Na3YCl6">
 <meta property="og:type" content="website">
 <meta property="og:title" content="xaz的花花世界">
-<meta property="og:url" content="http://example.com/%E5%B1%82%E7%8A%B6%E9%92%BE%E7%A6%BB%E5%AD%90%E5%9B%BA%E6%80%81%E7%94%B5%E8%A7%A3%E8%B4%A8%20K2Mg2TeO6.html">
+<meta property="og:url" content="http://example.com/%E9%80%9A%E8%BF%87%E6%90%AD%E7%A7%AF%E6%9C%A8%E7%9A%84%E6%96%B9%E5%BC%8F%E6%90%AD%E5%BB%BA%E5%9B%BA%E6%80%81%E7%94%B5%E8%A7%A3%E8%B4%A8Na3Y2Cl9.html">
 <meta property="og:site_name" content="xaz的花花世界">
-<meta property="og:description" content="层状钾离子固态电解质 $K_2Mg_2TeO_6$想法：$K_2Mg_2TeO_6$  2018年提出，但是其形成机制和电化学表现还没有被研究 结论：$K_2Mg_2TeO_6$ 的离子电导率在20℃达到$1.65×10^{-6} S&#x2F;cm$ ;120℃达到$5.15×10^{-5}S&#x2F;cm$。能够稳定循环500 圈 ,倍率性能为$1C,~64 mAh&#x2F;g$  , 循">
+<meta property="og:description" content="通过搭积木的方式搭建固态电解质Na3Y2Cl9“New Halide-Based Sodium-Ion Conductors Na3Y2Cl9 InverselyDesigned by Building Block Construction” (Xu 等, 2023, p. 1) 想法：将不同相的优点结合（热稳定性，高离子电导率），把骨架结构作为一个个块，来进行搭建 研究方法： 分析Na3YCl6">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/attachments/FVE5UK9D.png">
-<meta property="og:image" content="http://example.com/attachments/MF84JV97.png">
-<meta property="article:published_time" content="2024-05-30T02:56:27.353Z">
-<meta property="article:modified_time" content="2024-05-30T02:56:10.265Z">
+<meta property="og:image" content="http://example.com/attachments/GGQ2R94Q.png">
+<meta property="article:published_time" content="2024-05-31T06:59:40.761Z">
+<meta property="article:modified_time" content="2024-05-31T06:59:27.678Z">
 <meta property="article:author" content="xaz">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/attachments/FVE5UK9D.png">
+<meta name="twitter:image" content="http://example.com/attachments/GGQ2R94Q.png">
 
 
 <link rel="icon" href="/img/1.png">
@@ -312,7 +311,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="74">
-<input type="hidden" id="yelog_site_word_count" value="107.7k">
+<input type="hidden" id="yelog_site_word_count" value="108.2k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1094,12 +1093,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2024-10-03 22:31:37'>2024-10-03 11:38</time>
+            发布时间 : <time class="date" title='最后更新: 2024-10-12 15:12:51'>2024-10-03 11:38</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:63</span>
+        <span>字数:613</span>
         
         
         
@@ -1107,7 +1106,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-pacman"><span class="toc-text">1. pacman</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E9%85%8D%E7%BD%AE%E4%B8%AD%E6%96%87%E8%BE%93%E5%85%A5%E6%B3%95"><span class="toc-text">2.配置中文输入法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E5%AE%89%E8%A3%85v2ray%E4%BB%A3%E7%90%86"><span class="toc-text">3. 安装v2ray代理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-%E4%BF%AE%E6%94%B9zsh%E4%B8%BAbash%E7%9A%84shell"><span class="toc-text">4. 修改zsh为bash的shell</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-%E6%8C%82%E8%BD%BDu%E7%9B%98"><span class="toc-text">5. 挂载u盘</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-pacman"><span class="toc-text">1. pacman</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E9%85%8D%E7%BD%AE%E4%B8%AD%E6%96%87%E8%BE%93%E5%85%A5%E6%B3%95"><span class="toc-text">2.配置中文输入法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E5%AE%89%E8%A3%85v2ray%E4%BB%A3%E7%90%86"><span class="toc-text">3. 安装v2ray代理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-%E4%BF%AE%E6%94%B9zsh%E4%B8%BAbash%E7%9A%84shell"><span class="toc-text">4. 修改zsh为bash的shell</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-%E6%8C%82%E8%BD%BDu%E7%9B%98"><span class="toc-text">5. 挂载u盘</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E5%85%B3%E4%BA%8E-systemctl"><span class="toc-text">1. 关于 systemctl</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E4%BD%BF%E7%94%A8conections%E4%BB%8Elinux%E8%BF%9E%E6%8E%A5windows"><span class="toc-text">2.使用conections从linux连接windows</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E4%BD%BF%E7%94%A8samba%E8%AE%BF%E9%97%AEnas%E6%96%87%E4%BB%B6"><span class="toc-text">3.使用samba访问nas文件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-%E9%85%8D%E7%BD%AE%E4%BB%A3%E7%90%86"><span class="toc-text">4. 配置代理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-%E4%BD%BF%E7%94%A8%E5%BF%AB%E7%85%A7%E5%A4%87%E4%BB%BD%E7%B3%BB%E7%BB%9F"><span class="toc-text">5.使用快照备份系统</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-%E4%BD%BF%E7%94%A8Backups%E5%A4%87%E4%BB%BD%E6%96%87%E4%BB%B6"><span class="toc-text">6.使用Backups备份文件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-%E5%AE%89%E8%A3%85%E5%BE%AE%E4%BF%A1"><span class="toc-text">7.安装微信</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-text">8.常用命令</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#9-%E6%B7%BB%E5%8A%A0AUR%E6%BA%90"><span class="toc-text">9.添加AUR源</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#10-pamac%E6%97%A0%E6%B3%95%E6%9F%A5%E7%9C%8B%E5%88%86%E7%B1%BB-%E5%92%8CAUR%E6%BA%90"><span class="toc-text">10. pamac无法查看分类 和AUR源</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#11-%E4%BD%BF%E7%94%A8rsync%E5%A4%87%E4%BB%BD%E6%96%87%E4%BB%B6"><span class="toc-text">11.使用rsync备份文件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#12-%E5%B0%86%E7%94%A8%E6%88%B7%E5%8A%A0%E5%88%B0%E7%AE%A1%E7%90%86%E5%91%98%E7%BB%84"><span class="toc-text">12.将用户加到管理员组</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#13-command%E5%91%BD%E4%BB%A4"><span class="toc-text">13.command命令</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#14-%E5%85%B3%E4%BA%8E%E8%B7%AF%E7%94%B1%E3%80%81%E7%AB%AF%E5%8F%A3%E3%80%81%E4%B8%BB%E6%9C%BA%E5%8A%A8%E6%80%81ip%E3%80%81%E9%9D%99%E6%80%81ip%E3%80%81%E4%B8%BB%E6%9C%BAmac"><span class="toc-text">14.关于路由、端口、主机动态ip、静态ip、主机mac</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#15-xdotool%E5%B7%A5%E5%85%B7"><span class="toc-text">15. xdotool工具</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#16-%E4%B8%8D%E5%90%8C%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">16.不同系统的区别</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -1123,12 +1122,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><div class='inner-toc'><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-pacman"><span class="toc-text">1. pacman</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E9%85%8D%E7%BD%AE%E4%B8%AD%E6%96%87%E8%BE%93%E5%85%A5%E6%B3%95"><span class="toc-text">2.配置中文输入法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E5%AE%89%E8%A3%85v2ray%E4%BB%A3%E7%90%86"><span class="toc-text">3. 安装v2ray代理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-%E4%BF%AE%E6%94%B9zsh%E4%B8%BAbash%E7%9A%84shell"><span class="toc-text">4. 修改zsh为bash的shell</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-%E6%8C%82%E8%BD%BDu%E7%9B%98"><span class="toc-text">5. 挂载u盘</span></a></li></ol></div></p>
+        <p><div class='inner-toc'><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-pacman"><span class="toc-text">1. pacman</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E9%85%8D%E7%BD%AE%E4%B8%AD%E6%96%87%E8%BE%93%E5%85%A5%E6%B3%95"><span class="toc-text">2.配置中文输入法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E5%AE%89%E8%A3%85v2ray%E4%BB%A3%E7%90%86"><span class="toc-text">3. 安装v2ray代理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-%E4%BF%AE%E6%94%B9zsh%E4%B8%BAbash%E7%9A%84shell"><span class="toc-text">4. 修改zsh为bash的shell</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-%E6%8C%82%E8%BD%BDu%E7%9B%98"><span class="toc-text">5. 挂载u盘</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E5%85%B3%E4%BA%8E-systemctl"><span class="toc-text">1. 关于 systemctl</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E4%BD%BF%E7%94%A8conections%E4%BB%8Elinux%E8%BF%9E%E6%8E%A5windows"><span class="toc-text">2.使用conections从linux连接windows</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E4%BD%BF%E7%94%A8samba%E8%AE%BF%E9%97%AEnas%E6%96%87%E4%BB%B6"><span class="toc-text">3.使用samba访问nas文件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-%E9%85%8D%E7%BD%AE%E4%BB%A3%E7%90%86"><span class="toc-text">4. 配置代理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-%E4%BD%BF%E7%94%A8%E5%BF%AB%E7%85%A7%E5%A4%87%E4%BB%BD%E7%B3%BB%E7%BB%9F"><span class="toc-text">5.使用快照备份系统</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-%E4%BD%BF%E7%94%A8Backups%E5%A4%87%E4%BB%BD%E6%96%87%E4%BB%B6"><span class="toc-text">6.使用Backups备份文件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-%E5%AE%89%E8%A3%85%E5%BE%AE%E4%BF%A1"><span class="toc-text">7.安装微信</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-text">8.常用命令</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#9-%E6%B7%BB%E5%8A%A0AUR%E6%BA%90"><span class="toc-text">9.添加AUR源</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#10-pamac%E6%97%A0%E6%B3%95%E6%9F%A5%E7%9C%8B%E5%88%86%E7%B1%BB-%E5%92%8CAUR%E6%BA%90"><span class="toc-text">10. pamac无法查看分类 和AUR源</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#11-%E4%BD%BF%E7%94%A8rsync%E5%A4%87%E4%BB%BD%E6%96%87%E4%BB%B6"><span class="toc-text">11.使用rsync备份文件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#12-%E5%B0%86%E7%94%A8%E6%88%B7%E5%8A%A0%E5%88%B0%E7%AE%A1%E7%90%86%E5%91%98%E7%BB%84"><span class="toc-text">12.将用户加到管理员组</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#13-command%E5%91%BD%E4%BB%A4"><span class="toc-text">13.command命令</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#14-%E5%85%B3%E4%BA%8E%E8%B7%AF%E7%94%B1%E3%80%81%E7%AB%AF%E5%8F%A3%E3%80%81%E4%B8%BB%E6%9C%BA%E5%8A%A8%E6%80%81ip%E3%80%81%E9%9D%99%E6%80%81ip%E3%80%81%E4%B8%BB%E6%9C%BAmac"><span class="toc-text">14.关于路由、端口、主机动态ip、静态ip、主机mac</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#15-xdotool%E5%B7%A5%E5%85%B7"><span class="toc-text">15. xdotool工具</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#16-%E4%B8%8D%E5%90%8C%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">16.不同系统的区别</span></a></li></ol></div></p>
 <h1 id="1-pacman"><a href="#1-pacman" class="headerlink" title="1. pacman"></a>1. pacman</h1><h1 id="2-配置中文输入法"><a href="#2-配置中文输入法" class="headerlink" title="2.配置中文输入法"></a>2.配置中文输入法</h1><blockquote>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/Mingcai_Xiong/article/details/138989121">https://blog.csdn.net/Mingcai_Xiong/article/details/138989121</a></p>
 </blockquote>
 <h1 id="3-安装v2ray代理"><a href="#3-安装v2ray代理" class="headerlink" title="3. 安装v2ray代理"></a>3. 安装v2ray代理</h1><blockquote>
 <p><a target="_blank" rel="noopener" href="https://www.wannaexpresso.com/2020/02/23/manjaro-v2ray/">https://www.wannaexpresso.com/2020/02/23/manjaro-v2ray/</a></p>
+<p><a target="_blank" rel="noopener" href="https://toutyrater.github.io/prep/start.html">https://toutyrater.github.io/prep/start.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.v2ray.com/chapter_00/start.html">https://www.v2ray.com/chapter_00/start.html</a></p>
 </blockquote>
 <h1 id="4-修改zsh为bash的shell"><a href="#4-修改zsh为bash的shell" class="headerlink" title="4. 修改zsh为bash的shell"></a>4. 修改zsh为bash的shell</h1><pre><code class="shell">sudo chsh -s --shell /bin/bash lizhao
 注销后登录
@@ -1144,6 +1145,42 @@
 <p><img src="/./../../%E5%9B%BE%E7%89%87/image-20241003223013889.png" alt="image-20241003223013889"></p>
 <p><img src="/./../../%E5%9B%BE%E7%89%87/image-20241003223028021.png" alt="image-20241003223028021"></p>
 <p><img src="/./../../%E5%9B%BE%E7%89%87/image-20241003223136102.png" alt="image-20241003223136102"></p>
+<h1 id="1-关于-systemctl"><a href="#1-关于-systemctl" class="headerlink" title="1. 关于 systemctl"></a>1. 关于 systemctl</h1><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/zwcry/p/9602756.html">https://www.cnblogs.com/zwcry/p/9602756.html</a></p>
+<h1 id="2-使用conections从linux连接windows"><a href="#2-使用conections从linux连接windows" class="headerlink" title="2.使用conections从linux连接windows"></a>2.使用conections从linux连接windows</h1><h1 id="3-使用samba访问nas文件"><a href="#3-使用samba访问nas文件" class="headerlink" title="3.使用samba访问nas文件"></a>3.使用samba访问nas文件</h1><p><a target="_blank" rel="noopener" href="https://coda.world/linux-and-samba-share/#:~:text=%E7%94%A8%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86%E5%99%A8%E7%9B%B4%E6%8E%A5%E8%AE%BF%E9%97%AE">https://coda.world/linux-and-samba-share/#:~:text=%E7%94%A8%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86%E5%99%A8%E7%9B%B4%E6%8E%A5%E8%AE%BF%E9%97%AE</a></p>
+<p>另一种（不优雅）：smbclient &#x2F;&#x2F;192.168.110.13&#x2F;Home1 -U 18843101769%1021</p>
+<h1 id="4-配置代理"><a href="#4-配置代理" class="headerlink" title="4. 配置代理"></a>4. 配置代理</h1><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/676022554#:~:text=%E6%89%93%E5%BC%80%E7%BB%88%E7%AB%AF%E8%BE%93%E5%85%A5%E4%BB%A5%E4%B8%8B%E5%91%BD%E4%BB%A4">https://zhuanlan.zhihu.com/p/676022554#:~:text=%E6%89%93%E5%BC%80%E7%BB%88%E7%AB%AF%E8%BE%93%E5%85%A5%E4%BB%A5%E4%B8%8B%E5%91%BD%E4%BB%A4</a></p>
+<h1 id="5-使用快照备份系统"><a href="#5-使用快照备份系统" class="headerlink" title="5.使用快照备份系统"></a>5.使用快照备份系统</h1><p><a target="_blank" rel="noopener" href="https://cn.linux-console.net/?p=19103#:~:text=%E6%9C%AC%E5%88%9D%E5%AD%A6%E8%80%85%E6%8C%87%E5%8D%97%E5%90%91%E6%82%A8%E5%B1%95%E7%A4%BA">https://cn.linux-console.net/?p=19103#:~:text=%E6%9C%AC%E5%88%9D%E5%AD%A6%E8%80%85%E6%8C%87%E5%8D%97%E5%90%91%E6%82%A8%E5%B1%95%E7%A4%BA</a></p>
+<h1 id="6-使用Backups备份文件"><a href="#6-使用Backups备份文件" class="headerlink" title="6.使用Backups备份文件"></a>6.使用Backups备份文件</h1><h1 id="7-安装微信"><a href="#7-安装微信" class="headerlink" title="7.安装微信"></a>7.安装微信</h1><p><a target="_blank" rel="noopener" href="https://wenku.csdn.net/answer/4tppvuy282">https://wenku.csdn.net/answer/4tppvuy282</a></p>
+<h1 id="8-常用命令"><a href="#8-常用命令" class="headerlink" title="8.常用命令"></a>8.常用命令</h1><p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/2223411">https://cloud.tencent.com/developer/article/2223411</a></p>
+<h1 id="9-添加AUR源"><a href="#9-添加AUR源" class="headerlink" title="9.添加AUR源"></a>9.添加AUR源</h1><p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1948468">https://cloud.tencent.com/developer/article/1948468</a></p>
+<h1 id="10-pamac无法查看分类-和AUR源"><a href="#10-pamac无法查看分类-和AUR源" class="headerlink" title="10. pamac无法查看分类 和AUR源"></a>10. pamac无法查看分类 和AUR源</h1><p>关闭软件模式</p>
+<p><img src="/../../%E5%9B%BE%E7%89%87/image-20241008110252006.png" alt="image-20241008110252006"></p>
+<ul>
+<li><p>查看AUR源需要再点一下搜索，使用pamac命令在命令行搜索能够查找AUR源</p>
+<p>或者关掉然后重新开启以下</p>
+<p>查看源是否有问题 yay -p -Q</p>
+</li>
+</ul>
+<h1 id="11-使用rsync备份文件"><a href="#11-使用rsync备份文件" class="headerlink" title="11.使用rsync备份文件"></a>11.使用rsync备份文件</h1><p><a target="_blank" rel="noopener" href="https://www.ruanyifeng.com/blog/2020/08/rsync.html">https://www.ruanyifeng.com/blog/2020/08/rsync.html</a></p>
+<h1 id="12-将用户加到管理员组"><a href="#12-将用户加到管理员组" class="headerlink" title="12.将用户加到管理员组"></a>12.将用户加到管理员组</h1><p><code>sudo usermod -aG wheel lizhao</code></p>
+<h1 id="13-command命令"><a href="#13-command命令" class="headerlink" title="13.command命令"></a>13.command命令</h1><p>command -V </p>
+<h1 id="14-关于路由、端口、主机动态ip、静态ip、主机mac"><a href="#14-关于路由、端口、主机动态ip、静态ip、主机mac" class="headerlink" title="14.关于路由、端口、主机动态ip、静态ip、主机mac"></a>14.关于路由、端口、主机动态ip、静态ip、主机mac</h1><ul>
+<li><p>路由分配给主机ip, 这个主机相当于挂载在路由上的一个端口上。需要首先由路由分配给主机一个静态ip和设置一个端口映射，</p>
+</li>
+<li><p>主机应该打开sshd服务，这样外面的机器可以访问本地 </p>
+<p><code>systemctl start sshd</code></p>
+</li>
+<li><p>同一个路由下的主机的ip地址前几个是相同的，可以通过输入前几个进入路由设置</p>
+</li>
+<li><p>访问时，访问路由的特定端口，然后 由路由转到主机</p>
+</li>
+<li><p>访问路由可以通过 ip adress 查看ip,然后删除最后的数字换成1</p>
+</li>
+</ul>
+<p><img src="/../../%E5%9B%BE%E7%89%87/image-20241008164703168.png" alt="image-20241008164703168"></p>
+<p><img src="/../../%E5%9B%BE%E7%89%87/image-20241008165352346.png" alt="image-20241008165352346"></p>
+<h1 id="15-xdotool工具"><a href="#15-xdotool工具" class="headerlink" title="15. xdotool工具"></a>15. xdotool工具</h1><p><a target="_blank" rel="noopener" href="http://git.malu.me/xdotool%E8%87%AA%E5%8A%A8%E5%8C%96%E5%B7%A5%E5%85%B7%E7%AC%94%E8%AE%B0/w">http://git.malu.me/xdotool%E8%87%AA%E5%8A%A8%E5%8C%96%E5%B7%A5%E5%85%B7%E7%AC%94%E8%AE%B0/w</a></p>
+<h1 id="16-不同系统的区别"><a href="#16-不同系统的区别" class="headerlink" title="16.不同系统的区别"></a>16.不同系统的区别</h1><p><a target="_blank" rel="noopener" href="https://www.51cto.com/article/621615.html">https://www.51cto.com/article/621615.html</a></p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源 </span>
