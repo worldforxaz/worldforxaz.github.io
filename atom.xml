@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-10-12T07:12:51.136Z</updated>
+  <updated>2024-10-25T03:16:17.174Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>git使用</title>
+    <link href="http://example.com/2024/10/25/linux%E5%AD%A6%E4%B9%A0%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/"/>
+    <id>http://example.com/2024/10/25/linux%E5%AD%A6%E4%B9%A0%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/</id>
+    <published>2024-10-25T00:55:46.000Z</published>
+    <updated>2024-10-25T03:16:17.174Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p><a href="http://www.cnblogs.com/hmy-666/p/17326120.html">www.cnblogs.com/hmy-666/p/17326120.html</a> git 分支的命令与使用</p><p>git 教程（新手向） <a href="https://zhuanlan.zhihu.com/p/135183491">Git 使用教程：最详细、最傻瓜、最浅显、真正手把手教！（万字长文） - 知乎</a></p><p>[Git 基本命令 – 你用过 git diff 吗？补习一下吧 - 知乎](<a href="https://zhuanlan.zhihu.com/p/148312377#:~:text=%E8%BF%90%E8%A1%8C">https://zhuanlan.zhihu.com/p/148312377#:~:text=运行</a> git log –pretty%3Doneline –abbrev-commit 命令看一下当前分支的提交记录，选择两个进行比较。 运行 git,commit 的差异： 好奇宝宝附体，咱们颠倒一下 commit 之间的顺序，看看差异效果 可以看到，比较对象的先后顺序决定了 diff 的差异结果的「增删」。)</p></blockquote><ul><li>概念合集</li></ul><p>远程服务器 远程分支 本地分支 远程跟踪分支&#x3D;&#x3D; 上游分支</p><p><strong>命令合集</strong></p><ul><li><p>查看分支<code>git branch</code></p></li><li><p>创建分支 <code>git branch &lt;本地分支&gt;</code></p></li><li><p>切换分支 <code>git checkout &lt;本地分支&gt;</code></p></li><li><p>当前分支跟踪远程分支 <code>git branch -u &lt;仓库&gt;/&lt;远程分支&gt;</code></p></li><li><p>将当前分支推送到远程仓库并跟踪新分支或旧分支 <code>git push -u &lt;远程仓库&gt; &lt;远程分支&gt;</code>  <strong>不适合直接修改完提交，会把仓库内旧分支覆盖，可以建一个新分支</strong></p></li><li><p>合并某分支到当前分支 <code>git merge &lt;远程分支&gt;</code> (需要先git fetch) 或者<code>&lt;本地分支&gt;</code></p></li><li><p>删除分支 <code>git branch -d name </code></p></li><li><p>创建本地分支跟踪远程分支 <code>git checkout -b  &lt;新建本地分支&gt; &lt;远程服务器分支&gt;/&lt;远程分支（上游分支&gt;</code> （本地分支和追踪的远程分支不要求名字一定想同）</p></li><li><p>指定已有的分支跟踪远程分支 </p><p><code>git branch &lt;已有的分支&gt; -u &lt;远程服务器分支&gt;/&lt;远程分支&gt; </code>   (u&#x3D; –set upstream-to)</p><p>如果在本地分支下可以 <code>git branch -u &lt;远程仓库&gt;/&lt;远程分支&gt;</code></p></li><li><p>查看远程分支和本地分支跟踪情况</p><p><code>git branch -vv</code></p></li><li><p>删除远程分支</p></li><li><p><code>git push &lt;远程仓库&gt;</code> –delete &lt;远程分支&gt;</p></li><li><p>获取所有分支的更新 <code>git fetch origin</code>  </p><p>获取特定分支的更新 <code>git fetch origin &lt;分支名称&gt;</code></p><p>显示区别 <code>git log / git diff</code></p><p>合并某分支到当前 <code>git merge origin/&lt;远程分支&gt;</code></p></li><li><p><code>git pull</code> 是git fetch 和git merge的组合  <code>git pull origin main</code> &#x3D;&#x3D; <code>git fetch origin </code> + <code>git merge origin/main</code></p></li><li><p>查看所有远程分支 <code>git remote show &lt;远程仓库&gt;</code> ；<code>git fetch </code> + <code>git branch -r</code>  or <code>git branch -a</code></p></li><li><p><code>git pull &lt;仓库名&gt; &lt;仓库分支&gt;:&lt;本地分支&gt;</code>  将仓库与本地分支合并，如果是当前分支，不需要冒号后面的内容</p></li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.cnblogs.com/hmy-666/p/17326120.html&quot;&gt;www.cnblogs.com/hmy-666/p/17326120.html&lt;/a&gt; git 分支的命令与使用&lt;/p&gt;
+&lt;p&gt;git</summary>
+      
+    
+    
+    
+    <category term="linux学习使用" scheme="http://example.com/categories/linux%E5%AD%A6%E4%B9%A0%E4%BD%BF%E7%94%A8/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>manjaro学习笔记</title>
@@ -473,29 +497,6 @@ structure = a.get_</summary>
     
     
     <category term="学习笔记" scheme="http://example.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>表面计算</title>
-    <link href="http://example.com/2024/05/25/%E6%A8%A1%E6%8B%9F%E6%96%B9%E6%B3%95/%E8%A1%A8%E9%9D%A2%E8%AE%A1%E7%AE%97/"/>
-    <id>http://example.com/2024/05/25/%E6%A8%A1%E6%8B%9F%E6%96%B9%E6%B3%95/%E8%A1%A8%E9%9D%A2%E8%AE%A1%E7%AE%97/</id>
-    <published>2024-05-25T14:01:20.383Z</published>
-    <updated>2024-05-27T06:13:48.334Z</updated>
-    
-    <content type="html"><![CDATA[<p>[toc]</p><h1 id="1-固定原子"><a href="#1-固定原子" class="headerlink" title="1.固定原子"></a>1.固定原子</h1><pre><code class="python">from numpy import *import pandas as pdimport stringwith open(&#39;POSCAR&#39;) as f:    f.readline()    f.readline()    f.readline()    f.readline()    f.readline()    atom_name=f.readline()    atom_num=f.readline()    atom_name2=atom_name.split()     print(atom_name2)    atom_num2=[int(x) for x in atom_num.split()]    print(atom_num2)    atom_total=sum(atom_num2)    line_total = 8+atom_total    line_a=f.readlines()[1:atom_total+1]A=zeros((atom_total,3))B=zeros((atom_num2[0],3))C=zeros((atom_num2[1],3))A_row=0for line in line_a:    list =line.strip(&#39; &#39;).strip(&#39;\n&#39;).split(&#39; &#39;)    list=[x for x in list if x !=&#39;&#39;]    float_list=[float(x) for x in list]    A[A_row:]=float_list[0:3]    A_row +=1B,C=vsplit(A,[atom_num2[0]])#A[:,2] +=0.1 #第三列加0.2#A[:,1] -=0.1format_string= &quot;&#123;:,.8f&#125;&quot;with open(&#39;POSCAR-2&#39;,&#39;w&#39;) as h:    for i in range(B.shape[0]):        if B[i,2] &lt;0.33644:          for j in range(B.shape[1]):            h.write(format_string.format(B[i,j]) + &#39; &#39;)          h.write(&#39;F F F&#39;)          print(B[i])        else:          for j in range(B.shape[1]):            h.write(format_string.format(B[i,j]) + &#39; &#39;)          h.write(&#39;T T T&#39;)          print(B[i])        h.write(&#39;\n&#39;)with open(&#39;POSCAR-2&#39;,&#39;a&#39;) as h:    for i in range(C.shape[0]):        if C[i,2] &lt;0.3703:          for j in range(C.shape[1]):            h.write(format_string.format(C[i,j]) + &#39; &#39;)          h.write(&#39;F F F&#39;)        else:          for j in range(C.shape[1]):            h.write(format_string.format(C[i,j]) + &#39; &#39;)          h.write(&#39;T T T&#39;)        h.write(&#39;\n&#39;)   </code></pre><h1 id="2-计算表面能"><a href="#2-计算表面能" class="headerlink" title="2.计算表面能"></a>2.计算表面能</h1><p><a href="https://zhuanlan.zhihu.com/p/379448266">表面能计算基础及最新进展（PRB连载，计算表面能） - 知乎 (zhihu.com)</a></p><p><a href="https://en.wikipedia.org/wiki/Surface_energy">https://en.wikipedia.org/wiki/Surface_energy</a></p><p><img src="/./../%E5%9B%BE%E7%89%87/image-20230604191033411.png" alt="image-20230604191033411"></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;[toc]&lt;/p&gt;
-&lt;h1 id=&quot;1-固定原子&quot;&gt;&lt;a href=&quot;#1-固定原子&quot; class=&quot;headerlink&quot; title=&quot;1.固定原子&quot;&gt;&lt;/a&gt;1.固定原子&lt;/h1&gt;&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;from numpy import </summary>
-      
-    
-    
-    
-    <category term="模拟方法" scheme="http://example.com/categories/%E6%A8%A1%E6%8B%9F%E6%96%B9%E6%B3%95/"/>
     
     
   </entry>
