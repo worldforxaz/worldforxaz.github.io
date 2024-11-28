@@ -312,7 +312,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="75">
-<input type="hidden" id="yelog_site_word_count" value="110.3k">
+<input type="hidden" id="yelog_site_word_count" value="110.6k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1105,12 +1105,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2024-10-29 20:51:20'>2024-05-25 22:01</time>
+            发布时间 : <time class="date" title='最后更新: 2024-11-18 13:49:01'>2024-05-25 22:01</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:4.1k</span>
+        <span>字数:4.4k</span>
         
         
         
@@ -1524,6 +1524,7 @@ def solvechemical(entries,target_entry):
     reduced_a = entries[0].composition.reduced_formula
     reduced_b = entries[1].composition.reduced_formula
     reduced_c = entries[2].composition.reduced_formula
+#     print(reduced_a,reduced_b,reduced_c)
     reduced_aa = entries[0].composition
     reduced_bb = entries[1].composition
     reduced_cc = entries[2].composition
@@ -1540,9 +1541,11 @@ def solvechemical(entries,target_entry):
 
     # 获取目标化合物所含元素
     elements = target_compound.as_dict().keys()
-
+   
+    #不能是通解的判断 
     # 为每个元素设置质量守恒方程
     equations = []
+    
     for element in elements:
         # 每个化合物中该元素的数量
         eq = (
@@ -1552,23 +1555,35 @@ def solvechemical(entries,target_entry):
             target_compound.get(element, 0)
         )
         equations.append(Eq(eq, 0))
-        solution = solve(equations, (x, y, z), dict = True)
+    solution = solve(equations, (x, y, z), dict = True)
     # 判断并输出结果
-    if solution and all(val &gt;= 0 for val in solution[0].values()):
-        coeffs = solution[0]
-        formation_energy = (target_entry.energy / factortarget - (coeffs[x] / factora * entries[0].energy + coeffs[y] / factorb * entries[1].energy + coeffs[z] / factorc * entries[2].energy))
-        results.append((f&quot;&#123;reduced_a&#125;, &#123;reduced_b&#125;, &#123;reduced_c&#125;&quot;, [value for value in solution[0].values()], formation_energy))
-        #rint(reduced_a,reduced_b,reduced_c,end = &#39;,&#39;)
-        #print(f&quot;可以生成目标化合物，配平系数为: &#123;solution&#125;&quot;)
-        # print(print([value for item in solution for value in item.values()]),end = &#39;,&#39;)
-        #print(([value for value in solution[0].values()]),end = &#39;,&#39;)
-        #entries = list(entries)
-        #entries.append(target_entry)
-        #print(f&quot;目标化合物 &#123;target_entry.composition.reduced_formula&#125; 的形成能为: &#123;formation_energy:.3f&#125; eV&quot;)
-        #print(f&quot;&#123;formation_energy:.3f&#125; eV&quot;)
+    if solution:
+        valid_solutions = []
+        for sol in solution:
+        # 检查解是否包含自由变量(通解）
+            has_free_symbols = any(val.free_symbols for val in sol.values())
+        # 检查解是否全部非负且为具体数值
+            if not has_free_symbols: 
+                is_valid = all(val.evalf() &gt;= 0 and val.is_number for val in sol.values())
+                if is_valid:
+                    valid_solutions.append(sol)
 
-#    else:
-#        print(&quot;无法通过这三个化合物生成目标化合物。&quot;)
+        if valid_solutions:
+            coeffs = solution[0]
+            formation_energy = (target_entry.energy / factortarget - (coeffs[x] / factora * entries[0].energy + coeffs[y] / factorb * entries[1].energy + coeffs[z] / factorc * entries[2].energy))
+            results.append((f&quot;&#123;reduced_a&#125;, &#123;reduced_b&#125;, &#123;reduced_c&#125;&quot;, [value for value in solution[0].values()], formation_energy))
+            # print(reduced_a,reduced_b,reduced_c,end = &#39;,&#39;)
+            # print(entries[0].energy/factora,entries[1].energy/factorb,entries[2].energy/factorc, target_entry.energy / factortarget,  end = &#39;,&#39;)
+            # print(f&quot;可以生成目标化合物，配平系数为: &#123;solution&#125;&quot;)
+            # print(print([value for item in solution for value in item.values()]),end = &#39;,&#39;)
+            #print(([value for value in solution[0].values()]),end = &#39;,&#39;)
+            #entries = list(entries)
+            #entries.append(target_entry)
+            print(f&quot;目标化合物 &#123;target_entry.composition.reduced_formula&#125; 的形成能为: &#123;formation_energy:.3f&#125; eV&quot;)
+            #print(f&quot;&#123;formation_energy:.3f&#125; eV&quot;)
+
+    #    else:
+    #        print(&quot;无法通过这三个化合物生成目标化合物。&quot;)
 
 
 
@@ -1577,10 +1592,14 @@ mp_entries = mpr.get_entries_in_chemsys(elements=[&quot;K&quot;,&quot;Y&quot;,&q
 
 
 vasprun=Vasprun(&#39;vasprun.xml&#39;)
+vasprun2 = Vasprun(&#39;oqmd.xml&#39;)
 entry_vasp = vasprun.get_computed_entry(inc_structure=True)
+entry_vasp2 = vasprun2.get_computed_entry(inc_structure=True)
 compatibility = MaterialsProjectCompatibility()
 entry_from_vasp = compatibility.process_entry(entry_vasp)
+entry_from_vasp2 = compatibility.process_entry(entry_vasp2)
 mp_entries.append(entry_from_vasp)
+mp_entries.append(entry_from_vasp2)
 pd=PhaseDiagram(mp_entries)
 stable_entries=list(pd.stable_entries)
 print(len(stable_entries))
@@ -1595,6 +1614,46 @@ results.sort(key=lambda x: x[2])
 
 for combo, coeffs, energy in results:
     print(f&quot;&#123;combo&#125;, &#123;coeffs&#125;, &#123;energy:.3f&#125; eV&quot;)
+</code></pre>
+<p>转换输出为latex格式</p>
+<pre><code class="python">import re
+
+def read_and_convert(file_path):
+    with open(file_path, &#39;r&#39;, encoding=&#39;utf-16&#39;) as file:
+        lines = file.readlines()
+
+    latex_output = []
+
+    for line in lines:
+        # 去除空格和换行符
+        line = line.strip()
+        # 使用正则表达式匹配和提取数据
+        match = re.match(r&#39;([\w\d, ]+), \[([\d., ]+)\], (-?\d+\.\d+) eV&#39;, line)
+        if match:
+            compounds = match.group(1).split(&#39;, &#39;)
+            coefficients = list(map(float, match.group(2).split(&#39;, &#39;)))
+            energy = match.group(3)
+
+            # 构建LaTeX化学方程式
+            latex_equation = &#39;\\ce&#123;&#39;
+            for i, compound in enumerate(compounds):
+                coefficient = coefficients[i]
+                if coefficient != 1.0:
+                    latex_equation += f&#39;&#123;coefficient:.3g&#125; &#39;
+                latex_equation += compound + &#39; + &#39;
+            latex_equation = latex_equation.rstrip(&#39; + &#39;) + &#39;&#125; &amp; &#39; + energy + &#39; eV&#39; + &#39; \\\\&#39;
+
+            latex_output.append(latex_equation)
+
+    return latex_output
+
+# 读取文件并转换
+file_path = &#39;solve2.dat&#39;
+latex_equations = read_and_convert(file_path)
+
+# 打印转换后的LaTeX化学方程式
+for equation in latex_equations:
+    print(equation)
 </code></pre>
 
       
