@@ -312,7 +312,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="75">
-<input type="hidden" id="yelog_site_word_count" value="110.6k">
+<input type="hidden" id="yelog_site_word_count" value="111k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1105,12 +1105,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2024-11-18 13:49:01'>2024-05-25 22:01</time>
+            发布时间 : <time class="date" title='最后更新: 2024-12-02 20:33:05'>2024-05-25 22:01</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:4.4k</span>
+        <span>字数:4.8k</span>
         
         
         
@@ -1118,7 +1118,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E7%BB%98%E5%9B%BE%E8%84%9A%E6%9C%AC%EF%BC%88%E7%9B%B8%E5%9B%BE%E3%80%81%E5%B7%A8%E5%8A%BF%E7%9B%B8%E5%9B%BE%EF%BC%89"><span class="toc-text">1.绘图脚本（相图、巨势相图）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%9B%B8%E5%9B%BE-%E6%96%B0%E7%9A%84"><span class="toc-text">1. 相图-新的</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%BB%A3%E7%A0%81"><span class="toc-text">1.代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%BB%98%E5%88%B6%E4%B8%89%E5%85%83-%E8%B5%9D%E4%B8%89%E5%85%83%E7%9B%B8%E5%9B%BE%E4%BB%A3%E7%A0%81"><span class="toc-text">2. 绘制三元&#x2F;赝三元相图代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%8C%96%E5%90%88%E7%89%A9%E7%9B%B8%E5%9B%BE%E7%9A%84%E8%BE%93%E5%87%BA"><span class="toc-text">3. 化合物相图的输出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-pymatgen%E4%B8%AD%E7%9A%84%E4%BB%A3%E7%A0%81%E7%BB%93%E6%9E%84"><span class="toc-text">4.pymatgen中的代码结构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E5%8C%96%E5%AD%A6%E5%BC%8F%E7%9B%B8%E5%9B%BE"><span class="toc-text">1.化学式相图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E7%9B%B8%E5%9B%BE"><span class="toc-text">2. 相图</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E8%80%81%E7%9A%84%EF%BC%8C%E4%BC%BC%E4%B9%8E%E4%B8%8D%E8%83%BD%E7%94%A8%E4%BA%86-%E4%B8%8D%E8%83%BD%E4%BB%8Ematerials-project%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%AD%E6%8F%90%E5%8F%96%E6%95%B0%E6%8D%AE%E4%BA%86"><span class="toc-text">2. 老的，似乎不能用了 (不能从materials project数据库中提取数据了)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E4%BB%8E%E7%8E%B0%E6%9C%89%E6%95%B0%E6%8D%AE%E7%9A%84-dat%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96%E7%84%B6%E5%90%8E%E7%BB%98%E5%88%B6%E7%9B%B8%E5%9B%BE"><span class="toc-text">3. 从现有数据的.dat文件读取然后绘制相图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%B7%A8%E5%8A%BF%E7%9B%B8%E5%9B%BE"><span class="toc-text">4. 巨势相图</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E7%9B%B8%E5%9B%BE%E8%A7%A3%E9%87%8A-%EF%BC%88%E4%B8%89%E5%85%83%E4%B8%89%E8%A7%92%E3%80%81%E5%9B%9B%E5%85%83%E5%9B%9B%E9%9D%A2%E4%BD%93%EF%BC%89"><span class="toc-text">2. 相图解释 （三元三角、四元四面体）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%9B%B8%E5%9B%BE%E7%9A%84%E7%90%86%E8%A7%A3"><span class="toc-text">1.相图的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%85%B3%E4%BA%8E%E5%88%86%E8%A7%A3"><span class="toc-text">1.关于分解</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E8%AE%A1%E7%AE%97%E5%8C%96%E5%90%88%E7%89%A9%E7%9A%84%E5%88%86%E8%A7%A3"><span class="toc-text">3. 计算化合物的分解</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-%E7%BB%98%E5%88%B6%E7%9B%B8%E5%9B%BE%EF%BC%88%E4%B8%89%E5%85%83%E4%B8%89%E8%A7%92%E3%80%81%E5%9B%9B%E5%85%83%E5%9B%9B%E9%9D%A2%E4%BD%93%EF%BC%89"><span class="toc-text">4.绘制相图（三元三角、四元四面体）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-%E8%AE%A1%E7%AE%97%E5%8F%AF%E8%83%BD%E7%9A%84%E5%90%88%E6%88%90%E8%B7%AF%E5%BE%84"><span class="toc-text">5. 计算可能的合成路径</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E7%BB%98%E5%9B%BE%E8%84%9A%E6%9C%AC%EF%BC%88%E7%9B%B8%E5%9B%BE%E3%80%81%E5%B7%A8%E5%8A%BF%E7%9B%B8%E5%9B%BE%EF%BC%89"><span class="toc-text">1.绘图脚本（相图、巨势相图）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%9B%B8%E5%9B%BE-%E6%96%B0%E7%9A%84"><span class="toc-text">1. 相图-新的</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%BB%A3%E7%A0%81"><span class="toc-text">1.代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%BB%98%E5%88%B6%E4%B8%89%E5%85%83-%E8%B5%9D%E4%B8%89%E5%85%83%E7%9B%B8%E5%9B%BE%E4%BB%A3%E7%A0%81"><span class="toc-text">2. 绘制三元&#x2F;赝三元相图代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%8C%96%E5%90%88%E7%89%A9%E7%9B%B8%E5%9B%BE%E7%9A%84%E8%BE%93%E5%87%BA"><span class="toc-text">3. 化合物相图的输出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-pymatgen%E4%B8%AD%E7%9A%84%E4%BB%A3%E7%A0%81%E7%BB%93%E6%9E%84"><span class="toc-text">4.pymatgen中的代码结构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E5%8C%96%E5%AD%A6%E5%BC%8F%E7%9B%B8%E5%9B%BE"><span class="toc-text">1.化学式相图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E7%9B%B8%E5%9B%BE"><span class="toc-text">2. 相图</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E8%80%81%E7%9A%84%EF%BC%8C%E4%BC%BC%E4%B9%8E%E4%B8%8D%E8%83%BD%E7%94%A8%E4%BA%86-%E4%B8%8D%E8%83%BD%E4%BB%8Ematerials-project%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%AD%E6%8F%90%E5%8F%96%E6%95%B0%E6%8D%AE%E4%BA%86"><span class="toc-text">2. 老的，似乎不能用了 (不能从materials project数据库中提取数据了)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E4%BB%8E%E7%8E%B0%E6%9C%89%E6%95%B0%E6%8D%AE%E7%9A%84-dat%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96%E7%84%B6%E5%90%8E%E7%BB%98%E5%88%B6%E7%9B%B8%E5%9B%BE"><span class="toc-text">3. 从现有数据的.dat文件读取然后绘制相图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%B7%A8%E5%8A%BF%E7%9B%B8%E5%9B%BE"><span class="toc-text">4. 巨势相图</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E7%9B%B8%E5%9B%BE%E8%A7%A3%E9%87%8A-%EF%BC%88%E4%B8%89%E5%85%83%E4%B8%89%E8%A7%92%E3%80%81%E5%9B%9B%E5%85%83%E5%9B%9B%E9%9D%A2%E4%BD%93%EF%BC%89"><span class="toc-text">2. 相图解释 （三元三角、四元四面体）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%9B%B8%E5%9B%BE%E7%9A%84%E7%90%86%E8%A7%A3"><span class="toc-text">1.相图的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%85%B3%E4%BA%8E%E5%88%86%E8%A7%A3"><span class="toc-text">1.关于分解</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E8%AE%A1%E7%AE%97%E5%8C%96%E5%90%88%E7%89%A9%E7%9A%84%E5%88%86%E8%A7%A3"><span class="toc-text">3. 计算化合物的分解</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-%E7%BB%98%E5%88%B6%E7%9B%B8%E5%9B%BE%EF%BC%88%E4%B8%89%E5%85%83%E4%B8%89%E8%A7%92%E3%80%81%E5%9B%9B%E5%85%83%E5%9B%9B%E9%9D%A2%E4%BD%93%EF%BC%89"><span class="toc-text">4.绘制相图（三元三角、四元四面体）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-%E8%AE%A1%E7%AE%97%E5%8F%AF%E8%83%BD%E7%9A%84%E5%90%88%E6%88%90%E8%B7%AF%E5%BE%84"><span class="toc-text">5. 计算可能的合成路径</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-help-Pr-congwei"><span class="toc-text">6. help Pr. congwei</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -1134,8 +1134,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><div class='inner-toc'><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E7%BB%98%E5%9B%BE%E8%84%9A%E6%9C%AC%EF%BC%88%E7%9B%B8%E5%9B%BE%E3%80%81%E5%B7%A8%E5%8A%BF%E7%9B%B8%E5%9B%BE%EF%BC%89"><span class="toc-text">1.绘图脚本（相图、巨势相图）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%9B%B8%E5%9B%BE-%E6%96%B0%E7%9A%84"><span class="toc-text">1. 相图-新的</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%BB%A3%E7%A0%81"><span class="toc-text">1.代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%BB%98%E5%88%B6%E4%B8%89%E5%85%83-%E8%B5%9D%E4%B8%89%E5%85%83%E7%9B%B8%E5%9B%BE%E4%BB%A3%E7%A0%81"><span class="toc-text">2. 绘制三元&#x2F;赝三元相图代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%8C%96%E5%90%88%E7%89%A9%E7%9B%B8%E5%9B%BE%E7%9A%84%E8%BE%93%E5%87%BA"><span class="toc-text">3. 化合物相图的输出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-pymatgen%E4%B8%AD%E7%9A%84%E4%BB%A3%E7%A0%81%E7%BB%93%E6%9E%84"><span class="toc-text">4.pymatgen中的代码结构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E5%8C%96%E5%AD%A6%E5%BC%8F%E7%9B%B8%E5%9B%BE"><span class="toc-text">1.化学式相图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E7%9B%B8%E5%9B%BE"><span class="toc-text">2. 相图</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E8%80%81%E7%9A%84%EF%BC%8C%E4%BC%BC%E4%B9%8E%E4%B8%8D%E8%83%BD%E7%94%A8%E4%BA%86-%E4%B8%8D%E8%83%BD%E4%BB%8Ematerials-project%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%AD%E6%8F%90%E5%8F%96%E6%95%B0%E6%8D%AE%E4%BA%86"><span class="toc-text">2. 老的，似乎不能用了 (不能从materials project数据库中提取数据了)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E4%BB%8E%E7%8E%B0%E6%9C%89%E6%95%B0%E6%8D%AE%E7%9A%84-dat%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96%E7%84%B6%E5%90%8E%E7%BB%98%E5%88%B6%E7%9B%B8%E5%9B%BE"><span class="toc-text">3. 从现有数据的.dat文件读取然后绘制相图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%B7%A8%E5%8A%BF%E7%9B%B8%E5%9B%BE"><span class="toc-text">4. 巨势相图</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E7%9B%B8%E5%9B%BE%E8%A7%A3%E9%87%8A-%EF%BC%88%E4%B8%89%E5%85%83%E4%B8%89%E8%A7%92%E3%80%81%E5%9B%9B%E5%85%83%E5%9B%9B%E9%9D%A2%E4%BD%93%EF%BC%89"><span class="toc-text">2. 相图解释 （三元三角、四元四面体）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%9B%B8%E5%9B%BE%E7%9A%84%E7%90%86%E8%A7%A3"><span class="toc-text">1.相图的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%85%B3%E4%BA%8E%E5%88%86%E8%A7%A3"><span class="toc-text">1.关于分解</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E8%AE%A1%E7%AE%97%E5%8C%96%E5%90%88%E7%89%A9%E7%9A%84%E5%88%86%E8%A7%A3"><span class="toc-text">3. 计算化合物的分解</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-%E7%BB%98%E5%88%B6%E7%9B%B8%E5%9B%BE%EF%BC%88%E4%B8%89%E5%85%83%E4%B8%89%E8%A7%92%E3%80%81%E5%9B%9B%E5%85%83%E5%9B%9B%E9%9D%A2%E4%BD%93%EF%BC%89"><span class="toc-text">4.绘制相图（三元三角、四元四面体）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-%E8%AE%A1%E7%AE%97%E5%8F%AF%E8%83%BD%E7%9A%84%E5%90%88%E6%88%90%E8%B7%AF%E5%BE%84"><span class="toc-text">5. 计算可能的合成路径</span></a></li></ol></div></p>
-<h1 id="1-绘图脚本（相图、巨势相图）"><a href="#1-绘图脚本（相图、巨势相图）" class="headerlink" title="1.绘图脚本（相图、巨势相图）"></a>1.绘图脚本（相图、巨势相图）</h1><h2 id="1-相图-新的"><a href="#1-相图-新的" class="headerlink" title="1. 相图-新的"></a>1. 相图-新的</h2><h3 id="1-代码"><a href="#1-代码" class="headerlink" title="1.代码"></a>1.代码</h3><p>已经修正能量，注意关掉翻墙软件，需要安装新的API</p>
+        <p><div class='inner-toc'><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E7%BB%98%E5%9B%BE%E8%84%9A%E6%9C%AC%EF%BC%88%E7%9B%B8%E5%9B%BE%E3%80%81%E5%B7%A8%E5%8A%BF%E7%9B%B8%E5%9B%BE%EF%BC%89"><span class="toc-text">1.绘图脚本（相图、巨势相图）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%9B%B8%E5%9B%BE-%E6%96%B0%E7%9A%84"><span class="toc-text">1. 相图-新的</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%BB%A3%E7%A0%81"><span class="toc-text">1.代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%BB%98%E5%88%B6%E4%B8%89%E5%85%83-%E8%B5%9D%E4%B8%89%E5%85%83%E7%9B%B8%E5%9B%BE%E4%BB%A3%E7%A0%81"><span class="toc-text">2. 绘制三元&#x2F;赝三元相图代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%8C%96%E5%90%88%E7%89%A9%E7%9B%B8%E5%9B%BE%E7%9A%84%E8%BE%93%E5%87%BA"><span class="toc-text">3. 化合物相图的输出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-pymatgen%E4%B8%AD%E7%9A%84%E4%BB%A3%E7%A0%81%E7%BB%93%E6%9E%84"><span class="toc-text">4.pymatgen中的代码结构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E5%8C%96%E5%AD%A6%E5%BC%8F%E7%9B%B8%E5%9B%BE"><span class="toc-text">1.化学式相图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E7%9B%B8%E5%9B%BE"><span class="toc-text">2. 相图</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E8%80%81%E7%9A%84%EF%BC%8C%E4%BC%BC%E4%B9%8E%E4%B8%8D%E8%83%BD%E7%94%A8%E4%BA%86-%E4%B8%8D%E8%83%BD%E4%BB%8Ematerials-project%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%AD%E6%8F%90%E5%8F%96%E6%95%B0%E6%8D%AE%E4%BA%86"><span class="toc-text">2. 老的，似乎不能用了 (不能从materials project数据库中提取数据了)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E4%BB%8E%E7%8E%B0%E6%9C%89%E6%95%B0%E6%8D%AE%E7%9A%84-dat%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96%E7%84%B6%E5%90%8E%E7%BB%98%E5%88%B6%E7%9B%B8%E5%9B%BE"><span class="toc-text">3. 从现有数据的.dat文件读取然后绘制相图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%B7%A8%E5%8A%BF%E7%9B%B8%E5%9B%BE"><span class="toc-text">4. 巨势相图</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E7%9B%B8%E5%9B%BE%E8%A7%A3%E9%87%8A-%EF%BC%88%E4%B8%89%E5%85%83%E4%B8%89%E8%A7%92%E3%80%81%E5%9B%9B%E5%85%83%E5%9B%9B%E9%9D%A2%E4%BD%93%EF%BC%89"><span class="toc-text">2. 相图解释 （三元三角、四元四面体）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%9B%B8%E5%9B%BE%E7%9A%84%E7%90%86%E8%A7%A3"><span class="toc-text">1.相图的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%85%B3%E4%BA%8E%E5%88%86%E8%A7%A3"><span class="toc-text">1.关于分解</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E8%AE%A1%E7%AE%97%E5%8C%96%E5%90%88%E7%89%A9%E7%9A%84%E5%88%86%E8%A7%A3"><span class="toc-text">3. 计算化合物的分解</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-%E7%BB%98%E5%88%B6%E7%9B%B8%E5%9B%BE%EF%BC%88%E4%B8%89%E5%85%83%E4%B8%89%E8%A7%92%E3%80%81%E5%9B%9B%E5%85%83%E5%9B%9B%E9%9D%A2%E4%BD%93%EF%BC%89"><span class="toc-text">4.绘制相图（三元三角、四元四面体）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-%E8%AE%A1%E7%AE%97%E5%8F%AF%E8%83%BD%E7%9A%84%E5%90%88%E6%88%90%E8%B7%AF%E5%BE%84"><span class="toc-text">5. 计算可能的合成路径</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-help-Pr-congwei"><span class="toc-text">6. help Pr. congwei</span></a></li></ol></div></p>
+<h1 id="1-绘图脚本（相图、巨势相图）"><a href="#1-绘图脚本（相图、巨势相图）" class="headerlink" title="1.绘图脚本（相图、巨势相图）"></a>1.绘图脚本（相图、巨势相图）</h1><blockquote>
+<p>使用material project数据库中的数据要求赝势和mp数据库一致，如果有磁性要求U值也一致。否则在MaterialsProjectCompatibility() 后会输出为none</p>
+</blockquote>
+<h2 id="1-相图-新的"><a href="#1-相图-新的" class="headerlink" title="1. 相图-新的"></a>1. 相图-新的</h2><h3 id="1-代码"><a href="#1-代码" class="headerlink" title="1.代码"></a>1.代码</h3><p>已经修正能量，注意关掉翻墙软件，需要安装新的API</p>
 <p><a target="_blank" rel="noopener" href="https://docs.materialsproject.org/methodology/materials-methodology/thermodynamic-stability/phase-diagrams-pds">https://docs.materialsproject.org/methodology/materials-methodology/thermodynamic-stability/phase-diagrams-pds</a></p>
 <pre><code class="python">from mp_api.client import MPRester
 from pymatgen.core import composition
@@ -1655,6 +1658,107 @@ latex_equations = read_and_convert(file_path)
 for equation in latex_equations:
     print(equation)
 </code></pre>
+<h1 id="6-help-Pr-congwei"><a href="#6-help-Pr-congwei" class="headerlink" title="6. help Pr. congwei"></a>6. help Pr. congwei</h1><ol>
+<li>画普通相图</li>
+</ol>
+<pre><code class="python">#usage: python pd.py PD.txt
+import pandas as pd
+from pymatgen.core import Composition
+from pymatgen.analysis.phase_diagram import PDEntry, PhaseDiagram, PDPlotter
+import argparse
+
+
+if __name__ == &quot;__main__&quot;:
+    parser = argparse.ArgumentParser(description=&quot;Process phase diagram from input file.&quot;)
+    parser.add_argument(&#39;filename&#39;, type=str, help=&#39;Path to the input file&#39;)
+    args = parser.parse_args()
+    filename = args.filename
+
+colspecs = [
+    (0, 25),    # Name
+    (25, 42),   # Composition
+    (42, 46),   # Sym
+    (46, 61),   # Enthalpy
+    (61, 80),   # Volume
+    (80, 97),  # Density
+    (99, 116), # FormEnthalpy
+    (116, None) # Instability (到最后)
+]
+
+all_data = pd.read_fwf(filename, colspecs=colspecs,header=0)
+
+compositions = all_data[&#39;Composition&#39;]
+enthalpy = all_data[&#39;Enthalpy&#39;]
+
+entries = []
+for i in range(len(compositions)):
+    comp = Composition(compositions[i])
+    total_atoms = comp.num_atoms
+    total_energy = total_atoms * enthalpy[i]
+    entry = PDEntry(comp,total_energy)
+    entries.append(entry)
+
+phase_diagram = PhaseDiagram(entries)
+plotter = PDPlotter(phase_diagram,show_unstable = 1)
+plotter.show()
+#plotter.write_image(&#39;pd.png&#39;, image_format=&#39;png&#39;)
+</code></pre>
+<ol start="2">
+<li><p>画化合物相图</p>
+<pre><code class="python">#usage: python pd.py PD.txt
+import pandas as pd
+from pymatgen.core import Composition
+from pymatgen.analysis.phase_diagram import PDEntry, PhaseDiagram, PDPlotter,CompoundPhaseDiagram
+import argparse
+
+
+if __name__ == &quot;__main__&quot;:
+    parser = argparse.ArgumentParser(description=&quot;Process phase diagram from input file.&quot;)
+    parser.add_argument(&#39;filename&#39;, type=str, help=&#39;Path to the input file&#39;)
+    args = parser.parse_args()
+    filename = args.filename
+
+colspecs = [
+    (0, 25),    # Name
+    (25, 42),   # Composition
+    (42, 46),   # Sym
+    (46, 61),   # Enthalpy
+    (61, 80),   # Volume
+    (80, 97),  # Density
+    (99, 116), # FormEnthalpy
+    (116, None) # Instability (到最后)
+]
+
+all_data = pd.read_fwf(filename, colspecs=colspecs,header=0)
+
+compositions = all_data[&#39;Composition&#39;]
+enthalpy = all_data[&#39;Enthalpy&#39;]
+
+entries = []
+for i in range(len(compositions)):
+    comp = Composition(compositions[i])
+    total_atoms = comp.num_atoms
+    total_energy = total_atoms * enthalpy[i]
+    entry = PDEntry(comp,total_energy)
+    entries.append(entry)
+
+phase_diagram = PhaseDiagram(entries)
+plotter = PDPlotter(phase_diagram,show_unstable = 1)
+#plotter.show()
+plotter.write_image(&#39;pd.png&#39;, image_format=&#39;png&#39;)
+
+aa = Composition(&quot;Li2O&quot;)
+bb = Composition(&quot;B2O3&quot;)
+cc = Composition(&quot;LiF&quot;)
+pd2=CompoundPhaseDiagram(entries,[aa,bb,cc])
+plotterb=PDPlotter(pd2)
+plotterb.write_image(&#39;pd2.png&#39;, image_format=&#39;png&#39;)
+#plotterb.show()
+print(pd2.qhull_data)
+#plotter.write_image(&#39;pd.png&#39;, image_format=&#39;png&#39;)
+</code></pre>
+</li>
+</ol>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源 </span>
