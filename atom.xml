@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-10-25T03:16:17.174Z</updated>
+  <updated>2024-12-16T09:07:02.853Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>资源网站</title>
+    <link href="http://example.com/2024/12/16/%E7%BD%91%E7%AB%99%E6%94%B6%E9%9B%86/%E8%B5%84%E6%BA%90%E7%B1%BB%E7%BD%91%E7%AB%99/"/>
+    <id>http://example.com/2024/12/16/%E7%BD%91%E7%AB%99%E6%94%B6%E9%9B%86/%E8%B5%84%E6%BA%90%E7%B1%BB%E7%BD%91%E7%AB%99/</id>
+    <published>2024-12-16T08:56:28.000Z</published>
+    <updated>2024-12-16T09:07:02.853Z</updated>
+    
+    <content type="html"><![CDATA[<p>[toc]</p><h1 id="1-影视"><a href="#1-影视" class="headerlink" title="1. 影视"></a>1. 影视</h1><ol><li><a href="https://www.jitutv.me/">极兔</a></li></ol><h1 id="2-游戏"><a href="#2-游戏" class="headerlink" title="2. 游戏"></a>2. 游戏</h1><ol><li>[破解游戏论坛 3dm](<a href="https://bbs.3dmgame.com/forum.php">单机游戏_单机游戏下载_3DMGAME_中国单机游戏论坛 - Powered by Discuz!</a>)</li></ol><h1 id="3-节点"><a href="#3-节点" class="headerlink" title="3. 节点"></a>3. 节点</h1><ol><li><p><a href="https://www.spcloud2.cc/dashboard">SPCloud</a></p></li><li><p><a href="https://www.nfsq.us/#/dashboard">农夫山泉</a></p></li><li><p><a href="https://udwt.io/">UDWT.IO</a></p></li><li><p><a href="https://fn1.170203.xyz/#/plan">飞鸟云</a></p></li><li><p><a href="https://hk.freecat.network/console">自由猫</a></p></li><li><p><a href="https://github.com/DiningFactory/panda-vpn-pro">GitHub推荐</a></p></li><li><p><a href="https://pub.riolu.icu/?code=Babz9GDg">RioLU.443</a></p></li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;[toc]&lt;/p&gt;
+&lt;h1 id=&quot;1-影视&quot;&gt;&lt;a href=&quot;#1-影视&quot; class=&quot;headerlink&quot; title=&quot;1. 影视&quot;&gt;&lt;/a&gt;1. 影视&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.jitutv.me/&quot;&gt;极兔&lt;/a&gt;&lt;/</summary>
+      
+    
+    
+    
+    <category term="网站收集" scheme="http://example.com/categories/%E7%BD%91%E7%AB%99%E6%94%B6%E9%9B%86/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>git使用</title>
@@ -288,9 +312,9 @@ from pymatgen.io.vasp.inputs</summary>
     <link href="http://example.com/2024/05/30/%E7%BD%91%E7%AB%99%E6%94%B6%E9%9B%86/%E5%B7%A5%E5%85%B7%E7%B1%BB%E7%BD%91%E7%AB%99/"/>
     <id>http://example.com/2024/05/30/%E7%BD%91%E7%AB%99%E6%94%B6%E9%9B%86/%E5%B7%A5%E5%85%B7%E7%B1%BB%E7%BD%91%E7%AB%99/</id>
     <published>2024-05-30T13:49:59.000Z</published>
-    <updated>2024-09-29T11:41:42.644Z</updated>
+    <updated>2024-12-16T09:06:32.313Z</updated>
     
-    <content type="html"><![CDATA[<p>[toc]</p><h1 id="1-工具网站"><a href="#1-工具网站" class="headerlink" title="1. 工具网站"></a>1. 工具网站</h1><ol><li>查询配色表</li></ol><p><a href="https://www.rocschool.com/tool/colorquery/">Color颜色值查询、RGB颜色值、html网页颜色代码在线查询 (rocschool.com)</a></p><ol start="2"><li>数学公式绘制</li></ol><p><a href="https://zh.numberempire.com/graphingcalculator.php?functions=log(x),sqrt(x),sin(x),1/x,x%5E2&xmin=0&xmax=3&ymin=-1.0&ymax=1.0&var=x">函数图像绘制工具 (numberempire.com)</a></p><p><a href="https://www.desmos.com/calculator?lang=zh-CN">Desmos | 图形计算器</a></p><ol start="3"><li><a href="https://www.52pojie.cn/forum.php">吾爱破解</a></li></ol><h1 id="2-游戏网站"><a href="#2-游戏网站" class="headerlink" title="2. 游戏网站"></a>2. 游戏网站</h1><ol><li>[破解游戏论坛 3dm](<a href="https://bbs.3dmgame.com/forum.php">单机游戏_单机游戏下载_3DMGAME_中国单机游戏论坛 - Powered by Discuz!</a>)</li></ol>]]></content>
+    <content type="html"><![CDATA[<p>[toc]</p><h1 id="1-工具网站"><a href="#1-工具网站" class="headerlink" title="1. 工具网站"></a>1. 工具网站</h1><ol><li>查询配色表</li></ol><p><a href="https://www.rocschool.com/tool/colorquery/">Color颜色值查询、RGB颜色值、html网页颜色代码在线查询 (rocschool.com)</a></p><ol start="2"><li>数学公式绘制</li></ol><p><a href="https://zh.numberempire.com/graphingcalculator.php?functions=log(x),sqrt(x),sin(x),1/x,x%5E2&xmin=0&xmax=3&ymin=-1.0&ymax=1.0&var=x">函数图像绘制工具 (numberempire.com)</a></p><p><a href="https://www.desmos.com/calculator?lang=zh-CN">Desmos | 图形计算器</a></p><ol start="3"><li><a href="https://www.52pojie.cn/forum.php">吾爱破解</a></li></ol>]]></content>
     
     
       
@@ -472,31 +496,6 @@ from pymatgen.io.vasp.inputs</summary>
     
     
     <category term="linux学习使用" scheme="http://example.com/categories/linux%E5%AD%A6%E4%B9%A0%E4%BD%BF%E7%94%A8/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>高通量筛选结构</title>
-    <link href="http://example.com/2024/05/25/%E6%A8%A1%E6%8B%9F%E6%96%B9%E6%B3%95/%E9%AB%98%E9%80%9A%E9%87%8F%E7%AD%9B%E9%80%89%E7%BB%93%E6%9E%84/"/>
-    <id>http://example.com/2024/05/25/%E6%A8%A1%E6%8B%9F%E6%96%B9%E6%B3%95/%E9%AB%98%E9%80%9A%E9%87%8F%E7%AD%9B%E9%80%89%E7%BB%93%E6%9E%84/</id>
-    <published>2024-05-25T14:01:20.386Z</published>
-    <updated>2024-05-25T11:59:51.971Z</updated>
-    
-    <content type="html"><![CDATA[<p>[toc]</p><pre><code class="python">from pymatgen.ext.matproj import MPRestera = MPRester(&#39;1agzMpqyTNkIiTUX&#39;)structure = a.get_structure_by_material_id(&quot;mp-1234&quot;)print(structure)a.get_database_version()#data = a.query(criteria=&#123;&quot;pretty_formula&quot;: &quot;Li2O&quot;&#125;, properties=[&quot;spacegroup.symbol&quot;])#data = a.query(criteria=&#123;&quot;pretty_formula&quot;: &quot;Li2O&quot;&#125;, properties=[&quot;icsd_ids&quot;])data = a.query(criteria=&#123;&quot;pretty_formula&quot;: &quot;Li2O&quot;&#125;, properties=[&quot;material_id&quot;])data = a.query(criteria=&#123;&quot;pretty_formula&quot;: &quot;Li2O&quot;&#125;, properties=[&quot;band_gap&quot;,&quot;structure&quot;])data = a.query(&#39;Li-O&#39;,properties=[&quot;band_gap&quot;,&quot;material_id&quot;&quot;cif&quot;])) #获取Li-O体系所有化合物和iddata = a.query(&#39;Li-O-*-*&#39;,properties=[&quot;formula&quot;,&quot;material_id&quot;,&quot;band_gap&quot;])#获取所有四元Li-O化合物data = a.query(&#123;&quot;elements&quot;:&#123;&quot;$in&quot;:[&quot;Na&quot;], &quot;$all&quot;: [&quot;O&quot;]&#125;, &quot;nelements&quot;:4, &quot;band_gap&quot;: &#123;&quot;$gt&quot;: 2&#125;, &quot;e_above_hull&quot;: &#123;&quot;$lt&quot;: 0.1&#125;&#125;,properties=[&quot;formula&quot;,&quot;material_id&quot;,])#带隙&gt;2的所有Na-O四元素化合物print(len(data))#data = &#123;     &#39;criteria&#39;: &#123;          &#39;elements&#39;: &#123;&#39;$in&#39;: [&#39;Li&#39;], &#39;$all&#39;: [&#39;O&#39;]&#125;,          &#39;nelements&#39;: 4,      &#125;,      &#39;properties&#39;: [        &#39;formula&#39;,        &#39;material_id&#39;,      ]   &#125;#r = requests.post(&#39;https://materialsproject.org/rest/v2/query&#39;,#   headers=&#123;&#39;X-API-KEY&#39;: &#39;1agzMpqyTNkIiTUX&#39;&#125;,#   data=&#123;k: json.dumps(v) for k,v in data.items()&#125;)#response_content = r.json()#print(response_content[&#39;num_results&#39;])#stable_mpids = [doc.material_id for doc in docs]print(m.get_data(&quot;Li2O&quot;, prop=&quot;structure&quot;))for abc in data:    print(abc.values())#    print(abc[&#39;formula&#39;])valulist=[abc.values() for abc in data]valulist = [abc[&#39;material_id&#39;] for abc in data]valulist = [abc[&#39;formula&#39;].keys() for abc in data]#列表每个元素是一个字典，包含两个键，第一个键的值又是一个字典，包含四个键 #把第一个键的值的键作为列表peibi = [list(abc[&#39;formula&#39;].keys()) for abc in data] #把第一个键的值的键作为列表id  = [abc[&#39;material_id&#39;] for abc in data] pidic = dict(zip(id,peibi))#new1pidic=&#123;ka : va for ka, va in pidic.items() if &#39;H&#39; not in va&#125;#new1pidic2=&#123;ka : va for ka, va in pidic.items() if &#39;H&#39; in va&#125;nothopeelement=[&#39;V&#39;, &#39;Cr&#39;, &#39;Mn&#39;, &#39;Fe&#39;, &#39;Co&#39;, &#39;Ni&#39;, &#39;Cu&#39;, &#39;H&#39;, &#39;S&#39;,&#39;F&#39;,&#39;Cl&#39;,&#39;Br&#39;,&#39;I&#39;,&#39;N&#39;, &#39;Li&#39;, &#39;K&#39;, &#39;Ac&#39;, &#39;Th&#39;, &#39;U&#39;,&#39;Pa&#39;, &#39;Np&#39;, &#39;Pu&#39;, &#39;Am&#39;, &#39;Cm&#39;, &#39;Bk&#39;, &#39;Cf&#39;, &#39;Es&#39;, &#39;Fm&#39;, &#39;Md&#39;, &#39;No&#39;, &#39;Lr&#39;, &#39;Fr&#39;, &#39;Po&#39;, &#39;At&#39;, &#39;Rn&#39;, &#39;Tc&#39;,&#39;Ra&#39;,&#39;As&#39;,&#39;Hg&#39;,&#39;Be&#39;,&#39;Tl&#39;]newpidic=&#123;ka : va for ka, va in pidic.items() if not any (ha in va for ha in nothopeelement)&#125;#newpidic2=&#123;ka : va for ka, va in pidic.items() if any (ha in va for ha in nothopeelement)&#125;print(newpidic.values())id2=list(newpidic.keys())for ha in id2:    print(ha)    structure = a.get_structure_by_material_id(ha)    speciesna=[Element(&#39;Na&#39;)]    stripped = structure.copy()    stripped.remove_species(speciesna)    stripped = stripped.get_sorted_structure(reverse=True)    Vasp_Str = Poscar(stripped)    Vasp_Str.write_file(&#39;%s.vasp&#39;%ha)     #去除结构中的某一元素structure = a.get_structure_by_material_id(&quot;mp-6150&quot;)speciesna=[Element(&#39;Na&#39;)]stripped = struct.copy()stripped.remove_species(speciesna)stripped = stripped.get_sorted_structure(reverse=True)</code></pre>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;[toc]&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;from pymatgen.ext.matproj import MPRester
-a = MPRester(&amp;#39;1agzMpqyTNkIiTUX&amp;#39;)
-structure = a.get_</summary>
-      
-    
-    
-    
-    <category term="模拟方法" scheme="http://example.com/categories/%E6%A8%A1%E6%8B%9F%E6%96%B9%E6%B3%95/"/>
     
     
   </entry>
