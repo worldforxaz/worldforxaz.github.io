@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2025-01-07T00:45:23.403Z</updated>
+  <updated>2025-01-09T06:16:48.803Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>其他普通课题</title>
+    <link href="http://example.com/2025/01/09/6-%E8%AF%BE%E9%A2%98%E7%A0%94%E7%A9%B6/%E5%85%B6%E4%BB%96%E6%99%AE%E9%80%9A%E8%AF%BE%E9%A2%98/"/>
+    <id>http://example.com/2025/01/09/6-%E8%AF%BE%E9%A2%98%E7%A0%94%E7%A9%B6/%E5%85%B6%E4%BB%96%E6%99%AE%E9%80%9A%E8%AF%BE%E9%A2%98/</id>
+    <published>2025-01-09T06:10:02.000Z</published>
+    <updated>2025-01-09T06:16:48.803Z</updated>
+    
+    <content type="html"><![CDATA[<p>[toc]</p><h1 id="1-不做大模型，分别训练单个小模型，也不苛求跑大胞"><a href="#1-不做大模型，分别训练单个小模型，也不苛求跑大胞" class="headerlink" title="1. 不做大模型，分别训练单个小模型，也不苛求跑大胞"></a>1. 不做大模型，分别训练单个小模型，也不苛求跑大胞</h1><h1 id="2-做个掺杂，类似K3SbS4的工作"><a href="#2-做个掺杂，类似K3SbS4的工作" class="headerlink" title="2. 做个掺杂，类似K3SbS4的工作"></a>2. 做个掺杂，类似K3SbS4的工作</h1><h1 id="3-不要想着发大文章，毕业要紧"><a href="#3-不要想着发大文章，毕业要紧" class="headerlink" title="3. 不要想着发大文章，毕业要紧"></a>3. 不要想着发大文章，毕业要紧</h1><h1 id="4-一定要主导自己的课题"><a href="#4-一定要主导自己的课题" class="headerlink" title="4. 一定要主导自己的课题"></a>4. 一定要主导自己的课题</h1><h1 id="5-定个小目标，过年前还有半个月，把势训练完成"><a href="#5-定个小目标，过年前还有半个月，把势训练完成" class="headerlink" title="5.定个小目标，过年前还有半个月，把势训练完成"></a>5.定个小目标，过年前还有半个月，把势训练完成</h1>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;[toc]&lt;/p&gt;
+&lt;h1 id=&quot;1-不做大模型，分别训练单个小模型，也不苛求跑大胞&quot;&gt;&lt;a href=&quot;#1-不做大模型，分别训练单个小模型，也不苛求跑大胞&quot; class=&quot;headerlink&quot; title=&quot;1. 不做大模型，分别训练单个小模型，也不苛求跑大胞&quot;&gt;&lt;</summary>
+      
+    
+    
+    
+    <category term="课题研究" scheme="http://example.com/categories/%E8%AF%BE%E9%A2%98%E7%A0%94%E7%A9%B6/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>镶嵌图形</title>
@@ -467,30 +490,6 @@ from pymatgen.io.vasp.inputs</summary>
     
     
     <category term="绘图与写作" scheme="http://example.com/categories/%E7%BB%98%E5%9B%BE%E4%B8%8E%E5%86%99%E4%BD%9C/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>slurm系统</title>
-    <link href="http://example.com/2024/05/27/5-linux%E5%AD%A6%E4%B9%A0%E4%BD%BF%E7%94%A8/slurm%E7%B3%BB%E7%BB%9F/"/>
-    <id>http://example.com/2024/05/27/5-linux%E5%AD%A6%E4%B9%A0%E4%BD%BF%E7%94%A8/slurm%E7%B3%BB%E7%BB%9F/</id>
-    <published>2024-05-27T08:36:48.000Z</published>
-    <updated>2024-10-03T03:43:09.778Z</updated>
-    
-    <content type="html"><![CDATA[<p>[toc]</p><h1 id="1-关于slurm系统"><a href="#1-关于slurm系统" class="headerlink" title="1.关于slurm系统"></a>1.关于slurm系统</h1><ol><li><strong>指定节点提任务 ：<code>#SBATCH  --nodelist=c1405</code></strong></li><li><strong>杀残余进程   <code>killall -9 vasp_std   killall -9 vasp_gam</code></strong></li></ol><h1 id="2-slurm系统的sq命令"><a href="#2-slurm系统的sq命令" class="headerlink" title="2. slurm系统的sq命令"></a>2. slurm系统的sq命令</h1><pre><code class="shell">#!/bin/bash# A simple wrapper for squeue, requires bash 4.0+# by Junhao Li@TCBUSAGE()&#123;echoecho &quot;available arguments: &quot;echo &quot;   -h | --help             print the help information&quot;echo &quot;   -P | --show_partition   number (optional, default is 10)&quot;echo &quot;   -j | --job_length       number (optional, default is 20)&quot;echo &quot;   -p | --workidng_dir     number (optional, default is a full path)&quot;echo &quot;   -a | --show_account     number (optional, default is 15)&quot;echo &quot;   -A | --tcb_users&quot;echo &quot;    *                      other arguments pass to squeue&quot;echo&#125;resize &gt;&amp; /dev/null[[ -z $1 ]] &amp;&amp; squeue -u $USER -o &#39; %10i %15a %20j %8u %3t %10M %10l %4D%5C %20V %Z&#39; &amp;&amp; exit 0squeueArgs=()TCBUserList=&quot;lilu,user2,user3,user4&quot; # replace the username herewhile [[ $# -gt 0 ]]; do    case $1 in     -P | --show_partition)    showPartition=&quot;%10P&quot;    [[ &quot;$2&quot; -gt 0 ]] &amp;&amp; showPartition=&quot;%$&#123;2&#125;P&quot; &amp;&amp; shift 2 || shift 1    ;;    -U | --User_list) #user1,user2,.. or user1    if [[ -z $showTCBUsers ]]; then        if [[ &quot;$2&quot; -gt 0 ]]; then            userList=&quot;-u $&#123;2&#125;&quot;            shift 2        else            echo &quot;Warning: please give user after -u&quot;            shift 1        fi    else        echo &quot;-u could not be used with -A!&quot;        exit 1    fi        ;;    -j | --job_length)    [[ &quot;$2&quot; -gt 0 ]] &amp;&amp; jobLength=&quot;%$&#123;2&#125;j&quot; || echo &quot;Warning: please give number after -j&quot;    shift 2    ;;    -p | -wd | --working_dir)    showWorkingDir=&quot;%Z&quot;    [[ &quot;$2&quot; -gt 0 ]] &amp;&amp; showWorkingDir=&quot;%$&#123;2&#125;Z&quot; &amp;&amp; shift 2 || shift 1    ;;    -a | --show_account)    showAccount=&quot;%15a&quot;    [[ &quot;$2&quot; -gt 0 ]] &amp;&amp; showAccount=&quot;%$&#123;2&#125;a&quot; &amp;&amp; shift 2 || shift 1    ;;    -A | --tcb_users)    if [[ ! -z userList ]]; then        showTCBUsers=&quot;-u $TCBUserList&quot;     shift 1    else        echo &quot;-A could not be used with -u!&quot;        exit 1    fi    ;;    -s | --star | --start)    showStartTime=&quot;--start&quot;    shift 1    ;;    -aAp | -apA | -Aap | -Apa | -paA | -pAa)    showAccount=&quot;%15a&quot;    showTCBUsers=&quot;-u $TCBUserList&quot;    showWorkingDir=&quot;%Z&quot;    shift 1    ;;    -h | --help)    USAGE    exit 0    ;;    *) # Other argurement pass to squeue!    squeueArgs=($&#123;squeueArgs[*]&#125; $1)    shift 1    ;;    esacdone[[ -z $jobLength ]] &amp;&amp; jobLength=&quot;%20j&quot;#if [[ -z $userList ]] &amp;&amp; [[ -z $showTCBUsers ]]; then#    userToShow=&quot;-u $USER&quot;#elif [[ ! -z $userList ]]; then#    userToShow=$userList#elif [[ ! -z $showTCBUsers ]]; then#    userToShow=$showTCBUsers#fiformat=$(echo &quot; %10i $showPartition $showAccount $jobLength %8u %3t %10M %10l %4D%5C %20V $showWorkingDir&quot;)squeue $userToShow -o &quot;$format&quot; $showStartTime $&#123;squeueArgs[@]&#125;</code></pre><h1 id="3-array-任务-限制同时运行的任务总数"><a href="#3-array-任务-限制同时运行的任务总数" class="headerlink" title="3. array 任务 限制同时运行的任务总数"></a>3. array 任务 限制同时运行的任务总数</h1><pre><code class="shell#SBATCH">#SBATCH --array=1-100%10</code></pre><p><code>1-100</code> 指定了任务数组的范围，即从 1 到 100 的任务。</p><p><code>%10</code> 限制了同时运行的任务数为 10</p><p><strong>–array的数字范围只能在0-1001 ，1001是最大值</strong></p><p>–array是重复提交固定次数，运行标头下面的内容，然后可以做一些限制</p><pre><code class="shell">#!/bin/sh#SBATCH  --job-name=scf#SBATCH  --output=log.out.%A_%a#SBATCH  --error=log.err.%A_%a#SBATCH  --partition=intel6240r_192#SBATCH  --nodes=1#SBATCH  --ntasks=48#SBATCH  --ntasks-per-node=48#SBATCH  --array=0-1000%15#SBATCH  --cpus-per-task=1#SBATCH  --exclusivedir=$((SLURM_ARRAY_TASK_ID + 1000))cd $dir || &#123; echo &quot;Failed to enter directory $dir&quot;; exit 1; &#125;source /work/env/intel2018srun hostname | sort | uniq &gt;&gt; /tmp/nodefile.$$NP=`srun hostname | wc -l`mpirun -genv I_MPI_FABRICS shm:tcp -machinefile /tmp/nodefile.$$ -n $NP /work/software/vasp.6.1.0/vasp_std  &gt; vasp.log 2&gt;&amp;1#mpirun -genv I_MPI_FABRICS shm:ofa -machinefile /tmp/nodefile.$$ -n $NP /work/software/vasp.6.1.0/vasp_std  &gt; vasp.log 2&gt;&amp;1  rm -rf /tmp/nodefile.$$</code></pre><h1 id="4-给每个文件分配一个文件夹"><a href="#4-给每个文件分配一个文件夹" class="headerlink" title="4. 给每个文件分配一个文件夹"></a>4. 给每个文件分配一个文件夹</h1><pre><code class="shell">#!/bin/bash# 初始化计数器counter=0# 获取当前目录下的所有文件for file in *; do    # 检查是否是文件（排除目录）    if [ -f &quot;$file&quot; ]; then        # 使用计数器作为文件夹名        foldername=&quot;$counter&quot;                # 创建文件夹，以计数器命名        mkdir -p &quot;$foldername&quot;                # 移动文件到对应的文件夹        mv &quot;$file&quot; &quot;$foldername/&quot;                # 递增计数器        counter=$((counter + 1))    fidone</code></pre>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;[toc]&lt;/p&gt;
-&lt;h1 id=&quot;1-关于slurm系统&quot;&gt;&lt;a href=&quot;#1-关于slurm系统&quot; class=&quot;headerlink&quot; title=&quot;1.关于slurm系统&quot;&gt;&lt;/a&gt;1.关于slurm系统&lt;/h1&gt;&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;指定节点提任务</summary>
-      
-    
-    
-    
-    <category term="linux学习使用" scheme="http://example.com/categories/linux%E5%AD%A6%E4%B9%A0%E4%BD%BF%E7%94%A8/"/>
     
     
   </entry>
