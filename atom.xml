@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2025-01-09T06:16:48.803Z</updated>
+  <updated>2025-01-21T13:28:23.773Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,13 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>其他普通课题</title>
-    <link href="http://example.com/2025/01/09/6-%E8%AF%BE%E9%A2%98%E7%A0%94%E7%A9%B6/%E5%85%B6%E4%BB%96%E6%99%AE%E9%80%9A%E8%AF%BE%E9%A2%98/"/>
-    <id>http://example.com/2025/01/09/6-%E8%AF%BE%E9%A2%98%E7%A0%94%E7%A9%B6/%E5%85%B6%E4%BB%96%E6%99%AE%E9%80%9A%E8%AF%BE%E9%A2%98/</id>
-    <published>2025-01-09T06:10:02.000Z</published>
-    <updated>2025-01-09T06:16:48.803Z</updated>
+    <title>大模型</title>
+    <link href="http://example.com/2025/01/21/4-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E5%A4%A7%E6%A8%A1%E5%9E%8B/"/>
+    <id>http://example.com/2025/01/21/4-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E5%A4%A7%E6%A8%A1%E5%9E%8B/</id>
+    <published>2025-01-21T13:22:55.000Z</published>
+    <updated>2025-01-21T13:28:23.773Z</updated>
     
-    <content type="html"><![CDATA[<p>[toc]</p><h1 id="1-不做大模型，分别训练单个小模型，也不苛求跑大胞"><a href="#1-不做大模型，分别训练单个小模型，也不苛求跑大胞" class="headerlink" title="1. 不做大模型，分别训练单个小模型，也不苛求跑大胞"></a>1. 不做大模型，分别训练单个小模型，也不苛求跑大胞</h1><h1 id="2-做个掺杂，类似K3SbS4的工作"><a href="#2-做个掺杂，类似K3SbS4的工作" class="headerlink" title="2. 做个掺杂，类似K3SbS4的工作"></a>2. 做个掺杂，类似K3SbS4的工作</h1><h1 id="3-不要想着发大文章，毕业要紧"><a href="#3-不要想着发大文章，毕业要紧" class="headerlink" title="3. 不要想着发大文章，毕业要紧"></a>3. 不要想着发大文章，毕业要紧</h1><h1 id="4-一定要主导自己的课题"><a href="#4-一定要主导自己的课题" class="headerlink" title="4. 一定要主导自己的课题"></a>4. 一定要主导自己的课题</h1><h1 id="5-定个小目标，过年前还有半个月，把势训练完成"><a href="#5-定个小目标，过年前还有半个月，把势训练完成" class="headerlink" title="5.定个小目标，过年前还有半个月，把势训练完成"></a>5.定个小目标，过年前还有半个月，把势训练完成</h1>]]></content>
+    <content type="html"><![CDATA[<p>[toc]</p><h1 id="1-原子大模型排名"><a href="#1-原子大模型排名" class="headerlink" title="1. 原子大模型排名"></a>1. 原子大模型排名</h1><p><a href="https://matbench-discovery.materialsproject.org/">https://matbench-discovery.materialsproject.org/</a></p><h1 id="2-使用ASE结合mattersim进行结构优化、分子动力学"><a href="#2-使用ASE结合mattersim进行结构优化、分子动力学" class="headerlink" title="2. 使用ASE结合mattersim进行结构优化、分子动力学"></a>2. 使用ASE结合mattersim进行结构优化、分子动力学</h1><p>from wangq</p><pre><code class="python">from mattersim.applications.moldyn import MolecularDynamicsfrom ase.io import read, writefrom mattersim.forcefield import MatterSimCalculatorfrom mattersim.applications.relax import Relaxerimport numpy as np# calc = MatterSimCalculator(device=&#39;cuda&#39;)calc = MatterSimCalculator(load_path=&quot;MatterSim-v1.0.0-5M.pth&quot;, device=&#39;cuda:2&#39;)#默认是1M参数大模型，下面的是5M的relaxer = Relaxer(    optimizer=&quot;BFGS&quot;, # the optimization method FIRE, BFGS    filter=None, # filter to apply to the cell    constrain_symmetry=True, # whether to constrain the symmetry)atoms = read(&quot;SPOSCAR&quot;,format=&#39;vasp&#39;)atoms.calc = calcconverged, relaxed_structure = relaxer.relax_structures(atoms,optimizer=&quot;FIRE&quot;, # the optimization method FIRE, BFGS    filter=None,     constrain_symmetry=True, fmax=0.1 )# # 获取晶胞矩阵# cell =   relaxed_structure.get_cell()# # 尝试使用 Cholesky 分解将晶胞矩阵转换为上三角矩阵# try:#     # 确保晶胞矩阵是正定的#     upper_triangular = np.linalg.cholesky(cell.dot(cell.T)).T# except np.linalg.LinAlgError:#     # 如果 Cholesky 分解失败，使用 QR 分解#     _, upper_triangular = np.linalg.qr(cell)# # 更新   relaxed_structure 对象的晶胞矩阵# relaxed_structure.set_cell(upper_triangular, scale_atoms=True)relaxed_structure.calc = calcensemble = &quot;NVT_BERENDSEN&quot;temperature = 1000timestep = 1.0taut = 100trajectory = &quot;atoms.traj&quot;logfile = &quot;atoms.log&quot;nvt_runner = MolecularDynamics(atoms=relaxed_structure, ensemble=ensemble, temperature=temperature, timestep=timestep, taut=taut, trajectory=trajectory, logfile = logfile)nvt_runner.run(1000000)</code></pre><h1 id="3-转换ase轨迹"><a href="#3-转换ase轨迹" class="headerlink" title="3. 转换ase轨迹"></a>3. 转换ase轨迹</h1><p>使用ase自带的方法</p><p><code>ase convert --input-format traj --output-format vasp-xdatcar atoms.traj XDATCAR</code></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;[toc]&lt;/p&gt;
+&lt;h1 id=&quot;1-原子大模型排名&quot;&gt;&lt;a href=&quot;#1-原子大模型排名&quot; class=&quot;headerlink&quot; title=&quot;1. 原子大模型排名&quot;&gt;&lt;/a&gt;1. 原子大模型排名&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://matbench-d</summary>
+      
+    
+    
+    
+    <category term="机器学习" scheme="http://example.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>一些课题</title>
+    <link href="http://example.com/2025/01/09/6-%E8%AF%BE%E9%A2%98%E7%A0%94%E7%A9%B6/%E4%B8%80%E4%BA%9B%E8%AF%BE%E9%A2%98/"/>
+    <id>http://example.com/2025/01/09/6-%E8%AF%BE%E9%A2%98%E7%A0%94%E7%A9%B6/%E4%B8%80%E4%BA%9B%E8%AF%BE%E9%A2%98/</id>
+    <published>2025-01-09T06:10:02.000Z</published>
+    <updated>2025-01-21T09:26:01.414Z</updated>
+    
+    <content type="html"><![CDATA[<p>[toc]</p><h1 id="1-不做大模型，分别训练单个小模型，也不苛求跑大胞"><a href="#1-不做大模型，分别训练单个小模型，也不苛求跑大胞" class="headerlink" title="1. 不做大模型，分别训练单个小模型，也不苛求跑大胞"></a>1. 不做大模型，分别训练单个小模型，也不苛求跑大胞</h1><h1 id="2-做个掺杂，类似K3SbS4的工作"><a href="#2-做个掺杂，类似K3SbS4的工作" class="headerlink" title="2. 做个掺杂，类似K3SbS4的工作"></a>2. 做个掺杂，类似K3SbS4的工作</h1><h1 id="3-不要想着发大文章，毕业要紧"><a href="#3-不要想着发大文章，毕业要紧" class="headerlink" title="3. 不要想着发大文章，毕业要紧"></a>3. 不要想着发大文章，毕业要紧</h1><h1 id="4-一定要主导自己的课题"><a href="#4-一定要主导自己的课题" class="headerlink" title="4. 一定要主导自己的课题"></a>4. 一定要主导自己的课题</h1><h1 id="5-定个小目标，过年前还有半个月，把势训练完成"><a href="#5-定个小目标，过年前还有半个月，把势训练完成" class="headerlink" title="5.定个小目标，过年前还有半个月，把势训练完成"></a>5.定个小目标，过年前还有半个月，把势训练完成</h1><h1 id="6-使用通用大模型-小模型来做一个数据库筛选"><a href="#6-使用通用大模型-小模型来做一个数据库筛选" class="headerlink" title="6. 使用通用大模型+小模型来做一个数据库筛选"></a>6. 使用通用大模型+小模型来做一个数据库筛选</h1><p>大模型可以直接筛选ICSD了，那些分数占据的结构！！以前没有人做过</p><h1 id="7-对高压、焓熵关系、元素替换、晶格振动、化学预压缩概念的统一"><a href="#7-对高压、焓熵关系、元素替换、晶格振动、化学预压缩概念的统一" class="headerlink" title="7. 对高压、焓熵关系、元素替换、晶格振动、化学预压缩概念的统一"></a>7. 对高压、焓熵关系、元素替换、晶格振动、化学预压缩概念的统一</h1><h1 id="8-用多占位法得到多个势的222结果。大模型现在可以跑222-dp不知道行不行"><a href="#8-用多占位法得到多个势的222结果。大模型现在可以跑222-dp不知道行不行" class="headerlink" title="8. 用多占位法得到多个势的222结果。大模型现在可以跑222 dp不知道行不行"></a>8. 用多占位法得到多个势的222结果。大模型现在可以跑222 dp不知道行不行</h1>]]></content>
     
     
       
@@ -106,9 +129,9 @@
     <link href="http://example.com/2024/12/16/9-%E7%BD%91%E7%AB%99%E6%94%B6%E9%9B%86/%E8%B5%84%E6%BA%90%E7%BD%91%E7%AB%99/"/>
     <id>http://example.com/2024/12/16/9-%E7%BD%91%E7%AB%99%E6%94%B6%E9%9B%86/%E8%B5%84%E6%BA%90%E7%BD%91%E7%AB%99/</id>
     <published>2024-12-16T08:56:28.000Z</published>
-    <updated>2025-01-17T01:30:29.295Z</updated>
+    <updated>2025-01-21T02:11:25.430Z</updated>
     
-    <content type="html"><![CDATA[<p>[toc]</p><h1 id="1-影视"><a href="#1-影视" class="headerlink" title="1. 影视"></a>1. 影视</h1><ol><li><a href="https://www.jitutv.me/">极兔</a></li><li><a href="https://www.netflixgc.com/">奈飞工厂</a></li></ol><h1 id="2-音乐"><a href="#2-音乐" class="headerlink" title="2. 音乐"></a>2. 音乐</h1><ol><li><p><a href="https://www.hifini.com/">HiFiNi - 音乐磁场</a></p></li><li><p><a href="https://xiageba.com/">下歌吧 </a></p></li></ol><h1 id="3-游戏"><a href="#3-游戏" class="headerlink" title="3. 游戏"></a>3. 游戏</h1><ol><li><a href="https://bbs.3dmgame.com/forum.php">破解游戏论坛 3dm</a></li></ol><h1 id="4-聚合站"><a href="#4-聚合站" class="headerlink" title="4. 聚合站"></a>4. 聚合站</h1><ol><li><p><a href="https://www.ysa.cc/">伊萨书签</a></p></li><li><p><a href="https://link3.cc/galijun">咖喱君的资源库</a></p></li><li><p><a href="https://www.xygalaxy.com/">星云导航</a></p></li><li><p><a href="https://heeee.com/">资源导航</a></p></li><li><p><a href="https://axutongxue.com/">阿虚同学的储物间</a></p></li><li><p><a href="https://xydh.fun/">iLinks (高级)</a></p></li><li><p><a href="https://www.chongbuluo.com/thread-7961-1-1.html">虫部落 小众网站合集</a></p></li><li></li></ol><h1 id="7-pt站"><a href="#7-pt站" class="headerlink" title="7. pt站"></a>7. pt站</h1><blockquote><p> <a href="https://iecho.cc/2019/01/09/PT-%E4%B8%8B%E8%BD%BD%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%BB%E8%80%81/">PT 下载从入门到养老篇一：站点介绍及生存指南 | 回声</a></p><p> <a href="https://wiki.ukenn.top/pt-bt-zhong-jing-chang-jian-dao-de-ci-hui">PT &amp; BT 中经常见到的词汇 | Private Tracker Wiki</a></p><p> <a href="https://post.smzdm.com/p/aqm8opw7/">玩转PT之PT-Plugin-Plus（PT助手)</a> (<a href="https://github.com/pt-plugins/PT-Plugin-Plus/releases/tag/v1.6.1.2780">https://github.com/pt-plugins/PT-Plugin-Plus/releases/tag/v1.6.1.2780</a>)</p><p> <a href="https://wiki.scio.icu/index.php/%E5%86%B3%E5%AE%9A%E8%B8%8F%E5%85%A5PT%E5%89%8D%E4%BD%A0%E5%BA%94%E8%AF%A5%E7%9F%A5%E9%81%93%E7%9A%84%E4%BA%8B%E6%83%85">决定踏入PT前你应该知道的事情</a></p><p> <a href="http://www.ptyqm.com/category/kfyqzc/">开放注册 | PT邀请码网</a></p><p> <a href="https://www.those.cc/652.html">pt 博客</a></p></blockquote><ol><li><a href="https://ptcafe.club/login.php">咖啡pt</a></li><li><a href="https://www.pttime.org/login.php">PTT </a></li><li><a href="https://ptlgs.org/login.php">PTLGS</a></li><li><a href="https://rousi.zip/login.php">Rousi</a></li><li><a href="https://www.icc2022.com/login.php">ICC冰淇淋 </a></li><li><a href="https://ptzone.xyz/login.php">PTzone </a></li><li><a href="https://ptfans.cc/login.php">PTFans</a></li><li><a href="https://1ptba.com/login.php">1PTBA</a></li><li><a href="https://cyanbug.net/login.php">大青虫</a></li><li><a href="https://lemonhd.club/login.php">LemonHD</a></li><li><a href="https://fsm.name/Users/login">FSM 无iyuu</a></li><li><a href="https://raingfh.top/login.php">雨</a></li><li><a href="https://pt.btschool.club/index.php">比特校园 学校</a></li><li><a href="https://52pt.site/index.php">52PT </a></li><li><a href="https://ptchina.org/index.php">铂金学院 </a></li><li><a href="https://www.nicept.net/login.php">NicePT 无iyuu</a></li><li><a href="https://discfan.net/torrents.php">DiscFan碟粉</a></li><li><a href="https://www.gamegamept.com/index.php">GGPT 无iyuu </a></li><li><a href="https://kp.m-team.cc/index">M-Team馒头</a></li><li><a href="https://carpt.net/torrents.php">CarPT 车站</a></li><li><a href="https://kufei.org/torrents.php">库非 </a></li><li><a href="https://hdtime.org/index.php">HDTIME</a></li><li><a href="https://ptlover.cc/ok.php?type=confirm">AFUN</a></li></ol><p>外站：</p><ol><li><a href="https://lusthive.org/">LustHive</a></li><li><a href="https://seedpool.org/login">seedpool</a></li></ol>]]></content>
+    <content type="html"><![CDATA[<p>[toc]</p><h1 id="1-影视"><a href="#1-影视" class="headerlink" title="1. 影视"></a>1. 影视</h1><ol><li><a href="https://www.jitutv.me/">极兔</a></li><li><a href="https://www.netflixgc.com/">奈飞工厂</a></li></ol><h1 id="2-音乐"><a href="#2-音乐" class="headerlink" title="2. 音乐"></a>2. 音乐</h1><ol><li><p><a href="https://www.hifini.com/">HiFiNi - 音乐磁场</a></p></li><li><p><a href="https://xiageba.com/">下歌吧 </a></p></li></ol><h1 id="3-游戏"><a href="#3-游戏" class="headerlink" title="3. 游戏"></a>3. 游戏</h1><ol><li><a href="https://bbs.3dmgame.com/forum.php">破解游戏论坛 3dm</a></li></ol><h1 id="4-聚合站"><a href="#4-聚合站" class="headerlink" title="4. 聚合站"></a>4. 聚合站</h1><ol><li><p><a href="https://www.ysa.cc/">伊萨书签</a></p></li><li><p><a href="https://link3.cc/galijun">咖喱君的资源库</a></p></li><li><p><a href="https://www.xygalaxy.com/">星云导航</a></p></li><li><p><a href="https://heeee.com/">资源导航</a></p></li><li><p><a href="https://axutongxue.com/">阿虚同学的储物间</a></p></li><li><p><a href="https://xydh.fun/">iLinks (高级)</a></p></li><li><p><a href="https://www.chongbuluo.com/thread-7961-1-1.html">虫部落 小众网站合集</a></p></li><li></li></ol><h1 id="7-pt站"><a href="#7-pt站" class="headerlink" title="7. pt站"></a>7. pt站</h1><blockquote><p> <a href="https://iecho.cc/2019/01/09/PT-%E4%B8%8B%E8%BD%BD%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%BB%E8%80%81/">PT 下载从入门到养老篇一：站点介绍及生存指南 | 回声</a></p><p> <a href="https://wiki.ukenn.top/pt-bt-zhong-jing-chang-jian-dao-de-ci-hui">PT &amp; BT 中经常见到的词汇 | Private Tracker Wiki</a></p><p> <a href="https://post.smzdm.com/p/aqm8opw7/">玩转PT之PT-Plugin-Plus（PT助手)</a> (<a href="https://github.com/pt-plugins/PT-Plugin-Plus/releases/tag/v1.6.1.2780">https://github.com/pt-plugins/PT-Plugin-Plus/releases/tag/v1.6.1.2780</a>)</p><p> <a href="https://wiki.scio.icu/index.php/%E5%86%B3%E5%AE%9A%E8%B8%8F%E5%85%A5PT%E5%89%8D%E4%BD%A0%E5%BA%94%E8%AF%A5%E7%9F%A5%E9%81%93%E7%9A%84%E4%BA%8B%E6%83%85">决定踏入PT前你应该知道的事情</a></p><p> <a href="http://www.ptyqm.com/category/kfyqzc/">开放注册 | PT邀请码网</a></p><p> <a href="https://www.those.cc/652.html">pt 博客</a></p></blockquote><ol><li><a href="https://ptcafe.club/login.php">咖啡pt</a></li><li><a href="https://www.pttime.org/login.php">PTT </a></li><li><a href="https://ptlgs.org/login.php">PTLGS</a></li><li><a href="https://rousi.zip/login.php">Rousi</a></li><li><a href="https://www.icc2022.com/login.php">ICC冰淇淋 </a></li><li><a href="https://ptzone.xyz/login.php">PTzone </a></li><li><a href="https://ptfans.cc/login.php">PTFans</a></li><li><a href="https://1ptba.com/login.php">1PTBA</a></li><li><a href="https://cyanbug.net/login.php">大青虫</a></li><li><a href="https://lemonhd.club/login.php">LemonHD</a></li><li><a href="https://fsm.name/Users/login">FSM 无iyuu</a></li><li><a href="https://raingfh.top/login.php">雨</a></li><li><a href="https://pt.btschool.club/index.php">比特校园 学校</a></li><li><a href="https://52pt.site/index.php">52PT </a></li><li><a href="https://ptchina.org/index.php">铂金学院 </a></li><li><a href="https://discfan.net/torrents.php">DiscFan碟粉</a></li><li><a href="https://www.gamegamept.com/index.php">GGPT 无iyuu </a></li><li><a href="https://kp.m-team.cc/index">M-Team馒头</a></li><li><a href="https://carpt.net/torrents.php">CarPT 车站</a></li><li><a href="https://kufei.org/torrents.php">库非 </a></li><li><a href="https://hdtime.org/index.php">HDTIME</a></li><li><a href="https://ptlover.cc/ok.php?type=confirm">AFUN</a></li></ol><p>外站：</p><ol><li><a href="https://lusthive.org/">LustHive</a></li><li><a href="https://seedpool.org/login">seedpool</a></li></ol>]]></content>
     
     
       
@@ -324,6 +347,29 @@ if [ -f &amp;quot;$file&amp;quot; ];then
   </entry>
   
   <entry>
+    <title>dpmd-dpgen</title>
+    <link href="http://example.com/2024/06/05/4-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/dpmd-dpgen/"/>
+    <id>http://example.com/2024/06/05/4-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/dpmd-dpgen/</id>
+    <published>2024-06-05T07:22:59.000Z</published>
+    <updated>2025-01-21T02:25:19.685Z</updated>
+    
+    <content type="html"><![CDATA[<p>[toc]</p><h1 id="1-关于groupsize"><a href="#1-关于groupsize" class="headerlink" title="1. 关于groupsize"></a>1. 关于groupsize</h1><p>dp中的任务是以组来运行的，<code>groupsize</code>定义了一组任务的数量有多少。组内的任务是串行的，不同组之间的任务是并行的。</p><p>例如，有90个任务，设置<code>groupsize</code>为5，那么dp会自动把这些任务分为18个组。提交到任务系统上，会产生18个任务，这些任务会去自动占用节点，每个任务里有5个小任务。</p><p>把<code>groupsize</code>设大的好处是可以进行自我限制，限制使用的总节点数量。如果想使用所有的资源，可以把<code>groupsize</code>设置为1。</p><p><code>number_node</code>  指的的每个小组任务占用的节点数量，而不是申请的节点资源总数量。设置为多那会开启多节点并行。</p><p>例如，有18个组，设置<code>number_node=5</code> ,会自动给每个任务申请5个节点，这样就不合理了。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;[toc]&lt;/p&gt;
+&lt;h1 id=&quot;1-关于groupsize&quot;&gt;&lt;a href=&quot;#1-关于groupsize&quot; class=&quot;headerlink&quot; title=&quot;1. 关于groupsize&quot;&gt;&lt;/a&gt;1. 关于groupsize&lt;/h1&gt;&lt;p&gt;dp中的任务是以组来运</summary>
+      
+    
+    
+    
+    <category term="机器学习" scheme="http://example.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>从MP数据库提取结构</title>
     <link href="http://example.com/2024/06/05/2-%E6%A8%A1%E6%8B%9F%E6%96%B9%E6%B3%95/%E4%BB%8EMP%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8F%90%E5%8F%96%E7%BB%93%E6%9E%84/"/>
     <id>http://example.com/2024/06/05/2-%E6%A8%A1%E6%8B%9F%E6%96%B9%E6%B3%95/%E4%BB%8EMP%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8F%90%E5%8F%96%E7%BB%93%E6%9E%84/</id>
@@ -376,9 +422,9 @@ from pymatgen.io.vasp.inputs</summary>
     <link href="http://example.com/2024/05/31/9-%E7%BD%91%E7%AB%99%E6%94%B6%E9%9B%86/%E7%9F%A5%E8%AF%86%E7%BD%91%E7%AB%99/"/>
     <id>http://example.com/2024/05/31/9-%E7%BD%91%E7%AB%99%E6%94%B6%E9%9B%86/%E7%9F%A5%E8%AF%86%E7%BD%91%E7%AB%99/</id>
     <published>2024-05-31T02:08:33.000Z</published>
-    <updated>2025-01-17T01:35:46.724Z</updated>
+    <updated>2025-01-22T07:56:45.314Z</updated>
     
-    <content type="html"><![CDATA[<p>[toc]</p><h1 id="1-固态电解质收集"><a href="#1-固态电解质收集" class="headerlink" title="1 固态电解质收集"></a>1 固态电解质收集</h1><p><a href="https://ddse-database.streamlit.app/">Streamlit (ddse-database.streamlit.app)</a></p><h1 id="2-国家航天局"><a href="#2-国家航天局" class="headerlink" title="2 国家航天局"></a>2 国家航天局</h1><p><a href="https://www.cnsa.gov.cn/">国家航天局 (cnsa.gov.cn)</a></p><h1 id="3-吉大图书馆"><a href="#3-吉大图书馆" class="headerlink" title="3 吉大图书馆"></a>3 吉大图书馆</h1><p><a href="http://lib.jlu.edu.cn/portal/index.aspx">吉林大学图书馆 (jlu.edu.cn)</a></p><h1 id="4-物理课程站"><a href="#4-物理课程站" class="headerlink" title="4. 物理课程站"></a>4. 物理课程站</h1><p><a href="https://physics.stackexchange.com/questions/550507/pdf-lecture-notes-of-various-courses-by-leonard-susskind">PHYSICS</a></p><h1 id="5-傅里叶级数"><a href="#5-傅里叶级数" class="headerlink" title="5. 傅里叶级数"></a>5. 傅里叶级数</h1><p><a href="https://www.andreinc.net/2024/04/24/from-the-circle-to-epicycles">From the Circle to Epicycles (Part 1) - An animated introduction to Fourier Series | andreinc</a></p><h1 id="6-理解深度学习"><a href="#6-理解深度学习" class="headerlink" title="6. 理解深度学习"></a>6. 理解深度学习</h1><p><a href="https://udlbook.github.io/udlbook/">Understanding Deep Learning (udlbook.github.io)</a></p><h1 id="7-从CPU角度理解机器运行"><a href="#7-从CPU角度理解机器运行" class="headerlink" title="7.从CPU角度理解机器运行"></a>7.从CPU角度理解机器运行</h1><p><a href="https://cpu.land/">Intro | Putting the “You” in CPU</a></p><h1 id="8-物理学入门推荐"><a href="#8-物理学入门推荐" class="headerlink" title="8.物理学入门推荐"></a>8.物理学入门推荐</h1><p><a href="https://www.susanrigetti.com/physics">Physics — Susan Rigetti</a></p><h1 id="9-天文图像"><a href="#9-天文图像" class="headerlink" title="9. 天文图像"></a>9. 天文图像</h1><p><a href="https://www.astrobin.com/iotd/archive/">今日最佳 - AstroBin</a></p><h1 id="10-技术博客"><a href="#10-技术博客" class="headerlink" title="10. 技术博客"></a>10. 技术博客</h1><p><a href="https://world.hey.com/dhh/why-don-t-more-people-use-linux-33b75f53">Why don’t more people use Linux? (hey.com)</a></p><h1 id="11-历史网站"><a href="#11-历史网站" class="headerlink" title="11. 历史网站"></a>11. 历史网站</h1><ol><li><a href="https://histography.io/">时间轴历史事件</a></li><li><a href="https://history-maps.com/zh">各国历史</a></li><li><a href="https://www.allhistory.com/">时间轴各国历史</a></li></ol><h1 id="12-原子大模型排行榜"><a href="#12-原子大模型排行榜" class="headerlink" title="12. 原子大模型排行榜"></a>12. 原子大模型排行榜</h1><ol><li><a href="https://matbench-discovery.materialsproject.org/">Matbench Discovery</a></li></ol>]]></content>
+    <content type="html"><![CDATA[<p>[toc]</p><h1 id="1-固态电解质收集"><a href="#1-固态电解质收集" class="headerlink" title="1 固态电解质收集"></a>1 固态电解质收集</h1><p><a href="https://ddse-database.streamlit.app/">Streamlit (ddse-database.streamlit.app)</a></p><h1 id="2-国家航天局"><a href="#2-国家航天局" class="headerlink" title="2 国家航天局"></a>2 国家航天局</h1><p><a href="https://www.cnsa.gov.cn/">国家航天局 (cnsa.gov.cn)</a></p><h1 id="3-吉大图书馆"><a href="#3-吉大图书馆" class="headerlink" title="3 吉大图书馆"></a>3 吉大图书馆</h1><p><a href="http://lib.jlu.edu.cn/portal/index.aspx">吉林大学图书馆 (jlu.edu.cn)</a></p><h1 id="4-物理课程站"><a href="#4-物理课程站" class="headerlink" title="4. 物理课程站"></a>4. 物理课程站</h1><p><a href="https://physics.stackexchange.com/questions/550507/pdf-lecture-notes-of-various-courses-by-leonard-susskind">PHYSICS</a></p><h1 id="5-傅里叶级数"><a href="#5-傅里叶级数" class="headerlink" title="5. 傅里叶级数"></a>5. 傅里叶级数</h1><p><a href="https://www.andreinc.net/2024/04/24/from-the-circle-to-epicycles">From the Circle to Epicycles (Part 1) - An animated introduction to Fourier Series | andreinc</a></p><h1 id="6-理解深度学习"><a href="#6-理解深度学习" class="headerlink" title="6. 理解深度学习"></a>6. 理解深度学习</h1><p><a href="https://udlbook.github.io/udlbook/">Understanding Deep Learning (udlbook.github.io)</a></p><h1 id="7-从CPU角度理解机器运行"><a href="#7-从CPU角度理解机器运行" class="headerlink" title="7.从CPU角度理解机器运行"></a>7.从CPU角度理解机器运行</h1><p><a href="https://cpu.land/">Intro | Putting the “You” in CPU</a></p><h1 id="8-物理学入门推荐"><a href="#8-物理学入门推荐" class="headerlink" title="8.物理学入门推荐"></a>8.物理学入门推荐</h1><p><a href="https://www.susanrigetti.com/physics">Physics — Susan Rigetti</a></p><h1 id="9-天文图像"><a href="#9-天文图像" class="headerlink" title="9. 天文图像"></a>9. 天文图像</h1><p><a href="https://www.astrobin.com/iotd/archive/">今日最佳 - AstroBin</a></p><h1 id="10-技术博客"><a href="#10-技术博客" class="headerlink" title="10. 技术博客"></a>10. 技术博客</h1><p><a href="https://world.hey.com/dhh/why-don-t-more-people-use-linux-33b75f53">Why don’t more people use Linux? (hey.com)</a></p><h1 id="11-历史网站"><a href="#11-历史网站" class="headerlink" title="11. 历史网站"></a>11. 历史网站</h1><ol><li><a href="https://histography.io/">时间轴历史事件</a></li><li><a href="https://history-maps.com/zh">各国历史</a></li><li><a href="https://www.allhistory.com/">时间轴各国历史</a></li></ol><h1 id="12-原子大模型排行榜"><a href="#12-原子大模型排行榜" class="headerlink" title="12. 原子大模型排行榜"></a>12. 原子大模型排行榜</h1><ol><li><a href="https://matbench-discovery.materialsproject.org/">Matbench Discovery</a></li></ol><h1 id="13-国际数学奥林匹克金牌得主都去哪里了"><a href="#13-国际数学奥林匹克金牌得主都去哪里了" class="headerlink" title="13. 国际数学奥林匹克金牌得主都去哪里了"></a>13. 国际数学奥林匹克金牌得主都去哪里了</h1><p><a href="https://xquant.substack.com/p/where-have-the-international-math-0d9">https://xquant.substack.com/p/where-have-the-international-math-0d9</a></p>]]></content>
     
     
       
@@ -444,52 +490,6 @@ from pymatgen.io.vasp.inputs</summary>
     
     
     <category term="杂谈" scheme="http://example.com/categories/%E6%9D%82%E8%B0%88/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>zotero使用技巧</title>
-    <link href="http://example.com/2024/05/28/5-linux%E5%AD%A6%E4%B9%A0%E4%BD%BF%E7%94%A8/zotero%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/"/>
-    <id>http://example.com/2024/05/28/5-linux%E5%AD%A6%E4%B9%A0%E4%BD%BF%E7%94%A8/zotero%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/</id>
-    <published>2024-05-28T08:16:10.000Z</published>
-    <updated>2024-12-16T07:28:01.316Z</updated>
-    
-    <content type="html"><![CDATA[<p>[toc]</p><p>发现一款好用的文献管理软件，zotero，相比endnote, 用起来更加没有束缚；缺点是相比知云文献翻译，没有直接划词、划段翻译的功能；但是知云文献翻译的问题就是打开太慢了，而且内部没有zotero的笔记功能，pdf阅读器用起来不丝滑。所以比较合适的解决方法是使用zotero搭配比较好用的文献翻译软件。</p><h1 id="1-解决zotero翻译问题"><a href="#1-解决zotero翻译问题" class="headerlink" title="1. 解决zotero翻译问题"></a>1. 解决zotero翻译问题</h1><p>zotero自带了翻译引擎，但是相比知云翻译，体验差太多；使用网上沙拉划词+quicker的方案，每次划词都会跳出&#x2F;跳回 翻译界面，效果很差。</p><p>考虑使用知云家的翻译软件 xtranslator</p><p><a href="https://www.zhiyunwenxian.cn/">https://www.zhiyunwenxian.cn</a></p><p><a href="https://www.yuque.com/xtranslator/help/mep0g0">001-Xtranslator最新版下载地址(含安装方法) (yuque.com)</a></p><p>安装后使用方便，一点缺点是翻译的速度没有知云快</p><h1 id="2-zotero中的笔记功能"><a href="#2-zotero中的笔记功能" class="headerlink" title="2. zotero中的笔记功能"></a>2. zotero中的笔记功能</h1><blockquote><p>分为独立笔记和条目笔记，条目笔记用于附加在文献上</p><p>在文献阅读界面，可以任意打开独立笔记和条目笔记进行修改</p><p>可以通过改变布局修改笔记的位置，和xtranslator有更好的配合</p></blockquote><p>折腾来折腾去感觉还是自带的最好，可以直接复制markdown的源码到本地博客中的文献阅读，作为汇总，zotero的内容附在每个文献上</p><p>the diﬀusion ability of K ions</p><p>and the stronger polarizing ability of potassium ,<br>which results in weaker interactions between potassium ions<br>and the surrounding ions.</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;[toc]&lt;/p&gt;
-&lt;p&gt;发现一款好用的文献管理软件，zotero，相比endnote, 用起来更加没有束缚；缺点是相比知云文献翻译，没有直接划词、划段翻译的功能；但是知云文献翻译的问题就是打开太慢了，而且内部没有zotero的笔记功能，pdf阅读器用起来不丝滑。所以比较合</summary>
-      
-    
-    
-    
-    <category term="linux学习使用" scheme="http://example.com/categories/linux%E5%AD%A6%E4%B9%A0%E4%BD%BF%E7%94%A8/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>写作工具</title>
-    <link href="http://example.com/2024/05/27/7-%E7%BB%98%E5%9B%BE%E4%B8%8E%E5%86%99%E4%BD%9C/%E5%86%99%E4%BD%9C%E5%B7%A5%E5%85%B7/"/>
-    <id>http://example.com/2024/05/27/7-%E7%BB%98%E5%9B%BE%E4%B8%8E%E5%86%99%E4%BD%9C/%E5%86%99%E4%BD%9C%E5%B7%A5%E5%85%B7/</id>
-    <published>2024-05-27T11:37:31.000Z</published>
-    <updated>2024-06-18T13:35:46.706Z</updated>
-    
-    <content type="html"><![CDATA[<p>[toc]</p><h1 id="1-输入数学公式的工具"><a href="#1-输入数学公式的工具" class="headerlink" title="1.输入数学公式的工具"></a>1.输入数学公式的工具</h1><p><a href="https://www.mathcha.io/editor">https://www.mathcha.io/editor</a></p><h1 id="2-pdf转图片"><a href="#2-pdf转图片" class="headerlink" title="2. pdf转图片"></a>2. pdf转图片</h1><p><strong>sumatraPDF</strong></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;[toc]&lt;/p&gt;
-&lt;h1 id=&quot;1-输入数学公式的工具&quot;&gt;&lt;a href=&quot;#1-输入数学公式的工具&quot; class=&quot;headerlink&quot; title=&quot;1.输入数学公式的工具&quot;&gt;&lt;/a&gt;1.输入数学公式的工具&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://www.</summary>
-      
-    
-    
-    
-    <category term="绘图与写作" scheme="http://example.com/categories/%E7%BB%98%E5%9B%BE%E4%B8%8E%E5%86%99%E4%BD%9C/"/>
     
     
   </entry>
