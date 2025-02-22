@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2025-02-14T07:34:03.090Z</updated>
+  <updated>2025-02-17T06:59:41.382Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>bader电荷分析</title>
+    <link href="http://example.com/2025/02/17/2-%E6%A8%A1%E6%8B%9F%E6%96%B9%E6%B3%95/bader%E7%94%B5%E8%8D%B7%E5%88%86%E6%9E%90/"/>
+    <id>http://example.com/2025/02/17/2-%E6%A8%A1%E6%8B%9F%E6%96%B9%E6%B3%95/bader%E7%94%B5%E8%8D%B7%E5%88%86%E6%9E%90/</id>
+    <published>2025-02-17T06:21:06.000Z</published>
+    <updated>2025-02-17T06:59:41.382Z</updated>
+    
+    <content type="html"><![CDATA[<p>[toc]</p><p><a href="https://theory.cm.utexas.edu/henkelman/code/bader/">https://theory.cm.utexas.edu/henkelman/code/bader/</a></p><p>VASP从入门到入土：Bader电荷的计算 - 知乎<br><a href="https://zhuanlan.zhihu.com/p/673557738">https://zhuanlan.zhihu.com/p/673557738</a></p><p><code> LAECHG=.TRUE.</code></p><pre><code class="shell"> chgsum.pl AECCAR0 AECCAR2 bader CHGCAR -ref CHGCAR_sum</code></pre>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;[toc]&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://theory.cm.utexas.edu/henkelman/code/bader/&quot;&gt;https://theory.cm.utexas.edu/henkelman/code/bader/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;V</summary>
+      
+    
+    
+    
+    <category term="模拟方法" scheme="http://example.com/categories/%E6%A8%A1%E6%8B%9F%E6%96%B9%E6%B3%95/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>mattersim-x</title>
@@ -63,9 +87,9 @@
     <link href="http://example.com/2025/01/21/4-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E5%A4%A7%E6%A8%A1%E5%9E%8B/"/>
     <id>http://example.com/2025/01/21/4-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E5%A4%A7%E6%A8%A1%E5%9E%8B/</id>
     <published>2025-01-21T13:22:55.000Z</published>
-    <updated>2025-01-21T13:28:23.773Z</updated>
+    <updated>2025-02-21T11:46:36.955Z</updated>
     
-    <content type="html"><![CDATA[<p>[toc]</p><h1 id="1-原子大模型排名"><a href="#1-原子大模型排名" class="headerlink" title="1. 原子大模型排名"></a>1. 原子大模型排名</h1><p><a href="https://matbench-discovery.materialsproject.org/">https://matbench-discovery.materialsproject.org/</a></p><h1 id="2-使用ASE结合mattersim进行结构优化、分子动力学"><a href="#2-使用ASE结合mattersim进行结构优化、分子动力学" class="headerlink" title="2. 使用ASE结合mattersim进行结构优化、分子动力学"></a>2. 使用ASE结合mattersim进行结构优化、分子动力学</h1><p>from wangq</p><pre><code class="python">from mattersim.applications.moldyn import MolecularDynamicsfrom ase.io import read, writefrom mattersim.forcefield import MatterSimCalculatorfrom mattersim.applications.relax import Relaxerimport numpy as np# calc = MatterSimCalculator(device=&#39;cuda&#39;)calc = MatterSimCalculator(load_path=&quot;MatterSim-v1.0.0-5M.pth&quot;, device=&#39;cuda:2&#39;)#默认是1M参数大模型，下面的是5M的relaxer = Relaxer(    optimizer=&quot;BFGS&quot;, # the optimization method FIRE, BFGS    filter=None, # filter to apply to the cell    constrain_symmetry=True, # whether to constrain the symmetry)atoms = read(&quot;SPOSCAR&quot;,format=&#39;vasp&#39;)atoms.calc = calcconverged, relaxed_structure = relaxer.relax_structures(atoms,optimizer=&quot;FIRE&quot;, # the optimization method FIRE, BFGS    filter=None,     constrain_symmetry=True, fmax=0.1 )# # 获取晶胞矩阵# cell =   relaxed_structure.get_cell()# # 尝试使用 Cholesky 分解将晶胞矩阵转换为上三角矩阵# try:#     # 确保晶胞矩阵是正定的#     upper_triangular = np.linalg.cholesky(cell.dot(cell.T)).T# except np.linalg.LinAlgError:#     # 如果 Cholesky 分解失败，使用 QR 分解#     _, upper_triangular = np.linalg.qr(cell)# # 更新   relaxed_structure 对象的晶胞矩阵# relaxed_structure.set_cell(upper_triangular, scale_atoms=True)relaxed_structure.calc = calcensemble = &quot;NVT_BERENDSEN&quot;temperature = 1000timestep = 1.0taut = 100trajectory = &quot;atoms.traj&quot;logfile = &quot;atoms.log&quot;nvt_runner = MolecularDynamics(atoms=relaxed_structure, ensemble=ensemble, temperature=temperature, timestep=timestep, taut=taut, trajectory=trajectory, logfile = logfile)nvt_runner.run(1000000)</code></pre><h1 id="3-转换ase轨迹"><a href="#3-转换ase轨迹" class="headerlink" title="3. 转换ase轨迹"></a>3. 转换ase轨迹</h1><p>使用ase自带的方法</p><p><code>ase convert --input-format traj --output-format vasp-xdatcar atoms.traj XDATCAR</code></p>]]></content>
+    <content type="html"><![CDATA[<p>[toc]</p><h1 id="1-原子大模型排名"><a href="#1-原子大模型排名" class="headerlink" title="1. 原子大模型排名"></a>1. 原子大模型排名</h1><p><a href="https://matbench-discovery.materialsproject.org/">https://matbench-discovery.materialsproject.org/</a></p><h1 id="2-使用ASE结合mattersim进行结构优化、分子动力学"><a href="#2-使用ASE结合mattersim进行结构优化、分子动力学" class="headerlink" title="2. 使用ASE结合mattersim进行结构优化、分子动力学"></a>2. 使用ASE结合mattersim进行结构优化、分子动力学</h1><h2 id="1-使用ASE进行包括晶胞的结构优化"><a href="#1-使用ASE进行包括晶胞的结构优化" class="headerlink" title="1. 使用ASE进行包括晶胞的结构优化"></a>1. 使用ASE进行包括晶胞的结构优化</h2><pre><code class="python">from mattersim.applications.moldyn import MolecularDynamicsfrom ase.io import read, writefrom mattersim.forcefield import MatterSimCalculatorfrom mattersim.applications.relax import Relaxerimport numpy as npfrom ase.optimize import LBFGSfrom ase.filters import ExpCellFilterfrom ase.io import Trajectory# calc = MatterSimCalculator(device=&#39;cuda&#39;)# calc = MatterSimCalculator(device=&#39;cuda:0&#39;)calc = MatterSimCalculator(load_path=&quot;MatterSim-v1.0.0-5M.pth&quot;, device=&#39;cuda:0&#39;)#relaxer = Relaxer(#    optimizer=&quot;BFGS&quot;, # the optimization method FIRE, BFGS#    filter=None, # filter to apply to the cell#    constrain_symmetry=True, # whether to constrain the symmetry#)atoms = read(&quot;POSCAR&quot;,format=&#39;vasp&#39;)atoms.calc = calcecf = ExpCellFilter(atoms)traj = Trajectory(&#39;optimization.traj&#39;, &#39;w&#39;, atoms)#converged, relaxed_structure = relaxer.relax_structures(atoms,optimizer=&quot;BFGS&quot;, # the optimization method FIRE, BFGS#    filter=None, #    constrain_symmetry=True, fmax=0.01 )opt = LBFGS(ecf)opt.attach(traj.write, interval=1)opt.run(fmax=0.01) write(&quot;POSCAR.vasp&quot;, atoms, format=&quot;vasp&quot;)</code></pre><h2 id="2-from-wangq"><a href="#2-from-wangq" class="headerlink" title="2. from wangq"></a>2. from wangq</h2><pre><code class="python">from mattersim.applications.moldyn import MolecularDynamicsfrom ase.io import read, writefrom mattersim.forcefield import MatterSimCalculatorfrom mattersim.applications.relax import Relaxerimport numpy as np# calc = MatterSimCalculator(device=&#39;cuda&#39;)calc = MatterSimCalculator(load_path=&quot;MatterSim-v1.0.0-5M.pth&quot;, device=&#39;cuda:2&#39;)#默认是1M参数大模型，下面的是5M的relaxer = Relaxer(    optimizer=&quot;BFGS&quot;, # the optimization method FIRE, BFGS    filter=None, # filter to apply to the cell    constrain_symmetry=True, # whether to constrain the symmetry)atoms = read(&quot;SPOSCAR&quot;,format=&#39;vasp&#39;)atoms.calc = calcconverged, relaxed_structure = relaxer.relax_structures(atoms,optimizer=&quot;FIRE&quot;, # the optimization method FIRE, BFGS    filter=None,     constrain_symmetry=True, fmax=0.1 )# # 获取晶胞矩阵# cell =   relaxed_structure.get_cell()# # 尝试使用 Cholesky 分解将晶胞矩阵转换为上三角矩阵# try:#     # 确保晶胞矩阵是正定的#     upper_triangular = np.linalg.cholesky(cell.dot(cell.T)).T# except np.linalg.LinAlgError:#     # 如果 Cholesky 分解失败，使用 QR 分解#     _, upper_triangular = np.linalg.qr(cell)# # 更新   relaxed_structure 对象的晶胞矩阵# relaxed_structure.set_cell(upper_triangular, scale_atoms=True)relaxed_structure.calc = calcensemble = &quot;NVT_BERENDSEN&quot;temperature = 1000timestep = 1.0taut = 100trajectory = &quot;atoms.traj&quot;logfile = &quot;atoms.log&quot;nvt_runner = MolecularDynamics(atoms=relaxed_structure, ensemble=ensemble, temperature=temperature, timestep=timestep, taut=taut, trajectory=trajectory, logfile = logfile)nvt_runner.run(1000000)</code></pre><h1 id="3-一些结果"><a href="#3-一些结果" class="headerlink" title="3. 一些结果"></a>3. 一些结果</h1><p>大模型对NaInSiO的计算</p><p><img src="/./../../%E5%9B%BE%E7%89%87/image-20250121214124415.png" alt="image-20250121214124415"></p><p>大模型能够比较好的模拟出Na的离子扩散行为</p><h1 id="4-一些脚本"><a href="#4-一些脚本" class="headerlink" title="4. 一些脚本"></a>4. 一些脚本</h1><h2 id="1-把ase轨迹转换为XDATCAR的脚本"><a href="#1-把ase轨迹转换为XDATCAR的脚本" class="headerlink" title="1. 把ase轨迹转换为XDATCAR的脚本"></a>1. 把ase轨迹转换为XDATCAR的脚本</h2><p>使用ase自带的方法</p><p><code>ase convert --input-format traj --output-format vasp-xdatcar atoms.traj XDATCAR</code></p><p>python脚本</p><pre><code class="python">from ase.io import read, write# 读取原始轨迹文件atoms = read(&#39;atoms.traj&#39;, index=&#39;:&#39;)# 将轨迹写入 XDATCAR 格式write(&#39;XDATCAR&#39;, atoms)</code></pre><h2 id="2-蒸馏大模型数据变成符合acnn标准的xsf文件的脚本"><a href="#2-蒸馏大模型数据变成符合acnn标准的xsf文件的脚本" class="headerlink" title="2. 蒸馏大模型数据变成符合acnn标准的xsf文件的脚本"></a>2. 蒸馏大模型数据变成符合acnn标准的xsf文件的脚本</h2><pre><code class="python">from mattersim.applications.moldyn import MolecularDynamicsfrom ase.io import readfrom mattersim.forcefield import MatterSimCalculatorfrom mattersim.applications.relax import Relaxerimport numpy as np# 使用 MatterSimCalculator 初始化计算器calc = MatterSimCalculator(load_path=&quot;MatterSim-v1.0.0-5M.pth&quot;, device=&#39;cuda:0&#39;)# 设置优化器relaxer = Relaxer(    optimizer=&quot;BFGS&quot;,  # 优化方法，使用 FIRE 或 BFGS    filter=None,  # 是否应用过滤器    constrain_symmetry=True,  # 是否约束对称性)# 读取 POSCAR 文件atoms = read(&quot;POSCAR111.vasp&quot;, format=&#39;vasp&#39;)atoms.calc = calc# 进行结构弛豫converged, relaxed_structure = relaxer.relax_structures(atoms, optimizer=&quot;FIRE&quot;, filter=None, constrain_symmetry=True, fmax=0.05)# 设置计算器并准备进行分子动力学模拟relaxed_structure.calc = calc# 分子动力学参数ensemble = &quot;NVT_BERENDSEN&quot;temperature = 1000timestep = 1.0taut = 50trajectory = &quot;atoms.traj&quot;logfile = &quot;atoms.log&quot;nvt_runner = MolecularDynamics(    atoms=relaxed_structure,    ensemble=ensemble,    temperature=temperature,    timestep=timestep,    taut=taut,    trajectory=trajectory,    loginterval=1,    logfile=logfile)# 保存每一帧为 .xsf 文件的函数def write2my(file_path, ene_i, lat_i, ele_i, coo_i, foc_i):    lat_i = lat_i.reshape(3, 3)    coo_i = coo_i.reshape(-1, 3)    foc_i = foc_i.reshape(-1, 3)    with open(file_path, &#39;w&#39;) as file:        file.write(f&quot;# total energy = &#123;ene_i&#125; eV\n\n&quot;)        file.write(&quot;CRYSTAL\n&quot;)        file.write(&quot;PRIMVEC\n&quot;)                for j in lat_i:            for k in j:                file.write(f&#39;&#123;k:20.8f&#125;&#39;)            file.write(&#39;\n&#39;)        file.write(&quot;PRIMCOORD\n&quot;)        file.write(f&quot;&#123;len(coo_i)&#125; 1\n&quot;)        for j in range(len(coo_i)):            file.write(f&#39;&#123;ele_i[j]:2&#125; &#39;)            # 写入坐标            for k in coo_i[j]:                file.write(f&quot;&#123;k:20.8f&#125;&quot;)            # 写入受力            for k in foc_i[j]:                file.write(f&quot;&#123;k:20.8f&#125;&quot;)            file.write(&quot;\n&quot;)# 模拟运行并每50步保存一次 .xsf 文件for step in range(1000000):  # 你可以根据需要设置步数    nvt_runner.run(1)  # 运行一个步长    atoms = nvt_runner.atoms  # 获取当前步长的原子对象        # 每50步保存一次数据    if step % 100 == 0:        # 获取总能量        energy = atoms.get_total_energy()                # 获取晶胞矩阵        cell = atoms.get_cell()                # 获取原子元素类型        atomic_numbers = atoms.get_atomic_numbers()                # 获取原子坐标        positions = atoms.get_positions()                # 获取原子受力        forces = atoms.get_forces()                # 保存当前帧数据为 .xsf 文件        frame_filename = f&quot;frame_&#123;step&#125;.xsf&quot;        write2my(frame_filename, energy, cell, atomic_numbers, positions, forces)</code></pre><h2 id="3-扩胞脚本"><a href="#3-扩胞脚本" class="headerlink" title="3. 扩胞脚本"></a>3. 扩胞脚本</h2><pre><code class="python">from pymatgen.io.vasp import Poscar# 读取 POSCAR 文件poscar = Poscar.from_file(&quot;POSCAR&quot;)# 扩胞为 2x2x3supercell = poscar.structure * [6, 6, 6]# 将扩胞后的结构写入新的 POSCAR 文件poscar = Poscar(supercell)poscar.write_file(&quot;POSCAR666.vasp&quot;)</code></pre><pre><code class="python">from ase.io import read,writefrom ase.build import make_supercellatoms = read(&quot;POSCAR&quot;)P = [[3, 0, 0],     [0, 3, 0],     [0, 0, 3]]supercell = make_supercell(atoms,P)supercell.write(&quot;POSCAR333&quot;)</code></pre><h2 id="4-计算体积脚本"><a href="#4-计算体积脚本" class="headerlink" title="4. 计算体积脚本"></a>4. 计算体积脚本</h2><pre><code class="python">from pymatgen.core import Structure# 读取POSCAR文件#structure = Structure.from_file(&quot;POSCAR.vasp&quot;)structure = Structure.from_file(&quot;POSCAR.vasp&quot;)# 计算体积volume = structure.volume# 输出体积print(f&quot;&#123;volume&#125; Å³&quot;)</code></pre><h2 id="5-元素替换脚本"><a href="#5-元素替换脚本" class="headerlink" title="5. 元素替换脚本"></a>5. 元素替换脚本</h2><pre><code class="python">import osimport shutil# 创建文件夹base_path = &quot;./&quot;  # 替换为你的根目录路径element_symbols = [&quot;La&quot;, &quot;Ce&quot;,&quot;Pr&quot;,&quot;Nd&quot;,&quot;Pm&quot;,&quot;Eu&quot;,&quot;Sm&quot;,&quot;Gd&quot;,&quot;Tb&quot;,&quot;Dy&quot;,&quot;Ho&quot;,&quot;Er&quot;,&quot;Tm&quot;,&quot;Sc&quot;,&quot;Ti&quot;,&quot;V&quot;,&quot;Nb&quot;,&quot;Ta&quot;,&quot;Cr&quot;,&quot;Mo&quot;,&quot;Mn&quot;,&quot;Fe&quot;,&quot;Ru&quot;,&quot;Co&quot;,&quot;Rh&quot;,&quot;Ir&quot;,&quot;Ni&quot;,&quot;Pd&quot;,&quot;Cu&quot;,&quot;B&quot;,&quot;Al&quot;,&quot;Ga&quot;,&quot;In&quot;,&quot;N&quot;,&quot;P&quot;,&quot;Sb&quot;,&quot;Bi&quot;]for idx, element in enumerate(element_symbols, start=1):    folder_name = f&quot;&#123;idx&#125;-&#123;element&#125;&quot;    folder_path = os.path.join(base_path, folder_name)        if not os.path.exists(folder_path):        os.makedirs(folder_path)# 读取原始 POSCAR 文件input_file = &quot;./POSCAR&quot;  # 替换为你的 POSCAR 文件路径with open(input_file, &quot;r&quot;) as file:    lines = file.readlines()# 逐个元素进行替换并创建文件夹for idx, element in enumerate(element_symbols, start=1):    folder_name = f&quot;&#123;idx&#125;-&#123;element&#125;&quot;    folder_path = os.path.join(base_path, folder_name)        modified_lines = [line.replace(&quot;Y&quot;, element) for line in lines]        # 写入修改后的内容到对应的文件夹    output_file = os.path.join(folder_path, &quot;POSCAR&quot;)    with open(output_file, &quot;w&quot;) as file:        file.writelines(modified_lines)        # 复制同名的 INCAR 文件到对应的文件夹    incar_source = &quot;./INCAR&quot;  # 替换为你的 INCAR 文件路径    incar_destination = os.path.join(folder_path, &quot;INCAR&quot;)    shutil.copy(incar_source, incar_destination)    lsf_source = &quot;./vasp.pbs&quot;  # 替换为你的 INCAR 文件路径    lsf_destination = os.path.join(folder_path, &quot;opt.lsf&quot;)    shutil.copy(lsf_source, lsf_destination)print(&quot;Replacement and file writing complete.&quot;)</code></pre><h1 id="5-使用m3gnet"><a href="#5-使用m3gnet" class="headerlink" title="5. 使用m3gnet"></a>5. 使用m3gnet</h1><pre><code class="python"># import warnings# from m3gnet.models import Relaxer# from pymatgen.core import Lattice, Structure# from ase.io import read, write# import tensorflow as tf# from ase.optimize import BFGS# for category in (UserWarning, DeprecationWarning):#     warnings.filterwarnings(&quot;ignore&quot;, category=category, module=&quot;tensorflow&quot;)# gpus = tf.config.list_physical_devices(&#39;GPU&#39;)# if len(gpus) &gt; 0:#     tf.config.set_visible_devices(gpus[0], &#39;GPU&#39;) # atoms = read(&quot;POSCAR222.vasp&quot;,format=&#39;vasp&#39;)#  # 只使用第一块 GPU# relaxer = Relaxer(optimizer = &quot;BFGS&quot;)  # This loads the default pre-trained model# relax_results = relaxer.relax(atoms,verbose=True)# final_structure = relax_results[&#39;final_structure&#39;]# final_energy_per_atom = float(relax_results[&#39;trajectory&#39;].energies[-1] / len(atoms))# print(f&quot;Relaxed lattice parameter is &#123;final_structure.lattice.abc[0]:.3f&#125; Å&quot;)# print(f&quot;Final energy is &#123;final_energy_per_atom:.3f&#125; eV/atom&quot;)from ase.optimize import BFGSfrom m3gnet.models import Relaxer,M3GNetCalculatorfrom ase.io import read, writeimport tensorflow as tfgpus = tf.config.list_physical_devices(&#39;GPU&#39;)if len(gpus) &gt; 0:    tf.config.set_visible_devices(gpus[0], &#39;GPU&#39;) relaxer = Relaxer()calculator = relaxer.calculatoratoms = read(&quot;POSCAR222.vasp&quot;,format=&#39;vasp&#39;)# print(f&quot;unrelaxed lattice parameter is &#123;atoms.lattice.abc[0]:.3f&#125; Å&quot;)atoms.calc = calculatoroptimizer = BFGS(atoms)optimizer.run(fmax=0.01) # print(f&quot;Relaxed lattice parameter is &#123;atoms.lattice.abc[0]:.3f&#125; Å&quot;)</code></pre><h1 id="6-ASE结合phonopy-使用大模型作为计算器"><a href="#6-ASE结合phonopy-使用大模型作为计算器" class="headerlink" title="6. ASE结合phonopy 使用大模型作为计算器"></a>6. ASE结合phonopy 使用大模型作为计算器</h1><h2 id="1-关于声子谱"><a href="#1-关于声子谱" class="headerlink" title="1.关于声子谱"></a>1.关于声子谱</h2><pre><code>有限位移法（Finite Displacement Method）是一种用于计算晶体声子谱的数值方法，其基本原理是通过对晶体结构中的原子进行微小的位移，计算相应的力，从而构建力常数矩阵，进而求解声子频率和振动模式。具体步骤如下：结构优化：首先，对晶体结构进行高精度的优化，以获得平衡的原子位置和晶格常数。在优化过程中，需要设置适当的收敛标准，如能量收敛（EDIFF）和力收敛（EDIFFG）等，以确保结构的准确性。构建超胞：在优化后的结构基础上，使用Phonopy等工具构建超胞。超胞的尺寸通常是原胞的整数倍，具体尺寸取决于所需的声子计算精度和计算资源。原子位移：对超胞中的每个原子进行微小的位移，通常在0.01到0.03埃之间。这些位移可以是沿着晶体轴的正负方向，或者在不同方向上进行。力计算：在每个位移结构上，进行单点能量计算，获取每个原子所受的力。这些力数据用于构建力常数矩阵。构建力常数矩阵：利用获得的力数据，构建力常数矩阵。该矩阵描述了原子间的相互作用，是计算声子谱的基础。声子谱计算：通过对力常数矩阵进行对角化，得到声子的频率和振动模式。进一步，可以绘制声子色散曲线，分析声子的行为。注意事项：有限位移法的计算精度高度依赖于力的计算精度，因此在结构优化和单点计算中需要设置严格的收敛标准。位移幅度的选择需要平衡计算精度和计算量，过大的位移可能导致力常数矩阵的非线性，过小的位移可能导致数值误差。计算过程中，可能需要考虑晶体的对称性，以减少计算量。通过上述步骤，有限位移法能够有效地计算晶体的声子谱，为研究材料的热力学性质、动力学稳定性等提供重要信息。</code></pre><h2 id="2-绘制投影声子态密度"><a href="#2-绘制投影声子态密度" class="headerlink" title="2. 绘制投影声子态密度"></a>2. 绘制投影声子态密度</h2><pre><code class="python"></code></pre>]]></content>
     
     
       
@@ -365,6 +389,29 @@ if [ -f &amp;quot;$file&amp;quot; ];then
   </entry>
   
   <entry>
+    <title>dpmd-dpgen</title>
+    <link href="http://example.com/2024/06/05/4-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/dpmd-dpgen/"/>
+    <id>http://example.com/2024/06/05/4-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/dpmd-dpgen/</id>
+    <published>2024-06-05T07:22:59.000Z</published>
+    <updated>2025-02-06T04:04:13.408Z</updated>
+    
+    <content type="html"><![CDATA[<p>[toc]</p><h1 id="1-关于groupsize"><a href="#1-关于groupsize" class="headerlink" title="1. 关于groupsize"></a>1. 关于groupsize</h1><p>dp中的任务是以组来运行的，<code>groupsize</code>定义了一组任务的数量有多少。组内的任务是串行的，不同组之间的任务是并行的。</p><p>例如，有90个任务，设置<code>groupsize</code>为5，那么dp会自动把这些任务分为18个组。提交到任务系统上，会产生18个任务，这些任务会去自动占用节点，每个任务里有5个小任务。</p><p>把<code>groupsize</code>设大的好处是可以进行自我限制，限制使用的总节点数量。如果想使用所有的资源，可以把<code>groupsize</code>设置为1。</p><p><code>number_node</code>  指的的每个小组任务占用的节点数量，而不是申请的节点资源总数量。设置为多那会开启多节点并行。</p><p>例如，有18个组，设置<code>number_node=5</code> ,会自动给每个任务申请5个节点，这样就不合理了。</p><h1 id="2-关于训练的代数"><a href="#2-关于训练的代数" class="headerlink" title="2. 关于训练的代数"></a>2. 关于训练的代数</h1><p><img src="/./../../%E5%9B%BE%E7%89%87/0057820c0ddd57990a2765496116a6a.png" alt="0057820c0ddd57990a2765496116a6a"></p><p>通过model_devi_jobs来控制，不会自动停止，写多少就会跑多少代。sys_idx控制使用哪一组结构，temps可以是多个温度点，这样在多个温度点跑nsteps步的分子动力学</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;[toc]&lt;/p&gt;
+&lt;h1 id=&quot;1-关于groupsize&quot;&gt;&lt;a href=&quot;#1-关于groupsize&quot; class=&quot;headerlink&quot; title=&quot;1. 关于groupsize&quot;&gt;&lt;/a&gt;1. 关于groupsize&lt;/h1&gt;&lt;p&gt;dp中的任务是以组来运</summary>
+      
+    
+    
+    
+    <category term="机器学习" scheme="http://example.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>meta_dynamics_plumed</title>
     <link href="http://example.com/2024/06/05/4-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/meta-dynamics-plumed/"/>
     <id>http://example.com/2024/06/05/4-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/meta-dynamics-plumed/</id>
@@ -379,29 +426,6 @@ if [ -f &amp;quot;$file&amp;quot; ];then
     <summary type="html">&lt;p&gt;[toc]&lt;/p&gt;
 &lt;h1 id=&quot;1-基本功能&quot;&gt;&lt;a href=&quot;#1-基本功能&quot; class=&quot;headerlink&quot; title=&quot;1. 基本功能&quot;&gt;&lt;/a&gt;1. 基本功能&lt;/h1&gt;&lt;blockquote&gt;
 &lt;p&gt;Promoting transparency and</summary>
-      
-    
-    
-    
-    <category term="机器学习" scheme="http://example.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>dpmd-dpgen</title>
-    <link href="http://example.com/2024/06/05/4-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/dpmd-dpgen/"/>
-    <id>http://example.com/2024/06/05/4-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/dpmd-dpgen/</id>
-    <published>2024-06-05T07:22:59.000Z</published>
-    <updated>2025-02-06T04:04:13.408Z</updated>
-    
-    <content type="html"><![CDATA[<p>[toc]</p><h1 id="1-关于groupsize"><a href="#1-关于groupsize" class="headerlink" title="1. 关于groupsize"></a>1. 关于groupsize</h1><p>dp中的任务是以组来运行的，<code>groupsize</code>定义了一组任务的数量有多少。组内的任务是串行的，不同组之间的任务是并行的。</p><p>例如，有90个任务，设置<code>groupsize</code>为5，那么dp会自动把这些任务分为18个组。提交到任务系统上，会产生18个任务，这些任务会去自动占用节点，每个任务里有5个小任务。</p><p>把<code>groupsize</code>设大的好处是可以进行自我限制，限制使用的总节点数量。如果想使用所有的资源，可以把<code>groupsize</code>设置为1。</p><p><code>number_node</code>  指的的每个小组任务占用的节点数量，而不是申请的节点资源总数量。设置为多那会开启多节点并行。</p><p>例如，有18个组，设置<code>number_node=5</code> ,会自动给每个任务申请5个节点，这样就不合理了。</p><h1 id="2-关于训练的代数"><a href="#2-关于训练的代数" class="headerlink" title="2. 关于训练的代数"></a>2. 关于训练的代数</h1><p><img src="/./../../%E5%9B%BE%E7%89%87/0057820c0ddd57990a2765496116a6a.png" alt="0057820c0ddd57990a2765496116a6a"></p><p>通过model_devi_jobs来控制，不会自动停止，写多少就会跑多少代。sys_idx控制使用哪一组结构，temps可以是多个温度点，这样在多个温度点跑nsteps步的分子动力学</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;[toc]&lt;/p&gt;
-&lt;h1 id=&quot;1-关于groupsize&quot;&gt;&lt;a href=&quot;#1-关于groupsize&quot; class=&quot;headerlink&quot; title=&quot;1. 关于groupsize&quot;&gt;&lt;/a&gt;1. 关于groupsize&lt;/h1&gt;&lt;p&gt;dp中的任务是以组来运</summary>
       
     
     
@@ -450,29 +474,6 @@ from pymatgen.io.vasp.inputs</summary>
       
     <summary type="html">&lt;p&gt;[toc]&lt;/p&gt;
 &lt;h1 id=&quot;1-纯爱&quot;&gt;&lt;a href=&quot;#1-纯爱&quot; class=&quot;headerlink&quot; title=&quot;1. 纯爱&quot;&gt;&lt;/a&gt;1. 纯爱&lt;/h1&gt;&lt;p&gt;一个非常漂亮的残疾女孩，会有人愿意娶吗？ - 清霖的回答 - 知乎&lt;br&gt;&lt;a href=&quot;h</summary>
-      
-    
-    
-    
-    <category term="网站收集" scheme="http://example.com/categories/%E7%BD%91%E7%AB%99%E6%94%B6%E9%9B%86/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>知识网站</title>
-    <link href="http://example.com/2024/05/31/9-%E7%BD%91%E7%AB%99%E6%94%B6%E9%9B%86/%E7%9F%A5%E8%AF%86%E7%BD%91%E7%AB%99/"/>
-    <id>http://example.com/2024/05/31/9-%E7%BD%91%E7%AB%99%E6%94%B6%E9%9B%86/%E7%9F%A5%E8%AF%86%E7%BD%91%E7%AB%99/</id>
-    <published>2024-05-31T02:08:33.000Z</published>
-    <updated>2025-02-11T03:13:53.578Z</updated>
-    
-    <content type="html"><![CDATA[<p>[toc]</p><h1 id="1-固态电解质收集"><a href="#1-固态电解质收集" class="headerlink" title="1 固态电解质收集"></a>1 固态电解质收集</h1><p><a href="https://ddse-database.streamlit.app/">Streamlit (ddse-database.streamlit.app)</a></p><h1 id="2-国家航天局"><a href="#2-国家航天局" class="headerlink" title="2 国家航天局"></a>2 国家航天局</h1><p><a href="https://www.cnsa.gov.cn/">国家航天局 (cnsa.gov.cn)</a></p><h1 id="3-吉大图书馆"><a href="#3-吉大图书馆" class="headerlink" title="3 吉大图书馆"></a>3 吉大图书馆</h1><p><a href="http://lib.jlu.edu.cn/portal/index.aspx">吉林大学图书馆 (jlu.edu.cn)</a></p><h1 id="4-物理课程站"><a href="#4-物理课程站" class="headerlink" title="4. 物理课程站"></a>4. 物理课程站</h1><p><a href="https://physics.stackexchange.com/questions/550507/pdf-lecture-notes-of-various-courses-by-leonard-susskind">PHYSICS</a></p><h1 id="5-傅里叶级数"><a href="#5-傅里叶级数" class="headerlink" title="5. 傅里叶级数"></a>5. 傅里叶级数</h1><p><a href="https://www.andreinc.net/2024/04/24/from-the-circle-to-epicycles">From the Circle to Epicycles (Part 1) - An animated introduction to Fourier Series | andreinc</a></p><h1 id="6-理解深度学习"><a href="#6-理解深度学习" class="headerlink" title="6. 理解深度学习"></a>6. 理解深度学习</h1><p><a href="https://udlbook.github.io/udlbook/">Understanding Deep Learning (udlbook.github.io)</a></p><h1 id="7-从CPU角度理解机器运行"><a href="#7-从CPU角度理解机器运行" class="headerlink" title="7.从CPU角度理解机器运行"></a>7.从CPU角度理解机器运行</h1><p><a href="https://cpu.land/">Intro | Putting the “You” in CPU</a></p><h1 id="8-物理学入门推荐"><a href="#8-物理学入门推荐" class="headerlink" title="8.物理学入门推荐"></a>8.物理学入门推荐</h1><p><a href="https://www.susanrigetti.com/physics">Physics — Susan Rigetti</a></p><h1 id="9-天文图像"><a href="#9-天文图像" class="headerlink" title="9. 天文图像"></a>9. 天文图像</h1><p><a href="https://www.astrobin.com/iotd/archive/">今日最佳 - AstroBin</a></p><h1 id="10-技术博客"><a href="#10-技术博客" class="headerlink" title="10. 技术博客"></a>10. 技术博客</h1><p><a href="https://world.hey.com/dhh/why-don-t-more-people-use-linux-33b75f53">Why don’t more people use Linux? (hey.com)</a></p><h1 id="11-历史网站"><a href="#11-历史网站" class="headerlink" title="11. 历史网站"></a>11. 历史网站</h1><ol><li><a href="https://histography.io/">时间轴历史事件</a></li><li><a href="https://history-maps.com/zh">各国历史</a></li><li><a href="https://www.allhistory.com/">时间轴各国历史</a></li></ol><h1 id="12-原子大模型排行榜"><a href="#12-原子大模型排行榜" class="headerlink" title="12. 原子大模型排行榜"></a>12. 原子大模型排行榜</h1><ol><li><a href="https://matbench-discovery.materialsproject.org/">Matbench Discovery</a></li></ol><h1 id="13-国际数学奥林匹克金牌得主都去哪里了"><a href="#13-国际数学奥林匹克金牌得主都去哪里了" class="headerlink" title="13. 国际数学奥林匹克金牌得主都去哪里了"></a>13. 国际数学奥林匹克金牌得主都去哪里了</h1><p><a href="https://xquant.substack.com/p/where-have-the-international-math-0d9">https://xquant.substack.com/p/where-have-the-international-math-0d9</a></p><h1 id="14-下载COD数据库"><a href="#14-下载COD数据库" class="headerlink" title="14. 下载COD数据库"></a>14. 下载COD数据库</h1><p><a href="https://wiki.crystallography.net/howtoobtaincod/">https://wiki.crystallography.net/howtoobtaincod/</a></p><h1 id="15-optimade"><a href="#15-optimade" class="headerlink" title="15. optimade"></a>15. optimade</h1><p><a href="https://www.optimade.org/providers-dashboard/">https://www.optimade.org/providers-dashboard/</a></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;[toc]&lt;/p&gt;
-&lt;h1 id=&quot;1-固态电解质收集&quot;&gt;&lt;a href=&quot;#1-固态电解质收集&quot; class=&quot;headerlink&quot; title=&quot;1 固态电解质收集&quot;&gt;&lt;/a&gt;1 固态电解质收集&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://ddse-databas</summary>
       
     
     
