@@ -6,17 +6,19 @@
   <meta name="keywords" content="">
   <meta name="description" content="大模型 | xaz的花花世界">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="[toc] https:&#x2F;&#x2F;theory.cm.utexas.edu&#x2F;henkelman&#x2F;code&#x2F;bader&#x2F; VASP从入门到入土：Bader电荷的计算 - 知乎https:&#x2F;&#x2F;zhuanlan.zhihu.com&#x2F;p&#x2F;673557738  LAECHG&#x3D;.TRUE.  chgsum.pl AECCAR0 AECCAR2  bader CHGCAR -ref CHGCAR_sum">
-<meta property="og:type" content="article">
-<meta property="og:title" content="bader电荷分析">
-<meta property="og:url" content="http://example.com/2025/02/17/2-%E6%A8%A1%E6%8B%9F%E6%96%B9%E6%B3%95/bader%E7%94%B5%E8%8D%B7%E5%88%86%E6%9E%90/index.html">
+<meta name="description" content="快捷键">
+<meta property="og:type" content="website">
+<meta property="og:title" content="about">
+<meta property="og:url" content="http://example.com/about/index.html">
 <meta property="og:site_name" content="xaz的花花世界">
-<meta property="og:description" content="[toc] https:&#x2F;&#x2F;theory.cm.utexas.edu&#x2F;henkelman&#x2F;code&#x2F;bader&#x2F; VASP从入门到入土：Bader电荷的计算 - 知乎https:&#x2F;&#x2F;zhuanlan.zhihu.com&#x2F;p&#x2F;673557738  LAECHG&#x3D;.TRUE.  chgsum.pl AECCAR0 AECCAR2  bader CHGCAR -ref CHGCAR_sum">
+<meta property="og:description" content="快捷键">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-02-17T06:21:06.000Z">
-<meta property="article:modified_time" content="2025-02-17T06:59:41.382Z">
+<meta property="og:image" content="http://example.com/%E5%9B%BE%E7%89%87/%E5%BF%AB%E6%8D%B7%E9%94%AE.jpg">
+<meta property="article:published_time" content="2024-05-25T09:36:13.000Z">
+<meta property="article:modified_time" content="2024-05-25T09:40:28.322Z">
 <meta property="article:author" content="xaz">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/%E5%9B%BE%E7%89%87/%E5%BF%AB%E6%8D%B7%E9%94%AE.jpg">
 
 
 <link rel="icon" href="/img/1.png">
@@ -309,7 +311,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="86">
-<input type="hidden" id="yelog_site_word_count" value="115.3k">
+<input type="hidden" id="yelog_site_word_count" value="115.5k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -352,6 +354,8 @@
             <li><a target="_blank" href="https://liuyuyang.net/">一个很励志的博客</a></li>
             
             <li><a target="_blank" href="https://wukan.me/">一个程序员</a></li>
+            
+            <li><a target="_blank" href="https://whuzbf.github.io/">理论物理方向一个博主郑卜凡</a></li>
             
         </ul>
     </div>
@@ -1215,12 +1219,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2025-02-21 19:46:36'>2025-01-21 21:22</time>
+            发布时间 : <time class="date" title='最后更新: 2025-02-22 16:18:12'>2025-01-21 21:22</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:2.5k</span>
+        <span>字数:3.5k</span>
         
         
         
@@ -1228,7 +1232,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E5%8E%9F%E5%AD%90%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%8E%92%E5%90%8D"><span class="toc-text">1. 原子大模型排名</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E4%BD%BF%E7%94%A8ASE%E7%BB%93%E5%90%88mattersim%E8%BF%9B%E8%A1%8C%E7%BB%93%E6%9E%84%E4%BC%98%E5%8C%96%E3%80%81%E5%88%86%E5%AD%90%E5%8A%A8%E5%8A%9B%E5%AD%A6"><span class="toc-text">2. 使用ASE结合mattersim进行结构优化、分子动力学</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E4%BD%BF%E7%94%A8ASE%E8%BF%9B%E8%A1%8C%E5%8C%85%E6%8B%AC%E6%99%B6%E8%83%9E%E7%9A%84%E7%BB%93%E6%9E%84%E4%BC%98%E5%8C%96"><span class="toc-text">1. 使用ASE进行包括晶胞的结构优化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-from-wangq"><span class="toc-text">2. from wangq</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E4%B8%80%E4%BA%9B%E7%BB%93%E6%9E%9C"><span class="toc-text">3. 一些结果</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-%E4%B8%80%E4%BA%9B%E8%84%9A%E6%9C%AC"><span class="toc-text">4. 一些脚本</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%8A%8Aase%E8%BD%A8%E8%BF%B9%E8%BD%AC%E6%8D%A2%E4%B8%BAXDATCAR%E7%9A%84%E8%84%9A%E6%9C%AC"><span class="toc-text">1. 把ase轨迹转换为XDATCAR的脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E8%92%B8%E9%A6%8F%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%8F%98%E6%88%90%E7%AC%A6%E5%90%88acnn%E6%A0%87%E5%87%86%E7%9A%84xsf%E6%96%87%E4%BB%B6%E7%9A%84%E8%84%9A%E6%9C%AC"><span class="toc-text">2. 蒸馏大模型数据变成符合acnn标准的xsf文件的脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%89%A9%E8%83%9E%E8%84%9A%E6%9C%AC"><span class="toc-text">3. 扩胞脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E8%AE%A1%E7%AE%97%E4%BD%93%E7%A7%AF%E8%84%9A%E6%9C%AC"><span class="toc-text">4. 计算体积脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E5%85%83%E7%B4%A0%E6%9B%BF%E6%8D%A2%E8%84%9A%E6%9C%AC"><span class="toc-text">5. 元素替换脚本</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-%E4%BD%BF%E7%94%A8m3gnet"><span class="toc-text">5. 使用m3gnet</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-ASE%E7%BB%93%E5%90%88phonopy-%E4%BD%BF%E7%94%A8%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BD%9C%E4%B8%BA%E8%AE%A1%E7%AE%97%E5%99%A8"><span class="toc-text">6. ASE结合phonopy 使用大模型作为计算器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%85%B3%E4%BA%8E%E5%A3%B0%E5%AD%90%E8%B0%B1"><span class="toc-text">1.关于声子谱</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E7%BB%98%E5%88%B6%E6%8A%95%E5%BD%B1%E5%A3%B0%E5%AD%90%E6%80%81%E5%AF%86%E5%BA%A6"><span class="toc-text">2. 绘制投影声子态密度</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E5%8E%9F%E5%AD%90%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%8E%92%E5%90%8D"><span class="toc-text">1. 原子大模型排名</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E4%BD%BF%E7%94%A8ASE%E7%BB%93%E5%90%88mattersim%E8%BF%9B%E8%A1%8C%E7%BB%93%E6%9E%84%E4%BC%98%E5%8C%96%E3%80%81%E5%88%86%E5%AD%90%E5%8A%A8%E5%8A%9B%E5%AD%A6"><span class="toc-text">2. 使用ASE结合mattersim进行结构优化、分子动力学</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E4%BD%BF%E7%94%A8ASE%E8%BF%9B%E8%A1%8C%E5%8C%85%E6%8B%AC%E6%99%B6%E8%83%9E%E7%9A%84%E7%BB%93%E6%9E%84%E4%BC%98%E5%8C%96"><span class="toc-text">1. 使用ASE进行包括晶胞的结构优化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-from-wangq"><span class="toc-text">2. from wangq</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%A4%84%E7%90%86vaspkit-%E7%9A%84MSD-dat%E5%BE%97%E5%88%B0%E7%94%B5%E5%AF%BC%E7%8E%87"><span class="toc-text">3. 处理vaspkit 的MSD.dat得到电导率</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E4%B8%80%E4%BA%9B%E7%BB%93%E6%9E%9C"><span class="toc-text">3. 一些结果</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-%E4%B8%80%E4%BA%9B%E8%84%9A%E6%9C%AC"><span class="toc-text">4. 一些脚本</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%8A%8Aase%E8%BD%A8%E8%BF%B9%E8%BD%AC%E6%8D%A2%E4%B8%BAXDATCAR%E7%9A%84%E8%84%9A%E6%9C%AC"><span class="toc-text">1. 把ase轨迹转换为XDATCAR的脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E8%92%B8%E9%A6%8F%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%8F%98%E6%88%90%E7%AC%A6%E5%90%88acnn%E6%A0%87%E5%87%86%E7%9A%84xsf%E6%96%87%E4%BB%B6%E7%9A%84%E8%84%9A%E6%9C%AC"><span class="toc-text">2. 蒸馏大模型数据变成符合acnn标准的xsf文件的脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%89%A9%E8%83%9E%E8%84%9A%E6%9C%AC"><span class="toc-text">3. 扩胞脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E8%AE%A1%E7%AE%97%E4%BD%93%E7%A7%AF%E8%84%9A%E6%9C%AC"><span class="toc-text">4. 计算体积脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E5%85%83%E7%B4%A0%E6%9B%BF%E6%8D%A2%E8%84%9A%E6%9C%AC"><span class="toc-text">5. 元素替换脚本</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-%E4%BD%BF%E7%94%A8m3gnet"><span class="toc-text">5. 使用m3gnet</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-ASE%E7%BB%93%E5%90%88phonopy-%E4%BD%BF%E7%94%A8%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BD%9C%E4%B8%BA%E8%AE%A1%E7%AE%97%E5%99%A8"><span class="toc-text">6. ASE结合phonopy 使用大模型作为计算器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%85%B3%E4%BA%8E%E5%A3%B0%E5%AD%90%E8%B0%B1"><span class="toc-text">1.关于声子谱</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E7%BB%98%E5%88%B6%E6%8A%95%E5%BD%B1%E5%A3%B0%E5%AD%90%E6%80%81%E5%AF%86%E5%BA%A6"><span class="toc-text">2. 绘制投影声子态密度</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -1244,7 +1248,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><div class='inner-toc'><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E5%8E%9F%E5%AD%90%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%8E%92%E5%90%8D"><span class="toc-text">1. 原子大模型排名</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E4%BD%BF%E7%94%A8ASE%E7%BB%93%E5%90%88mattersim%E8%BF%9B%E8%A1%8C%E7%BB%93%E6%9E%84%E4%BC%98%E5%8C%96%E3%80%81%E5%88%86%E5%AD%90%E5%8A%A8%E5%8A%9B%E5%AD%A6"><span class="toc-text">2. 使用ASE结合mattersim进行结构优化、分子动力学</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E4%BD%BF%E7%94%A8ASE%E8%BF%9B%E8%A1%8C%E5%8C%85%E6%8B%AC%E6%99%B6%E8%83%9E%E7%9A%84%E7%BB%93%E6%9E%84%E4%BC%98%E5%8C%96"><span class="toc-text">1. 使用ASE进行包括晶胞的结构优化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-from-wangq"><span class="toc-text">2. from wangq</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E4%B8%80%E4%BA%9B%E7%BB%93%E6%9E%9C"><span class="toc-text">3. 一些结果</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-%E4%B8%80%E4%BA%9B%E8%84%9A%E6%9C%AC"><span class="toc-text">4. 一些脚本</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%8A%8Aase%E8%BD%A8%E8%BF%B9%E8%BD%AC%E6%8D%A2%E4%B8%BAXDATCAR%E7%9A%84%E8%84%9A%E6%9C%AC"><span class="toc-text">1. 把ase轨迹转换为XDATCAR的脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E8%92%B8%E9%A6%8F%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%8F%98%E6%88%90%E7%AC%A6%E5%90%88acnn%E6%A0%87%E5%87%86%E7%9A%84xsf%E6%96%87%E4%BB%B6%E7%9A%84%E8%84%9A%E6%9C%AC"><span class="toc-text">2. 蒸馏大模型数据变成符合acnn标准的xsf文件的脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%89%A9%E8%83%9E%E8%84%9A%E6%9C%AC"><span class="toc-text">3. 扩胞脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E8%AE%A1%E7%AE%97%E4%BD%93%E7%A7%AF%E8%84%9A%E6%9C%AC"><span class="toc-text">4. 计算体积脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E5%85%83%E7%B4%A0%E6%9B%BF%E6%8D%A2%E8%84%9A%E6%9C%AC"><span class="toc-text">5. 元素替换脚本</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-%E4%BD%BF%E7%94%A8m3gnet"><span class="toc-text">5. 使用m3gnet</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-ASE%E7%BB%93%E5%90%88phonopy-%E4%BD%BF%E7%94%A8%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BD%9C%E4%B8%BA%E8%AE%A1%E7%AE%97%E5%99%A8"><span class="toc-text">6. ASE结合phonopy 使用大模型作为计算器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%85%B3%E4%BA%8E%E5%A3%B0%E5%AD%90%E8%B0%B1"><span class="toc-text">1.关于声子谱</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E7%BB%98%E5%88%B6%E6%8A%95%E5%BD%B1%E5%A3%B0%E5%AD%90%E6%80%81%E5%AF%86%E5%BA%A6"><span class="toc-text">2. 绘制投影声子态密度</span></a></li></ol></li></ol></div></p>
+        <p><div class='inner-toc'><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E5%8E%9F%E5%AD%90%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%8E%92%E5%90%8D"><span class="toc-text">1. 原子大模型排名</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E4%BD%BF%E7%94%A8ASE%E7%BB%93%E5%90%88mattersim%E8%BF%9B%E8%A1%8C%E7%BB%93%E6%9E%84%E4%BC%98%E5%8C%96%E3%80%81%E5%88%86%E5%AD%90%E5%8A%A8%E5%8A%9B%E5%AD%A6"><span class="toc-text">2. 使用ASE结合mattersim进行结构优化、分子动力学</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E4%BD%BF%E7%94%A8ASE%E8%BF%9B%E8%A1%8C%E5%8C%85%E6%8B%AC%E6%99%B6%E8%83%9E%E7%9A%84%E7%BB%93%E6%9E%84%E4%BC%98%E5%8C%96"><span class="toc-text">1. 使用ASE进行包括晶胞的结构优化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-from-wangq"><span class="toc-text">2. from wangq</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%A4%84%E7%90%86vaspkit-%E7%9A%84MSD-dat%E5%BE%97%E5%88%B0%E7%94%B5%E5%AF%BC%E7%8E%87"><span class="toc-text">3. 处理vaspkit 的MSD.dat得到电导率</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E4%B8%80%E4%BA%9B%E7%BB%93%E6%9E%9C"><span class="toc-text">3. 一些结果</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-%E4%B8%80%E4%BA%9B%E8%84%9A%E6%9C%AC"><span class="toc-text">4. 一些脚本</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%8A%8Aase%E8%BD%A8%E8%BF%B9%E8%BD%AC%E6%8D%A2%E4%B8%BAXDATCAR%E7%9A%84%E8%84%9A%E6%9C%AC"><span class="toc-text">1. 把ase轨迹转换为XDATCAR的脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E8%92%B8%E9%A6%8F%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%8F%98%E6%88%90%E7%AC%A6%E5%90%88acnn%E6%A0%87%E5%87%86%E7%9A%84xsf%E6%96%87%E4%BB%B6%E7%9A%84%E8%84%9A%E6%9C%AC"><span class="toc-text">2. 蒸馏大模型数据变成符合acnn标准的xsf文件的脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%89%A9%E8%83%9E%E8%84%9A%E6%9C%AC"><span class="toc-text">3. 扩胞脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E8%AE%A1%E7%AE%97%E4%BD%93%E7%A7%AF%E8%84%9A%E6%9C%AC"><span class="toc-text">4. 计算体积脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E5%85%83%E7%B4%A0%E6%9B%BF%E6%8D%A2%E8%84%9A%E6%9C%AC"><span class="toc-text">5. 元素替换脚本</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-%E4%BD%BF%E7%94%A8m3gnet"><span class="toc-text">5. 使用m3gnet</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-ASE%E7%BB%93%E5%90%88phonopy-%E4%BD%BF%E7%94%A8%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BD%9C%E4%B8%BA%E8%AE%A1%E7%AE%97%E5%99%A8"><span class="toc-text">6. ASE结合phonopy 使用大模型作为计算器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%85%B3%E4%BA%8E%E5%A3%B0%E5%AD%90%E8%B0%B1"><span class="toc-text">1.关于声子谱</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E7%BB%98%E5%88%B6%E6%8A%95%E5%BD%B1%E5%A3%B0%E5%AD%90%E6%80%81%E5%AF%86%E5%BA%A6"><span class="toc-text">2. 绘制投影声子态密度</span></a></li></ol></li></ol></div></p>
 <h1 id="1-原子大模型排名"><a href="#1-原子大模型排名" class="headerlink" title="1. 原子大模型排名"></a>1. 原子大模型排名</h1><p><a target="_blank" rel="noopener" href="https://matbench-discovery.materialsproject.org/">https://matbench-discovery.materialsproject.org/</a></p>
 <h1 id="2-使用ASE结合mattersim进行结构优化、分子动力学"><a href="#2-使用ASE结合mattersim进行结构优化、分子动力学" class="headerlink" title="2. 使用ASE结合mattersim进行结构优化、分子动力学"></a>2. 使用ASE结合mattersim进行结构优化、分子动力学</h1><h2 id="1-使用ASE进行包括晶胞的结构优化"><a href="#1-使用ASE进行包括晶胞的结构优化" class="headerlink" title="1. 使用ASE进行包括晶胞的结构优化"></a>1. 使用ASE进行包括晶胞的结构优化</h2><pre><code class="python">from mattersim.applications.moldyn import MolecularDynamics
 from ase.io import read, write
@@ -1327,6 +1331,94 @@ trajectory = &quot;atoms.traj&quot;
 logfile = &quot;atoms.log&quot;
 nvt_runner = MolecularDynamics(atoms=relaxed_structure, ensemble=ensemble, temperature=temperature, timestep=timestep, taut=taut, trajectory=trajectory, logfile = logfile)
 nvt_runner.run(1000000)
+</code></pre>
+<h3 id="3-处理vaspkit-的MSD-dat得到电导率"><a href="#3-处理vaspkit-的MSD-dat得到电导率" class="headerlink" title="3. 处理vaspkit 的MSD.dat得到电导率"></a>3. 处理vaspkit 的MSD.dat得到电导率</h3><pre><code class="python">import numpy as np
+import matplotlib.pyplot as plt
+from scipy.stats import linregress
+
+
+def dealMSD(inputfile):
+    data = np.loadtxt(inputfile,skiprows = 1 )
+    data[:,0] = data[:,0] / 1000
+    n = data.shape[0]
+    start_idx = int(n*0.05)
+    end_idx = int(n*0.95)
+    time = data[start_idx:end_idx,0]
+    MSD = data[start_idx:end_idx,4]
+    slope, intercept, r_value, _, _ = linregress(time, MSD)
+    MSD_fit = slope * time + intercept
+
+    
+    fig,ax1 = plt.subplots(figsize=(4,3),dpi = 600)
+    ax1.plot(data[:, 0], data[:, 4], 
+            label=&#39;600 K&#39;, 
+            linewidth=2,          # 更粗的线条
+            color=&#39;#2ecc71&#39;,      # 柔和的绿色
+            alpha=0.8)  
+    ax1.plot(time, MSD_fit, label=f&#39;Fit: y = &#123;slope:.2f&#125;x + &#123;intercept:.2f&#125;&#39;, color=&#39;red&#39;)
+    ax1.set_xlabel(&#39;t (ps)&#39;)
+    ax1.set_ylabel(r&#39;MSD ($\AA^2$)&#39;)
+    ax1.legend()
+    ax1.grid(True)
+    output_filename = inputfile.replace(&#39;/&#39;,&#39;-&#39;) + &#39;.png&#39;
+    plt.savefig(output_filename, bbox_inches=&#39;tight&#39;)
+    plt.close()
+#    plt.show()
+    return slope
+
+
+diffD = []
+temp = [600, 800,1000]
+for i in temp:
+    inputfile = f&quot;&#123;i&#125;/msd/MSD.dat&quot;
+    try:
+        slope = dealMSD(inputfile)
+        diffuD = slope / 60000
+        diffD.append(diffuD)
+    except FileNotFoundError:
+        print(f&quot;文件 &#123;inputfile&#125; 不存在&quot;)
+        diffD.append(0)
+logdiffD = np.log10(diffD)
+temp_inv = np.array([1000 / i for i in temp]) 
+
+
+
+slope_D, intercept_D, _, _, _ = linregress(temp_inv, logdiffD)
+
+temp_inv_fit = np.linspace(1, 3.3, 100)
+logDfit = slope_D * temp_inv_fit + intercept_D
+#logDfit = slope_D * temp_inv + intercept_D
+fig,ax1 = plt.subplots(figsize=(4,3),dpi = 600)
+ax1.plot(temp_inv_fit, logDfit, label=f&#39;Fit: y = &#123;slope_D:.2f&#125;x + &#123;intercept_D:.2f&#125;&#39;, color=&#39;red&#39;)
+ax1.scatter(temp_inv, logdiffD,color = &#39;blue&#39;,marker = &#39;o&#39;)
+ax1.set_xlabel(&#39;1000/T (1/K)&#39;)
+ax1.set_ylabel(r&#39;log10(D) (Å$^2$/ps)&#39;)
+ax1.set_xlim(0.9, 3.5)
+ax1.set_ylim(slope_D * 3.5 + intercept_D, slope_D * 0.9 + intercept_D+ 0.3)
+
+y_min = slope_D * 3.5 + intercept_D
+y_max = slope_D * 0.9 + intercept_D + 0.3
+y_ticks = np.arange(np.floor(y_min / 0.5) * 0.5, np.ceil(y_max / 0.5) * 0.5, 0.5)
+ax1.set_yticks(y_ticks)
+
+ax1.legend()
+ax1.grid(True)
+plt.savefig(&#39;arrnius.png&#39;,bbox_inches=&#39;tight&#39;)
+
+
+from pymatgen.core import Structure
+structure = Structure.from_file(&quot;POSCAR&quot;)
+volume = structure.volume
+atomsnumber = 30
+Eanumber = 0.198691478
+T = 300
+logD300 = slope_D * (1000 / T) + intercept_D
+D = 10 ** logD300
+
+sigma300 = 1.858 * atomsnumber / volume / 300 * (10**12) * D
+Ea = -Eanumber * slope_D
+
+print(Ea, sigma300)
 </code></pre>
 <h1 id="3-一些结果"><a href="#3-一些结果" class="headerlink" title="3. 一些结果"></a>3. 一些结果</h1><p>大模型对NaInSiO的计算</p>
 <p><img src="/./../../%E5%9B%BE%E7%89%87/image-20250121214124415.png" alt="image-20250121214124415"></p>
@@ -1603,7 +1695,113 @@ optimizer.run(fmax=0.01)
 计算过程中，可能需要考虑晶体的对称性，以减少计算量。
 通过上述步骤，有限位移法能够有效地计算晶体的声子谱，为研究材料的热力学性质、动力学稳定性等提供重要信息。
 </code></pre>
-<h2 id="2-绘制投影声子态密度"><a href="#2-绘制投影声子态密度" class="headerlink" title="2. 绘制投影声子态密度"></a>2. 绘制投影声子态密度</h2><pre><code class="python">
+<h2 id="2-绘制投影声子态密度"><a href="#2-绘制投影声子态密度" class="headerlink" title="2. 绘制投影声子态密度"></a>2. 绘制投影声子态密度</h2><pre><code class="python">import numpy as np
+import matplotlib
+matplotlib.use(&#39;Agg&#39;)
+import matplotlib.pyplot as plt
+
+# 读取文件
+input_file1 = &#39;projected_dos.dat&#39;  # 输入文件名
+input_file2 = &#39;total_dos.dat&#39;
+output_file = &#39;tdosandpdos.dat&#39;  # 输出文件名
+
+# 读取数据
+data = np.loadtxt(input_file1)
+data2 = np.loadtxt(input_file2)
+
+# 处理数据
+# 第一列保持不变
+col0 = data2[:,1]
+col1 = data[:, 0]
+
+# 第2-31列求和放到第二列
+col2 = np.sum(data[:, 1:31], axis=1)
+
+# 第32-37列求和放到第三列
+col3 = np.sum(data[:, 31:37], axis=1)
+
+# 第38-61列求和放到第四列
+col4 = np.sum(data[:, 37:61], axis=1)
+
+# 第62-133列求和放到第五列
+col5 = np.sum(data[:, 61:133], axis=1)
+
+# 将处理后的数据保存到新文件
+processed_data = np.column_stack((col1, col2, col3, col4, col5,col0))
+np.savetxt(output_file, processed_data, fmt=&#39;%.6f&#39;, delimiter=&#39;\t&#39;)
+
+
+plt.figure(figsize=(10, 6), dpi=100)  # 增加 dpi 以提高分辨率
+
+# 绘制图形，增强样式
+plt.plot(processed_data[:, 0], processed_data[:, 1], 
+         label=&#39;PDOS_Na&#39;, 
+         linewidth=2,          # 更粗的线条
+         color=&#39;#2ecc71&#39;,      # 柔和的绿色
+         alpha=0.8)           # 轻微的透明度
+plt.plot(processed_data[:, 0], processed_data[:, 2], 
+         label=&#39;PDOS_X&#39;, 
+         linewidth=2, 
+         color=&#39;#e74c3c&#39;,      # 柔和的红色
+         alpha=0.8)
+plt.plot(processed_data[:, 0], processed_data[:, 3], 
+         label=&#39;PDOS_Si&#39;, 
+         linewidth=2, 
+         color=&#39;#3498db&#39;,      # 柔和的蓝色
+         alpha=0.8)
+plt.plot(processed_data[:, 0], processed_data[:, 4], 
+         label=&#39;PDOS_O&#39;, 
+         linewidth=2, 
+         color=&#39;#9b59b6&#39;,      # 紫色
+         alpha=0.8)
+plt.plot(processed_data[:, 0], processed_data[:, 5], 
+         label=&#39;TDOS&#39;, 
+         linewidth=2.5,        # TDOS 线条稍粗
+         color=&#39;#34495e&#39;,      # 深灰色
+         alpha=0.9)
+
+# 自定义坐标轴
+plt.xlabel(&#39;ω (THz)&#39;, fontsize=12, labelpad=10)  # 使用希腊字母 ω 表示频率
+plt.ylabel(&#39;Number&#39;, fontsize=12, labelpad=10)
+plt.title(&#39;Partial and Total Density of States&#39;, 
+          fontsize=14, 
+          pad=15, 
+          fontweight=&#39;bold&#39;)
+
+# 增强图例
+plt.legend(
+    fontsize=10,
+    frameon=True,           # 添加边框
+    framealpha=0.9,         # 轻微透明的边框
+    edgecolor=&#39;gray&#39;,       # 边框颜色
+    loc=&#39;best&#39;              # 自动选择最佳位置
+)
+
+# 自定义网格（可选 - 浅色网格）
+plt.grid(True, linestyle=&#39;--&#39;, alpha=0.3, color=&#39;gray&#39;)
+
+# 调整边框（坐标轴边框）
+ax = plt.gca()
+ax.spines[&#39;top&#39;].set_color(&#39;gray&#39;)
+ax.spines[&#39;right&#39;].set_color(&#39;gray&#39;)
+ax.spines[&#39;left&#39;].set_color(&#39;gray&#39;)
+ax.spines[&#39;bottom&#39;].set_color(&#39;gray&#39;)
+ax.spines[&#39;top&#39;].set_alpha(0.5)
+ax.spines[&#39;right&#39;].set_alpha(0.5)
+
+# 添加次要刻度
+plt.minorticks_on()
+
+# 调整刻度参数
+plt.tick_params(axis=&#39;both&#39;, which=&#39;major&#39;, labelsize=10)
+plt.tick_params(axis=&#39;both&#39;, which=&#39;minor&#39;, length=2)
+
+# 紧凑布局，防止标签被截断
+plt.tight_layout()
+
+# 保存高质量图像
+plot_file = &#39;DOS.png&#39;
+plt.savefig(plot_file, dpi=300, bbox_inches=&#39;tight&#39;, facecolor=&#39;white&#39;)
 </code></pre>
 
       

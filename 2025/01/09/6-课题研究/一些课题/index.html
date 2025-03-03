@@ -6,17 +6,19 @@
   <meta name="keywords" content="">
   <meta name="description" content="一些课题 | xaz的花花世界">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="[toc] https:&#x2F;&#x2F;theory.cm.utexas.edu&#x2F;henkelman&#x2F;code&#x2F;bader&#x2F; VASP从入门到入土：Bader电荷的计算 - 知乎https:&#x2F;&#x2F;zhuanlan.zhihu.com&#x2F;p&#x2F;673557738  LAECHG&#x3D;.TRUE.  chgsum.pl AECCAR0 AECCAR2  bader CHGCAR -ref CHGCAR_sum">
-<meta property="og:type" content="article">
-<meta property="og:title" content="bader电荷分析">
-<meta property="og:url" content="http://example.com/2025/02/17/2-%E6%A8%A1%E6%8B%9F%E6%96%B9%E6%B3%95/bader%E7%94%B5%E8%8D%B7%E5%88%86%E6%9E%90/index.html">
+<meta name="description" content="快捷键">
+<meta property="og:type" content="website">
+<meta property="og:title" content="about">
+<meta property="og:url" content="http://example.com/about/index.html">
 <meta property="og:site_name" content="xaz的花花世界">
-<meta property="og:description" content="[toc] https:&#x2F;&#x2F;theory.cm.utexas.edu&#x2F;henkelman&#x2F;code&#x2F;bader&#x2F; VASP从入门到入土：Bader电荷的计算 - 知乎https:&#x2F;&#x2F;zhuanlan.zhihu.com&#x2F;p&#x2F;673557738  LAECHG&#x3D;.TRUE.  chgsum.pl AECCAR0 AECCAR2  bader CHGCAR -ref CHGCAR_sum">
+<meta property="og:description" content="快捷键">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-02-17T06:21:06.000Z">
-<meta property="article:modified_time" content="2025-02-17T06:59:41.382Z">
+<meta property="og:image" content="http://example.com/%E5%9B%BE%E7%89%87/%E5%BF%AB%E6%8D%B7%E9%94%AE.jpg">
+<meta property="article:published_time" content="2024-05-25T09:36:13.000Z">
+<meta property="article:modified_time" content="2024-05-25T09:40:28.322Z">
 <meta property="article:author" content="xaz">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/%E5%9B%BE%E7%89%87/%E5%BF%AB%E6%8D%B7%E9%94%AE.jpg">
 
 
 <link rel="icon" href="/img/1.png">
@@ -309,7 +311,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="86">
-<input type="hidden" id="yelog_site_word_count" value="115.3k">
+<input type="hidden" id="yelog_site_word_count" value="115.5k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -352,6 +354,8 @@
             <li><a target="_blank" href="https://liuyuyang.net/">一个很励志的博客</a></li>
             
             <li><a target="_blank" href="https://wukan.me/">一个程序员</a></li>
+            
+            <li><a target="_blank" href="https://whuzbf.github.io/">理论物理方向一个博主郑卜凡</a></li>
             
         </ul>
     </div>
@@ -1215,12 +1219,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2025-01-21 17:26:01'>2025-01-09 14:10</time>
+            发布时间 : <time class="date" title='最后更新: 2025-02-24 20:19:16'>2025-01-09 14:10</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:181</span>
+        <span>字数:195</span>
         
         
         
@@ -1228,7 +1232,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E4%B8%8D%E5%81%9A%E5%A4%A7%E6%A8%A1%E5%9E%8B%EF%BC%8C%E5%88%86%E5%88%AB%E8%AE%AD%E7%BB%83%E5%8D%95%E4%B8%AA%E5%B0%8F%E6%A8%A1%E5%9E%8B%EF%BC%8C%E4%B9%9F%E4%B8%8D%E8%8B%9B%E6%B1%82%E8%B7%91%E5%A4%A7%E8%83%9E"><span class="toc-text">1. 不做大模型，分别训练单个小模型，也不苛求跑大胞</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E5%81%9A%E4%B8%AA%E6%8E%BA%E6%9D%82%EF%BC%8C%E7%B1%BB%E4%BC%BCK3SbS4%E7%9A%84%E5%B7%A5%E4%BD%9C"><span class="toc-text">2. 做个掺杂，类似K3SbS4的工作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E4%B8%8D%E8%A6%81%E6%83%B3%E7%9D%80%E5%8F%91%E5%A4%A7%E6%96%87%E7%AB%A0%EF%BC%8C%E6%AF%95%E4%B8%9A%E8%A6%81%E7%B4%A7"><span class="toc-text">3. 不要想着发大文章，毕业要紧</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-%E4%B8%80%E5%AE%9A%E8%A6%81%E4%B8%BB%E5%AF%BC%E8%87%AA%E5%B7%B1%E7%9A%84%E8%AF%BE%E9%A2%98"><span class="toc-text">4. 一定要主导自己的课题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-%E5%AE%9A%E4%B8%AA%E5%B0%8F%E7%9B%AE%E6%A0%87%EF%BC%8C%E8%BF%87%E5%B9%B4%E5%89%8D%E8%BF%98%E6%9C%89%E5%8D%8A%E4%B8%AA%E6%9C%88%EF%BC%8C%E6%8A%8A%E5%8A%BF%E8%AE%AD%E7%BB%83%E5%AE%8C%E6%88%90"><span class="toc-text">5.定个小目标，过年前还有半个月，把势训练完成</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-%E4%BD%BF%E7%94%A8%E9%80%9A%E7%94%A8%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%B0%8F%E6%A8%A1%E5%9E%8B%E6%9D%A5%E5%81%9A%E4%B8%80%E4%B8%AA%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AD%9B%E9%80%89"><span class="toc-text">6. 使用通用大模型+小模型来做一个数据库筛选</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-%E5%AF%B9%E9%AB%98%E5%8E%8B%E3%80%81%E7%84%93%E7%86%B5%E5%85%B3%E7%B3%BB%E3%80%81%E5%85%83%E7%B4%A0%E6%9B%BF%E6%8D%A2%E3%80%81%E6%99%B6%E6%A0%BC%E6%8C%AF%E5%8A%A8%E3%80%81%E5%8C%96%E5%AD%A6%E9%A2%84%E5%8E%8B%E7%BC%A9%E6%A6%82%E5%BF%B5%E7%9A%84%E7%BB%9F%E4%B8%80"><span class="toc-text">7. 对高压、焓熵关系、元素替换、晶格振动、化学预压缩概念的统一</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8-%E7%94%A8%E5%A4%9A%E5%8D%A0%E4%BD%8D%E6%B3%95%E5%BE%97%E5%88%B0%E5%A4%9A%E4%B8%AA%E5%8A%BF%E7%9A%84222%E7%BB%93%E6%9E%9C%E3%80%82%E5%A4%A7%E6%A8%A1%E5%9E%8B%E7%8E%B0%E5%9C%A8%E5%8F%AF%E4%BB%A5%E8%B7%91222-dp%E4%B8%8D%E7%9F%A5%E9%81%93%E8%A1%8C%E4%B8%8D%E8%A1%8C"><span class="toc-text">8. 用多占位法得到多个势的222结果。大模型现在可以跑222 dp不知道行不行</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E4%B8%8D%E5%81%9A%E5%A4%A7%E6%A8%A1%E5%9E%8B%EF%BC%8C%E5%88%86%E5%88%AB%E8%AE%AD%E7%BB%83%E5%8D%95%E4%B8%AA%E5%B0%8F%E6%A8%A1%E5%9E%8B%EF%BC%8C%E4%B9%9F%E4%B8%8D%E8%8B%9B%E6%B1%82%E8%B7%91%E5%A4%A7%E8%83%9E"><span class="toc-text">1. 不做大模型，分别训练单个小模型，也不苛求跑大胞</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E5%81%9A%E4%B8%AA%E6%8E%BA%E6%9D%82%EF%BC%8C%E7%B1%BB%E4%BC%BCK3SbS4%E7%9A%84%E5%B7%A5%E4%BD%9C"><span class="toc-text">2. 做个掺杂，类似K3SbS4的工作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E4%B8%8D%E8%A6%81%E6%83%B3%E7%9D%80%E5%8F%91%E5%A4%A7%E6%96%87%E7%AB%A0%EF%BC%8C%E6%AF%95%E4%B8%9A%E8%A6%81%E7%B4%A7"><span class="toc-text">3. 不要想着发大文章，毕业要紧</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-%E4%B8%80%E5%AE%9A%E8%A6%81%E4%B8%BB%E5%AF%BC%E8%87%AA%E5%B7%B1%E7%9A%84%E8%AF%BE%E9%A2%98"><span class="toc-text">4. 一定要主导自己的课题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-%E5%AE%9A%E4%B8%AA%E5%B0%8F%E7%9B%AE%E6%A0%87%EF%BC%8C%E8%BF%87%E5%B9%B4%E5%89%8D%E8%BF%98%E6%9C%89%E5%8D%8A%E4%B8%AA%E6%9C%88%EF%BC%8C%E6%8A%8A%E5%8A%BF%E8%AE%AD%E7%BB%83%E5%AE%8C%E6%88%90"><span class="toc-text">5.定个小目标，过年前还有半个月，把势训练完成</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-%E4%BD%BF%E7%94%A8%E9%80%9A%E7%94%A8%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%B0%8F%E6%A8%A1%E5%9E%8B%E6%9D%A5%E5%81%9A%E4%B8%80%E4%B8%AA%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AD%9B%E9%80%89"><span class="toc-text">6. 使用通用大模型+小模型来做一个数据库筛选</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-%E5%AF%B9%E9%AB%98%E5%8E%8B%E3%80%81%E7%84%93%E7%86%B5%E5%85%B3%E7%B3%BB%E3%80%81%E5%85%83%E7%B4%A0%E6%9B%BF%E6%8D%A2%E3%80%81%E6%99%B6%E6%A0%BC%E6%8C%AF%E5%8A%A8%E3%80%81%E5%8C%96%E5%AD%A6%E9%A2%84%E5%8E%8B%E7%BC%A9%E6%A6%82%E5%BF%B5%E7%9A%84%E7%BB%9F%E4%B8%80"><span class="toc-text">7. 对高压、焓熵关系、元素替换、晶格振动、化学预压缩概念的统一</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8-%E7%94%A8%E5%A4%9A%E5%8D%A0%E4%BD%8D%E6%B3%95%E5%BE%97%E5%88%B0%E5%A4%9A%E4%B8%AA%E5%8A%BF%E7%9A%84222%E7%BB%93%E6%9E%9C%E3%80%82%E5%A4%A7%E6%A8%A1%E5%9E%8B%E7%8E%B0%E5%9C%A8%E5%8F%AF%E4%BB%A5%E8%B7%91222-dp%E4%B8%8D%E7%9F%A5%E9%81%93%E8%A1%8C%E4%B8%8D%E8%A1%8C"><span class="toc-text">8. 用多占位法得到多个势的222结果。大模型现在可以跑222 dp不知道行不行</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#9-%E7%BB%93%E6%9E%84%E5%8E%9F%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93%E8%83%BD%E4%B8%8D%E8%83%BD%E5%81%9A%E7%82%B9%E4%BB%80%E4%B9%88"><span class="toc-text">9.结构原型数据库能不能做点什么</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -1244,9 +1248,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><div class='inner-toc'><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E4%B8%8D%E5%81%9A%E5%A4%A7%E6%A8%A1%E5%9E%8B%EF%BC%8C%E5%88%86%E5%88%AB%E8%AE%AD%E7%BB%83%E5%8D%95%E4%B8%AA%E5%B0%8F%E6%A8%A1%E5%9E%8B%EF%BC%8C%E4%B9%9F%E4%B8%8D%E8%8B%9B%E6%B1%82%E8%B7%91%E5%A4%A7%E8%83%9E"><span class="toc-text">1. 不做大模型，分别训练单个小模型，也不苛求跑大胞</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E5%81%9A%E4%B8%AA%E6%8E%BA%E6%9D%82%EF%BC%8C%E7%B1%BB%E4%BC%BCK3SbS4%E7%9A%84%E5%B7%A5%E4%BD%9C"><span class="toc-text">2. 做个掺杂，类似K3SbS4的工作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E4%B8%8D%E8%A6%81%E6%83%B3%E7%9D%80%E5%8F%91%E5%A4%A7%E6%96%87%E7%AB%A0%EF%BC%8C%E6%AF%95%E4%B8%9A%E8%A6%81%E7%B4%A7"><span class="toc-text">3. 不要想着发大文章，毕业要紧</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-%E4%B8%80%E5%AE%9A%E8%A6%81%E4%B8%BB%E5%AF%BC%E8%87%AA%E5%B7%B1%E7%9A%84%E8%AF%BE%E9%A2%98"><span class="toc-text">4. 一定要主导自己的课题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-%E5%AE%9A%E4%B8%AA%E5%B0%8F%E7%9B%AE%E6%A0%87%EF%BC%8C%E8%BF%87%E5%B9%B4%E5%89%8D%E8%BF%98%E6%9C%89%E5%8D%8A%E4%B8%AA%E6%9C%88%EF%BC%8C%E6%8A%8A%E5%8A%BF%E8%AE%AD%E7%BB%83%E5%AE%8C%E6%88%90"><span class="toc-text">5.定个小目标，过年前还有半个月，把势训练完成</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-%E4%BD%BF%E7%94%A8%E9%80%9A%E7%94%A8%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%B0%8F%E6%A8%A1%E5%9E%8B%E6%9D%A5%E5%81%9A%E4%B8%80%E4%B8%AA%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AD%9B%E9%80%89"><span class="toc-text">6. 使用通用大模型+小模型来做一个数据库筛选</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-%E5%AF%B9%E9%AB%98%E5%8E%8B%E3%80%81%E7%84%93%E7%86%B5%E5%85%B3%E7%B3%BB%E3%80%81%E5%85%83%E7%B4%A0%E6%9B%BF%E6%8D%A2%E3%80%81%E6%99%B6%E6%A0%BC%E6%8C%AF%E5%8A%A8%E3%80%81%E5%8C%96%E5%AD%A6%E9%A2%84%E5%8E%8B%E7%BC%A9%E6%A6%82%E5%BF%B5%E7%9A%84%E7%BB%9F%E4%B8%80"><span class="toc-text">7. 对高压、焓熵关系、元素替换、晶格振动、化学预压缩概念的统一</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8-%E7%94%A8%E5%A4%9A%E5%8D%A0%E4%BD%8D%E6%B3%95%E5%BE%97%E5%88%B0%E5%A4%9A%E4%B8%AA%E5%8A%BF%E7%9A%84222%E7%BB%93%E6%9E%9C%E3%80%82%E5%A4%A7%E6%A8%A1%E5%9E%8B%E7%8E%B0%E5%9C%A8%E5%8F%AF%E4%BB%A5%E8%B7%91222-dp%E4%B8%8D%E7%9F%A5%E9%81%93%E8%A1%8C%E4%B8%8D%E8%A1%8C"><span class="toc-text">8. 用多占位法得到多个势的222结果。大模型现在可以跑222 dp不知道行不行</span></a></li></ol></div></p>
+        <p><div class='inner-toc'><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E4%B8%8D%E5%81%9A%E5%A4%A7%E6%A8%A1%E5%9E%8B%EF%BC%8C%E5%88%86%E5%88%AB%E8%AE%AD%E7%BB%83%E5%8D%95%E4%B8%AA%E5%B0%8F%E6%A8%A1%E5%9E%8B%EF%BC%8C%E4%B9%9F%E4%B8%8D%E8%8B%9B%E6%B1%82%E8%B7%91%E5%A4%A7%E8%83%9E"><span class="toc-text">1. 不做大模型，分别训练单个小模型，也不苛求跑大胞</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E5%81%9A%E4%B8%AA%E6%8E%BA%E6%9D%82%EF%BC%8C%E7%B1%BB%E4%BC%BCK3SbS4%E7%9A%84%E5%B7%A5%E4%BD%9C"><span class="toc-text">2. 做个掺杂，类似K3SbS4的工作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E4%B8%8D%E8%A6%81%E6%83%B3%E7%9D%80%E5%8F%91%E5%A4%A7%E6%96%87%E7%AB%A0%EF%BC%8C%E6%AF%95%E4%B8%9A%E8%A6%81%E7%B4%A7"><span class="toc-text">3. 不要想着发大文章，毕业要紧</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-%E4%B8%80%E5%AE%9A%E8%A6%81%E4%B8%BB%E5%AF%BC%E8%87%AA%E5%B7%B1%E7%9A%84%E8%AF%BE%E9%A2%98"><span class="toc-text">4. 一定要主导自己的课题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-%E5%AE%9A%E4%B8%AA%E5%B0%8F%E7%9B%AE%E6%A0%87%EF%BC%8C%E8%BF%87%E5%B9%B4%E5%89%8D%E8%BF%98%E6%9C%89%E5%8D%8A%E4%B8%AA%E6%9C%88%EF%BC%8C%E6%8A%8A%E5%8A%BF%E8%AE%AD%E7%BB%83%E5%AE%8C%E6%88%90"><span class="toc-text">5.定个小目标，过年前还有半个月，把势训练完成</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-%E4%BD%BF%E7%94%A8%E9%80%9A%E7%94%A8%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%B0%8F%E6%A8%A1%E5%9E%8B%E6%9D%A5%E5%81%9A%E4%B8%80%E4%B8%AA%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AD%9B%E9%80%89"><span class="toc-text">6. 使用通用大模型+小模型来做一个数据库筛选</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-%E5%AF%B9%E9%AB%98%E5%8E%8B%E3%80%81%E7%84%93%E7%86%B5%E5%85%B3%E7%B3%BB%E3%80%81%E5%85%83%E7%B4%A0%E6%9B%BF%E6%8D%A2%E3%80%81%E6%99%B6%E6%A0%BC%E6%8C%AF%E5%8A%A8%E3%80%81%E5%8C%96%E5%AD%A6%E9%A2%84%E5%8E%8B%E7%BC%A9%E6%A6%82%E5%BF%B5%E7%9A%84%E7%BB%9F%E4%B8%80"><span class="toc-text">7. 对高压、焓熵关系、元素替换、晶格振动、化学预压缩概念的统一</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8-%E7%94%A8%E5%A4%9A%E5%8D%A0%E4%BD%8D%E6%B3%95%E5%BE%97%E5%88%B0%E5%A4%9A%E4%B8%AA%E5%8A%BF%E7%9A%84222%E7%BB%93%E6%9E%9C%E3%80%82%E5%A4%A7%E6%A8%A1%E5%9E%8B%E7%8E%B0%E5%9C%A8%E5%8F%AF%E4%BB%A5%E8%B7%91222-dp%E4%B8%8D%E7%9F%A5%E9%81%93%E8%A1%8C%E4%B8%8D%E8%A1%8C"><span class="toc-text">8. 用多占位法得到多个势的222结果。大模型现在可以跑222 dp不知道行不行</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#9-%E7%BB%93%E6%9E%84%E5%8E%9F%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93%E8%83%BD%E4%B8%8D%E8%83%BD%E5%81%9A%E7%82%B9%E4%BB%80%E4%B9%88"><span class="toc-text">9.结构原型数据库能不能做点什么</span></a></li></ol></div></p>
 <h1 id="1-不做大模型，分别训练单个小模型，也不苛求跑大胞"><a href="#1-不做大模型，分别训练单个小模型，也不苛求跑大胞" class="headerlink" title="1. 不做大模型，分别训练单个小模型，也不苛求跑大胞"></a>1. 不做大模型，分别训练单个小模型，也不苛求跑大胞</h1><h1 id="2-做个掺杂，类似K3SbS4的工作"><a href="#2-做个掺杂，类似K3SbS4的工作" class="headerlink" title="2. 做个掺杂，类似K3SbS4的工作"></a>2. 做个掺杂，类似K3SbS4的工作</h1><h1 id="3-不要想着发大文章，毕业要紧"><a href="#3-不要想着发大文章，毕业要紧" class="headerlink" title="3. 不要想着发大文章，毕业要紧"></a>3. 不要想着发大文章，毕业要紧</h1><h1 id="4-一定要主导自己的课题"><a href="#4-一定要主导自己的课题" class="headerlink" title="4. 一定要主导自己的课题"></a>4. 一定要主导自己的课题</h1><h1 id="5-定个小目标，过年前还有半个月，把势训练完成"><a href="#5-定个小目标，过年前还有半个月，把势训练完成" class="headerlink" title="5.定个小目标，过年前还有半个月，把势训练完成"></a>5.定个小目标，过年前还有半个月，把势训练完成</h1><h1 id="6-使用通用大模型-小模型来做一个数据库筛选"><a href="#6-使用通用大模型-小模型来做一个数据库筛选" class="headerlink" title="6. 使用通用大模型+小模型来做一个数据库筛选"></a>6. 使用通用大模型+小模型来做一个数据库筛选</h1><p>大模型可以直接筛选ICSD了，那些分数占据的结构！！以前没有人做过</p>
-<h1 id="7-对高压、焓熵关系、元素替换、晶格振动、化学预压缩概念的统一"><a href="#7-对高压、焓熵关系、元素替换、晶格振动、化学预压缩概念的统一" class="headerlink" title="7. 对高压、焓熵关系、元素替换、晶格振动、化学预压缩概念的统一"></a>7. 对高压、焓熵关系、元素替换、晶格振动、化学预压缩概念的统一</h1><h1 id="8-用多占位法得到多个势的222结果。大模型现在可以跑222-dp不知道行不行"><a href="#8-用多占位法得到多个势的222结果。大模型现在可以跑222-dp不知道行不行" class="headerlink" title="8. 用多占位法得到多个势的222结果。大模型现在可以跑222 dp不知道行不行"></a>8. 用多占位法得到多个势的222结果。大模型现在可以跑222 dp不知道行不行</h1>
+<h1 id="7-对高压、焓熵关系、元素替换、晶格振动、化学预压缩概念的统一"><a href="#7-对高压、焓熵关系、元素替换、晶格振动、化学预压缩概念的统一" class="headerlink" title="7. 对高压、焓熵关系、元素替换、晶格振动、化学预压缩概念的统一"></a>7. 对高压、焓熵关系、元素替换、晶格振动、化学预压缩概念的统一</h1><h1 id="8-用多占位法得到多个势的222结果。大模型现在可以跑222-dp不知道行不行"><a href="#8-用多占位法得到多个势的222结果。大模型现在可以跑222-dp不知道行不行" class="headerlink" title="8. 用多占位法得到多个势的222结果。大模型现在可以跑222 dp不知道行不行"></a>8. 用多占位法得到多个势的222结果。大模型现在可以跑222 dp不知道行不行</h1><h1 id="9-结构原型数据库能不能做点什么"><a href="#9-结构原型数据库能不能做点什么" class="headerlink" title="9.结构原型数据库能不能做点什么"></a>9.结构原型数据库能不能做点什么</h1>
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源  有问题可通过github提交issue </span>
     </div>
