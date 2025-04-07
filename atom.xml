@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2025-02-17T06:59:41.382Z</updated>
+  <updated>2025-04-07T01:12:00.345Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>python绘图图案规范</title>
+    <link href="http://example.com/2025/04/07/python%E7%BB%98%E5%9B%BE%E5%9B%BE%E6%A1%88%E8%A7%84%E8%8C%83/"/>
+    <id>http://example.com/2025/04/07/python%E7%BB%98%E5%9B%BE%E5%9B%BE%E6%A1%88%E8%A7%84%E8%8C%83/</id>
+    <published>2025-04-07T01:12:00.000Z</published>
+    <updated>2025-04-07T01:12:00.345Z</updated>
+    
+    <content type="html"><![CDATA[<p>[toc]</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;[toc]&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>bader电荷分析</title>
@@ -452,29 +473,6 @@ from pymatgen.io.vasp.inputs</summary>
     
     
     <category term="模拟方法" scheme="http://example.com/categories/%E6%A8%A1%E6%8B%9F%E6%96%B9%E6%B3%95/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>故事集</title>
-    <link href="http://example.com/2024/06/01/9-%E7%BD%91%E7%AB%99%E6%94%B6%E9%9B%86/%E6%95%85%E4%BA%8B%E9%9B%86/"/>
-    <id>http://example.com/2024/06/01/9-%E7%BD%91%E7%AB%99%E6%94%B6%E9%9B%86/%E6%95%85%E4%BA%8B%E9%9B%86/</id>
-    <published>2024-06-01T12:29:00.000Z</published>
-    <updated>2024-12-16T07:50:59.350Z</updated>
-    
-    <content type="html"><![CDATA[<p>[toc]</p><h1 id="1-纯爱"><a href="#1-纯爱" class="headerlink" title="1. 纯爱"></a>1. 纯爱</h1><p>一个非常漂亮的残疾女孩，会有人愿意娶吗？ - 清霖的回答 - 知乎<br><a href="https://www.zhihu.com/question/607294004/answer/3419797924">https://www.zhihu.com/question/607294004/answer/3419797924</a></p><p><img src="/./../../%E5%9B%BE%E7%89%87/image-20240601211424155.png" alt="image-20240601211424155"></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;[toc]&lt;/p&gt;
-&lt;h1 id=&quot;1-纯爱&quot;&gt;&lt;a href=&quot;#1-纯爱&quot; class=&quot;headerlink&quot; title=&quot;1. 纯爱&quot;&gt;&lt;/a&gt;1. 纯爱&lt;/h1&gt;&lt;p&gt;一个非常漂亮的残疾女孩，会有人愿意娶吗？ - 清霖的回答 - 知乎&lt;br&gt;&lt;a href=&quot;h</summary>
-      
-    
-    
-    
-    <category term="网站收集" scheme="http://example.com/categories/%E7%BD%91%E7%AB%99%E6%94%B6%E9%9B%86/"/>
     
     
   </entry>
