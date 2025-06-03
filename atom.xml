@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2025-04-16T02:31:18.847Z</updated>
+  <updated>2025-06-03T01:59:13.388Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,50 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>名家集</title>
+    <link href="http://example.com/2025/06/03/%E5%90%8D%E5%AE%B6%E9%9B%86/"/>
+    <id>http://example.com/2025/06/03/%E5%90%8D%E5%AE%B6%E9%9B%86/</id>
+    <published>2025-06-03T01:59:13.000Z</published>
+    <updated>2025-06-03T01:59:13.388Z</updated>
+    
+    <content type="html"><![CDATA[<p>[toc]</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;[toc]&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>编译ACNN</title>
+    <link href="http://example.com/2025/05/27/4-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E7%BC%96%E8%AF%91ACNN/"/>
+    <id>http://example.com/2025/05/27/4-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E7%BC%96%E8%AF%91ACNN/</id>
+    <published>2025-05-27T01:30:30.000Z</published>
+    <updated>2025-05-27T02:51:21.817Z</updated>
+    
+    <content type="html"><![CDATA[<p>[toc]</p><h1 id="1-编译可使用ACNN势的lammps"><a href="#1-编译可使用ACNN势的lammps" class="headerlink" title="1. 编译可使用ACNN势的lammps"></a>1. 编译可使用ACNN势的lammps</h1><p>需要注意的点</p><ul><li><p>修改torchdemo-v3 里的prefix.cmake  修改里面openblas 和 torch的位置 </p></li><li><p>需要使用oneapi 来编译，因为需要用到mkl库</p><p>可以检查mpicxx -show  如果输出是icx 说明使用的是oneapi的编译器，如果输出是g++ ，说明使用的是openmpi </p></li><li><p>在interface 处sh bulid**.sh build</p></li><li><p>编译完成后，需要给出torch 和openblas的库文件位置以及source onempi 才能运行程序</p></li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;[toc]&lt;/p&gt;
+&lt;h1 id=&quot;1-编译可使用ACNN势的lammps&quot;&gt;&lt;a href=&quot;#1-编译可使用ACNN势的lammps&quot; class=&quot;headerlink&quot; title=&quot;1. 编译可使用ACNN势的lammps&quot;&gt;&lt;/a&gt;1. 编译可使用ACNN势的l</summary>
+      
+    
+    
+    
+    <category term="机器学习" scheme="http://example.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>关于毕业论文</title>
@@ -428,53 +472,6 @@ if [ -f &amp;quot;$file&amp;quot; ];then
     
     
     <category term="模拟方法" scheme="http://example.com/categories/%E6%A8%A1%E6%8B%9F%E6%96%B9%E6%B3%95/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>机器学习的理论基础</title>
-    <link href="http://example.com/2024/06/21/4-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9A%84%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80/"/>
-    <id>http://example.com/2024/06/21/4-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9A%84%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80/</id>
-    <published>2024-06-21T11:40:04.000Z</published>
-    <updated>2024-06-21T12:40:57.809Z</updated>
-    
-    <content type="html"><![CDATA[<p>[toc]</p><h1 id="1-机器学习中的取样"><a href="#1-机器学习中的取样" class="headerlink" title="1. 机器学习中的取样"></a>1. 机器学习中的取样</h1><p>机器学习的一个重要步骤是采样，采集那些能够表征系统特征的构型加以训练，能够训练出新的机器学习势，在遇到构型时，能够准确判断构型中原子受到的力</p><p>从统计热力学的角度看，一个系统的微观状态的概率服从玻尔兹曼分布，即随着能量增加，微观状态出现的概率越低。在我的体系中，能够出现一些稀有的构型，这些构型应该有一个共同的特点就是能量高，导致他们出现的概率很低。但是增大晶胞能够大大增加这些稀有事件出现的概率。</p><p>分子动力学的过程只能探索很少的势能面，这些很少的势能面在大概率上决定了系统在大部分时间内的演化。系统根据玻尔兹曼分布到达其他势能面的概率很低，这也是机器学习能够起到作用的根本原因</p><blockquote><p>分子动力学只需要很少的势能面就能运行足够多的时间</p></blockquote><p><strong>为什么增大晶胞这些稀有的构型就出现了？</strong></p><p>理论上讲，氧元素所能探索的高能态是很有限的，因为它们没有扩散，真正起作用的还是钠离子的扩散，导致在小晶胞中本来不可能探测到的氧原子的位移、钠离子的构型出现了，所以问题的根源还是在钠离子的扩散。大晶胞和小晶胞的扩散不同的一点应该就在于钠离子可以以更加紧密的方式排列在一起。这需要证据。并且如果是这样的话，为什么在其他体系的模拟中没有出现这样的现象。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;[toc]&lt;/p&gt;
-&lt;h1 id=&quot;1-机器学习中的取样&quot;&gt;&lt;a href=&quot;#1-机器学习中的取样&quot; class=&quot;headerlink&quot; title=&quot;1. 机器学习中的取样&quot;&gt;&lt;/a&gt;1. 机器学习中的取样&lt;/h1&gt;&lt;p&gt;机器学习的一个重要步骤是采样，采集那些能够表征</summary>
-      
-    
-    
-    
-    <category term="机器学习" scheme="http://example.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>统计力学</title>
-    <link href="http://example.com/2024/06/17/1-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%BB%9F%E8%AE%A1%E5%8A%9B%E5%AD%A6/"/>
-    <id>http://example.com/2024/06/17/1-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%BB%9F%E8%AE%A1%E5%8A%9B%E5%AD%A6/</id>
-    <published>2024-06-17T13:25:23.000Z</published>
-    <updated>2024-07-22T12:14:42.142Z</updated>
-    
-    <content type="html"><![CDATA[<p>[toc]</p><h1 id="1-学习统计力学"><a href="#1-学习统计力学" class="headerlink" title="1.学习统计力学"></a>1.学习统计力学</h1><blockquote><p>学习<a href="https://theoreticalminimum.com/courses/statistical-mechanics/2009/spring/lecture-3">统计力学</a></p></blockquote><p><img src="/./../../%E5%9B%BE%E7%89%87/image-20240618213331482.png" alt="image-20240618213331482"></p><p><img src="/./../../%E5%9B%BE%E7%89%87/image-20240618213400376.png" alt="image-20240618213400376"></p><p><strong>势能面本质上是多维的能量概率分布</strong></p><p><img src="/./../../%E5%9B%BE%E7%89%87/image-20240618213407601.png" alt="image-20240618213407601"></p><p><img src="/./../../%E5%9B%BE%E7%89%87/image-20240618213414194.png" alt="image-20240618213414194"></p><p><img src="/./../../%E5%9B%BE%E7%89%87/image-20240618213421000.png" alt="image-20240618213421000"></p><p><img src="/./../../%E5%9B%BE%E7%89%87/image-20240618213426693.png" alt="image-20240618213426693"></p><p><img src="/./../../%E5%9B%BE%E7%89%87/image-20240618213432429.png" alt="image-20240618213432429"></p><p><img src="/./../../%E5%9B%BE%E7%89%87/image-20240618213442093.png" alt="image-20240618213442093"></p><h1 id="2-如何用统计物理理解晶体"><a href="#2-如何用统计物理理解晶体" class="headerlink" title="2. 如何用统计物理理解晶体"></a>2. 如何用统计物理理解晶体</h1><h2 id="2-1-晶体与统计物理中微观态的关系"><a href="#2-1-晶体与统计物理中微观态的关系" class="headerlink" title="2.1 晶体与统计物理中微观态的关系"></a>2.1 晶体与统计物理中微观态的关系</h2><p>对于一个有大量原子的集合，可以有多种微观状态，晶体也是其中一种微观状态，且能量比普通随机的微观状态低得多，因此是概率最大的微观状态。温度升高时，系统的状态由能量和熵共同决定，高温下无序状态的熵贡献可能使系统偏离晶体结构。结构熔化就是一种温度升高导致的能量最小值改变的现象。</p><p>宏观态指的是宏观的外界条件，微观态指的是宏观条件约束下原子的速度、坐标等信息</p><h2 id="2-2-两者的不同"><a href="#2-2-两者的不同" class="headerlink" title="2.2 两者的不同"></a>2.2 两者的不同</h2><p>统计物理描述的是大量微观状态&#x2F;粒子在不同能级上的分布，晶体中的声子、电子能级、空位浓度这些描述在不同能级上的分布可以用统计物理来理解。</p><p>但是晶体在基态时是能量最低的状态，这与统计力学不同，统计物理中，平衡态并不是能量最低的状态，而是微观状态数最多的状态。可以理解为平衡态下，晶体中的声子的分布并不是能量最低的状态，而是有最合适的分布。</p><blockquote><p>空位浓度是统计物理的研究范围，离子的扩散也是空位的浓度的一种重分布啊（阿伦尼乌斯公式）</p></blockquote><h2 id="2-3-统计物理来理解晶格中的声子"><a href="#2-3-统计物理来理解晶格中的声子" class="headerlink" title="2.3 统计物理来理解晶格中的声子"></a>2.3 统计物理来理解晶格中的声子</h2><p>在统计物理中，声子是描述晶体中原子集体振动的量子化准粒子。理解声子和它们在不同温度下的行为可以揭示晶体的热力学性质、比热容、热导率等。</p><h3 id="声子的统计物理描述"><a href="#声子的统计物理描述" class="headerlink" title="声子的统计物理描述"></a>声子的统计物理描述</h3><h4 id="1-声子基本概念"><a href="#1-声子基本概念" class="headerlink" title="1. 声子基本概念"></a>1. 声子基本概念</h4><ul><li><strong>声子</strong>: 声子是晶格振动的量子化模式。声子可以分为纵波和横波，且每种类型可以进一步分为声学声子和光学声子。</li><li><strong>简谐振动</strong>: 在平衡位置附近，原子的振动可以近似为简谐振动。这个近似使得我们能够用二次项展开势能函数，并使用量子力学来处理振动能级。</li></ul><h4 id="2-声子模型和配分函数"><a href="#2-声子模型和配分函数" class="headerlink" title="2. 声子模型和配分函数"></a>2. 声子模型和配分函数</h4><p>在统计物理中，声子的贡献通过声子配分函数来描述。对于一个具有频率 $( \omega_q)$ 的声子模式，其能量量子化为：</p><p>$$[ E_n &#x3D; \left( n + \frac{1}{2} \right) \hbar \omega_q ]$$</p><p>其中 $$( n &#x3D; 0, 1, 2, \ldots )$$。</p><p>对于一组声子模式，配分函数$$ ( Z_{\text{phonon}} )$$ 可以写成：</p><p>$$[ Z_{\text{phonon}} &#x3D; \prod_{q} \left( \sum_{n_q&#x3D;0}^{\infty} e^{-\beta \left( n_q + \frac{1}{2} \right) \hbar \omega_q} \right) ]$$</p><p>计算上述和，可以得到：</p><p>$$[ Z_{\text{phonon}} &#x3D; \prod_{q} \left( \frac{e^{-\beta \hbar \omega_q &#x2F; 2}}{1 - e^{-\beta \hbar \omega_q}} \right) ]$$</p><h4 id="3-声子的热力学性质"><a href="#3-声子的热力学性质" class="headerlink" title="3. 声子的热力学性质"></a>3. 声子的热力学性质</h4><p>通过声子配分函数，可以计算出系统的热力学性质：</p><ul><li><p><strong>内能 ( U )</strong>:<br>$$[ U &#x3D; \sum_q \left( \frac{\hbar \omega_q}{2} + \frac{\hbar \omega_q}{e^{\beta \hbar \omega_q} - 1} \right) ]$$</p><p>其中，第一项是零点能，第二项是由热激发引起的能量。</p></li><li><p><strong>比热容 ( C_V )</strong>:<br>$$[ C_V &#x3D; \left( \frac{\partial U}{\partial T} \right)_V ]$$</p></li></ul><p>对于高温（经典极限）和低温（量子极限），比热容表现出不同的行为。在低温下，比热容 ( C_V ) 随温度 ( T ) 的立方关系增长（德拜定律）；在高温下，比热容趋于常数（德拜高温极限）。</p><h3 id="温度升高时晶体的振动变化"><a href="#温度升高时晶体的振动变化" class="headerlink" title="温度升高时晶体的振动变化"></a>温度升高时晶体的振动变化</h3><h4 id="1-低温下的振动"><a href="#1-低温下的振动" class="headerlink" title="1. 低温下的振动"></a>1. 低温下的振动</h4><p>在低温下，大多数声子模式处于其最低量子态，只有少量的声子被激发。这时，晶体的热容量主要由少数低频声子（长波长声子）贡献。热激发的能量较少，原子振动幅度较小。</p><h4 id="2-高温下的振动"><a href="#2-高温下的振动" class="headerlink" title="2. 高温下的振动"></a>2. 高温下的振动</h4><p>随着温度升高，更多的声子模式被热激发，占据更高的量子态。这导致以下几方面的变化：</p><ul><li><p><strong>声子激发增加</strong>:<br>高温下，大量声子被激发，声子模式的占据数增加。这意味着晶体内的原子振动更加剧烈。</p></li><li><p><strong>平均振动能量增加</strong>:<br>根据玻尔兹曼分布，声子的平均能量随温度增加。高温下，每个声子模式的平均能量趋近于 ( k_B T )。</p></li><li><p><strong>比热容趋于常数</strong>:<br>在经典极限（高温下），根据德拜模型，晶体的比热容趋于 ( 3Nk_B )，其中 ( N ) 是原子的数目。这称为德拜高温极限。</p></li></ul><h3 id="德拜模型"><a href="#德拜模型" class="headerlink" title="德拜模型"></a>德拜模型</h3><p>德拜模型是描述声子热容的经典模型之一。德拜模型假设声子的频谱是连续的，并引入一个最高截止频率 (\omega_D)，即德拜频率。</p><ul><li><p><strong>德拜频率</strong>:<br>$$[ \omega_D^3 &#x3D; \frac{6\pi^2 N}{V} v_s^3 ]$$</p><p>其中， ( v_s ) 是声速， ( N ) 是晶体中的原子数， ( V ) 是体积。</p></li><li><p><strong>德拜积分</strong>:<br>德拜模型中，比热容 ( C_V ) 可以通过德拜积分计算：</p><p>$$[ C_V &#x3D; 9Nk_B \left( \frac{T}{\Theta_D} \right)^3 \int_0^{\Theta_D&#x2F;T} \frac{x^4 e^x}{(e^x - 1)^2} dx ]$$</p><p>其中， $$(\Theta_D &#x3D; \hbar \omega_D &#x2F; k_B) $$是德拜温度。</p></li></ul><h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p>通过统计物理和声子模型，可以理解晶体的振动行为及其热力学性质。随着温度升高，晶体的原子振动加剧，声子激发增加，比热容从低温下的$$ ( T^3 )$$ 依赖逐渐趋于常数。这些行为在德拜模型和配分函数的框架下得到了很好的解释。</p><h1 id="3-玻尔兹曼分布与麦克斯韦-玻尔兹曼分布函数"><a href="#3-玻尔兹曼分布与麦克斯韦-玻尔兹曼分布函数" class="headerlink" title="3. 玻尔兹曼分布与麦克斯韦-玻尔兹曼分布函数"></a>3. 玻尔兹曼分布与麦克斯韦-玻尔兹曼分布函数</h1><p><img src="/./../../%E5%9B%BE%E7%89%87/image-20240620200917358.png" alt="image-20240620200917358"></p><p>玻尔兹曼分布既指某一个宏观状态的概率，也可指某个全同小部分的概率的分布</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;[toc]&lt;/p&gt;
-&lt;h1 id=&quot;1-学习统计力学&quot;&gt;&lt;a href=&quot;#1-学习统计力学&quot; class=&quot;headerlink&quot; title=&quot;1.学习统计力学&quot;&gt;&lt;/a&gt;1.学习统计力学&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;学习&lt;a href=&quot;https://t</summary>
-      
-    
-    
-    
-    <category term="学习笔记" scheme="http://example.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
   </entry>
