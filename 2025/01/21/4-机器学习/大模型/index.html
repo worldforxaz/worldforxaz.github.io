@@ -6,19 +6,17 @@
   <meta name="keywords" content="">
   <meta name="description" content="大模型 | xaz的花花世界">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="快捷键">
-<meta property="og:type" content="website">
-<meta property="og:title" content="about">
-<meta property="og:url" content="http://example.com/about/index.html">
+<meta name="description" content="[toc] 1. 编译可使用ACNN势的lammps需要注意的点  修改torchdemo-v3 里的prefix.cmake  修改里面openblas 和 torch的位置   需要使用oneapi 来编译，因为需要用到mkl库 可以检查mpicxx -show  如果输出是icx 说明使用的是oneapi的编译器，如果输出是g++ ，说明使用的是openmpi   在interface 处s">
+<meta property="og:type" content="article">
+<meta property="og:title" content="编译ACNN">
+<meta property="og:url" content="http://example.com/2025/05/27/4-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E7%BC%96%E8%AF%91ACNN/index.html">
 <meta property="og:site_name" content="xaz的花花世界">
-<meta property="og:description" content="快捷键">
+<meta property="og:description" content="[toc] 1. 编译可使用ACNN势的lammps需要注意的点  修改torchdemo-v3 里的prefix.cmake  修改里面openblas 和 torch的位置   需要使用oneapi 来编译，因为需要用到mkl库 可以检查mpicxx -show  如果输出是icx 说明使用的是oneapi的编译器，如果输出是g++ ，说明使用的是openmpi   在interface 处s">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/%E5%9B%BE%E7%89%87/%E5%BF%AB%E6%8D%B7%E9%94%AE.jpg">
-<meta property="article:published_time" content="2024-05-25T09:36:13.000Z">
-<meta property="article:modified_time" content="2024-05-25T09:40:28.322Z">
+<meta property="article:published_time" content="2025-05-27T01:30:30.000Z">
+<meta property="article:modified_time" content="2025-05-27T02:51:21.817Z">
 <meta property="article:author" content="xaz">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/%E5%9B%BE%E7%89%87/%E5%BF%AB%E6%8D%B7%E9%94%AE.jpg">
 
 
 <link rel="icon" href="/img/1.png">
@@ -311,7 +309,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="92">
-<input type="hidden" id="yelog_site_word_count" value="124k">
+<input type="hidden" id="yelog_site_word_count" value="125.8k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1279,12 +1277,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2025-06-05 15:44:12'>2025-01-21 21:22</time>
+            发布时间 : <time class="date" title='最后更新: 2025-06-16 20:41:21'>2025-01-21 21:22</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:7.4k</span>
+        <span>字数:8.3k</span>
         
         
         
@@ -1292,7 +1290,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E5%8E%9F%E5%AD%90%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%8E%92%E5%90%8D"><span class="toc-text">1. 原子大模型排名</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E4%BD%BF%E7%94%A8ASE%E7%BB%93%E5%90%88mattersim%E8%BF%9B%E8%A1%8C%E7%BB%93%E6%9E%84%E4%BC%98%E5%8C%96%E3%80%81%E5%88%86%E5%AD%90%E5%8A%A8%E5%8A%9B%E5%AD%A6"><span class="toc-text">2. 使用ASE结合mattersim进行结构优化、分子动力学</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E4%BD%BF%E7%94%A8ASE%E8%BF%9B%E8%A1%8C%E5%8C%85%E6%8B%AC%E6%99%B6%E8%83%9E%E7%9A%84%E7%BB%93%E6%9E%84%E4%BC%98%E5%8C%96"><span class="toc-text">1. 使用ASE进行包括晶胞的结构优化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-from-wangq"><span class="toc-text">2. from wangq</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%A4%84%E7%90%86vaspkit-%E7%9A%84MSD-dat%E5%BE%97%E5%88%B0%E7%94%B5%E5%AF%BC%E7%8E%87"><span class="toc-text">3. 处理vaspkit 的MSD.dat得到电导率</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-mattersim-MD%E7%9B%B4%E6%8E%A5%E8%BE%93%E5%87%BAMSD"><span class="toc-text">4. mattersim-MD直接输出MSD</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-mattersim%E4%BD%BF%E7%94%A8Nose-Hoover"><span class="toc-text">5. mattersim使用Nose-Hoover</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E8%AE%A1%E7%AE%97MSD-%E5%A4%84%E7%90%86equili-log-atoms-log"><span class="toc-text">6. 计算MSD 处理equili.log &amp; atoms.log</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E5%A4%84%E7%90%86%E4%B8%8D%E5%90%8C%E6%AC%A1%E7%9A%84MSD%EF%BC%8C%E5%BE%97%E5%88%B0%E6%89%80%E6%9C%89MSD"><span class="toc-text">7. 处理不同次的MSD，得到所有MSD</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-%E8%AE%A1%E7%AE%97%E4%B8%8D%E5%90%8C%E6%AC%A1%E5%88%86%E5%AD%90%E5%8A%A8%E5%8A%9B%E5%AD%A6%E5%B9%B3%E5%9D%87%E5%90%8E%E7%9A%84%E7%94%B5%E5%AF%BC%E7%8E%87"><span class="toc-text">8.计算不同次分子动力学平均后的电导率</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E4%B8%80%E4%BA%9B%E7%BB%93%E6%9E%9C"><span class="toc-text">3. 一些结果</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-%E4%B8%80%E4%BA%9B%E8%84%9A%E6%9C%AC"><span class="toc-text">4. 一些脚本</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%8A%8Aase%E8%BD%A8%E8%BF%B9%E8%BD%AC%E6%8D%A2%E4%B8%BAXDATCAR%E7%9A%84%E8%84%9A%E6%9C%AC"><span class="toc-text">1. 把ase轨迹转换为XDATCAR的脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E8%92%B8%E9%A6%8F%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%8F%98%E6%88%90%E7%AC%A6%E5%90%88acnn%E6%A0%87%E5%87%86%E7%9A%84xsf%E6%96%87%E4%BB%B6%E7%9A%84%E8%84%9A%E6%9C%AC"><span class="toc-text">2. 蒸馏大模型数据变成符合acnn标准的xsf文件的脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%89%A9%E8%83%9E%E8%84%9A%E6%9C%AC"><span class="toc-text">3. 扩胞脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E8%AE%A1%E7%AE%97%E4%BD%93%E7%A7%AF%E8%84%9A%E6%9C%AC"><span class="toc-text">4. 计算体积脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E5%85%83%E7%B4%A0%E6%9B%BF%E6%8D%A2%E8%84%9A%E6%9C%AC"><span class="toc-text">5. 元素替换脚本</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-%E4%BD%BF%E7%94%A8m3gnet"><span class="toc-text">5. 使用m3gnet</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-ASE%E7%BB%93%E5%90%88phonopy-%E4%BD%BF%E7%94%A8%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BD%9C%E4%B8%BA%E8%AE%A1%E7%AE%97%E5%99%A8"><span class="toc-text">6. ASE结合phonopy 使用大模型作为计算器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%85%B3%E4%BA%8E%E5%A3%B0%E5%AD%90%E8%B0%B1"><span class="toc-text">1.关于声子谱</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E7%BB%98%E5%88%B6%E6%8A%95%E5%BD%B1%E5%A3%B0%E5%AD%90%E6%80%81%E5%AF%86%E5%BA%A6"><span class="toc-text">2. 绘制投影声子态密度</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-ASE-grace"><span class="toc-text">7. ASE+grace</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-BFGS%E4%BC%98%E5%8C%96-NVTBerendsen%E5%88%86%E5%AD%90%E5%8A%A8%E5%8A%9B%E5%AD%A6"><span class="toc-text">1. BFGS优化+NVTBerendsen分子动力学</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E4%BD%BF%E7%94%A8ASE%E4%B8%AD%E7%9A%84Nose-Hoover-NVT"><span class="toc-text">2. 使用ASE中的Nose-Hoover NVT</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8-Nose-Hoover%E5%92%8CBerendsen%E7%9A%84%E5%AF%B9%E6%AF%94"><span class="toc-text">8. Nose-Hoover和Berendsen的对比</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#9-%E5%AD%A6%E4%B9%A0mattersim%E7%9A%84phonon%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-text">9. 学习mattersim的phonon的方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%8C%85%E8%A3%85ase%E7%9A%84%E7%BB%93%E6%9E%84%E4%B8%BAphonon%E7%9A%84%E6%A0%BC%E5%BC%8F"><span class="toc-text">1. 包装ase的结构为phonon的格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E4%BF%AE%E6%94%B9mattersim%E4%BB%A5%E8%BE%93%E5%87%BA%E6%8A%95%E5%BD%B1%E5%A3%B0%E5%AD%90%E5%AF%86%E5%BA%A6"><span class="toc-text">2. 修改mattersim以输出投影声子密度</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E5%8E%9F%E5%AD%90%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%8E%92%E5%90%8D"><span class="toc-text">1. 原子大模型排名</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E4%BD%BF%E7%94%A8ASE%E7%BB%93%E5%90%88mattersim%E8%BF%9B%E8%A1%8C%E7%BB%93%E6%9E%84%E4%BC%98%E5%8C%96%E3%80%81%E5%88%86%E5%AD%90%E5%8A%A8%E5%8A%9B%E5%AD%A6"><span class="toc-text">2. 使用ASE结合mattersim进行结构优化、分子动力学</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E4%BD%BF%E7%94%A8ASE%E8%BF%9B%E8%A1%8C%E5%8C%85%E6%8B%AC%E6%99%B6%E8%83%9E%E7%9A%84%E7%BB%93%E6%9E%84%E4%BC%98%E5%8C%96"><span class="toc-text">1. 使用ASE进行包括晶胞的结构优化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-from-wangq"><span class="toc-text">2. from wangq</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%A4%84%E7%90%86vaspkit-%E7%9A%84MSD-dat%E5%BE%97%E5%88%B0%E7%94%B5%E5%AF%BC%E7%8E%87"><span class="toc-text">3. 处理vaspkit 的MSD.dat得到电导率</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-mattersim-MD%E7%9B%B4%E6%8E%A5%E8%BE%93%E5%87%BAMSD"><span class="toc-text">4. mattersim-MD直接输出MSD</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-mattersim%E4%BD%BF%E7%94%A8Nose-Hoover"><span class="toc-text">5. mattersim使用Nose-Hoover</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E8%AE%A1%E7%AE%97MSD-%E5%A4%84%E7%90%86equili-log-atoms-log"><span class="toc-text">6. 计算MSD 处理equili.log &amp; atoms.log</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E5%A4%84%E7%90%86%E4%B8%8D%E5%90%8C%E6%AC%A1%E7%9A%84MSD%EF%BC%8C%E5%BE%97%E5%88%B0%E6%89%80%E6%9C%89MSD"><span class="toc-text">7. 处理不同次的MSD，得到所有MSD</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-%E8%AE%A1%E7%AE%97%E4%B8%8D%E5%90%8C%E6%AC%A1%E5%88%86%E5%AD%90%E5%8A%A8%E5%8A%9B%E5%AD%A6%E5%B9%B3%E5%9D%87%E5%90%8E%E7%9A%84%E7%94%B5%E5%AF%BC%E7%8E%87"><span class="toc-text">8.计算不同次分子动力学平均后的电导率</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E4%B8%80%E4%BA%9B%E7%BB%93%E6%9E%9C"><span class="toc-text">3. 一些结果</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-%E4%B8%80%E4%BA%9B%E8%84%9A%E6%9C%AC"><span class="toc-text">4. 一些脚本</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%8A%8Aase%E8%BD%A8%E8%BF%B9%E8%BD%AC%E6%8D%A2%E4%B8%BAXDATCAR%E7%9A%84%E8%84%9A%E6%9C%AC"><span class="toc-text">1. 把ase轨迹转换为XDATCAR的脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E8%92%B8%E9%A6%8F%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%8F%98%E6%88%90%E7%AC%A6%E5%90%88acnn%E6%A0%87%E5%87%86%E7%9A%84xsf%E6%96%87%E4%BB%B6%E7%9A%84%E8%84%9A%E6%9C%AC"><span class="toc-text">2. 蒸馏大模型数据变成符合acnn标准的xsf文件的脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%89%A9%E8%83%9E%E8%84%9A%E6%9C%AC"><span class="toc-text">3. 扩胞脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E8%AE%A1%E7%AE%97%E4%BD%93%E7%A7%AF%E8%84%9A%E6%9C%AC"><span class="toc-text">4. 计算体积脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E5%85%83%E7%B4%A0%E6%9B%BF%E6%8D%A2%E8%84%9A%E6%9C%AC"><span class="toc-text">5. 元素替换脚本</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-%E4%BD%BF%E7%94%A8m3gnet"><span class="toc-text">5. 使用m3gnet</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-ASE%E7%BB%93%E5%90%88phonopy-%E4%BD%BF%E7%94%A8%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BD%9C%E4%B8%BA%E8%AE%A1%E7%AE%97%E5%99%A8"><span class="toc-text">6. ASE结合phonopy 使用大模型作为计算器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%85%B3%E4%BA%8E%E5%A3%B0%E5%AD%90%E8%B0%B1"><span class="toc-text">1.关于声子谱</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E7%BB%98%E5%88%B6%E6%8A%95%E5%BD%B1%E5%A3%B0%E5%AD%90%E6%80%81%E5%AF%86%E5%BA%A6"><span class="toc-text">2. 绘制投影声子态密度</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-ASE-grace"><span class="toc-text">7. ASE+grace</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-BFGS%E4%BC%98%E5%8C%96-NVTBerendsen%E5%88%86%E5%AD%90%E5%8A%A8%E5%8A%9B%E5%AD%A6"><span class="toc-text">1. BFGS优化+NVTBerendsen分子动力学</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E4%BD%BF%E7%94%A8ASE%E4%B8%AD%E7%9A%84Nose-Hoover-NVT"><span class="toc-text">2. 使用ASE中的Nose-Hoover NVT</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8-Nose-Hoover%E5%92%8CBerendsen%E7%9A%84%E5%AF%B9%E6%AF%94"><span class="toc-text">8. Nose-Hoover和Berendsen的对比</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#9-%E5%AD%A6%E4%B9%A0mattersim%E7%9A%84phonon%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-text">9. 学习mattersim的phonon的方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%8C%85%E8%A3%85ase%E7%9A%84%E7%BB%93%E6%9E%84%E4%B8%BAphonon%E7%9A%84%E6%A0%BC%E5%BC%8F"><span class="toc-text">1. 包装ase的结构为phonon的格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E4%BF%AE%E6%94%B9mattersim%E4%BB%A5%E8%BE%93%E5%87%BA%E6%8A%95%E5%BD%B1%E5%A3%B0%E5%AD%90%E5%AF%86%E5%BA%A6%EF%BC%8C%E5%B9%B6%E4%B8%94%E6%8C%87%E5%AE%9A%E5%9B%BA%E5%AE%9A%E7%9A%84%E8%B7%AF%E5%BE%84%E5%86%85%E7%9A%84q%E7%82%B9%E4%B8%AA%E6%95%B0%E6%9D%A5%E5%8C%B9%E9%85%8D%E8%87%AA%E5%B7%B1%E5%86%99%E7%9A%84%E7%BB%98%E5%88%B6%E5%A3%B0%E5%AD%90%E8%B0%B1%E7%9A%84%E8%84%9A%E6%9C%AC%EF%BC%88vasp%E6%A8%A1%E6%8B%9F%E9%83%A8%E5%88%86%EF%BC%89%EF%BC%88auto-band%E5%BE%97%E5%88%B0%E7%9A%84q%E7%82%B9%E4%B8%AA%E6%95%B0%E5%9C%A8%E4%B8%8D%E5%90%8C%E8%B7%AF%E5%BE%84%E4%B8%8A%E4%B8%8D%E6%98%AF%E5%9B%BA%E5%AE%9A%E7%9A%84%EF%BC%89"><span class="toc-text">2. 修改mattersim以输出投影声子密度，并且指定固定的路径内的q点个数来匹配自己写的绘制声子谱的脚本（vasp模拟部分）（auto_band得到的q点个数在不同路径上不是固定的）</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -1308,7 +1306,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><div class='inner-toc'><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E5%8E%9F%E5%AD%90%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%8E%92%E5%90%8D"><span class="toc-text">1. 原子大模型排名</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E4%BD%BF%E7%94%A8ASE%E7%BB%93%E5%90%88mattersim%E8%BF%9B%E8%A1%8C%E7%BB%93%E6%9E%84%E4%BC%98%E5%8C%96%E3%80%81%E5%88%86%E5%AD%90%E5%8A%A8%E5%8A%9B%E5%AD%A6"><span class="toc-text">2. 使用ASE结合mattersim进行结构优化、分子动力学</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E4%BD%BF%E7%94%A8ASE%E8%BF%9B%E8%A1%8C%E5%8C%85%E6%8B%AC%E6%99%B6%E8%83%9E%E7%9A%84%E7%BB%93%E6%9E%84%E4%BC%98%E5%8C%96"><span class="toc-text">1. 使用ASE进行包括晶胞的结构优化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-from-wangq"><span class="toc-text">2. from wangq</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%A4%84%E7%90%86vaspkit-%E7%9A%84MSD-dat%E5%BE%97%E5%88%B0%E7%94%B5%E5%AF%BC%E7%8E%87"><span class="toc-text">3. 处理vaspkit 的MSD.dat得到电导率</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-mattersim-MD%E7%9B%B4%E6%8E%A5%E8%BE%93%E5%87%BAMSD"><span class="toc-text">4. mattersim-MD直接输出MSD</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-mattersim%E4%BD%BF%E7%94%A8Nose-Hoover"><span class="toc-text">5. mattersim使用Nose-Hoover</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E8%AE%A1%E7%AE%97MSD-%E5%A4%84%E7%90%86equili-log-atoms-log"><span class="toc-text">6. 计算MSD 处理equili.log &amp; atoms.log</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E5%A4%84%E7%90%86%E4%B8%8D%E5%90%8C%E6%AC%A1%E7%9A%84MSD%EF%BC%8C%E5%BE%97%E5%88%B0%E6%89%80%E6%9C%89MSD"><span class="toc-text">7. 处理不同次的MSD，得到所有MSD</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-%E8%AE%A1%E7%AE%97%E4%B8%8D%E5%90%8C%E6%AC%A1%E5%88%86%E5%AD%90%E5%8A%A8%E5%8A%9B%E5%AD%A6%E5%B9%B3%E5%9D%87%E5%90%8E%E7%9A%84%E7%94%B5%E5%AF%BC%E7%8E%87"><span class="toc-text">8.计算不同次分子动力学平均后的电导率</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E4%B8%80%E4%BA%9B%E7%BB%93%E6%9E%9C"><span class="toc-text">3. 一些结果</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-%E4%B8%80%E4%BA%9B%E8%84%9A%E6%9C%AC"><span class="toc-text">4. 一些脚本</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%8A%8Aase%E8%BD%A8%E8%BF%B9%E8%BD%AC%E6%8D%A2%E4%B8%BAXDATCAR%E7%9A%84%E8%84%9A%E6%9C%AC"><span class="toc-text">1. 把ase轨迹转换为XDATCAR的脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E8%92%B8%E9%A6%8F%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%8F%98%E6%88%90%E7%AC%A6%E5%90%88acnn%E6%A0%87%E5%87%86%E7%9A%84xsf%E6%96%87%E4%BB%B6%E7%9A%84%E8%84%9A%E6%9C%AC"><span class="toc-text">2. 蒸馏大模型数据变成符合acnn标准的xsf文件的脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%89%A9%E8%83%9E%E8%84%9A%E6%9C%AC"><span class="toc-text">3. 扩胞脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E8%AE%A1%E7%AE%97%E4%BD%93%E7%A7%AF%E8%84%9A%E6%9C%AC"><span class="toc-text">4. 计算体积脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E5%85%83%E7%B4%A0%E6%9B%BF%E6%8D%A2%E8%84%9A%E6%9C%AC"><span class="toc-text">5. 元素替换脚本</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-%E4%BD%BF%E7%94%A8m3gnet"><span class="toc-text">5. 使用m3gnet</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-ASE%E7%BB%93%E5%90%88phonopy-%E4%BD%BF%E7%94%A8%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BD%9C%E4%B8%BA%E8%AE%A1%E7%AE%97%E5%99%A8"><span class="toc-text">6. ASE结合phonopy 使用大模型作为计算器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%85%B3%E4%BA%8E%E5%A3%B0%E5%AD%90%E8%B0%B1"><span class="toc-text">1.关于声子谱</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E7%BB%98%E5%88%B6%E6%8A%95%E5%BD%B1%E5%A3%B0%E5%AD%90%E6%80%81%E5%AF%86%E5%BA%A6"><span class="toc-text">2. 绘制投影声子态密度</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-ASE-grace"><span class="toc-text">7. ASE+grace</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-BFGS%E4%BC%98%E5%8C%96-NVTBerendsen%E5%88%86%E5%AD%90%E5%8A%A8%E5%8A%9B%E5%AD%A6"><span class="toc-text">1. BFGS优化+NVTBerendsen分子动力学</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E4%BD%BF%E7%94%A8ASE%E4%B8%AD%E7%9A%84Nose-Hoover-NVT"><span class="toc-text">2. 使用ASE中的Nose-Hoover NVT</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8-Nose-Hoover%E5%92%8CBerendsen%E7%9A%84%E5%AF%B9%E6%AF%94"><span class="toc-text">8. Nose-Hoover和Berendsen的对比</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#9-%E5%AD%A6%E4%B9%A0mattersim%E7%9A%84phonon%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-text">9. 学习mattersim的phonon的方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%8C%85%E8%A3%85ase%E7%9A%84%E7%BB%93%E6%9E%84%E4%B8%BAphonon%E7%9A%84%E6%A0%BC%E5%BC%8F"><span class="toc-text">1. 包装ase的结构为phonon的格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E4%BF%AE%E6%94%B9mattersim%E4%BB%A5%E8%BE%93%E5%87%BA%E6%8A%95%E5%BD%B1%E5%A3%B0%E5%AD%90%E5%AF%86%E5%BA%A6"><span class="toc-text">2. 修改mattersim以输出投影声子密度</span></a></li></ol></li></ol></div></p>
+        <p><div class='inner-toc'><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E5%8E%9F%E5%AD%90%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%8E%92%E5%90%8D"><span class="toc-text">1. 原子大模型排名</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E4%BD%BF%E7%94%A8ASE%E7%BB%93%E5%90%88mattersim%E8%BF%9B%E8%A1%8C%E7%BB%93%E6%9E%84%E4%BC%98%E5%8C%96%E3%80%81%E5%88%86%E5%AD%90%E5%8A%A8%E5%8A%9B%E5%AD%A6"><span class="toc-text">2. 使用ASE结合mattersim进行结构优化、分子动力学</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E4%BD%BF%E7%94%A8ASE%E8%BF%9B%E8%A1%8C%E5%8C%85%E6%8B%AC%E6%99%B6%E8%83%9E%E7%9A%84%E7%BB%93%E6%9E%84%E4%BC%98%E5%8C%96"><span class="toc-text">1. 使用ASE进行包括晶胞的结构优化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-from-wangq"><span class="toc-text">2. from wangq</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%A4%84%E7%90%86vaspkit-%E7%9A%84MSD-dat%E5%BE%97%E5%88%B0%E7%94%B5%E5%AF%BC%E7%8E%87"><span class="toc-text">3. 处理vaspkit 的MSD.dat得到电导率</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-mattersim-MD%E7%9B%B4%E6%8E%A5%E8%BE%93%E5%87%BAMSD"><span class="toc-text">4. mattersim-MD直接输出MSD</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-mattersim%E4%BD%BF%E7%94%A8Nose-Hoover"><span class="toc-text">5. mattersim使用Nose-Hoover</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E8%AE%A1%E7%AE%97MSD-%E5%A4%84%E7%90%86equili-log-atoms-log"><span class="toc-text">6. 计算MSD 处理equili.log &amp; atoms.log</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E5%A4%84%E7%90%86%E4%B8%8D%E5%90%8C%E6%AC%A1%E7%9A%84MSD%EF%BC%8C%E5%BE%97%E5%88%B0%E6%89%80%E6%9C%89MSD"><span class="toc-text">7. 处理不同次的MSD，得到所有MSD</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-%E8%AE%A1%E7%AE%97%E4%B8%8D%E5%90%8C%E6%AC%A1%E5%88%86%E5%AD%90%E5%8A%A8%E5%8A%9B%E5%AD%A6%E5%B9%B3%E5%9D%87%E5%90%8E%E7%9A%84%E7%94%B5%E5%AF%BC%E7%8E%87"><span class="toc-text">8.计算不同次分子动力学平均后的电导率</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E4%B8%80%E4%BA%9B%E7%BB%93%E6%9E%9C"><span class="toc-text">3. 一些结果</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-%E4%B8%80%E4%BA%9B%E8%84%9A%E6%9C%AC"><span class="toc-text">4. 一些脚本</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%8A%8Aase%E8%BD%A8%E8%BF%B9%E8%BD%AC%E6%8D%A2%E4%B8%BAXDATCAR%E7%9A%84%E8%84%9A%E6%9C%AC"><span class="toc-text">1. 把ase轨迹转换为XDATCAR的脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E8%92%B8%E9%A6%8F%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%8F%98%E6%88%90%E7%AC%A6%E5%90%88acnn%E6%A0%87%E5%87%86%E7%9A%84xsf%E6%96%87%E4%BB%B6%E7%9A%84%E8%84%9A%E6%9C%AC"><span class="toc-text">2. 蒸馏大模型数据变成符合acnn标准的xsf文件的脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%89%A9%E8%83%9E%E8%84%9A%E6%9C%AC"><span class="toc-text">3. 扩胞脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E8%AE%A1%E7%AE%97%E4%BD%93%E7%A7%AF%E8%84%9A%E6%9C%AC"><span class="toc-text">4. 计算体积脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E5%85%83%E7%B4%A0%E6%9B%BF%E6%8D%A2%E8%84%9A%E6%9C%AC"><span class="toc-text">5. 元素替换脚本</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-%E4%BD%BF%E7%94%A8m3gnet"><span class="toc-text">5. 使用m3gnet</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-ASE%E7%BB%93%E5%90%88phonopy-%E4%BD%BF%E7%94%A8%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BD%9C%E4%B8%BA%E8%AE%A1%E7%AE%97%E5%99%A8"><span class="toc-text">6. ASE结合phonopy 使用大模型作为计算器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%85%B3%E4%BA%8E%E5%A3%B0%E5%AD%90%E8%B0%B1"><span class="toc-text">1.关于声子谱</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E7%BB%98%E5%88%B6%E6%8A%95%E5%BD%B1%E5%A3%B0%E5%AD%90%E6%80%81%E5%AF%86%E5%BA%A6"><span class="toc-text">2. 绘制投影声子态密度</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-ASE-grace"><span class="toc-text">7. ASE+grace</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-BFGS%E4%BC%98%E5%8C%96-NVTBerendsen%E5%88%86%E5%AD%90%E5%8A%A8%E5%8A%9B%E5%AD%A6"><span class="toc-text">1. BFGS优化+NVTBerendsen分子动力学</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E4%BD%BF%E7%94%A8ASE%E4%B8%AD%E7%9A%84Nose-Hoover-NVT"><span class="toc-text">2. 使用ASE中的Nose-Hoover NVT</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8-Nose-Hoover%E5%92%8CBerendsen%E7%9A%84%E5%AF%B9%E6%AF%94"><span class="toc-text">8. Nose-Hoover和Berendsen的对比</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#9-%E5%AD%A6%E4%B9%A0mattersim%E7%9A%84phonon%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-text">9. 学习mattersim的phonon的方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%8C%85%E8%A3%85ase%E7%9A%84%E7%BB%93%E6%9E%84%E4%B8%BAphonon%E7%9A%84%E6%A0%BC%E5%BC%8F"><span class="toc-text">1. 包装ase的结构为phonon的格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E4%BF%AE%E6%94%B9mattersim%E4%BB%A5%E8%BE%93%E5%87%BA%E6%8A%95%E5%BD%B1%E5%A3%B0%E5%AD%90%E5%AF%86%E5%BA%A6%EF%BC%8C%E5%B9%B6%E4%B8%94%E6%8C%87%E5%AE%9A%E5%9B%BA%E5%AE%9A%E7%9A%84%E8%B7%AF%E5%BE%84%E5%86%85%E7%9A%84q%E7%82%B9%E4%B8%AA%E6%95%B0%E6%9D%A5%E5%8C%B9%E9%85%8D%E8%87%AA%E5%B7%B1%E5%86%99%E7%9A%84%E7%BB%98%E5%88%B6%E5%A3%B0%E5%AD%90%E8%B0%B1%E7%9A%84%E8%84%9A%E6%9C%AC%EF%BC%88vasp%E6%A8%A1%E6%8B%9F%E9%83%A8%E5%88%86%EF%BC%89%EF%BC%88auto-band%E5%BE%97%E5%88%B0%E7%9A%84q%E7%82%B9%E4%B8%AA%E6%95%B0%E5%9C%A8%E4%B8%8D%E5%90%8C%E8%B7%AF%E5%BE%84%E4%B8%8A%E4%B8%8D%E6%98%AF%E5%9B%BA%E5%AE%9A%E7%9A%84%EF%BC%89"><span class="toc-text">2. 修改mattersim以输出投影声子密度，并且指定固定的路径内的q点个数来匹配自己写的绘制声子谱的脚本（vasp模拟部分）（auto_band得到的q点个数在不同路径上不是固定的）</span></a></li></ol></li></ol></div></p>
 <h1 id="1-原子大模型排名"><a href="#1-原子大模型排名" class="headerlink" title="1. 原子大模型排名"></a>1. 原子大模型排名</h1><p><a target="_blank" rel="noopener" href="https://matbench-discovery.materialsproject.org/">https://matbench-discovery.materialsproject.org/</a></p>
 <h1 id="2-使用ASE结合mattersim进行结构优化、分子动力学"><a href="#2-使用ASE结合mattersim进行结构优化、分子动力学" class="headerlink" title="2. 使用ASE结合mattersim进行结构优化、分子动力学"></a>2. 使用ASE结合mattersim进行结构优化、分子动力学</h1><h2 id="1-使用ASE进行包括晶胞的结构优化"><a href="#1-使用ASE进行包括晶胞的结构优化" class="headerlink" title="1. 使用ASE进行包括晶胞的结构优化"></a>1. 使用ASE进行包括晶胞的结构优化</h2><pre><code class="python">from mattersim.applications.moldyn import MolecularDynamics
 from ase.io import read, write
@@ -2712,7 +2710,7 @@ def to_ase_atoms(phonopy_atoms):
     )
     return atoms
 </code></pre>
-<h2 id="2-修改mattersim以输出投影声子密度"><a href="#2-修改mattersim以输出投影声子密度" class="headerlink" title="2. 修改mattersim以输出投影声子密度"></a>2. 修改mattersim以输出投影声子密度</h2><p>修改.&#x2F;lib&#x2F;python3.12&#x2F;site-packages&#x2F;mattersim&#x2F;applications&#x2F;phonon.py 中</p>
+<h2 id="2-修改mattersim以输出投影声子密度，并且指定固定的路径内的q点个数来匹配自己写的绘制声子谱的脚本（vasp模拟部分）（auto-band得到的q点个数在不同路径上不是固定的）"><a href="#2-修改mattersim以输出投影声子密度，并且指定固定的路径内的q点个数来匹配自己写的绘制声子谱的脚本（vasp模拟部分）（auto-band得到的q点个数在不同路径上不是固定的）" class="headerlink" title="2. 修改mattersim以输出投影声子密度，并且指定固定的路径内的q点个数来匹配自己写的绘制声子谱的脚本（vasp模拟部分）（auto_band得到的q点个数在不同路径上不是固定的）"></a>2. 修改mattersim以输出投影声子密度，并且指定固定的路径内的q点个数来匹配自己写的绘制声子谱的脚本（vasp模拟部分）（auto_band得到的q点个数在不同路径上不是固定的）</h2><p>修改&#x2F;lib&#x2F;python3.12&#x2F;site-packages&#x2F;mattersim&#x2F;applications&#x2F;phonon.py </p>
 <pre><code class="python">def compute_phonon_spectrum_dos(
         atoms: Atoms, phonon: Phonopy, k_point_mesh: Union[int, Iterable[int]]
     ):
@@ -2746,8 +2744,144 @@ def to_ase_atoms(phonopy_atoms):
         # Save additional files
         phonon.save(settings=&#123;&quot;force_constants&quot;: True&#125;)
 </code></pre>
-<p>增加投影态密度的计算</p>
-<pre><code class="python">def compute_phonon_spectrum_dos(
+<p>主要修改了compute_force_constants 这个函数，替换为 </p>
+<pre><code class="python"># -*- coding: utf-8 -*-
+import datetime
+import os
+from typing import Iterable, Union
+
+import numpy as np
+from ase import Atoms
+from phonopy import Phonopy
+from tqdm import tqdm
+from seekpath import get_path
+from phonopy.phonon.band_structure import get_band_qpoints_and_path_connections
+
+
+from mattersim.utils.phonon_utils import (
+    get_primitive_cell,
+    to_ase_atoms,
+    to_phonopy_atoms,
+)
+from mattersim.utils.supercell_utils import get_supercell_parameters
+
+
+class PhononWorkflow(object):
+    &quot;&quot;&quot;
+    This class is used to calculate the phonon dispersion relationship of
+    material using phonopy
+    &quot;&quot;&quot;
+
+    def __init__(
+        self,
+        atoms: Atoms,
+        find_prim: bool = False,
+        work_dir: str = None,
+        amplitude: float = 0.01,
+        supercell_matrix: np.ndarray = None,
+        qpoints_mesh: np.ndarray = None,
+        max_atoms: int = None,
+        calc_spec: bool = True,
+    ):
+        &quot;&quot;&quot;_summary
+
+        Args:
+            atoms (Atoms): ASE atoms object contains structure information and
+                calculator.
+            find_prim (bool, optional): If find the primitive cell and use it
+                to calculate phonon. Default to False.
+            work_dir (str, optional): workplace path to contain phonon result.
+                Defaults to data + chemical_symbols + &#39;phonon&#39;
+            amplitude (float, optional): Magnitude of the finite difference to
+                displace in force constant calculation, in Angstrom. Defaults
+                to 0.01 Angstrom.
+            supercell_matrix (nd.array, optional): Supercell matrix for constr
+                -uct supercell, priority over than max_atoms. Defaults to None.
+            qpoints_mesh (nd.array, optional): Qpoint mesh for IBZ integral,
+                priority over than max_atoms. Defaults to None.
+            max_atoms (int, optional): Maximum atoms number limitation for the
+                supercell generation. If not set, will automatic generate super
+                -cell based on symmetry. Defaults to None.
+            calc_spec (bool, optional): If calculate the spectrum and check 
+                imaginary frequencies. Default to True.
+        &quot;&quot;&quot;
+        assert (
+            atoms.calc is not None
+        ), &quot;PhononWorkflow only accepts ase atoms with an attached calculator&quot;
+        if find_prim:
+            self.atoms = get_primitive_cell(atoms)
+            self.atoms.calc = atoms.calc
+        else:
+            self.atoms = atoms
+        if work_dir is not None:
+            self.work_dir = work_dir
+        else:
+            current_datetime = datetime.datetime.now()
+            formatted_datetime = current_datetime.strftime(&quot;%Y-%m-%d-%H-%M&quot;)
+            self.work_dir = (
+                f&quot;&#123;formatted_datetime&#125;-&#123;atoms.get_chemical_formula()&#125;-phonon&quot;
+            )
+        self.amplitude = amplitude
+        if supercell_matrix is not None:
+            if supercell_matrix.shape == (3, 3):
+                self.supercell_matrix = supercell_matrix
+            elif supercell_matrix.shape == (3,):
+                self.supercell_matrix = np.diag(supercell_matrix)
+            else:
+                assert (
+                    False
+                ), &quot;Supercell matrix must be an array (3,1) or a matrix (3,3).&quot;
+        else:
+            self.supercell_matrix = supercell_matrix
+
+        if qpoints_mesh is not None:
+            assert qpoints_mesh.shape == (3,), &quot;Qpoints mesh must be an array (3,1).&quot;
+            self.qpoints_mesh = qpoints_mesh
+        else:
+            self.qpoints_mesh = qpoints_mesh
+
+        self.max_atoms = max_atoms
+        self.calc_spec = calc_spec
+
+    def compute_force_constants(self, atoms: Atoms, nrep_second: np.ndarray):
+        &quot;&quot;&quot;
+        Calculate force constants
+
+        Args:
+            atoms (Atoms): ASE atoms object to provide lattice informations.
+            nrep_second (np.ndarray): Supercell size used for 2nd force
+                constant calculations.
+        &quot;&quot;&quot;
+        print(f&quot;Supercell matrix for 2nd force constants : \n&#123;nrep_second&#125;&quot;)
+        # Generate phonopy object
+        phonon = Phonopy(
+            to_phonopy_atoms(atoms),
+            supercell_matrix=nrep_second,
+            primitive_matrix=&quot;auto&quot;,
+            log_level=2,
+        )
+
+        # Generate displacements
+        phonon.generate_displacements(distance=self.amplitude)
+
+        # Compute force constants
+        second_scs = phonon.supercells_with_displacements
+        second_force_sets = []
+        print(&quot;\n&quot;)
+        print(&quot;Inferring forces for displaced atoms and computing fcs ...&quot;)
+        for disp_second in tqdm(second_scs):
+            pa_second = to_ase_atoms(disp_second)
+            pa_second.calc = self.atoms.calc
+            second_force_sets.append(pa_second.get_forces())
+
+        phonon.forces = np.array(second_force_sets)
+        phonon.produce_force_constants()
+        phonon.symmetrize_force_constants()
+
+        return phonon
+
+    @staticmethod
+    def compute_phonon_spectrum_dos(
         atoms: Atoms, phonon: Phonopy, k_point_mesh: Union[int, Iterable[int]]
     ):
         &quot;&quot;&quot;
@@ -2768,19 +2902,123 @@ def to_ase_atoms(phonopy_atoms):
             + &quot; ...&quot;
             + &quot;\n&quot;
         )
+        #phonon.auto_band_structure(plot=True, write_yaml=True, with_eigenvectors=False).savefig(
+           # f&quot;&#123;str(atoms.symbols)&#125;_auto_band.png&quot;, dpi=300) 
+        
+        lattice = atoms.cell
+        scaled_positions = atoms.get_scaled_positions()
+        atomic_numbers = atoms.get_atomic_numbers()
+        path_data = get_path((lattice, scaled_positions, atomic_numbers))
+        point_coords = path_data[&quot;point_coords&quot;]
+        band_segments = path_data[&quot;path&quot;]
 
-        # plot phonon spectrum
-        phonon.auto_band_structure(plot=True, write_yaml=True, with_eigenvectors=True).savefig(
-            f&quot;&#123;str(atoms.symbols)&#125;_phonon_band.png&quot;, dpi=300
-        )
+        from phonopy.phonon.band_structure import get_band_qpoints_and_path_connections
+        raw_labels = []
+        path = []
+        connectionsall = []
+        for start_label, end_label in band_segments:
+            q_start = point_coords[start_label]
+            q_end = point_coords[end_label]
+            path.append([q_start,q_end])
+            raw_labels.append(start_label)
+            raw_labels.append(end_label)
+            connectionsall.append(&#39;False&#39;)
+        qpoints, connections = get_band_qpoints_and_path_connections(path, npoints=51)
+
+        def convert_labels(raw_labels):
+            latex_labels = []
+            for label in raw_labels:
+                if label.upper() == &quot;GAMMA&quot;:
+                    latex_labels.append(&quot;$\\Gamma$&quot;)
+                else:
+                    latex_labels.append(label)
+            return latex_labels
+        labels = convert_labels(raw_labels)
+        phonon.run_band_structure(qpoints, path_connections=connections, labels=labels)
+        bs = phonon.band_structure
+        bs.write_yaml()
+        plt = phonon.plot_band_structure()
+        plt.savefig(f&quot;&#123;str(atoms.symbols)&#125;_manual_band.png&quot;,dpi=300)
+
+
         phonon.auto_total_dos(plot=True, write_dat=True).savefig(
             f&quot;&#123;str(atoms.symbols)&#125;_phonon_dos.png&quot;, dpi=300
         )
         phonon.auto_projected_dos(plot=True,write_dat=True).savefig(
-            f&quot;&#123;str(atoms.symbols)&#125;_phonon_dos.png&quot;, dpi=300
+            f&quot;&#123;str(atoms.symbols)&#125;_phonon_projected_dos.png&quot;, dpi=300
         )
-        # Save additional files
         phonon.save(settings=&#123;&quot;force_constants&quot;: True&#125;)
+
+    @staticmethod
+    def check_imaginary_freq(phonon: Phonopy):
+        &quot;&quot;&quot;
+        Check whether phonon has imaginary frequency.
+
+        Args:
+            phonon (Phonopy): Phonopy object which contains phonon spectrum frequency.
+        &quot;&quot;&quot;
+        band_dict = phonon.get_band_structure_dict()
+        frequencies = np.concatenate(
+            [np.array(freq).flatten() for freq in band_dict[&quot;frequencies&quot;]], axis=None
+        )
+        has_imaginary = False
+        if np.all(np.array(frequencies) &gt;= -0.299):
+            pass
+        else:
+            print(&quot;Warning! Imaginary frequencies found!&quot;)
+            has_imaginary = True
+
+        return has_imaginary
+
+    def run(self):
+        &quot;&quot;&quot;
+        The entrypoint to start the workflow.
+        &quot;&quot;&quot;
+        current_path = os.path.abspath(&quot;.&quot;)
+        try:
+            # check folder exists
+            if not os.path.exists(self.work_dir):
+                os.makedirs(self.work_dir)
+
+            os.chdir(self.work_dir)
+
+            try:
+                # Generate supercell parameters based on optimized structures
+                nrep_second, k_point_mesh = get_supercell_parameters(
+                    self.atoms, self.supercell_matrix, self.qpoints_mesh, self.max_atoms
+                )
+            except Exception as e:
+                print(&quot;Error whille generating supercell parameters:&quot;, e)
+                raise
+
+            try:
+                # Calculate 2nd force constants
+                phonon = self.compute_force_constants(self.atoms, nrep_second)
+            except Exception as e:
+                print(&quot;Error while computing force constants:&quot;, e)
+                raise
+
+            if self.calc_spec:
+                try:
+                    # Calculate phonon spectrum
+                    self.compute_phonon_spectrum_dos(self.atoms, phonon, k_point_mesh)
+                    # check whether has imaginary frequency
+                    has_imaginary = self.check_imaginary_freq(phonon)
+                except Exception as e:
+                    print(&quot;Error while computing phonon spectrum and dos:&quot;, e)
+                    raise
+            else:
+                has_imaginary = &#39;Not calculated, set calc_spec True&#39;
+                phonon.save(settings=&#123;&quot;force_constants&quot;: True&#125;)
+
+        except Exception as e:
+            print(&quot;An error occurred during the Phonon workflow:&quot;, e)
+            raise
+
+        finally:
+            os.chdir(current_path)
+
+        return has_imaginary, phonon
 </code></pre>
 
       
