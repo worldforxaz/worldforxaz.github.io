@@ -309,7 +309,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="92">
-<input type="hidden" id="yelog_site_word_count" value="125.8k">
+<input type="hidden" id="yelog_site_word_count" value="126.9k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1279,12 +1279,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2025-05-16 20:21:32'>2024-05-25 10:41</time>
+            发布时间 : <time class="date" title='最后更新: 2025-06-22 15:52:26'>2024-05-25 10:41</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:543</span>
+        <span>字数:1.4k</span>
         
         
         
@@ -1309,7 +1309,155 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p><div class='inner-toc'><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E8%BD%AC%E6%8D%A2lammps%E7%9A%84%E8%BD%A8%E8%BF%B9%E6%96%87%E4%BB%B6%E4%B8%BAXDATCAR"><span class="toc-text">5.转换lammps的轨迹文件为XDATCAR</span></a></li></ol></div></p>
-<h2 id="5-转换lammps的轨迹文件为XDATCAR"><a href="#5-转换lammps的轨迹文件为XDATCAR" class="headerlink" title="5.转换lammps的轨迹文件为XDATCAR"></a>5.转换lammps的轨迹文件为XDATCAR</h2><pre><code class="python">from ase.io import read, write
+<h2 id="5-转换lammps的轨迹文件为XDATCAR"><a href="#5-转换lammps的轨迹文件为XDATCAR" class="headerlink" title="5.转换lammps的轨迹文件为XDATCAR"></a>5.转换lammps的轨迹文件为XDATCAR</h2><p>最新方法，逐个转换</p>
+<pre><code class="python">import numpy as np
+import time
+
+def timer(func):
+    def wrapper(*args, **kwargs):
+        start_time = time.time()
+        result = func(*args, **kwargs)
+        end_time = time.time()
+        print(f&quot;Time elapsed: &#123;end_time - start_time:.4f&#125; seconds&quot;)
+        return result
+
+    return wrapper
+
+@timer
+
+def convert_lmp_trj_to_xdatcar_streaming(
+    input_filename: str,
+    output_filename: str,
+    sample_interval: int = 10
+):
+    &quot;&quot;&quot;
+    逐帧读取 LAMMPS dump 文件 (lammpstrj)，每 sample_interval 帧采样一次，并即时写入 XDATCAR 格式的输出文件。
+    - input_filename: LAMMPS trajectory 文件路径
+    - output_filename: 输出文件路径 (XDATCAR)
+    - sample_interval: 采样间隔，例如 10 表示只处理第 10, 20, 30...帧
+    &quot;&quot;&quot;
+
+
+
+
+
+    # 打开输入输出文件
+    with open(input_filename, &#39;r&#39;) as fin, open(output_filename, &#39;w&#39;) as fout:
+        frame_index = 0       # 帧计数，从 1 开始计数时先 +1
+        sample_count = 0      # 已经写出的采样帧计数，用于 Direct configuration 序号
+        # 以下变量用于在循环中暂存 header info
+        while True:
+            line = fin.readline()
+            if not line:
+                break  # 文件末尾，结束
+
+            # 寻找“ITEM: NUMBER OF ATOMS”行，表示新帧开始
+
+            if line.strip().startswith(&quot;ITEM: NUMBER OF ATOMS&quot;):
+                # 读取原子数
+                line_n = fin.readline()
+                n_atoms = int(line_n)
+                frame_index += 1
+                # 解析 BOX BOUNDS
+                # 假定接下来一行是 BOX BOUNDS header，例如 &quot;ITEM: BOX BOUNDS pp pp pp&quot;
+                box_header = fin.readline()
+                    # 读取 3 行 bounds
+                bounds_list = []
+                for i in range(3):
+                    bound_line = fin.readline().strip().split()
+                    floats = [float(x) for x in bound_line]
+                    bounds_list.append(floats)
+                #有了晶格常数可以将笛卡尔坐标转换为分数坐标了
+                bounds_lattice = parse_triclinic_bounds(bounds_list)
+                atoms_header_line = fin.readline()
+                parts = atoms_header_line.strip().split()
+                col_names = parts[2:]
+                n_cols = len(col_names)
+                # 确定坐标列索引（x, y, z）
+                name2idx = &#123;name: idx for idx, name in enumerate(col_names)&#125;
+                if all(k in name2idx for k in (&#39;x&#39;,&#39;y&#39;,&#39;z&#39;)):
+                    coord_cols = [name2idx[&#39;x&#39;], name2idx[&#39;y&#39;], name2idx[&#39;z&#39;]]
+                else:
+                    # 尝试 &#39;xs&#39;,&#39;ys&#39;,&#39;zs&#39;
+                    if all(k in name2idx for k in (&#39;xs&#39;,&#39;ys&#39;,&#39;zs&#39;)):
+                        coord_cols = [name2idx[&#39;xs&#39;], name2idx[&#39;ys&#39;], name2idx[&#39;zs&#39;]]
+                    else:
+                        # 如果无法自动识别，可以抛错或手动指定
+                        raise ValueError(f&quot;无法自动识别坐标列 &#39;x,y,z&#39; 或 &#39;xs,ys,zs&#39;，ATOMS header: &#123;col_names&#125;&quot;)
+
+                id_col = name2idx[&#39;id&#39;]
+                element_col = name2idx[&#39;element&#39;]
+                ###可以用添加符号映射的方法来处理输出为元素名称时的情况
+
+                # 读取 n_atoms 行原子数据
+                # 为了节省内存，只在采样帧需要时才转换为数组；否则只读掉
+                atom_lines = []
+                if frame_index % sample_interval == 0:
+                    for _ in range(n_atoms):
+                        l = fin.readline()
+                        atom_lines.append(l.strip())
+                else:
+                    # 非采样帧：只读掉，不保存
+                    for _ in range(n_atoms):
+                        fin.readline()
+
+                if frame_index % sample_interval == 0:
+                    sample_count += 1
+                    arr = np.array([row.split() for row in atom_lines], dtype=float)  # shape (n_atoms, n_cols)
+
+                    # 排序
+                    sort_idx = np.lexsort((arr[:,id_col],arr[:,element_col]))
+                    arr = arr[sort_idx]
+                        # 每帧按 id和element 列排序
+
+                    coords = arr[:, coord_cols]  # shape (n_atoms, 3)
+                   # if sample_count ==1:
+                    #    fout.write(&quot;Generated from Lammps\n&quot;)
+                     #   fout.write(&quot;1.0\n&quot;)
+                     #   np.savetxt(fout,bounds_lattice,fmt=&#39;%15.10f&#39;)
+                     #   fout.write(&quot;K Y Si O\n&quot;)
+                     #   _, counts = np.unique(arr[:, element_col], return_counts=True)
+                      #  fout.write(&#39; &#39;.join(map(str, counts)))
+                      #  fout.write(&#39;\n&#39;)
+                    fout.write(f&#39;Direct configuration = &#123;sample_count&#125;\n&#39;)
+                    np.savetxt(fout, coords, fmt=&#39;%.10f&#39;, delimiter=&#39;   &#39;)
+
+                # 继续下一帧
+            # else: 如果不是 NUMBER OF ATOMS 行，就继续读下一行，直至文件末尾
+        # 结束 while
+
+    print(f&quot;总共读取帧数: &#123;frame_index&#125;，写出采样帧数: &#123;sample_count&#125;&quot;)
+
+
+def parse_triclinic_bounds(bounds_list):
+    #这里不太对，还得改改
+    a = bounds_list[0][1] - bounds_list[0][0]
+    b = bounds_list[1][1] - bounds_list[1][0]
+    c = bounds_list[2][1] - bounds_list[2][0]
+    xy = bounds_list[0][2]  # 倾斜参数
+    xz = bounds_list[1][2]
+    yz = bounds_list[2][2]
+    return np.array([
+        [a,  xy, xz],
+        [0,   b, yz],
+        [0,   0,  c]
+    ])
+
+
+
+
+
+if __name__ == &#39;__main__&#39;:
+    input_file = &quot;A.lammpstrj&quot;
+    output_file = &quot;XDATCAR&quot;
+    sample_interval = 10  # 每隔 10 帧采样一次
+    convert_lmp_trj_to_xdatcar_streaming(
+        input_filename=input_file,
+        output_filename=output_file,
+        sample_interval=sample_interval
+    )
+</code></pre>
+<pre><code class="python">from ase.io import read, write
 from sys import argv
 
 

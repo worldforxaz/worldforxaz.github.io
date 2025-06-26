@@ -309,7 +309,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="92">
-<input type="hidden" id="yelog_site_word_count" value="125.8k">
+<input type="hidden" id="yelog_site_word_count" value="126.9k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1281,7 +1281,7 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2024-10-19 12:59:24'>2024-05-25 09:03</time>
+            发布时间 : <time class="date" title='最后更新: 2025-06-22 17:24:11'>2024-05-25 09:03</time>
         
     </div>
     <div class="article-meta">
@@ -1465,24 +1465,24 @@ Zcenter0=0
 do atom=1,natom(1)
   Xcenter0=Xcenter0+x0(atom)*mo/msum
   Ycenter0=Ycenter0+y0(atom)*mo/msum
-  zcenter0=Zcenter0+z0(atom)*mo/msum
+  Zcenter0=Zcenter0+z0(atom)*mo/msum
 end do
 !在natom中提取第一个原子的数量，并且计算质心
 do atom=natom(1)+1,natom(1)+natom(2)
   Xcenter0=Xcenter0+x0(atom)*mh/msum
   Ycenter0=Ycenter0+y0(atom)*mh/msum
-  zcenter0=Zcenter0+z0(atom)*mh/msum
+  Zcenter0=Zcenter0+z0(atom)*mh/msum
 end do
 !提取第二个原子质量并求质心
 do atom=natom(1)+natom(2)+1,natom(1)+natom(2)+natom(3)
   Xcenter0=Xcenter0+x0(atom)*m3/msum
   Ycenter0=Ycenter0+y0(atom)*m3/msum
-  zcenter0=Zcenter0+z0(atom)*m3/msum
+  Zcenter0=Zcenter0+z0(atom)*m3/msum
 end do
 do atom=natom(1)+natom(2)+natom(3)+1,natom(1)+natom(2)+natom(3)+natom(4)
    Xcenter0=Xcenter0+x0(atom)*m4/msum
    Ycenter0=Ycenter0+y0(atom)*m4/msum
-   zcenter0=Zcenter0+z0(atom)*m4/msum
+   Zcenter0=Zcenter0+z0(atom)*m4/msum
  end do
  !计算质心
 deallocate(x0,y0,z0)
