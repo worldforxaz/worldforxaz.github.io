@@ -311,7 +311,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="92">
-<input type="hidden" id="yelog_site_word_count" value="126.9k">
+<input type="hidden" id="yelog_site_word_count" value="127.2k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1279,12 +1279,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2025-05-29 16:33:24'>2024-06-05 10:19</time>
+            发布时间 : <time class="date" title='最后更新: 2025-07-01 16:50:34'>2024-06-05 10:19</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:93</span>
+        <span>字数:206</span>
         
         
         
@@ -1292,7 +1292,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E8%AE%BE%E7%BD%AE"><span class="toc-text">参数设置</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E8%AE%BE%E7%BD%AE"><span class="toc-text">参数设置</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BE%97%E5%88%B0%E7%AC%A6%E5%90%88MP%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%A1%E7%AE%97%E5%8F%82%E6%95%B0"><span class="toc-text">得到符合MP数据库的计算参数</span></a>
     
 <style>
     .left-col .switch-btn,
@@ -1308,7 +1308,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><div class='inner-toc'><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E8%AE%BE%E7%BD%AE"><span class="toc-text">参数设置</span></a></li></ol></div></p>
+        <p><div class='inner-toc'><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E8%AE%BE%E7%BD%AE"><span class="toc-text">参数设置</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BE%97%E5%88%B0%E7%AC%A6%E5%90%88MP%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%A1%E7%AE%97%E5%8F%82%E6%95%B0"><span class="toc-text">得到符合MP数据库的计算参数</span></a></div></p>
 <pre><code class="python">from mp_api.client import MPRester
 from pymatgen.core import composition
 from pymatgen.io.vasp.inputs import Poscar
@@ -1323,6 +1323,26 @@ for entries in mp_entries:
 #print(mp_entries[0].structure)
 </code></pre>
 <h2 id="参数设置"><a href="#参数设置" class="headerlink" title="参数设置"></a>参数设置</h2><p><a target="_blank" rel="noopener" href="https://github.com/materialsproject/pymatgen/blob/v2025.5.28/src/pymatgen/io/vasp/MPRelaxSet.yaml">https://github.com/materialsproject/pymatgen/blob/v2025.5.28/src/pymatgen/io/vasp/MPRelaxSet.yaml</a></p>
+<h1 id="得到符合MP数据库的计算参数"><a href="#得到符合MP数据库的计算参数" class="headerlink" title="得到符合MP数据库的计算参数"></a>得到符合MP数据库的计算参数</h1><pre><code class="python">from pymatgen.core import Structure
+from pymatgen.io.vasp.sets import MPStaticSet
+import os
+
+# 读取 POSCAR 文件
+structure = Structure.from_file(&quot;POSCAR&quot;)
+
+# 创建 MPStaticSet（适用于自洽计算）
+# 默认使用 Materials Project 的 PBE 函数和标准参数
+vasp_input_set = MPStaticSet(structure)
+
+# 指定输出目录
+output_dir = &quot;static_vasp_inputs&quot;
+os.makedirs(output_dir, exist_ok=True)
+
+# 写入输入文件
+vasp_input_set.write_input(output_dir)
+
+print(f&quot;已生成用于自洽计算的 VASP 输入文件，路径: &#123;output_dir&#125;/&quot;)
+</code></pre>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源  有问题可通过github提交issue </span>
