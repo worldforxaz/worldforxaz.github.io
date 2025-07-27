@@ -6,19 +6,17 @@
   <meta name="keywords" content="">
   <meta name="description" content="other | xaz的花花世界">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="[toc]  在此记录一些个人很喜欢的历史上的人物，会给出喜欢的理由和他们的生平介绍  1. 路德维希·玻尔兹曼  *  2. 薛定谔3. 朱自清4. 史铁生5. 王安石6. 笛卡尔7. 刘慈欣8. 王立群9. 李白">
+<meta name="description" content="[toc] 1. 编译可使用ACNN势的lammps需要注意的点  修改torchdemo-v3 里的prefix.cmake  修改里面openblas 和 torch的位置   需要使用oneapi 来编译，因为需要用到mkl库 可以检查mpicxx -show  如果输出是icx 说明使用的是oneapi的编译器，如果输出是g++ ，说明使用的是openmpi   在interface 处s">
 <meta property="og:type" content="article">
-<meta property="og:title" content="名家集">
-<meta property="og:url" content="http://example.com/2025/06/03/1-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%90%8D%E5%AE%B6%E9%9B%86/index.html">
+<meta property="og:title" content="编译ACNN">
+<meta property="og:url" content="http://example.com/2025/05/27/4-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E7%BC%96%E8%AF%91ACNN/index.html">
 <meta property="og:site_name" content="xaz的花花世界">
-<meta property="og:description" content="[toc]  在此记录一些个人很喜欢的历史上的人物，会给出喜欢的理由和他们的生平介绍  1. 路德维希·玻尔兹曼  *  2. 薛定谔3. 朱自清4. 史铁生5. 王安石6. 笛卡尔7. 刘慈欣8. 王立群9. 李白">
+<meta property="og:description" content="[toc] 1. 编译可使用ACNN势的lammps需要注意的点  修改torchdemo-v3 里的prefix.cmake  修改里面openblas 和 torch的位置   需要使用oneapi 来编译，因为需要用到mkl库 可以检查mpicxx -show  如果输出是icx 说明使用的是oneapi的编译器，如果输出是g++ ，说明使用的是openmpi   在interface 处s">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2025/06/03/%E5%9B%BE%E7%89%87/ludwig-boltzmann-portrait.jpeg">
-<meta property="article:published_time" content="2025-06-03T01:59:13.000Z">
-<meta property="article:modified_time" content="2025-06-03T02:16:34.583Z">
+<meta property="article:published_time" content="2025-05-27T01:30:30.000Z">
+<meta property="article:modified_time" content="2025-05-27T02:51:21.817Z">
 <meta property="article:author" content="xaz">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2025/06/03/%E5%9B%BE%E7%89%87/ludwig-boltzmann-portrait.jpeg">
 
 
 <link rel="icon" href="/img/1.png">
@@ -311,7 +309,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="92">
-<input type="hidden" id="yelog_site_word_count" value="127.2k">
+<input type="hidden" id="yelog_site_word_count" value="127.9k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1279,7 +1277,7 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2024-05-26 11:24:40'>2024-05-23 00:14</time>
+            发布时间 : <time class="date" title='最后更新: 2025-07-23 13:51:24'>2024-05-23 00:14</time>
         
     </div>
     <div class="article-meta">
@@ -1309,7 +1307,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
-  <script id="hbeData" type="hbeData" data-hmacdigest="be2fc45df6df39d2dad29a76a1ecd76b127ec1e472432418c5676386ecfac3bd">bda6ad0d5f606e7055c23f770369041fbdc863218cee7dfefc786ad316b08a781cd7a81da91aea91fad7c436a78c35f097a0a44e762e6e47dcf4cc07feff22a7b4b6f5d95371fefdd1596afae2cf1ed3974a1d05f23aafe44ed87c10df69b3be9f6f5753071964fc60e59e11d3492799c45d1474f046429b76c801851eb6da5b5a21182905dfda6ceb115acbb2575a2fc19ee084d31fd731a32c59c1434304bd6cc85c516f7adb8b4ad688059ae3b179c59bb037f06b63f18553a4775a09dc5f9e8b6a9d836ed044ca9109f520fd6fa1e988dfe9ad23408c045fd299e1637336e1afb245020a8bc75884fc7de17a6271f8bc1d2a13764c16454cc52dc83bc3459989a5e1ffee34cdb26c7662b2a115ef6a24efa25074300fe5cc069d6fed49e42dd2023897bb5158b0f293b919cf5332f5978704ee14ad101b34740e07207a24af5682f4cfad883694483f20d71eb6b2e49ca6b42bd23b9a7ec624fbe1178d147caa04c0737684181d1e7023a834293c54f79ac5e89971e83ee1847fecc59188911694f72c6749592e14b387654d0cab6c428029a86e9ab6c317b46cdd8e06fb52e8f955274da11852090a2483efaf5e05533093a283d872f6acb006cc8c7ef2ca6281f65016674f4e3442059c89fe83cd777af2f2a3f0722b52a3469077bf52cfa740deac4b5e80ec37ec7a5c71a93af9e7ecb5db43ea5a6645e79a35a8119a239f3b1f0ddbce2bff2bc9e0262b4e43b8e24a05464a0dd573e3e5832167bf85b4443b59b59a3d4cb7411ac5b66c195d1e48cd95e7e2784ac4e821301a30696bb85c8c80aa8cc7b9742ea943bd50b16d621757d189a0d015bd1dd981f3e19a1c540994b30b40ca9ad336de10a6554ed64b62b4ea38f56abdbe2154f89a7a6b5d5c29e7871aa6fdb2e8dbf943d48136cc08153a4c4e10fefd9796c38051392aa5c1c1f4e00213906c41c29877d244eae7993cf3353c3273d07563e75f12f5aaf4f66c31a800453c38c4db94efc5ca9161ac44d0b56307eb00145f5cee141514407694ebcd17ed0485d5d9b01fd9e06317ec0cdc14db9fa34e92b7aa4d581c01f7e661f9675d8c8c5d7171087981e9af0fb514c0320733b62e7fd80f7f7b82d810f35f7ff6ad2f68686ef29f252a045ff12361b50d771a90ce40c3b411b40778b5f7d0fd30f4fef69091ec2c1e36a8e60e07e17438dff0be90dfc031d7807844b431f75fe498c9f5c037089e4ea720915ff4c7ec5f4750140cd1d15cd2a8bf694896a27236a33601261dcbaaa45425e13cd4f2f66bdfe2c7f4a51ad3643990263ef5d1abd1b19d5412588d881a38bbe41d248cba8e4c417f9e43697cb701f845b0</script>
+  <script id="hbeData" type="hbeData" data-hmacdigest="98627038d467f3fe5780432fe8b668c06d3e3723acbe8f43cfcddcb52885ae1a">bda6ad0d5f606e7055c23f770369041fbdc863218cee7dfefc786ad316b08a781cd7a81da91aea91fad7c436a78c35f097a0a44e762e6e47dcf4cc07feff22a7b4b6f5d95371fefdd1596afae2cf1ed3974a1d05f23aafe44ed87c10df69b3be9f6f5753071964fc60e59e11d3492799c45d1474f046429b76c801851eb6da5b5a21182905dfda6ceb115acbb2575a2fc19ee084d31fd731a32c59c1434304bd6cc85c516f7adb8b4ad688059ae3b179c59bb037f06b63f18553a4775a09dc5f9e8b6a9d836ed044ca9109f520fd6fa1e988dfe9ad23408c045fd299e1637336e1afb245020a8bc75884fc7de17a6271f8bc1d2a13764c16454cc52dc83bc3459989a5e1ffee34cdb26c7662b2a115ef6a24efa25074300fe5cc069d6fed49e42dd2023897bb5158b0f293b919cf5332f5978704ee14ad101b34740e07207a24af5682f4cfad883694483f20d71eb6b2e49ca6b42bd23b9a7ec624fbe1178d147caa04c0737684181d1e7023a834293c54f79ac5e89971e83ee1847fecc59188911694f72c6749592e14b387654d0cab6c428029a86e9ab6c317b46cdd8e06fb52e8f955274da11852090a2483efaf5e05533093a283d872f6acb006cc8c7ef2ca6281f65016674f4e3442059c89fe83cd777af2f2a3f0722b52a3469077bf52cfa740deac4b5e80ec37ec7a5c71a93af9e7ecb5db43ea5a6645e79a35a8119a239f3b1f0ddbce2bff2bc9e0262b4e43b8e24a05464a0dd573e3e5832167bf85b4443b59b59a3d4cb7411ac5b66c195d1e48cd95e7e2784ac4e821301a30696bb85c8c80aa8cc7b9742ea943bd50b16d621757d189a0d015bd1dd981f3e19a1c540994b30b40ca9ad336de10a6554ed64b62b4ea38f56abdbe2154f89a7a6b5d5c29e7871aa6fdb2e8dbf943d48136cc08153a4c4e10fefd9796c38051392aa5c1c1f4e00213906c41c29877d244eae7993cf3353c3273d07563e75f12f5aaf4f66c31a800453c38c4db94efc5ca9161ac44d0b56307eb00145f5cee141514407694ebcd17ed0485d5d9b01fd9e06317ec0cdc14db9fa34e92b7aa4d581c01f7e661f9675d8c8c5d7171087981e9af0fb514c0320733b62e7fd80f7f7b82d810f35f7ff6ad2f68686ef29f252a045ff12361b50d771a90ce40c3b411b40778b5b7c2a58f88850bfb01911a3095d5b828015d16097975473879a6e9aec44f542e1b7d66d40c7e7acc8f0a7e07f279f7c5eacf48f57569f56f4384de61ea7bd45b2dfcf576925139340c3ff07a0a78911b559f52b3d45b198b518f343c0341cc80dd9bd800292530d16457f481b69a9a9b9e05a7b20dae14caf5177ec38b194b8ff1952126d5e1167f80207b9610aa2a48</script>
   <div class="hbe hbe-content">
     <div class="hbe hbe-input hbe-input-default">
       <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
