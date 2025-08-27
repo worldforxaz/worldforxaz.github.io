@@ -311,7 +311,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="92">
-<input type="hidden" id="yelog_site_word_count" value="128.2k">
+<input type="hidden" id="yelog_site_word_count" value="125.7k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1279,12 +1279,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2025-08-01 15:57:52'>2024-05-25 22:01</time>
+            发布时间 : <time class="date" title='最后更新: 2025-08-27 15:50:02'>2024-05-25 22:01</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:11.5k</span>
+        <span>字数:11.6k</span>
         
         
         
@@ -1922,7 +1922,12 @@ GGA_COMPAT = .FALSE.
 <p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/349419162#:~:text=02">DFT+U理论及“一步”完成DFT+U多步计算 - 知乎 (zhihu.com)</a></p>
 <p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/502440652#:~:text=DFT%2BU%E7%90%86%E8%AE%BA">带你解读DFT+U计算，如何加U - 知乎 (zhihu.com)</a></p>
 <p><img src="/./../../%E5%9B%BE%E7%89%87/image-20240131093236149.png" alt="image-20240131093236149"></p>
-<h2 id="13-磁性"><a href="#13-磁性" class="headerlink" title="13. 磁性"></a>13. 磁性</h2><p>材料的磁性对应的微观电子结构为<strong>电子自旋的方向并不均匀分布</strong>。</p>
+<h2 id="13-磁性"><a href="#13-磁性" class="headerlink" title="13. 磁性"></a>13. 磁性</h2><p>通常磁矩是通过查看未成对电子数量来设置的，每个未成对电子对应最大磁矩为1</p>
+<p>在vasp的OSZICAR中，可以查看最终的总磁矩，在OUTCAR中，关键词mag可以查看分原子的磁矩。</p>
+<p>磁矩通常是从上向下优化的，可以设置一个比较大的初始磁矩，让它从上向下优化</p>
+<p>在一个磁性原子周围，可能会存在原本非磁性原子带有一些磁性的现象，这在计算中可以观察到</p>
+<hr>
+<p>材料的磁性对应的微观电子结构为<strong>电子自旋的方向并不均匀分布</strong>。</p>
 <p>绝大多数的磁性材料计算中，电子的自旋只会平行排列（磁各向同性，是共线磁矩 </p>
 <p>不考虑自旋的占据态能级自旋向上的能级和向下的能级相同，由同一个能级表示。</p>
 <p>考虑共线磁矩时，自旋向上和自旋向下的能级分别输出，每个能级的电子占据数为1，共同计算费米能级。</p>
