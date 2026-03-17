@@ -6,17 +6,19 @@
   <meta name="keywords" content="">
   <meta name="description" content="处理分数占据结构 | xaz的花花世界">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="[toc]  用rufus安装Clonezilla Live到U盘 从U盘启动后进行硬盘复制 用rufus安装gparted Live到U盘 从U盘启动后扩展原分区  两种 Live软件可免费直接在官网下载，在nas 软件目录中也有备份 备选方案：(未尝试)  把复制好的硬盘放到windows下用diskgenius扩展空间或者直接用windows的自带的分区扩展卷功能  Clonezilla 是">
-<meta property="og:type" content="article">
-<meta property="og:title" content="linux更换大硬盘">
-<meta property="og:url" content="http://example.com/2025/11/10/5-linux%E5%AD%A6%E4%B9%A0%E4%BD%BF%E7%94%A8/linux%E6%9B%B4%E6%8D%A2%E5%A4%A7%E7%A1%AC%E7%9B%98/index.html">
+<meta name="description" content="快捷键">
+<meta property="og:type" content="website">
+<meta property="og:title" content="about">
+<meta property="og:url" content="http://example.com/about/index.html">
 <meta property="og:site_name" content="xaz的花花世界">
-<meta property="og:description" content="[toc]  用rufus安装Clonezilla Live到U盘 从U盘启动后进行硬盘复制 用rufus安装gparted Live到U盘 从U盘启动后扩展原分区  两种 Live软件可免费直接在官网下载，在nas 软件目录中也有备份 备选方案：(未尝试)  把复制好的硬盘放到windows下用diskgenius扩展空间或者直接用windows的自带的分区扩展卷功能  Clonezilla 是">
+<meta property="og:description" content="快捷键">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-11-10T01:11:01.000Z">
-<meta property="article:modified_time" content="2025-11-10T01:24:54.943Z">
+<meta property="og:image" content="http://example.com/%E5%9B%BE%E7%89%87/%E5%BF%AB%E6%8D%B7%E9%94%AE.jpg">
+<meta property="article:published_time" content="2024-05-25T09:36:13.000Z">
+<meta property="article:modified_time" content="2024-05-25T09:40:28.322Z">
 <meta property="article:author" content="xaz">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/%E5%9B%BE%E7%89%87/%E5%BF%AB%E6%8D%B7%E9%94%AE.jpg">
 
 
 <link rel="icon" href="/img/1.png">
@@ -309,7 +311,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="99">
-<input type="hidden" id="yelog_site_word_count" value="147.5k">
+<input type="hidden" id="yelog_site_word_count" value="149.1k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1344,12 +1346,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2025-12-02 20:09:17'>2025-02-25 09:23</time>
+            发布时间 : <time class="date" title='最后更新: 2026-03-12 21:36:36'>2025-02-25 09:23</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:12.6k</span>
+        <span>字数:13.9k</span>
         
         
         
@@ -1376,6 +1378,8 @@
         <p><div class='inner-toc'><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E8%87%AA%E5%8A%A8%E8%AE%A1%E7%AE%97%E4%B8%80%E4%B8%AA%E5%88%86%E6%95%B0%E5%8D%A0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%9A%84%E6%9C%80%E4%BD%B3%E6%89%A9%E8%83%9E%E6%96%B9%E5%BC%8F%E5%B9%B6%E8%BF%9B%E8%A1%8C%E6%89%A9%E8%83%9E%EF%BC%8C%E5%8F%AF%E4%BB%A5%E4%B8%8E%E4%B8%8B%E9%9D%A2sqs%E7%9A%84pymatgen%E8%84%9A%E6%9C%AC%E8%BF%9E%E7%94%A8%E8%BF%9B%E8%A1%8C%E6%89%B9%E9%87%8F%E5%8C%96%E6%93%8D%E4%BD%9C"><span class="toc-text">1. 自动计算一个分数占据结构的最佳扩胞方式并进行扩胞，可以与下面sqs的pymatgen脚本连用进行批量化操作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-pymatgen%E6%A3%80%E9%AA%8C%E7%9B%B8%E5%90%8C%E7%BB%93%E6%9E%84"><span class="toc-text">1.pymatgen检验相同结构</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E4%B8%80%E6%AC%A1%E6%80%A7%E6%A3%80%E9%AA%8C"><span class="toc-text">1.一次性检验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E9%80%90%E4%B8%AA%E6%A3%80%E9%AA%8C"><span class="toc-text">2.逐个检验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%A3%80%E9%AA%8C%E4%B8%A4%E4%B8%AA%E7%BB%93%E6%9E%84"><span class="toc-text">3. 检验两个结构</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-pymatgen-enumeration"><span class="toc-text">2. pymatgen-enumeration</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-pymatgen-orderdisorder"><span class="toc-text">3. pymatgen-orderdisorder</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%B9%E9%87%8F%E5%81%9A"><span class="toc-text">批量做</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-%E8%AE%A1%E7%AE%97%E9%9D%99%E7%94%B5%E8%83%BD"><span class="toc-text">4.计算静电能</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-sqs"><span class="toc-text">5. sqs</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8pymatgen%E8%BF%9B%E8%A1%8Csqs%E6%93%8D%E4%BD%9C"><span class="toc-text">使用pymatgen进行sqs操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%89%8D%E5%A4%84%E7%90%86"><span class="toc-text">1.前处理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E8%BD%AC%E6%8D%A2rndstr%E6%A0%BC%E5%BC%8F%E7%9A%84%E7%BB%93%E6%9E%84"><span class="toc-text">1. 转换rndstr格式的结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%8F%90%E4%BA%A4%E5%A4%9A%E4%B8%AAip%E7%9A%84%E4%BB%BB%E5%8A%A1"><span class="toc-text">2.提交多个ip的任务</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%90%8E%E5%A4%84%E7%90%86"><span class="toc-text">2. 后处理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%8F%90%E5%8F%96bestcorr"><span class="toc-text">1. 提取bestcorr</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%AF%B9%E5%A4%9A%E4%BB%BB%E5%8A%A1ip%E4%BA%A7%E7%94%9F%E7%9A%84best-out%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86"><span class="toc-text">2.对多任务ip产生的best.out文件处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%A3%80%E9%AA%8C%E7%9B%B8%E5%90%8C%E7%9A%84%E7%BB%93%E6%9E%84"><span class="toc-text">3. 检验相同的结构</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-%E6%9A%B4%E5%8A%9B%E6%9E%9A%E4%B8%BE"><span class="toc-text">6.暴力枚举</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%9E%9A%E4%B8%BE%E8%84%9A%E6%9C%AC"><span class="toc-text">1.枚举脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%A4%9A%E4%BB%BB%E5%8A%A1%E8%84%9A%E6%9C%AC-%E6%A3%80%E9%AA%8C%E7%9B%B8%E5%90%8C%E7%BB%93%E6%9E%84"><span class="toc-text">2. 多任务脚本 检验相同结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%94%B9%E8%89%AF%E7%89%88"><span class="toc-text">3.改良版</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E9%99%90%E5%AE%9A%E6%9C%80%E5%B0%8F%E8%B7%9D%E7%A6%BB"><span class="toc-text">1.限定最小距离</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E9%99%90%E5%AE%9A%E6%9C%80%E5%B0%8F%E8%B7%9D%E7%A6%BB%E4%B8%94%E4%BF%9D%E8%AF%81%E6%9B%BF%E4%BB%A3%E5%8F%91%E7%94%9F%E5%9C%A8%E4%B8%8D%E5%90%8C%E7%9A%84%E4%BD%8D%E7%BD%AE"><span class="toc-text">2.限定最小距离且保证替代发生在不同的位置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E9%99%90%E5%AE%9A%E7%A9%BA%E9%97%B4%E7%BE%A4"><span class="toc-text">3.限定空间群</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%A4%9A%E4%BB%BB%E5%8A%A1%E5%81%9A%E6%94%B9%E8%89%AF%E7%89%88"><span class="toc-text">4.多任务做改良版</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E4%BD%BF%E7%94%A8%E6%9E%9A%E4%B8%BE%E6%96%B9%E6%B3%95%E5%A4%84%E7%90%86%E8%93%9D%E9%92%BB%E7%BB%93%E6%9E%84"><span class="toc-text">4.使用枚举方法处理蓝钻结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%AE%8C%E5%85%A8%E9%9A%8F%E6%9C%BA%E7%9A%84%E6%96%B9%E6%B3%95%EF%BC%88%E5%AE%8C%E5%85%A8%E8%A7%A3%E6%94%BE%E5%8F%8C%E6%89%8B%E4%BA%86%EF%BC%89"><span class="toc-text">1.完全随机的方法（完全解放双手了）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E6%8F%90%E4%BB%BB%E5%8A%A1"><span class="toc-text">1. 提任务</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-changeatom-py"><span class="toc-text">2. changeatom.py</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-multitask-sh-%E5%81%9A%E4%B8%80%E4%BA%9B%E6%96%87%E4%BB%B6%E5%A4%B9-%EF%BC%8C%E6%8F%90%E4%BA%A4%E4%BA%A7%E7%94%9F%E7%BB%93%E6%9E%84%E7%9A%84%E4%BB%BB%E5%8A%A1%EF%BC%8C%E6%8F%90%E4%BA%A4%E8%AE%A1%E7%AE%97ewald%E8%83%BD%E9%87%8F%E7%9A%84%E4%BB%BB%E5%8A%A1"><span class="toc-text">3. multitask.sh :做一些文件夹 ，提交产生结构的任务，提交计算ewald能量的任务</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E5%90%8E%E5%A4%84%E7%90%86%E6%96%87%E4%BB%B6-get-all-sh-%E6%8F%90%E5%8F%96%E8%83%BD%E9%87%8F%E6%9C%80%E4%BD%8E%E7%9A%84%E7%BB%93%E6%9E%84"><span class="toc-text">4. 后处理文件 get-all.sh   提取能量最低的结构</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%9B%BF%E6%8D%A2%E4%B8%BAB-3O%E5%92%8CB-4O%E6%9E%84%E5%9E%8B%E7%9A%84%E6%96%B9%E6%B3%95%EF%BC%88%E8%BF%98%E9%9C%80%E8%A6%81%E6%89%8B%E5%8A%A8%E5%81%9A%E4%B8%80%E4%BA%9B%E6%B5%81%E7%A8%8B%EF%BC%89"><span class="toc-text">2. 替换为B_3O和B_4O构型的方法（还需要手动做一些流程）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E6%9E%9A%E4%B8%BE%E6%B0%A7%E7%9A%84%E4%BD%8D%E7%BD%AE"><span class="toc-text">1. 枚举氧的位置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E6%A3%80%E9%AA%8C%E7%9B%B8%E5%90%8C%E7%9A%84%E7%BB%93%E6%9E%84"><span class="toc-text">2. 检验相同的结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E6%9B%BF%E6%8D%A2B%E5%8E%9F%E5%AD%90"><span class="toc-text">3. 替换B原子</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E5%86%8D%E6%AC%A1%E6%A3%80%E9%AA%8C%E7%9B%B8%E5%90%8C%E7%BB%93%E6%9E%84"><span class="toc-text">4. 再次检验相同结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E8%AE%A1%E7%AE%97%E8%83%BD%E9%87%8F%EF%BC%8C%E6%95%B4%E7%90%86%E7%BB%93%E6%9E%84"><span class="toc-text">5. 计算能量，整理结构</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%9B%BF%E6%8D%A2%E4%B8%BAB-2O%E5%92%8CB-3O%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-text">3. 替换为B_2O和B_3O的方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E6%9E%9A%E4%B8%BE%E6%B0%A7%E7%9A%84%E7%BB%93%E6%9E%84%E5%92%8C%E5%85%B6%E4%BB%96%E6%AD%A5%E9%AA%A4"><span class="toc-text">1.枚举氧的结构和其他步骤</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-%E6%9B%BF%E6%8D%A2B%E5%8E%9F%E5%AD%90-%E8%81%94%E5%90%88%E5%8F%96%E4%BB%A3%E3%80%81%E5%AE%8C%E5%85%A8%E6%9E%9A%E4%B8%BE"><span class="toc-text">2-1. 替换B原子(联合取代、完全枚举)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-%E5%85%88%E5%88%86%E7%B1%BB%E5%86%8D%E6%9B%BF%E4%BB%A3"><span class="toc-text">2-2 先分类再替代</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-%E6%AF%8F%E4%B8%AA%E7%BB%93%E6%9E%84%E9%9A%8F%E6%9C%BA%E5%8F%96%E6%A0%B7%E7%89%B9%E5%AE%9A%E6%95%B0%E7%9B%AE%E7%9A%84%E7%BB%93%E6%9E%84"><span class="toc-text">2-3 每个结构随机取样特定数目的结构</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%9E%9A%E4%B8%BE-%E8%BF%AD%E4%BB%A3%E5%99%A8%E8%BF%9B%E8%A1%8C%E5%B7%A5%E4%BD%9C"><span class="toc-text">4.枚举+迭代器进行工作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E6%9E%9A%E4%B8%BE-%E4%BD%BF%E7%94%A8%E9%9D%99%E7%94%B5%E8%83%BD%E4%BD%9C%E4%B8%BA%E5%93%88%E5%B8%8C%E5%80%BC%E8%80%8C%E4%B8%8D%E6%98%AFfit"><span class="toc-text">5.枚举-使用静电能作为哈希值而不是fit</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E5%8F%AF%E4%BB%A5%E5%88%86%E6%AD%A5%E9%AA%A4%E6%9D%A5%E5%81%9A%EF%BC%8C%E5%85%88%E6%9B%BF%E6%8D%A2%E5%9B%9B%E4%B8%AA%EF%BC%8C%E5%86%8D%E6%9B%BF%E6%8D%A2%E4%B8%A4%E4%B8%AA-%EF%BC%81"><span class="toc-text">6. 可以分步骤来做，先替换四个，再替换两个 ！</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E6%A3%80%E9%AA%8C"><span class="toc-text">5.检验</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E9%80%90%E4%B8%AA%E6%A3%80%E9%AA%8C%E7%9B%B8%E4%BC%BC%E6%80%A7"><span class="toc-text">1. 逐个检验相似性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%A3%80%E9%AA%8C%E4%B8%A4%E4%B8%AA%E7%BB%93%E6%9E%84"><span class="toc-text">2. 检验两个结构</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-%E6%89%BE%E5%87%BA%E7%BC%BA%E5%A4%B1%E7%9A%84%E5%8E%9F%E5%AD%90"><span class="toc-text">7.找出缺失的原子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-%E5%A4%84%E7%90%86CaH6%E7%9A%84333%E5%80%8D%E8%83%9E%E7%9A%84%E9%97%AE%E9%A2%98%EF%BC%88%E5%B0%86324%E4%B8%AAH%E4%B8%AD%E7%9A%8414%E4%B8%AA%E6%89%A3%E6%8E%89-%E5%8F%AF%E4%BB%A5%E6%9E%9A%E4%B8%BE%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-text">7. 处理CaH6的333倍胞的问题（将324个H中的14个扣掉-可以枚举的方法</span></a></li></ol></div></p>
 <h1 id="1-自动计算一个分数占据结构的最佳扩胞方式并进行扩胞，可以与下面sqs的pymatgen脚本连用进行批量化操作"><a href="#1-自动计算一个分数占据结构的最佳扩胞方式并进行扩胞，可以与下面sqs的pymatgen脚本连用进行批量化操作" class="headerlink" title="1. 自动计算一个分数占据结构的最佳扩胞方式并进行扩胞，可以与下面sqs的pymatgen脚本连用进行批量化操作"></a>1. 自动计算一个分数占据结构的最佳扩胞方式并进行扩胞，可以与下面sqs的pymatgen脚本连用进行批量化操作</h1><p><img src="/./../../%E5%9B%BE%E7%89%87/image-20251015135455841.png" alt="image-20251015135455841"></p>
 <pre><code class="python">#通过修改 tolerance可以限制哪些结构扩胞到100个原子以上
+#新版本增加了使用最大余数法取整
+#通过修改 tolerance可以限制哪些结构扩胞到100个原子以上
 import os
 import math
 from pymatgen.core import Structure
@@ -1385,6 +1389,20 @@ import warnings
 from pymatgen.symmetry.analyzer import SpacegroupAnalyzer
 import shutil
 from pymatgen.core.periodic_table import Element
+from pymatgen.io.cif import CifParser
+from collections import defaultdict
+from decimal import Decimal, ROUND_DOWN
+
+def parse_cif_number(s):
+    &quot;&quot;&quot;
+    解析 CIF 数字，支持类似 0.123(4) 这种格式。
+    &quot;&quot;&quot;
+    s = str(s).strip().strip(&quot;&#39;&quot;).strip(&#39;&quot;&#39;)
+    s = s.split(&#39;(&#39;)[0]
+    if s in [&#39;.&#39;, &#39;?&#39;, &#39;&#39;]:
+        raise ValueError(f&quot;无效数字: &#123;s&#125;&quot;)
+    return float(s)
+
 
 
 def get_scaling_factors(n):
@@ -1419,11 +1437,16 @@ def get_site_contributions_from_cif(filepath):
     &quot;&quot;&quot;
     # contributions = []
     site_info_list = []
+    coord_tol_digits=4
+    has_low_occupancy = False
     
     try:
         with open(filepath, &#39;r&#39;) as f:
             lines = f.readlines()
     except Exception as e:
+        os.makedirs(&#39;7-2-utf8_error&#39;, exist_ok=True)
+        shutil.copy(filepath, os.path.join(&#39;7-2-utf8_error&#39;, os.path.basename(filepath)))
+        print(&quot;已将文件移动到 &#39;7-2-utf8_error/&#39; 目录。&quot;)
         print(f&quot;错误: 无法打开文件 &#123;filepath&#125;. 原因: &#123;e&#125;&quot;)
         return []
 
@@ -1463,26 +1486,77 @@ def get_site_contributions_from_cif(filepath):
                 continue
 
             try:
+                def safe_get(key, default=None):
+                    if key in header_keys:
+                        return parts[header_keys.index(key)]
+                    return default
                 # 找到多样性和占有率所在的列索引
                 mult_idx = header_keys.index(&#39;_atom_site_symmetry_multiplicity&#39;)
                 occ_idx = header_keys.index(&#39;_atom_site_occupancy&#39;)
+
+                multiplicity  = int(parse_cif_number(parts[mult_idx]))
+                occupancy =parse_cif_number(parts[occ_idx])
+                if occupancy &lt; 0.01:
+                    occupancy = 0.0
+                    has_low_occupancy = True
+                     
                 
-                multiplicity  = int(parts[mult_idx])
-                occupancy_str = parts[occ_idx]
-                occupancy_cleaned = occupancy_str.split(&#39;(&#39;)[0]
-                occupancy = float(occupancy_cleaned)
+                x_str = safe_get(&#39;_atom_site_fract_x&#39;, None)
+                y_str = safe_get(&#39;_atom_site_fract_y&#39;, None)
+                z_str = safe_get(&#39;_atom_site_fract_z&#39;, None)
+                
+                fract_x = parse_cif_number(x_str) if x_str is not None else None
+                fract_y = parse_cif_number(y_str) if y_str is not None else None
+                fract_z = parse_cif_number(z_str) if z_str is not None else None
+                
+                label = safe_get(&#39;_atom_site_label&#39;, &#39;&#39;)
+                type_symbol = safe_get(&#39;_atom_site_type_symbol&#39;, &#39;&#39;)
+                wyckoff = safe_get(&#39;_atom_site_wyckoff_symbol&#39;, &#39;&#39;)
                          
                 amount = multiplicity * occupancy
+                
+                
+                if fract_x is not None and fract_y is not None and fract_z is not None:
+                    coord_key = (
+                        round(fract_x, coord_tol_digits),
+                        round(fract_y, coord_tol_digits),
+                        round(fract_z, coord_tol_digits),
+                    )
+                else:
+                    # 万一没有坐标，就退化到 label + mult
+                    coord_key = (label,)  
+                group_key = (multiplicity, coord_key)
+                
+                
+                
                 # contributions.append(amount)
                 site_info_list.append(&#123;
+                    &quot;label&quot;: label,
+                    &quot;type_symbol&quot;: type_symbol,
                     &quot;multiplicity&quot;: multiplicity,
                     &quot;occupancy&quot;: occupancy,
-                    &quot;amount&quot;: amount
+                    &quot;amount&quot;: amount,
+                    &quot;fract_x&quot;: fract_x,
+                    &quot;fract_y&quot;: fract_y,
+                    &quot;fract_z&quot;: fract_z,
+                    &quot;wyckoff&quot;: wyckoff,
+                    &quot;group_key&quot;: group_key,
                 &#125;)
+                
             except (ValueError, IndexError) as e:
                 print(f&quot;警告: 无法解析原子位点行: &#39;&#123;line&#125;&#39;. 原因: &#123;e&#125;&quot;)
                 continue
-
+    
+    if has_low_occupancy:
+        low_occ_dir = &#39;9-occ_less_than_0.01&#39;
+        try:
+            os.makedirs(low_occ_dir, exist_ok=True)
+            shutil.copy(filepath, os.path.join(low_occ_dir, os.path.basename(filepath)))
+            print(f&quot;文件 &#39;&#123;os.path.basename(filepath)&#125;&#39; 中发现 occupancy &lt; 0.01 的位点，已按 0 处理，并复制到 &#39;&#123;low_occ_dir&#125;/&#39; 目录。&quot;)
+        except Exception as e:
+            print(f&quot;复制文件 &#39;&#123;filepath&#125;&#39; 时出错: &#123;e&#125;&quot;)
+    
+    
     is_fractional = False
     for info in site_info_list:
         occupancy = info[&#39;occupancy&#39;]
@@ -1508,12 +1582,128 @@ def get_site_contributions_from_cif(filepath):
 
 
 
+def allocate_by_group_largest_remainder(site_info, best_n, group_total_mode=&quot;floor&quot;):
+    &quot;&quot;&quot;
+    对相同位点组进行最大余数法分配。
+
+    规则：
+    1. 同组总整数原子数 &lt;= multiplicity * best_n
+    2. 组内每行先取 floor(amount * n)
+    3. 剩余名额按余数从大到小分配
+
+    Args:
+        site_info (list[dict]): get_site_contributions_from_cif 返回的列表
+        best_n (int): 扩胞倍数
+        group_total_mode (str): &quot;floor&quot; 或 &quot;round&quot;
+            - floor: 组总数取 floor(group_amount * n)，一定不超过真实值
+            - round: 组总数取 round(group_amount * n)，但仍会被 cap 限制在 multiplicity*n 内
+
+    Returns:
+        list[float]: 与 site_info 顺序一致的新 occupancy 列表
+    &quot;&quot;&quot;
+    
+
+    grouped = defaultdict(list)
+    for idx, info in enumerate(site_info):
+        grouped[info[&quot;group_key&quot;]].append((idx, info))
+
+    new_occupancies = [0.0] * len(site_info)
+
+    for group_key, items in grouped.items():
+        group_mult = items[0][1][&quot;multiplicity&quot;]
+
+        # 组内理论总原子数（扩胞后）
+        group_exact_total = sum(info[&quot;amount&quot;] * best_n for _, info in items)
+
+        if group_total_mode == &quot;round&quot;:
+            desired_group_total = int(round(group_exact_total))
+        else:
+            desired_group_total = int(math.floor(group_exact_total + 1e-9))
+
+        # 严格上限：相同位点总数不能超过 multiplicity * n
+        cap = group_mult * best_n
+        group_int_total = min(desired_group_total, cap)
+
+        tmp = []
+        floor_sum = 0
+
+        for idx, info in items:
+            exact_count = info[&quot;amount&quot;] * best_n
+            base_count = int(math.floor(exact_count + 1e-9))
+            remainder = exact_count - base_count
+
+            # 单行本身也不能超过 multiplicity*n，虽然通常不会超
+            base_count = min(base_count, cap)
+
+            tmp.append(&#123;
+                &quot;idx&quot;: idx,
+                &quot;info&quot;: info,
+                &quot;exact_count&quot;: exact_count,
+                &quot;base_count&quot;: base_count,
+                &quot;remainder&quot;: remainder
+            &#125;)
+            floor_sum += base_count
+
+        # 保险：理论上 floor_sum 不应大于 group_int_total，但还是保护一下
+        if floor_sum &gt; group_int_total:
+            # 从余数最小的开始减
+            tmp.sort(key=lambda x: x[&quot;remainder&quot;])
+            overflow = floor_sum - group_int_total
+            for item in tmp:
+                if overflow &lt;= 0:
+                    break
+                item[&quot;base_count&quot;] -= 1
+                overflow -= 1
+                # dec = min(item[&quot;base_count&quot;], overflow)
+                # item[&quot;base_count&quot;] -= dec
+                # overflow -= dec
+
+        remaining = group_int_total - sum(item[&quot;base_count&quot;] for item in tmp)
+
+        # 最大余数法：把剩余整数分配给余数最大的项
+        tmp.sort(key=lambda x: (-x[&quot;remainder&quot;], x[&quot;idx&quot;]))
+
+        for i in range(remaining):
+            tmp[i][&quot;base_count&quot;] += 1
+
+        # 回写成 occupancy
+        for item in tmp:
+            idx = item[&quot;idx&quot;]
+            info = item[&quot;info&quot;]
+            multiplicity = info[&quot;multiplicity&quot;]
+
+            if multiplicity == 0 or best_n == 0:
+                new_occ = 0.0
+            else:
+                new_occ = item[&quot;base_count&quot;] / (multiplicity * best_n)
+
+            # 再做一次上限保护
+            new_occ = min(max(new_occ, 0.0), 1.0)
+            new_occupancies[idx] = new_occ
+
+        # 打印调试信息
+        print(f&quot;\n位点组 &#123;group_key&#125;:&quot;)
+        print(f&quot;  组内扩胞后理论总原子数 = &#123;group_exact_total:.6f&#125;&quot;)
+        print(f&quot;  组内整数总原子数      = &#123;group_int_total&#125;&quot;)
+        print(f&quot;  组上限                = &#123;cap&#125;&quot;)
+        for item in sorted(tmp, key=lambda x: x[&quot;idx&quot;]):
+            info = item[&quot;info&quot;]
+            print(
+                f&quot;    行 idx=&#123;item[&#39;idx&#39;]&#125;, label=&#123;info[&#39;label&#39;]&#125;, elem=&#123;info[&#39;type_symbol&#39;]&#125;, &quot;
+                f&quot;exact=&#123;item[&#39;exact_count&#39;]:.6f&#125;, int=&#123;item[&#39;base_count&#39;]&#125;, &quot;
+                f&quot;new_occ=&#123;new_occupancies[item[&#39;idx&#39;]]:.6f&#125;&quot;
+            )
+
+    return new_occupancies
+
+
+
 
 
 
 def create_modified_cif_content(filepath, new_occupancies):
     &quot;&quot;&quot;
-    读取原始CIF文件，仅替换_atom_site_loop_中的占有率值。
+    读取原始CIF文件,仅替换_atom_site_loop_中的占有率值。
     
     Args:
         filepath (str): 原始CIF文件的路径。
@@ -1538,6 +1728,9 @@ def create_modified_cif_content(filepath, new_occupancies):
 
     for line in lines:
         stripped_line = line.strip()
+        if not stripped_line:
+            new_cif_lines.append(line)
+            continue
 
         if stripped_line.lower() == &#39;loop_&#39;:
             in_atom_loop = False
@@ -1571,10 +1764,14 @@ def create_modified_cif_content(filepath, new_occupancies):
             if len(parts) == len(header_keys):
                 if atom_site_counter &lt; len(new_occupancies):
                     # 格式化新的占有率，保留足够精度
-                    parts[occ_idx] = f&quot;&#123;new_occupancies[atom_site_counter]:.5f&#125;&quot;
+                    occ = Decimal(str(new_occupancies[atom_site_counter]))
+                    occ_str = str(occ.quantize(Decimal(&quot;0.000001&quot;), rounding=ROUND_DOWN))
+                    parts[occ_idx] = occ_str
+                    # parts[occ_idx] = f&quot;&#123;new_occupancies[atom_site_counter]:.5f&#125;&quot;
                     # 重新组合成一行，注意保留原始的空格格式
                     # 这是一个简化处理，假设列之间是单个或多个空格
                     new_line = &quot;  &quot;.join(parts) + &quot;\n&quot;
+                    print(new_line)
                     new_cif_lines.append(new_line)
                     atom_site_counter += 1
                 else:
@@ -1616,6 +1813,7 @@ def process_via_text_modification(filepath):
         print(f&quot;无法从 &#123;filepath&#125; 解析原子位点信息&quot;)
         return
     contributions = [info[&#39;amount&#39;] for info in site_info]
+    print(f&quot;contributions:&#123;contributions&#125;&quot;)
     initial_total_atoms = sum(contributions)
     print(f&quot;单胞中的初始总原子数: &#123;initial_total_atoms:.4f&#125;&quot;)
 
@@ -1628,27 +1826,46 @@ def process_via_text_modification(filepath):
     print(f&quot;找到合适的扩胞倍数 n = &#123;best_n&#125;&quot;)
 
     # 步骤3: 计算所有位点的新占有率
-    new_occupancies = []
-    for info in site_info:
-        scaled_amount_rounded = round(info[&#39;amount&#39;] * best_n)
-        if info[&#39;multiplicity&#39;] == 0 or best_n == 0:
-            new_occ = 0
-        else:
-            new_occ = scaled_amount_rounded / (info[&#39;multiplicity&#39;] * best_n)
-        new_occupancies.append(new_occ)
+    # new_occupancies = []
+    # for info in site_info:
+    #     scaled_amount_rounded = round(info[&#39;amount&#39;] * best_n)
+    #     if info[&#39;multiplicity&#39;] == 0 or best_n == 0:
+    #         new_occ = 0
+    #     else:
+    #         new_occ = scaled_amount_rounded / (info[&#39;multiplicity&#39;] * best_n)
+    #     new_occupancies.append(new_occ)
+    new_occupancies = allocate_by_group_largest_remainder(
+        site_info,
+        best_n,
+        group_total_mode=&quot;floor&quot;   # 推荐 floor，保证不超过真实扩胞后总数
+    )
+    
+    print(new_occupancies)
+    
 
     # 步骤4: 生成包含新占有率的CIF文件内容（纯文本操作）
     modified_cif_content = create_modified_cif_content(filepath, new_occupancies)
-
+    
+    print(&quot;完成按相同位点组的最大余数法占有率修正。&quot;)
     try:
         with warnings.catch_warnings():
             warnings.simplefilter(&quot;ignore&quot;, UserWarning)
             modified_structure = Structure.from_str(modified_cif_content, fmt=&quot;cif&quot;)
 
     except Exception as e:
+        print(f&quot;[FAIL] &#123;filepath&#125;: &#123;e&#125;&quot;)
+        os.makedirs(&quot;3-2-debug_failed_cif&quot;, exist_ok=True)
+        with open(os.path.join(&quot;3-2-debug_failed_cif&quot;, os.path.basename(filepath)), &quot;w&quot;) as f:
+            f.write(modified_cif_content)
         print(f&quot;错误: Pymatgen无法得到结构&quot;)
         return
-
+    
+    # if initial_total_atoms &gt;= 200:
+    #     analyzer = SpacegroupAnalyzer(modified_structure)
+    #     primitive_cell = analyzer.find_primitive() 
+    #     if primitive_cell.num_sites &lt; 100:
+    #         print(f&quot;约化后原子数 &#123;primitive_cell.num_sites&#125; 小于100，继续使用原结构进行扩胞&quot;) 
+        
     
     scaling_factors = get_scaling_factors(best_n)
     supercell = modified_structure.copy()
@@ -1684,11 +1901,21 @@ def process_structure_file(filepath, output_dir, tolerance=0.0001):
     if not site_amounts:
         print(f&quot;错误: 未能从 &#123;filepath&#125; 的 _atom_site_ 循环中提取到数据。&quot;)
         return
-
+    site_occupancy = [info[&#39;occupancy&#39;] for info in site_info_list]
+    print(site_occupancy)
+    # os.makedirs(&#39;9-multiplicity_less_than_0.01&#39;, exist_ok=True)
+    # if any(m &lt; 0.01 for m in site_occupancy):
+    #     shutil.copy(filepath, os.path.join(&#39;9-multiplicity_less_than_0.01&#39;, os.path.basename(filepath)))
+    #     print(f&quot;文件 &#39;&#123;os.path.basename(filepath)&#125;&#39; 中发现有位点的多样性小于0.01,已将文件移动到 &#39;9-multiplicity_less_than_0.01/&#39; 目录。&quot;)
+    #     return
+    
+    
     if not os.path.exists(&#39;7-pymatgen_error&#39;):
         os.makedirs(&#39;7-pymatgen_error&#39;)
     try:
-        structure = Structure.from_file(filepath)
+        # structure = Structure.from_file(filepath)
+        parser = CifParser(filepath, occupancy_tolerance=1.05)
+        structure = parser.parse_structures(primitive=False)[0]
     except Exception as e:
         shutil.copy(filepath, os.path.join(&#39;7-pymatgen_error&#39;, os.path.basename(filepath)))
         print(f&quot;错误: Pymatgen无法读取或解析文件 &#123;filepath&#125;. 原因: &#123;e&#125;&quot;)
@@ -1701,9 +1928,10 @@ def process_structure_file(filepath, output_dir, tolerance=0.0001):
         analyzer = SpacegroupAnalyzer(structure)
         prim_cell = analyzer.find_primitive()
     except Exception as e:
-        shutil.copy(filepath, os.path.join(&#39;8-pymatgen_sym_error&#39;, os.path.basename(filepath)))
+        # shutil.copy(filepath, os.path.join(&#39;8-pymatgen_sym_error&#39;, os.path.basename(filepath)))
         print(f&quot;错误: Pymatgen无法找到原胞 &#123;filepath&#125;. 原因: &#123;e&#125;&quot;)
-        return
+        prim_cell = structure
+        
     structur_site_num = structure.num_sites
     prim_site_num = prim_cell.num_sites
     if prim_site_num != structur_site_num:
@@ -1716,7 +1944,7 @@ def process_structure_file(filepath, output_dir, tolerance=0.0001):
         os.makedirs(&#39;1-exceed_200&#39;)
     if total_sum &gt;= 200:
         shutil.copy(filepath, os.path.join(&#39;1-exceed_200&#39;, os.path.basename(filepath)))
-        print(&#39;原胞中原子个数超过200个原子，跳过&#39;)
+        print(&#39;原胞中原子个数超过200个原子,跳过&#39;)
         return
 
     
@@ -1777,30 +2005,41 @@ def process_structure_file(filepath, output_dir, tolerance=0.0001):
             print(f&quot;找到合适的扩胞系数: &#123;n&#125;&quot;)
             break
     
-    #如果有原子个数小于0.1的位点，后续sqs或order很难做，所以在这里收集起来,后续直接修改占据数或者舍弃
-    best_scaling_atom = site_amounts * n
-    lessthan1 = False
-    for site_number in best_scaling_atom:
-        if  site_number &lt; 0.1:
-            print(f&quot;文件 &#39;&#123;os.path.basename(filepath)&#125;&#39; 中发现有原子个数小于0.1&quot;)
-            lessthan1 = True
-            break  
-
-    if lessthan1:
-        os.makedirs(&#39;5-lessthan1dir&#39;, exist_ok=True)
-        shutil.copy(filepath, os.path.join(&#39;5-lessthan1dir&#39;, os.path.basename(filepath)))
-        print(&quot;已将文件移动到 &#39;5-lessthan1dir/&#39; 目录。&quot;)
-        return
-
-
-
-
-
     if best_scaling_factor is None:
         print(f&quot;&#123;filepath&#125;在2-60倍范围内未找到合适的扩胞系数，将进行约化处理&quot;)
         process_via_text_modification(filepath)
         # shutil.copy(filepath, os.path.join(need_appro_dir, os.path.basename(filepath)))
         return
+    
+    
+    #如果有原子个数小于0.1的位点，后续sqs或order很难做，所以在这里收集起来,后续直接修改占据数或者舍弃
+    # best_scaling_atom = site_amounts * n
+    best_scaling_atom = [amount * best_scaling_factor for amount in site_amounts]
+    lessthan1 = False
+    for site_number in best_scaling_atom:
+        if  site_number &lt; 0.1 and site_number != 0:
+            print(site_number)
+            print(f&quot;文件 &#39;&#123;os.path.basename(filepath)&#125;&#39; 中发现有原子个数小于0.1&quot;)
+            lessthan1 = True
+            break  
+
+    if lessthan1:
+        # process_via_text_modification(filepath)
+        os.makedirs(&#39;5-lessthan1dir&#39;, exist_ok=True)
+        shutil.copy(filepath, os.path.join(&#39;5-lessthan1dir&#39;, os.path.basename(filepath)))
+        print(&quot;已将文件移动到 &#39;5-lessthan1dir/&#39; 目录。&quot;)
+        return
+
+    total_sum_2 = total_sum * best_scaling_factor
+    if total_sum_2 &gt; 200:
+        print(f&quot;虽然找到扩胞系数 &#123;best_scaling_factor&#125;，但扩胞后总原子数 &#123;total_sum_2:.2f&#125; 超过200个原子，将进行约化处理&quot;)
+        process_via_text_modification(filepath)
+        # shutil.copy(filepath, os.path.join(need_appro_dir, os.path.basename(filepath)))
+        return
+
+
+
+    
 
     # 使用Pymatgen读取结构，用于执行扩胞操作
     # try:
@@ -1853,7 +2092,7 @@ def process_structure_file(filepath, output_dir, tolerance=0.0001):
 
 
 if __name__ == &#39;__main__&#39;:
-    input_dir = &#39;origin_str&#39;
+    input_dir = &#39;./origin_structures&#39;
     for file in os.listdir(input_dir):
         if file.endswith(&quot;.cif&quot;):
             test_filename = os.path.join(input_dir, file)    
